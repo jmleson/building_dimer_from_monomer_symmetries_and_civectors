@@ -1,8 +1,8 @@
-from symmetrie_und_orbitale.CI_Vectors.get_product_terms import draw
-from symmetrie_und_orbitale.PointGroups import POINTGROUP
-from symmetrie_und_orbitale.linear_combinations.linear_combination_monomer_states import \
+from CI_Vectors.get_product_terms import draw
+from PointGroups import POINTGROUP
+from linear_combinations.linear_combination_monomer_states import \
     get_monomer_state_linear_combinations
-from symmetrie_und_orbitale.linear_combinations.linear_combination_of_dimeroccstates import \
+from linear_combinations.linear_combination_of_dimeroccstates import \
     linear_combination_of_dimeroccstates
 
 

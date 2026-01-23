@@ -1,7 +1,7 @@
-from symmetrie_und_orbitale.PointGroups import POINTGROUP
-from symmetrie_und_orbitale.all_products import all_products
-from symmetrie_und_orbitale.linear_combinations.linear_combination_monomer_states import get_monomer_state_linear_combinations
-from symmetrie_und_orbitale.linear_combinations.linear_combinations_of_combined_monomer_states import \
+from PointGroups import POINTGROUP
+from all_products import all_products
+from linear_combinations.linear_combination_monomer_states import get_monomer_state_linear_combinations
+from linear_combinations.linear_combinations_of_combined_monomer_states import \
     linear_combinations_of_combined_monomer_states
 
 

@@ -1,6 +1,6 @@
 import copy
 
-from symmetrie_und_orbitale.PointGroups import POINTGROUP
+from PointGroups import POINTGROUP
 
 
 def irred_back_to_number(point_group:POINTGROUP, string:str):

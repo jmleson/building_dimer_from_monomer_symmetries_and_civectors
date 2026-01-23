@@ -1,6 +1,6 @@
 import unittest
 
-from symmetrie_und_orbitale.CI_Vectors.get_possible_dimer_ci import find_choices_in_monomer_ci, get_possible_dimer_ci
+from CI_Vectors.get_possible_dimer_ci import find_choices_in_monomer_ci, get_possible_dimer_ci
 
 
 class TestFindChoicesInMonomerCI(unittest.TestCase):

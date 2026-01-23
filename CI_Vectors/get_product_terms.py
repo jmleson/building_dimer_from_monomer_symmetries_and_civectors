@@ -1,9 +1,9 @@
 
 from fractions import Fraction
 
-from symmetrie_und_orbitale.CI_Vectors.count import combine_sequences
-from symmetrie_und_orbitale.CI_Vectors.write_in_ci_vectors import write_in_ci_vectors
-from symmetrie_und_orbitale.linear_combinations.linear_combination_of_dimeroccstates import \
+from CI_Vectors.count import combine_sequences
+from CI_Vectors.write_in_ci_vectors import write_in_ci_vectors
+from linear_combinations.linear_combination_of_dimeroccstates import \
     linear_combination_of_dimeroccstates
 
 
@@ -13,8 +13,8 @@ def fraction_to_tex(frac: Fraction) -> str:
     return fr"\frac{{{frac.numerator}}}{{{frac.denominator}}}"
 
 
-from symmetrie_und_orbitale.PointGroups import POINTGROUP
-from symmetrie_und_orbitale.linear_combinations.linear_combination_monomer_states import get_monomer_combinations, \
+from PointGroups import POINTGROUP
+from linear_combinations.linear_combination_monomer_states import get_monomer_combinations, \
     get_linear_combination_of_dimeroccstates_from_combinations
 
 

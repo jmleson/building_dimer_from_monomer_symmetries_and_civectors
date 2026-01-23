@@ -1,10 +1,10 @@
 import itertools
 from typing import Tuple, List
 
-from symmetrie_und_orbitale.PointGroups import POINTGROUP
-from symmetrie_und_orbitale.dimer_occ_state import dimer_occ_state
-from symmetrie_und_orbitale.linear_combinations.linear_combination_of_dimeroccstates import linear_combination_of_dimeroccstates
-from symmetrie_und_orbitale.switch_monomers import switch_monomers
+from PointGroups import POINTGROUP
+from dimer_occ_state import dimer_occ_state
+from linear_combinations.linear_combination_of_dimeroccstates import linear_combination_of_dimeroccstates
+from switch_monomers import switch_monomers
 
 
 

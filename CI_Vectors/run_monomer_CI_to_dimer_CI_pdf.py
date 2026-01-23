@@ -1,6 +1,6 @@
-from symmetrie_und_orbitale.CI_Vectors.get_linear_combined_states import get_linear_combined_states
-from symmetrie_und_orbitale.CI_Vectors.get_product_terms import get_product_terms
-from symmetrie_und_orbitale.PointGroups import POINTGROUP
+from CI_Vectors.get_linear_combined_states import get_linear_combined_states
+from CI_Vectors.get_product_terms import get_product_terms
+from PointGroups import POINTGROUP
 
 
 

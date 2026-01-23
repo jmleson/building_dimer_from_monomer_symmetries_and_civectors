@@ -1,4 +1,4 @@
-from symmetrie_und_orbitale.PointGroups import POINTGROUP
+from PointGroups import POINTGROUP
 
 height_upper_mos = 0
 height_lower_mos = height_upper_mos-0.6

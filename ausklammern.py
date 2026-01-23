@@ -1,8 +1,8 @@
 from itertools import product
 
-from symmetrie_und_orbitale.multipling_irred import multipling_irred
-from symmetrie_und_orbitale.split_expression_into_sums import split_sum_into_parts
-from separateAnwendungen.symmetrie_und_orbitale.split_expression_into_sums import split_expression_into_sums
+from multipling_irred import multipling_irred
+from split_expression_into_sums import split_sum_into_parts
+from split_expression_into_sums import split_expression_into_sums
 
 
 ### !!!!       Diese Datei ist nur zum Testen, und soll nicht von anderen Methoden importiert werden!!!!
