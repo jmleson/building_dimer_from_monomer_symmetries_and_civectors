@@ -1,11 +1,12 @@
 # from get_latex_file_for_all_combinations import get_latex_file_for_d2h_symmetrie_options
+from symmetries.Molecule import Molecule
 from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.linear_combinations.linear_combination_monomer_states import get_monomer_state_linear_combinations
 from symmetries.linear_combinations.linear_combination_of_dimeroccstates import linear_combination_of_dimeroccstates
 
 
-def linear_combinations_of_combined_monomer_states(point_group: POINTGROUP, detailed:bool):
-    combined_monomer_states = get_monomer_state_linear_combinations(point_group=point_group, detailed=True)[1]
+def linear_combinations_of_combined_monomer_states(molecule:Molecule, detailed:bool):
+    combined_monomer_states = get_monomer_state_linear_combinations(molecule=molecule, detailed=True)[1]
 
     existing = []
     content = "\n"+r"\section{Linear Combinations: 16 Monomer- / 8 Dimer-States}"+ "\n"

@@ -1,6 +1,7 @@
 import itertools
 from typing import Tuple, List
 
+from symmetries.Molecule import Molecule
 from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.dimer_occ_state import dimer_occ_state
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
@@ -25,7 +26,7 @@ def get_possible_occs() -> List[Tuple]:
 
 
 
-def all_products(point_group:POINTGROUP, monomer_combinations:bool=True, detailed:bool=True) -> str:
+def all_products(molecule:Molecule, monomer_combinations:bool=True, detailed:bool=True) -> str:
     """
     calculating all linear combinations of 2 monomer states or 4 monomer states
     :param monomer_combinations: toggle between calculating all
@@ -34,6 +35,7 @@ def all_products(point_group:POINTGROUP, monomer_combinations:bool=True, detaile
     :param detailed: give detailed formulas (true) or just give the compact form (false)
     :return: latex formatted result
     """
+    point_group = molecule.get_point_group()
     if monomer_combinations:
         content = r"\newpage \section{Linear Combinations: 2 Monomer- / 1 Dimer-States}"+"\n"
     else:

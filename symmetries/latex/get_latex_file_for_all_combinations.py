@@ -1,3 +1,4 @@
+from symmetries.Molecule import Molecule
 from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.all_products import all_products
 from symmetries.latex.format_irred_representations import format_irred_representations
@@ -8,7 +9,7 @@ from symmetries.linear_combinations.linear_combinations_of_combined_monomer_stat
     linear_combinations_of_combined_monomer_states
 
 
-def get_latex_file_for_d2h_symmetry_options(content:str, point_group:POINTGROUP) -> None :
+def get_latex_file_for_d2h_symmetry_options(content:str, molecule:Molecule) -> None :
     """
     writing a latex file with all given content, that is able to compile tikz-figures as well as equations
     :param content: content of to-be latex file
@@ -32,11 +33,11 @@ def get_latex_file_for_d2h_symmetry_options(content:str, point_group:POINTGROUP)
     \section{Orbitals And Their Symmetry}%Orbitale und deren Symmetrie
     """
 
-    chapter1, molecule = orbitals_and_their_symmetry_chapter(point_group=point_group)
+    chapter1, molecule = orbitals_and_their_symmetry_chapter(molecule=molecule)
 
 
     end= r"\end{document}"
-    with open(f"resulting_tex_files/{point_group.value}_{molecule}.tex", "w") as file:
+    with open(f"resulting_tex_files/{molecule.value}_{molecule.get_point_group().value}.tex", "w") as file:
         file.write(start
                    + chapter1
                    + content
@@ -44,30 +45,20 @@ def get_latex_file_for_d2h_symmetry_options(content:str, point_group:POINTGROUP)
 
 
 
-def orbitals_and_their_symmetry_chapter(point_group:POINTGROUP):
+def orbitals_and_their_symmetry_chapter(molecule:Molecule):
+    point_group = molecule.get_point_group()
     start = ""
-    if point_group == POINTGROUP.D2h:
-        molecule = "C6H6"
-        start += r"%In der Sortierung: oben rechts $a_u$, oben links $b_{1u}$, unten links $b_{2g}$ und unten rechts $b_{3g}$ folgt: \\"
-    elif point_group == POINTGROUP.C2v or point_group == POINTGROUP.C2h:
-        molecule = "C6H5Cl"
-        start += r"%In der Sortierung: oben rechts $ $, oben links $ $, unten links $ $ und unten rechts $ $ folgt: \\"
-    else:
-        raise Exception("unknown molecule for point group")
+    # if point_group == POINTGROUP.D2h:
+    #     start += r"%In der Sortierung: oben rechts $a_u$, oben links $b_{1u}$, unten links $b_{2g}$ und unten rechts $b_{3g}$ folgt: \\"
+    # elif point_group == POINTGROUP.C2v or point_group == POINTGROUP.C2h:
+    #     start += r"%In der Sortierung: oben rechts $ $, oben links $ $, unten links $ $ und unten rechts $ $ folgt: \\"
+    # else:
+    #     raise Exception("unknown molecule for point group")
 
-    if molecule == "C6H6":
-        filename = "DimerZOrbitalordnung-gesamt-MO-C6H6-beiWW.pdf"
-    else:
-        if point_group == POINTGROUP.D2h:
-            filename = "DimerZOrbitalordnung-C6H5Cl-C2h-gesamt-MO-beiWW.pdf"
-        elif point_group == POINTGROUP.C2v:
-            filename = "DimerZOrbitalordnung-C6H5Cl-C2v-gesamt-MO-beiWW.pdf"
-        elif point_group == POINTGROUP.C2h:
-            filename = "DimerZOrbitalordnung-C6H5Cl-C2h-gesamt-MO-beiWW.pdf"
-        else:
-            raise Exception("unknown file name for get_latex_file_for_d2h_symmetrie_options")
-    start += "\n" + r"%\includegraphics[scale=0.125]{img/" + filename + r"}" + "\n"
-    start += r"\vspace{2cm}" + "\n"
+    filename = molecule.get_info_file()
+    if filename is not None and len(filename) > 0:
+        start += "\n" + r"%\includegraphics[scale=0.125]{img/" + filename + r"}" + "\n"
+        start += r"\vspace{2cm}" + "\n"
 
     empty_mos = {value: {MonomerPositions.left: 0, MonomerPositions.right: 0} for value in point_group.label.values()}
     labeled_monomer_orbitals = wrap_tikzpicture(get_mo_schemata(occupied_mos=empty_mos, monomer=MonomerPositions.isolated, point_group=point_group))
@@ -78,31 +69,18 @@ def orbitals_and_their_symmetry_chapter(point_group:POINTGROUP):
     start += "In the following, we will leave out the explicit labeling by orbital symmetry. Each monomer will simply be written as:\n"
     start +=  "$$" + "\n" + unlabeled_monomer_orbitals + "\n" + "$$" + "\n"
     start += "where the character of the orbital is defined by its position. \n\n"
-    start += ("Dimer configurations will be written as their monomer occupations, by writing one monomer to the left and one to the right."
-              " The orbital order within the group of monomer orbitals follows the above mentioned definition.")
+    start += ("Dimer configurations will be written as their monomer occupations, by writing one monomer to the left and one to the right. "
+              "The orbital order within the group of monomer orbitals follows the above mentioned definition. ")
 
 
     start += r"\vspace{2cm}"
-    start += "The transformation of monomer orbitals into dimer orbitals is given by knowing the negative and positive linera combinations of monomer orbitals into dimer orbitals."
-    start += "Transforming this known equation system leads to:" + "\n"
+    start += " The transformation of monomer orbitals into dimer orbitals is given by knowing the negative and positive linera combinations of monomer orbitals into dimer orbitals. "
+    start += "Transforming this known equation system leads to: " + "\n"
     start += r"\begin{subequations}\begin{gather}" + "\n"
-    for monomer, combination in point_group.mo_pairs.items():
-        start += format_irred_representations(monomer) + " = " + format_irred_representations(combination) + r"  \\" + "\n"
+    combination_str = r"  \\" + "\n"
+    start += combination_str.join( [format_irred_representations(monomer) + " = " + format_irred_representations(combination)
+                                        for monomer, combination in point_group.mo_pairs.items() ] )
     start += r"\end{gather}\end{subequations}" + "\n"
-
 
     return start, molecule
 
-
-if __name__ == "__main__":
-    detailed = True
-    # detailed = False
-    # point_group = POINTGROUP("c2h")
-    # point_group = POINTGROUP("c2v")
-    point_group = POINTGROUP("d2h")
-
-    content = all_products(point_group=point_group, monomer_combinations=True, detailed=detailed)
-    content += all_products(point_group=point_group,monomer_combinations=False,detailed=detailed)
-    content += get_monomer_state_linear_combinations(point_group=point_group,detailed=detailed)[0]
-    content += linear_combinations_of_combined_monomer_states(point_group=point_group, detailed=detailed)
-    get_latex_file_for_d2h_symmetry_options(content, point_group=point_group)

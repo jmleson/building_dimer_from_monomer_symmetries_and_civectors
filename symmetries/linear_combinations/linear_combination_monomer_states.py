@@ -1,6 +1,7 @@
 import itertools
 from typing import Tuple, Dict
 
+from symmetries.Molecule import Molecule
 from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.dimer_occ_state import dimer_occ_state
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
@@ -9,43 +10,22 @@ from symmetries.linear_combinations.monomer_state import monomer_state
 
 
 
-def get_monomer_combinations(point_group: POINTGROUP):
-    # Vorgabe:
-    occupied_mos = {
-        point_group.label["oben_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 0},  # b1u
-        point_group.label["oben_rechts"]: {MonomerPositions.left: 0, MonomerPositions.right: 1},  # "au"
-        point_group.label["unten_links"]: {MonomerPositions.left: 2, MonomerPositions.right: 1},  # "b2g"
-        point_group.label["unten_rechts"]: {MonomerPositions.left: 1, MonomerPositions.right: 2},  # "b3g"
-    }
-    if point_group == POINTGROUP.D2h:
-        m1 = monomer_state(occupied_mos, "$i^3 b_{2u}$", "-")
-        m2 = monomer_state(occupied_mos, "$e^3 b_{2u}$", "+")
-    elif point_group == POINTGROUP.C2v or point_group == POINTGROUP.C2h:
-        m1 = monomer_state(occupied_mos, "$i^3 a_1$", "-")
-        m2 = monomer_state(occupied_mos, "$e^3 a_1$", "+")
-    else:
-        raise Exception("not yet implemented")
-    occupied_mos = {
-        point_group.label["oben_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 0},
-        point_group.label["oben_rechts"]: {MonomerPositions.left: 0, MonomerPositions.right: 1},
-        point_group.label["unten_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 2},
-        point_group.label["unten_rechts"]: {MonomerPositions.left: 2, MonomerPositions.right: 1},
-    }
-    if point_group == POINTGROUP.D2h:
-        m3 = monomer_state(occupied_mos, "$e^3 b_{3u}$", "-")
-        m4 = monomer_state(occupied_mos, "$i^3 b_{3u}$", "+")
-    elif point_group == point_group.C2v or point_group == POINTGROUP.C2h:
-        m3 = monomer_state(occupied_mos, "$e^3 b_{1}$", "-")
-        m4 = monomer_state(occupied_mos, "$i^3 b_{1}$", "+")
-    else:
-        raise Exception("error again")  # Fehler sollte oben schon geworfen werden, wenn unbekannte Punktgruppe
+def get_monomer_combinations(molecule: Molecule):
+    m_state_info = molecule.get_ci_vectors_triplets()
+    #INFO: INPUT according to CI-Vectors of triplet calculation:
 
-    monomers = [m1, m2, m3, m4]
+    monomers = []
+    for sym_infos in m_state_info:
+        for name, initial_combination in sym_infos["included states"]:
+            m = monomer_state(sym_infos["occupied_mos"], name=name, initial_combination=initial_combination)
+            monomers.append(m)
+
     return list(itertools.product(monomers, repeat=2))
 
 
 
-def get_linear_combination_of_dimeroccstates_from_combinations(combination, point_group:POINTGROUP):
+def get_linear_combination_of_dimeroccstates_from_combinations(combination, molecule:Molecule):
+    point_group = molecule.get_point_group()
     # split monomers-occupations:
     left1_occ = {key: value[MonomerPositions.left] for key, value in combination[0].occupied_mos.items()}
     right1_occ = {key: value[MonomerPositions.right] for key, value in combination[0].occupied_mos.items()}
@@ -81,43 +61,9 @@ def get_linear_combination_of_dimeroccstates_from_combinations(combination, poin
     return l
 
 
-def get_monomer_state_linear_combinations(point_group: POINTGROUP, detailed:bool=True)-> Tuple[ str, Dict ]:
-    # if point_group != POINTGROUP.D2h:
-    #     raise Exception("nyi")
+def get_monomer_state_linear_combinations(molecule:Molecule, detailed:bool=True)-> Tuple[ str, Dict ]:
     combined_monomer_states = {} # Sammeln der ausgedruckten Kombinationen von Monomerzuständen (damit daraus noch wieder Linear Combinations gebildet werden können)
-    # # Vorgabe:
-    # occupied_mos = {
-    #     point_group.label["oben_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 0},# b1u
-    #     point_group.label["oben_rechts"]:  {MonomerPositions.left: 0, MonomerPositions.right: 1},#"au"
-    #     point_group.label["unten_links"]: {MonomerPositions.left: 2, MonomerPositions.right: 1},#"b2g"
-    #     point_group.label["unten_rechts"]: {MonomerPositions.left: 1, MonomerPositions.right: 2},#"b3g"
-    # }
-    # if point_group == POINTGROUP.D2h:
-    #     m1 = monomer_state(occupied_mos, "$i^3 b_{2u}$", "-")
-    #     m2 = monomer_state(occupied_mos, "$e^3 b_{2u}$", "+")
-    # elif point_group == POINTGROUP.C2v or point_group == POINTGROUP.C2h:
-    #     m1 = monomer_state(occupied_mos, "$i^3 a_1$", "-")
-    #     m2 = monomer_state(occupied_mos, "$e^3 a_1$", "+")
-    # else:
-    #     raise Exception("not yet implemented")
-    # occupied_mos = {
-    #     point_group.label["oben_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 0},
-    #     point_group.label["oben_rechts"]: {MonomerPositions.left: 0, MonomerPositions.right: 1},
-    #     point_group.label["unten_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 2},
-    #     point_group.label["unten_rechts"]: {MonomerPositions.left: 2, MonomerPositions.right: 1},
-    # }
-    # if point_group == POINTGROUP.D2h:
-    #     m3 = monomer_state(occupied_mos, "$e^3 b_{3u}$", "-")
-    #     m4 = monomer_state(occupied_mos, "$i^3 b_{3u}$", "+")
-    # elif point_group == point_group.C2v or point_group == POINTGROUP.C2h:
-    #     m3 = monomer_state(occupied_mos, "$e^3 b_{1}$", "-")
-    #     m4 = monomer_state(occupied_mos, "$i^3 b_{1}$", "+")
-    # else:
-    #     raise Exception("error again")# Fehler sollte oben schon geworfen werden, wenn unbekannte Punktgruppe
-    #
-    # monomers=[m1,m2,m3,m4]
-    # kombinationen = list(itertools.product(monomers, repeat=2))
-    kombinationen = get_monomer_combinations(point_group=point_group)
+    kombinationen = get_monomer_combinations(molecule=molecule)
 
     content = "\n"+r"\section{Linear Combinations: 8 Monomer- / 4 Dimer-States}"+"\n"
     pagebreak = True
@@ -125,7 +71,7 @@ def get_monomer_state_linear_combinations(point_group: POINTGROUP, detailed:bool
         pagebreak = not pagebreak
         content += combination[0].name+ " * "+ combination[1].name+ ":\n\n"
 
-        l = get_linear_combination_of_dimeroccstates_from_combinations(combination=combination, point_group=point_group)
+        l = get_linear_combination_of_dimeroccstates_from_combinations(combination=combination, molecule=molecule)
         combined_monomer_states[l.name] = l
 
         content += l.draw()+"\n"
