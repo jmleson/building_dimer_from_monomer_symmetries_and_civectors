@@ -1,6 +1,6 @@
 import copy
 
-from symmetries.PointGroups import POINTGROUP
+from symmetries.group_theory.PointGroups import POINTGROUP
 
 
 def irred_back_to_number(point_group:POINTGROUP, string:str):

@@ -1,8 +1,8 @@
 from enum import Enum
 
-from symmetries.c2h_product import c2h_product
-from symmetries.c2v_product import c2v_product
-from symmetries.d2h_product import d2h_product
+from symmetries.group_theory.c2h_product import c2h_product
+from symmetries.group_theory.c2v_product import c2v_product
+from symmetries.group_theory.d2h_product import d2h_product
 
 
 class POINTGROUP(Enum):

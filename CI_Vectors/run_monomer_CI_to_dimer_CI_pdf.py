@@ -1,6 +1,6 @@
 from CI_Vectors.get_linear_combined_states import get_linear_combined_states
 from CI_Vectors.get_product_terms import get_product_terms
-from symmetries.PointGroups import POINTGROUP
+from symmetries.group_theory.PointGroups import POINTGROUP
 
 
 

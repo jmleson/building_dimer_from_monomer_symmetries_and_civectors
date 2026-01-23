@@ -1,11 +1,11 @@
 import itertools
 from typing import Tuple, List
 
-from symmetries.PointGroups import POINTGROUP
+from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.dimer_occ_state import dimer_occ_state
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
 from symmetries.linear_combinations.linear_combination_of_dimeroccstates import linear_combination_of_dimeroccstates
-from symmetries.switch_monomers import switch_monomers
+from symmetries.mathematics.switch_monomers import switch_monomers
 
 
 

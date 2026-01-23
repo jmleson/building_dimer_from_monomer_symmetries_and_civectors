@@ -1,5 +1,5 @@
 # from get_latex_file_for_all_combinations import get_latex_file_for_d2h_symmetrie_options
-from symmetries.PointGroups import POINTGROUP
+from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.linear_combinations.linear_combination_monomer_states import get_monomer_state_linear_combinations
 from symmetries.linear_combinations.linear_combination_of_dimeroccstates import linear_combination_of_dimeroccstates
 

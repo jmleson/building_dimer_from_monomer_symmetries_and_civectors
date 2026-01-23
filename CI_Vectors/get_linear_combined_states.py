@@ -1,5 +1,5 @@
 from CI_Vectors.get_product_terms import draw
-from symmetries.PointGroups import POINTGROUP
+from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.linear_combinations import \
     linear_combination_of_dimeroccstates
 from symmetries.linear_combinations.linear_combination_monomer_states import get_monomer_state_linear_combinations

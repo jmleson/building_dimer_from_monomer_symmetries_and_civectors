@@ -1,6 +1,6 @@
 from typing import List
 
-from symmetries.PointGroups import POINTGROUP
+from symmetries.group_theory.PointGroups import POINTGROUP
 
 
 def get_total_symmety_from_list_of_irred(list:List, point_group: POINTGROUP)-> str:

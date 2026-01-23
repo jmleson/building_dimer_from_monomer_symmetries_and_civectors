@@ -5,7 +5,7 @@ from CI_Vectors.count import combine_sequences
 from CI_Vectors.write_in_ci_vectors import write_in_ci_vectors
 from symmetries.linear_combinations import \
     linear_combination_of_dimeroccstates
-from symmetries.PointGroups import POINTGROUP
+from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.linear_combinations.linear_combination_monomer_states import get_monomer_combinations, \
     get_linear_combination_of_dimeroccstates_from_combinations
 

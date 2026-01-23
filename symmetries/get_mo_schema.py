@@ -1,5 +1,5 @@
-from symmetries.PointGroups import POINTGROUP
-from symmetries.format_irred_representations import format_irred_representations
+from symmetries.group_theory.PointGroups import POINTGROUP
+from symmetries.latex.format_irred_representations import format_irred_representations
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
 
 height_upper_mos = 0
@@ -11,15 +11,15 @@ arrow_height = 0.25
 arrow_x = 0.25
 padding = 0.1
 
-down_left_top = f" \draw[<-, thick] ({x_left + arrow_x-padding}, {height_upper_mos - arrow_height}) -- ({x_left + arrow_x-padding}, {height_upper_mos+arrow_height}); "
-up_left_top = f"\draw[->, thick] ({x_left + arrow_x+padding}, {height_upper_mos - arrow_height}) -- ({x_left + arrow_x+padding}, {height_upper_mos+arrow_height}); "
-down_right_top = f" \draw[<-, thick] ({x_right + arrow_x-padding}, {height_upper_mos - arrow_height}) -- ({x_right + arrow_x-padding}, {height_upper_mos+arrow_height}); "
-up_right_top = f"\draw[->, thick] ({x_right + arrow_x+padding}, {height_upper_mos - arrow_height}) -- ({x_right + arrow_x+padding}, {height_upper_mos+arrow_height}); "
+down_left_top = fr" \draw[<-, thick] ({x_left + arrow_x-padding}, {height_upper_mos - arrow_height}) -- ({x_left + arrow_x-padding}, {height_upper_mos+arrow_height}); "
+up_left_top = fr"\draw[->, thick] ({x_left + arrow_x+padding}, {height_upper_mos - arrow_height}) -- ({x_left + arrow_x+padding}, {height_upper_mos+arrow_height}); "
+down_right_top = fr" \draw[<-, thick] ({x_right + arrow_x-padding}, {height_upper_mos - arrow_height}) -- ({x_right + arrow_x-padding}, {height_upper_mos+arrow_height}); "
+up_right_top = fr"\draw[->, thick] ({x_right + arrow_x+padding}, {height_upper_mos - arrow_height}) -- ({x_right + arrow_x+padding}, {height_upper_mos+arrow_height}); "
 
-down_left_bottom = f"\draw[<- , thick] ({x_left + arrow_x-padding}, {height_lower_mos - arrow_height}) -- ({x_left + arrow_x-padding}, {height_lower_mos+arrow_height}); "
-up_left_bottom = f"\draw[-> , thick] ({x_left + arrow_x+padding}, {height_lower_mos - arrow_height}) -- ({x_left + arrow_x+padding}, {height_lower_mos+arrow_height}); "
-down_right_bottom = f"\draw[<- , thick] ({x_right + arrow_x-padding}, {height_lower_mos - arrow_height}) -- ({x_right + arrow_x-padding}, {height_lower_mos+arrow_height}); "
-up_right_bottom = f" \draw[-> , thick] ({x_right + arrow_x+padding}, {height_lower_mos - arrow_height}) -- ({x_right + arrow_x+padding}, {height_lower_mos+arrow_height}); "
+down_left_bottom = fr"\draw[<- , thick] ({x_left + arrow_x-padding}, {height_lower_mos - arrow_height}) -- ({x_left + arrow_x-padding}, {height_lower_mos+arrow_height}); "
+up_left_bottom = fr"\draw[-> , thick] ({x_left + arrow_x+padding}, {height_lower_mos - arrow_height}) -- ({x_left + arrow_x+padding}, {height_lower_mos+arrow_height}); "
+down_right_bottom = fr"\draw[<- , thick] ({x_right + arrow_x-padding}, {height_lower_mos - arrow_height}) -- ({x_right + arrow_x-padding}, {height_lower_mos+arrow_height}); "
+up_right_bottom = fr" \draw[-> , thick] ({x_right + arrow_x+padding}, {height_lower_mos - arrow_height}) -- ({x_right + arrow_x+padding}, {height_lower_mos+arrow_height}); "
 
 basic_tikz_element = fr"""
     % oberste MOs:
@@ -89,7 +89,7 @@ def get_mo_schemata(point_group:POINTGROUP, occupied_mos: dict, monomer:MonomerP
 
 
 def get_total_mo_schemata(point_group:POINTGROUP, occupied_mos:dict) -> str:
-    """
+    r"""
     get a mo diagramm for a benzene on the MonomerPositions.left and one on the MonomerPositions.right = combine two monomer mo diagramms to one dimer mo diagramm;
     :param occupied_mos: occupation numbers of the included orbitals, given as number per symmetry
     :return: equation with tikz environments representing the mo diagramms, Einzufassen in \[ und\] für Latex-Nutzung

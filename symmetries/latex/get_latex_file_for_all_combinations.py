@@ -1,6 +1,6 @@
-from symmetries.PointGroups import POINTGROUP
+from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.all_products import all_products
-from symmetries.format_irred_representations import format_irred_representations
+from symmetries.latex.format_irred_representations import format_irred_representations
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
 from symmetries.get_mo_schema import get_mo_schemata, wrap_tikzpicture
 from symmetries.linear_combinations.linear_combination_monomer_states import get_monomer_state_linear_combinations

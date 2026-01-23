@@ -1,17 +1,17 @@
 import copy
 from typing import Dict, List
 
-from symmetries.PointGroups import POINTGROUP
+from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.basisclass_handeling_mos import handeling_mos
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
-from symmetries.term_step import term_step
-from symmetries.format_irred_representations import format_irred_representations
+from symmetries.mathematics.term_step import term_step
+from symmetries.latex.format_irred_representations import format_irred_representations
 from symmetries.get_mo_schema import get_total_mo_schemata
-from symmetries.get_total_symmety_from_list_of_irred import get_total_symmety_from_list_of_irred
-from symmetries.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
-from symmetries.signed_number_to_latex_number import signed_number_to_latex_number
-from symmetries.split_expression_into_sums import split_expression_into_sums, split_sum_into_parts
-from symmetries.switch_monomers import switch_monomers
+from symmetries.group_theory.get_total_symmety_from_list_of_irred import get_total_symmety_from_list_of_irred
+from symmetries.latex.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
+from symmetries.latex.signed_number_to_latex_number import signed_number_to_latex_number
+from symmetries.mathematics.split_expression_into_sums import split_expression_into_sums, split_sum_into_parts
+from symmetries.mathematics.switch_monomers import switch_monomers
 
 
 class dimer_occ_state(handeling_mos):

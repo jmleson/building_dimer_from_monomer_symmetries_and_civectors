@@ -1,7 +1,7 @@
 import itertools
 from typing import Tuple, Dict
 
-from symmetries.PointGroups import POINTGROUP
+from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.dimer_occ_state import dimer_occ_state
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
 from symmetries.linear_combinations.linear_combination_of_dimeroccstates import linear_combination_of_dimeroccstates
