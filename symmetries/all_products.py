@@ -35,9 +35,9 @@ def all_products(point_group:POINTGROUP, monomer_combinations:bool=True, detaile
     :return: latex formatted result
     """
     if monomer_combinations:
-        content = r"\newpage \section{Linearkombinationen: 2 Monomer- / 1 Dimer-Zustände}"+"\n"
+        content = r"\newpage \section{Linear Combinations: 2 Monomer- / 1 Dimer-States}"+"\n"
     else:
-        content = r"\newpage \section{Linearkombinationen: 4 Monomer- / 2 Dimer-Zustände}"+"\n"
+        content = r"\newpage \section{Linear Combinations: 4 Monomer- / 2 Dimer-States}"+"\n"
     valid_combinations = get_possible_occs()
     for i in range(len(valid_combinations)):
         monomer_a = valid_combinations[i]

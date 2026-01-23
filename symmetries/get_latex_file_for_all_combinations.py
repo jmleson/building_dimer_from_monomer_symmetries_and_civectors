@@ -28,7 +28,7 @@ def get_latex_file_for_d2h_symmetry_options(content:str, point_group:POINTGROUP)
     \tableofcontents 
     \newpage 
     
-    \section{Orbitale und deren Symmetrie}
+    \section{Orbitals And Their Symmetry}%Orbitale und deren Symmetrie
     """
     if point_group == POINTGROUP.D2h:
         molecule = "C6H6"

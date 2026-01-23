@@ -5,6 +5,9 @@ from CI_Vectors.count import combine_sequences
 from CI_Vectors.write_in_ci_vectors import write_in_ci_vectors
 from symmetries.linear_combinations import \
     linear_combination_of_dimeroccstates
+from symmetries.PointGroups import POINTGROUP
+from symmetries.linear_combinations.linear_combination_monomer_states import get_monomer_combinations, \
+    get_linear_combination_of_dimeroccstates_from_combinations
 
 
 def fraction_to_tex(frac: Fraction) -> str:
@@ -13,18 +16,16 @@ def fraction_to_tex(frac: Fraction) -> str:
     return fr"\frac{{{frac.numerator}}}{{{frac.denominator}}}"
 
 
-from symmetries.PointGroups import POINTGROUP
-from symmetries.linear_combinations import get_monomer_combinations, \
-    get_linear_combination_of_dimeroccstates_from_combinations
+
 
 
 
 def draw(l:linear_combination_of_dimeroccstates, point_group: POINTGROUP):
     content = "\n\n" + r"\begin{minipage}{\linewidth}" + "\n"
 
-    l.name = l.name.replace("und", "*")
+    l.name = l.name.replace("and", "*")
     content += l.name
-    if point_group == POINTGROUP.D2h:# FALL C6H6 !!!
+    if point_group == POINTGROUP.D2h:# FALL C6H6 !!! TODO
         content += r" \quad = \quad "
         name = (l.name.replace("i^3 b_{2u}", "1.3").replace("i^3 b_{3u}", "2.2")
                 .replace("e^3 b_{2u}", "2.3").replace("e^3 b_{3u}", "1.2"))

@@ -208,13 +208,13 @@ class dimer_occ_state(handeling_mos):
             )
         if self.latex_equation[term_step.SORTED.value] != self.latex_equation[term_step.EVALUATED.value]:
             if detailed:
-                content += "zusammengefasst:"
+                content += "summarized:"#zusammengefasst
             content += get_expression_as_latex_formula(
                                             format_irred_representations(self.latex_equation[term_step.EVALUATED.value])
                                             , latex_equation_types.MULTLINE)
             content += r"\\ \\"
         elif detailed:
-            content += r"(nicht kürzbar)\\ \\"
+            content += r"(irreducible)\\ \\"# nicht kürzbar
         else:
             content += get_expression_as_latex_formula(
                 format_irred_representations(self.latex_equation[term_step.SORTED.value]),

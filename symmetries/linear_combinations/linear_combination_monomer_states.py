@@ -76,7 +76,7 @@ def get_linear_combination_of_dimeroccstates_from_combinations(combination, poin
     d4 = dimer_occ_state(occupied_mos=reconstructed_dict_term4, sign_and_factor=sign, point_group=point_group)
 
     l = linear_combination_of_dimeroccstates([d1, d2, d3, d4])
-    name = combination[0].name + " und " + combination[1].name
+    name = combination[0].name + " and " + combination[1].name
     l.name = name
     return l
 
@@ -84,7 +84,7 @@ def get_linear_combination_of_dimeroccstates_from_combinations(combination, poin
 def get_monomer_state_linear_combinations(point_group: POINTGROUP, detailed:bool=True)-> Tuple[ str, Dict ]:
     # if point_group != POINTGROUP.D2h:
     #     raise Exception("nyi")
-    combined_monomer_states = {} # Sammeln der ausgedruckten Kombinationen von Monomerzuständen (damit daraus noch wieder Linearkombinationen gebildet werden können)
+    combined_monomer_states = {} # Sammeln der ausgedruckten Kombinationen von Monomerzuständen (damit daraus noch wieder Linear Combinations gebildet werden können)
     # # Vorgabe:
     # occupied_mos = {
     #     point_group.label["oben_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 0},# b1u
@@ -119,7 +119,7 @@ def get_monomer_state_linear_combinations(point_group: POINTGROUP, detailed:bool
     # kombinationen = list(itertools.product(monomers, repeat=2))
     kombinationen = get_monomer_combinations(point_group=point_group)
 
-    content = "\n"+r"\section{Linearkombinationen: 8 Monomer- / 4 Dimer-Zustände}"+"\n"
+    content = "\n"+r"\section{Linear Combinations: 8 Monomer- / 4 Dimer-States}"+"\n"
     pagebreak = True
     for combination in kombinationen:
         pagebreak = not pagebreak
