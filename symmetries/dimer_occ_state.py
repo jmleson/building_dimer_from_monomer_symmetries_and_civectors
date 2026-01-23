@@ -98,19 +98,19 @@ class dimer_occ_state(handeling_mos):
         self.initial_equation["plain"] = " ".join(left) + " " + " ".join(right)
         self.initial_equation["sorted"] = " ".join(sorted_combination)
         self.initial_equation["sorted_formatted"] = r" \cdot ".join(sorted_combination)
-        left_part = "\cdot ".join(left)
+        left_part = r"\cdot ".join(left)
         left_part = r"\underbrace{" + left_part + r"}_{\text{l: }" + left_sym + r"}"
-        right_part = "\cdot ".join(right)
+        right_part = r"\cdot ".join(right)
         right_part = r"\underbrace{" + right_part + r"}_{\text{r: }" + right_sym + r"}"
         if len(left) > 0 and len(right) > 0:
-            self.initial_equation["formatted"] = left_part + "\cdot " + right_part
+            self.initial_equation["formatted"] = left_part + r"\cdot " + right_part
         elif len(left) > 0:
             self.initial_equation["formatted"] = left_part
         elif len(right) > 0:
             self.initial_equation["formatted"] = right_part
         else:
             raise Exception("should not be able to happen")
-        self.initial_equation["sorted_formatted"] = "\left|" + self.initial_equation["sorted_formatted"] + r"\right|"
+        self.initial_equation["sorted_formatted"] = r"\left|" + self.initial_equation["sorted_formatted"] + r"\right|"
         return
 
 
@@ -139,7 +139,7 @@ class dimer_occ_state(handeling_mos):
 
 
     def set_equation_as_dimer_orbitals(self) -> None:
-        """
+        r"""
         convert equation of monomer-orbitals into corresponding dimer orbital combination:
         replaces e.g. a_u^{r} by something like b2u-b2g
         :return:
@@ -191,6 +191,7 @@ class dimer_occ_state(handeling_mos):
         content = "\n" + self.get_total_mo_schemata()
         # zusammenfügen des Starts (bzgl. Sortierung):
         eq = sign + r"\cdot " + self.initial_equation["formatted"] + r"\Rightarrow " +sign+ self.initial_equation["sorted_formatted"]
+        eq = eq.replace(r"+\cdot", r"+")
         content += format_irred_representations( get_expression_as_latex_formula(eq, latex_equation_types.DISPLAYED) )
         # Ausgedrückt in Dimer-Orbitalen:
         content += get_expression_as_latex_formula(

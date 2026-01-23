@@ -119,11 +119,11 @@ class handeling_mos(object):
                 multipling_irred(sum,point_group=self.point_group)
                 lines += f'{self.get_sign_and_prefactor(sum)}{sum["factors"][0]}\n'
                 latex_equation_1 += self.get_sign_and_prefactor(sum) + r"\left|\underbrace{"
-                if detailed:
-                    latex_equation_1 += r"\overbrace{"
+                # if detailed:
+                #     latex_equation_1 += r"\overbrace{"
                 latex_equation_1 += sum["eq"]
-                if detailed:
-                    latex_equation_1 += "}^{"+ irred_back_to_number(point_group=self.point_group, string=sum["eq"]).replace("*", "^*") + r"}"
+                # if detailed:
+                #     latex_equation_1 += "}^{"+ irred_back_to_number(point_group=self.point_group, string=sum["eq"]).replace("*", "^*") + r"}"
                 latex_equation_1 += r"}_{" + sum["factors"][0] + r"}\right|"
                 counter += 1
                 if counter >= 4 and sum != combined[-1]:

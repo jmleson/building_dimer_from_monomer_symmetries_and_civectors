@@ -1,5 +1,6 @@
 from symmetries.PointGroups import POINTGROUP
 from symmetries.all_products import all_products
+from symmetries.format_irred_representations import format_irred_representations
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
 from symmetries.get_mo_schema import get_mo_schemata, wrap_tikzpicture
 from symmetries.linear_combinations.linear_combination_monomer_states import get_monomer_state_linear_combinations
@@ -30,6 +31,21 @@ def get_latex_file_for_d2h_symmetry_options(content:str, point_group:POINTGROUP)
     
     \section{Orbitals And Their Symmetry}%Orbitale und deren Symmetrie
     """
+
+    chapter1, molecule = orbitals_and_their_symmetry_chapter(point_group=point_group)
+
+
+    end= r"\end{document}"
+    with open(f"resulting_tex_files/{point_group.value}_{molecule}.tex", "w") as file:
+        file.write(start
+                   + chapter1
+                   + content
+                   + end)
+
+
+
+def orbitals_and_their_symmetry_chapter(point_group:POINTGROUP):
+    start = ""
     if point_group == POINTGROUP.D2h:
         molecule = "C6H6"
         start += r"%In der Sortierung: oben rechts $a_u$, oben links $b_{1u}$, unten links $b_{2g}$ und unten rechts $b_{3g}$ folgt: \\"
@@ -65,11 +81,17 @@ def get_latex_file_for_d2h_symmetry_options(content:str, point_group:POINTGROUP)
     start += ("Dimer configurations will be written as their monomer occupations, by writing one monomer to the left and one to the right."
               " The orbital order within the group of monomer orbitals follows the above mentioned definition.")
 
-    end= r"\end{document}"
-    with open(f"resulting_tex_files/{point_group.value}_{molecule}.tex", "w") as file:
-        file.write(start + content + end)
+
+    start += r"\vspace{2cm}"
+    start += "The transformation of monomer orbitals into dimer orbitals is given by knowing the negative and positive linera combinations of monomer orbitals into dimer orbitals."
+    start += "Transforming this known equation system leads to:" + "\n"
+    start += r"\begin{subequations}\begin{gather}" + "\n"
+    for monomer, combination in point_group.mo_pairs.items():
+        start += format_irred_representations(monomer) + " = " + format_irred_representations(combination) + r"  \\" + "\n"
+    start += r"\end{gather}\end{subequations}" + "\n"
 
 
+    return start, molecule
 
 
 if __name__ == "__main__":
