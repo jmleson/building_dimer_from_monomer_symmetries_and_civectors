@@ -1,12 +1,12 @@
 from typing import List
 
-from PointGroups import POINTGROUP
-from term_step import term_step
-from dimer_occ_state import dimer_occ_state
-from format_irred_representations import format_irred_representations
-from latex_equation_types import latex_equation_types, get_expression_as_latex_formula
-from signed_number_to_latex_number import signed_number_to_latex_number
-from switch_monomers import switch_monomers
+from symmetries.PointGroups import POINTGROUP
+from symmetries.term_step import term_step
+from symmetries.dimer_occ_state import dimer_occ_state
+from symmetries.format_irred_representations import format_irred_representations
+from symmetries.latex_equation_types import latex_equation_types, get_expression_as_latex_formula
+from symmetries.signed_number_to_latex_number import signed_number_to_latex_number
+from symmetries.switch_monomers import switch_monomers
 
 
 

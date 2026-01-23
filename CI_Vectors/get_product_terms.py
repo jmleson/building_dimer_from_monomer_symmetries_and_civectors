@@ -3,7 +3,7 @@ from fractions import Fraction
 
 from CI_Vectors.count import combine_sequences
 from CI_Vectors.write_in_ci_vectors import write_in_ci_vectors
-from linear_combinations.linear_combination_of_dimeroccstates import \
+from symmetries.linear_combinations import \
     linear_combination_of_dimeroccstates
 
 
@@ -13,8 +13,8 @@ def fraction_to_tex(frac: Fraction) -> str:
     return fr"\frac{{{frac.numerator}}}{{{frac.denominator}}}"
 
 
-from PointGroups import POINTGROUP
-from linear_combinations.linear_combination_monomer_states import get_monomer_combinations, \
+from symmetries.PointGroups import POINTGROUP
+from symmetries.linear_combinations import get_monomer_combinations, \
     get_linear_combination_of_dimeroccstates_from_combinations
 
 

@@ -2,11 +2,11 @@ from collections import defaultdict
 from itertools import product
 from typing import List, Tuple, Dict
 
-from PointGroups import POINTGROUP
-from irred_back_to_number import irred_back_to_number
-from multipling_irred import multipling_irred
-from signed_number_to_latex_number import signed_number_to_latex_number
-from general_functionalities.count_swaps import count_swaps
+
+from symmetries.irred_back_to_number import irred_back_to_number
+from symmetries.multipling_irred import multipling_irred
+from symmetries.signed_number_to_latex_number import signed_number_to_latex_number
+from symmetries.general_functionalities.count_swaps import count_swaps
 
 
 class handeling_mos(object):

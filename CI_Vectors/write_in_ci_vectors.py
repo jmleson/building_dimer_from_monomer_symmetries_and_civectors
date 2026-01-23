@@ -1,8 +1,8 @@
 from fractions import Fraction
 
 from CI_Vectors.get_possible_dimer_ci import get_possible_dimer_ci
-from dimer_occ_state import dimer_occ_state
-from linear_combinations.linear_combination_of_dimeroccstates import \
+from symmetries.dimer_occ_state import dimer_occ_state
+from symmetries.linear_combinations import \
     linear_combination_of_dimeroccstates
 
 

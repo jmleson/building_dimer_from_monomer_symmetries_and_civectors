@@ -1,11 +1,11 @@
-from PointGroups import POINTGROUP
-from all_products import all_products
-from linear_combinations.linear_combination_monomer_states import get_monomer_state_linear_combinations
-from linear_combinations.linear_combinations_of_combined_monomer_states import \
+from symmetries.PointGroups import POINTGROUP
+from symmetries.all_products import all_products
+from symmetries.linear_combinations.linear_combination_monomer_states import get_monomer_state_linear_combinations
+from symmetries.linear_combinations.linear_combinations_of_combined_monomer_states import \
     linear_combinations_of_combined_monomer_states
 
 
-def get_latex_file_for_d2h_symmetrie_options(content:str, point_group:POINTGROUP) -> None :
+def get_latex_file_for_d2h_symmetry_options(content:str, point_group:POINTGROUP) -> None :
     """
     writing a latex file with all given content, that is able to compile tikz-figures as well as equations
     :param content: content of to-be latex file
@@ -30,10 +30,12 @@ def get_latex_file_for_d2h_symmetrie_options(content:str, point_group:POINTGROUP
     """
     if point_group == POINTGROUP.D2h:
         molecule = "C6H6"
-        start += r"In der Sortierung: oben rechts $a_u$, oben links $b_{1u}$, unten links $b_{2g}$ und unten rechts $b_{3g}$ folgt: \\"
-    else:
+        start += r"%In der Sortierung: oben rechts $a_u$, oben links $b_{1u}$, unten links $b_{2g}$ und unten rechts $b_{3g}$ folgt: \\"
+    elif point_group == POINTGROUP.C2v or point_group == POINTGROUP.C2h:
         molecule = "C6H5Cl"
-        start += r"In der Sortierung: oben rechts $ $, oben links $ $, unten links $ $ und unten rechts $ $ folgt: \\"
+        start += r"%In der Sortierung: oben rechts $ $, oben links $ $, unten links $ $ und unten rechts $ $ folgt: \\"
+    else:
+        raise Exception("unknown molecule for point group")
 
     if molecule == "C6H6":
         filename = "DimerZOrbitalordnung-gesamt-MO-C6H6-beiWW.pdf"
@@ -46,11 +48,13 @@ def get_latex_file_for_d2h_symmetrie_options(content:str, point_group:POINTGROUP
             filename = "DimerZOrbitalordnung-C6H5Cl-C2h-gesamt-MO-beiWW.pdf"
         else:
             raise Exception("unknown file name for get_latex_file_for_d2h_symmetrie_options")
-    start += "\n" + r"\includegraphics[scale=0.125]{img/" + filename + r"}" + "\n"
+    start += "\n" + r"%\includegraphics[scale=0.125]{img/" + filename + r"}" + "\n"
     start += r"\vspace{2cm}" + "\n"
     end= r"\end{document}"
-    with open("tst.tex", "w") as file:
+    with open(f"resulting_tex_files/{point_group.value}_{molecule}.tex", "w") as file:
         file.write(start + content + end)
+
+
 
 
 if __name__ == "__main__":
@@ -64,4 +68,4 @@ if __name__ == "__main__":
     content += all_products(point_group=point_group,monomer_combinations=False,detailed=detailed)
     content += get_monomer_state_linear_combinations(point_group=point_group,detailed=detailed)[0]
     content += linear_combinations_of_combined_monomer_states(point_group=point_group, detailed=detailed)
-    get_latex_file_for_d2h_symmetrie_options(content, point_group=point_group)
+    get_latex_file_for_d2h_symmetry_options(content, point_group=point_group)

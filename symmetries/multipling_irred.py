@@ -1,4 +1,4 @@
-from PointGroups import POINTGROUP
+from symmetries.PointGroups import POINTGROUP
 
 
 def multipling_irred(product_term:dict, point_group:POINTGROUP) -> None:

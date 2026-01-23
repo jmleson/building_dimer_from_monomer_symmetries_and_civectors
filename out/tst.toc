@@ -1,5 +1,0 @@
-\contentsline {section}{\numberline {1}Orbitale und deren Symmetrie}{2}{section.1}%
-\contentsline {section}{\numberline {2}Linearkombinationen: 2 Monomer- / 1 Dimer-Zustände}{3}{section.2}%
-\contentsline {section}{\numberline {3}Linearkombinationen: 4 Monomer- / 2 Dimer-Zustände}{21}{section.3}%
-\contentsline {section}{\numberline {4}Linearkombinationen: 8 Monomer- / 4 Dimer-Zustände}{32}{section.4}%
-\contentsline {section}{\numberline {5}Linearkombinationen: 16 Monomer- / 8 Dimer-Zustände}{48}{section.5}%

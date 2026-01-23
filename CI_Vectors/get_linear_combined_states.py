@@ -1,8 +1,8 @@
 from CI_Vectors.get_product_terms import draw
-from PointGroups import POINTGROUP
-from linear_combinations.linear_combination_monomer_states import \
+from symmetries.PointGroups import POINTGROUP
+from symmetries.linear_combinations import \
     get_monomer_state_linear_combinations
-from linear_combinations.linear_combination_of_dimeroccstates import \
+from symmetries.linear_combinations import \
     linear_combination_of_dimeroccstates
 
 
