@@ -75,7 +75,7 @@ def get_monomer_state_linear_combinations(molecule:Molecule, detailed:bool=True)
         combined_monomer_states[l.name] = l
 
         content += l.draw()+"\n"
-        content += l.build_linear_kombination(detailed=detailed)+"\n"
+        content += l.build_linear_kombination(detailed=detailed) + "\n"
         if pagebreak:
             content += r"\newpage"+"\n\n"
         else:

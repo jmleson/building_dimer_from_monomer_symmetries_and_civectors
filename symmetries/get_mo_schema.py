@@ -105,14 +105,14 @@ def get_total_mo_schemata(point_group:POINTGROUP, occupied_mos:dict) -> str:
 
 def wrap_tikzpicture(tikzpicture:str) -> str:
     # complete_str = r"\begin{tikzpicture}"  + tikzpicture + "\n"+ r"\end{tikzpicture}"
-    return r"\begin{tikzpicture}"  + tikzpicture.rstrip("\n") + "\n"+ r"\end{tikzpicture}"
+    return r"\begin{tikzpicture}[baseline={(current bounding box.center)}]"  + tikzpicture.rstrip("\n") + "\n"+ r"\end{tikzpicture}"
 
 
 if __name__ == '__main__':
     occupied_mos = {
         "b1u": {MonomerPositions.left: 1, MonomerPositions.right: 0},
+        "b2g": {MonomerPositions.left: 2, MonomerPositions.right: 1},
+        "b3g": {MonomerPositions.left: 1, MonomerPositions.right: 2},
         "au": {MonomerPositions.left: 0, MonomerPositions.right: 1},
-        "b2g": {MonomerPositions.left: 1, MonomerPositions.right: 2},
-        "b3g": {MonomerPositions.left: 2, MonomerPositions.right: 1},
     }
-    print(r"\left\lbrace" + get_total_mo_schemata(occupied_mos=occupied_mos)+ r"\right\rbrace")
+    print(r"\left\lbrace" + get_total_mo_schemata(occupied_mos=occupied_mos, point_group=POINTGROUP.D2h)+ r"\right\rbrace")
