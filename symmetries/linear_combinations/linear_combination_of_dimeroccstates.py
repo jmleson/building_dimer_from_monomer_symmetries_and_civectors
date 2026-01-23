@@ -101,10 +101,10 @@ class linear_combination_of_dimeroccstates:
 
 if __name__ == "__main__":
     occupied_mos = {
-        "b1u": {"left": 0, "right": 0},
-        "au": {"left": 1, "right": 1},
-        "b2g": {"left": 1, "right": 2},
-        "b3g": {"left": 2, "right": 1},
+        "b1u": {MonomerPositions.left: 0, MonomerPositions.right: 0},
+        "au": {MonomerPositions.left: 1, MonomerPositions.right: 1},
+        "b2g": {MonomerPositions.left: 1, MonomerPositions.right: 2},
+        "b3g": {MonomerPositions.left: 2, MonomerPositions.right: 1},
     }
     d1 = dimer_occ_state(occupied_mos=occupied_mos, point_group=POINTGROUP.D2h)
     d2 = dimer_occ_state(switch_monomers(occupied_mos),-1)

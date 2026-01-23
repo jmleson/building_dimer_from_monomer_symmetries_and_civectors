@@ -1,5 +1,7 @@
 from symmetries.PointGroups import POINTGROUP
 from symmetries.all_products import all_products
+from symmetries.general_functionalities.monomer_positions import MonomerPositions
+from symmetries.get_mo_schema import get_mo_schemata, wrap_tikzpicture
 from symmetries.linear_combinations.linear_combination_monomer_states import get_monomer_state_linear_combinations
 from symmetries.linear_combinations.linear_combinations_of_combined_monomer_states import \
     linear_combinations_of_combined_monomer_states
@@ -50,6 +52,19 @@ def get_latex_file_for_d2h_symmetry_options(content:str, point_group:POINTGROUP)
             raise Exception("unknown file name for get_latex_file_for_d2h_symmetrie_options")
     start += "\n" + r"%\includegraphics[scale=0.125]{img/" + filename + r"}" + "\n"
     start += r"\vspace{2cm}" + "\n"
+
+    empty_mos = {value: {MonomerPositions.left: 0, MonomerPositions.right: 0} for value in point_group.label.values()}
+    labeled_monomer_orbitals = wrap_tikzpicture(get_mo_schemata(occupied_mos=empty_mos, monomer=MonomerPositions.isolated, point_group=point_group))
+    unlabeled_monomer_orbitals = labeled_monomer_orbitals.replace("node", "%node")
+
+    start += "We use the following order of orbitals here (assuming degeneracy of LUMOs and HOMOs): "+ "\n"
+    start += "$$" + "\n" + labeled_monomer_orbitals + "\n" + "$$" + "\n"
+    start += "In the following, we will leave out the explicit labeling by orbital symmetry. Each monomer will simply be written as:\n"
+    start +=  "$$" + "\n" + unlabeled_monomer_orbitals + "\n" + "$$" + "\n"
+    start += "where the character of the orbital is defined by its position. \n\n"
+    start += ("Dimer configurations will be written as their monomer occupations, by writing one monomer to the left and one to the right."
+              " The orbital order within the group of monomer orbitals follows the above mentioned definition.")
+
     end= r"\end{document}"
     with open(f"resulting_tex_files/{point_group.value}_{molecule}.tex", "w") as file:
         file.write(start + content + end)

@@ -3,6 +3,7 @@ from typing import Tuple, Dict
 
 from symmetries.PointGroups import POINTGROUP
 from symmetries.dimer_occ_state import dimer_occ_state
+from symmetries.general_functionalities.monomer_positions import MonomerPositions
 from symmetries.linear_combinations.linear_combination_of_dimeroccstates import linear_combination_of_dimeroccstates
 from symmetries.linear_combinations.monomer_state import monomer_state
 
@@ -11,10 +12,10 @@ from symmetries.linear_combinations.monomer_state import monomer_state
 def get_monomer_combinations(point_group: POINTGROUP):
     # Vorgabe:
     occupied_mos = {
-        point_group.label["oben_links"]: {"left": 1, "right": 0},  # b1u
-        point_group.label["oben_rechts"]: {"left": 0, "right": 1},  # "au"
-        point_group.label["unten_links"]: {"left": 2, "right": 1},  # "b2g"
-        point_group.label["unten_rechts"]: {"left": 1, "right": 2},  # "b3g"
+        point_group.label["oben_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 0},  # b1u
+        point_group.label["oben_rechts"]: {MonomerPositions.left: 0, MonomerPositions.right: 1},  # "au"
+        point_group.label["unten_links"]: {MonomerPositions.left: 2, MonomerPositions.right: 1},  # "b2g"
+        point_group.label["unten_rechts"]: {MonomerPositions.left: 1, MonomerPositions.right: 2},  # "b3g"
     }
     if point_group == POINTGROUP.D2h:
         m1 = monomer_state(occupied_mos, "$i^3 b_{2u}$", "-")
@@ -25,10 +26,10 @@ def get_monomer_combinations(point_group: POINTGROUP):
     else:
         raise Exception("not yet implemented")
     occupied_mos = {
-        point_group.label["oben_links"]: {"left": 1, "right": 0},
-        point_group.label["oben_rechts"]: {"left": 0, "right": 1},
-        point_group.label["unten_links"]: {"left": 1, "right": 2},
-        point_group.label["unten_rechts"]: {"left": 2, "right": 1},
+        point_group.label["oben_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 0},
+        point_group.label["oben_rechts"]: {MonomerPositions.left: 0, MonomerPositions.right: 1},
+        point_group.label["unten_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 2},
+        point_group.label["unten_rechts"]: {MonomerPositions.left: 2, MonomerPositions.right: 1},
     }
     if point_group == POINTGROUP.D2h:
         m3 = monomer_state(occupied_mos, "$e^3 b_{3u}$", "-")
@@ -46,10 +47,10 @@ def get_monomer_combinations(point_group: POINTGROUP):
 
 def get_linear_combination_of_dimeroccstates_from_combinations(combination, point_group:POINTGROUP):
     # split monomers-occupations:
-    left1_occ = {key: value["left"] for key, value in combination[0].occupied_mos.items()}
-    right1_occ = {key: value["right"] for key, value in combination[0].occupied_mos.items()}
-    left2_occ = {key: value["left"] for key, value in combination[1].occupied_mos.items()}
-    right2_occ = {key: value["right"] for key, value in combination[1].occupied_mos.items()}
+    left1_occ = {key: value[MonomerPositions.left] for key, value in combination[0].occupied_mos.items()}
+    right1_occ = {key: value[MonomerPositions.right] for key, value in combination[0].occupied_mos.items()}
+    left2_occ = {key: value[MonomerPositions.left] for key, value in combination[1].occupied_mos.items()}
+    right2_occ = {key: value[MonomerPositions.right] for key, value in combination[1].occupied_mos.items()}
 
     # multiply occupied_mos:
     ''' left * right
@@ -59,18 +60,18 @@ def get_linear_combination_of_dimeroccstates_from_combinations(combination, poin
     Fall 4:     (l1-r1)*(l2+r2) = l1*l2 - r1*l2 + l1*r2 - r1*r2
     '''
     # combine monomer occupations:
-    reconstructed_dict_term1 = {key: {"left": left1_occ[key], "right": left2_occ[key]} for key in left1_occ}  # immer +
+    reconstructed_dict_term1 = {key: {MonomerPositions.left: left1_occ[key], MonomerPositions.right: left2_occ[key]} for key in left1_occ}  # immer +
     d1 = dimer_occ_state(occupied_mos=reconstructed_dict_term1, sign_and_factor=+1, point_group=point_group)
 
-    reconstructed_dict_term2 = {key: {"left": right1_occ[key], "right": left2_occ[key]} for key in left1_occ}
+    reconstructed_dict_term2 = {key: {MonomerPositions.left: right1_occ[key], MonomerPositions.right: left2_occ[key]} for key in left1_occ}
     sign = -1 if combination[0].initial_kombination == "-" else +1
     d2 = dimer_occ_state(occupied_mos=reconstructed_dict_term2, sign_and_factor=sign, point_group=point_group)
 
-    reconstructed_dict_term3 = {key: {"left": left1_occ[key], "right": right2_occ[key]} for key in left1_occ}
+    reconstructed_dict_term3 = {key: {MonomerPositions.left: left1_occ[key], MonomerPositions.right: right2_occ[key]} for key in left1_occ}
     sign = -1 if combination[1].initial_kombination == "-" else +1
     d3 = dimer_occ_state(occupied_mos=reconstructed_dict_term3, sign_and_factor=sign, point_group=point_group)
 
-    reconstructed_dict_term4 = {key: {"left": right1_occ[key], "right": right2_occ[key]} for key in left1_occ}
+    reconstructed_dict_term4 = {key: {MonomerPositions.left: right1_occ[key], MonomerPositions.right: right2_occ[key]} for key in left1_occ}
     sign = +1 if combination[0].initial_kombination == combination[1].initial_kombination else -1
     d4 = dimer_occ_state(occupied_mos=reconstructed_dict_term4, sign_and_factor=sign, point_group=point_group)
 
@@ -86,10 +87,10 @@ def get_monomer_state_linear_combinations(point_group: POINTGROUP, detailed:bool
     combined_monomer_states = {} # Sammeln der ausgedruckten Kombinationen von Monomerzuständen (damit daraus noch wieder Linearkombinationen gebildet werden können)
     # # Vorgabe:
     # occupied_mos = {
-    #     point_group.label["oben_links"]: {"left": 1, "right": 0},# b1u
-    #     point_group.label["oben_rechts"]:  {"left": 0, "right": 1},#"au"
-    #     point_group.label["unten_links"]: {"left": 2, "right": 1},#"b2g"
-    #     point_group.label["unten_rechts"]: {"left": 1, "right": 2},#"b3g"
+    #     point_group.label["oben_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 0},# b1u
+    #     point_group.label["oben_rechts"]:  {MonomerPositions.left: 0, MonomerPositions.right: 1},#"au"
+    #     point_group.label["unten_links"]: {MonomerPositions.left: 2, MonomerPositions.right: 1},#"b2g"
+    #     point_group.label["unten_rechts"]: {MonomerPositions.left: 1, MonomerPositions.right: 2},#"b3g"
     # }
     # if point_group == POINTGROUP.D2h:
     #     m1 = monomer_state(occupied_mos, "$i^3 b_{2u}$", "-")
@@ -100,10 +101,10 @@ def get_monomer_state_linear_combinations(point_group: POINTGROUP, detailed:bool
     # else:
     #     raise Exception("not yet implemented")
     # occupied_mos = {
-    #     point_group.label["oben_links"]: {"left": 1, "right": 0},
-    #     point_group.label["oben_rechts"]: {"left": 0, "right": 1},
-    #     point_group.label["unten_links"]: {"left": 1, "right": 2},
-    #     point_group.label["unten_rechts"]: {"left": 2, "right": 1},
+    #     point_group.label["oben_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 0},
+    #     point_group.label["oben_rechts"]: {MonomerPositions.left: 0, MonomerPositions.right: 1},
+    #     point_group.label["unten_links"]: {MonomerPositions.left: 1, MonomerPositions.right: 2},
+    #     point_group.label["unten_rechts"]: {MonomerPositions.left: 2, MonomerPositions.right: 1},
     # }
     # if point_group == POINTGROUP.D2h:
     #     m3 = monomer_state(occupied_mos, "$e^3 b_{3u}$", "-")

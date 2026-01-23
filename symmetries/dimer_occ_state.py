@@ -3,6 +3,7 @@ from typing import Dict, List
 
 from symmetries.PointGroups import POINTGROUP
 from symmetries.basisclass_handeling_mos import handeling_mos
+from symmetries.general_functionalities.monomer_positions import MonomerPositions
 from symmetries.term_step import term_step
 from symmetries.format_irred_representations import format_irred_representations
 from symmetries.get_mo_schema import get_total_mo_schemata
@@ -74,10 +75,10 @@ class dimer_occ_state(handeling_mos):
         right_sym = []
         for i in self.occupied_mos.items():
             key, value = i[0], i[1]
-            if value["left"] == 1:
+            if value[MonomerPositions.left] == 1:
                 left.append("(" + key + "^{l})")
                 left_sym.append(key)
-            if value["right"] == 1:
+            if value[MonomerPositions.right] == 1:
                 right.append("(" + key + "^{r})")
                 right_sym.append(key)
         # Symmetrie der Monomere berechnen:
@@ -226,20 +227,20 @@ class dimer_occ_state(handeling_mos):
 
 if __name__ == "__main__":
     # occupied_mos = {
-    #     "b1u": {"left": 0, "right": 0},
-    #     "au": {"left": 1, "right": 1},
-    #     "b2g": {"left": 1, "right": 2},
-    #     "b3g": {"left": 2, "right": 1},
+    #     "b1u": {MonomerPositions.left: 0, MonomerPositions.right: 0},
+    #     "au": {MonomerPositions.left: 1, MonomerPositions.right: 1},
+    #     "b2g": {MonomerPositions.left: 1, MonomerPositions.right: 2},
+    #     "b3g": {MonomerPositions.left: 2, MonomerPositions.right: 1},
     # }
     # d = dimer_occ_state(point_group=POINTGROUP("d2h"), occupied_mos=switch_monomers(occupied_mos), sign_and_factor=2)
     # d.set_initial_equations()
     # print( d.print(detailed=True) )
 
     occupied_mos = {
-        "a2*": {"left": 1, "right": 0},
-        "b2*": {"left": 1, "right": 0},
-        "a2": {"left": 1, "right": 2},
-        "b2": {"left": 1, "right": 2},
+        "a2*": {MonomerPositions.left: 1, MonomerPositions.right: 0},
+        "b2*": {MonomerPositions.left: 1, MonomerPositions.right: 0},
+        "a2": {MonomerPositions.left: 1, MonomerPositions.right: 2},
+        "b2": {MonomerPositions.left: 1, MonomerPositions.right: 2},
     }
     d = dimer_occ_state(point_group=POINTGROUP("c2v"), occupied_mos=switch_monomers(occupied_mos), sign_and_factor=1)
     d.set_initial_equations()

@@ -1,4 +1,5 @@
 from symmetries.PointGroups import POINTGROUP
+from symmetries.general_functionalities.monomer_positions import MonomerPositions
 
 height_upper_mos = 0
 height_lower_mos = height_upper_mos-0.6
@@ -30,13 +31,35 @@ basic_tikz_element = f"""
 
 
 
-def get_mo_schemata(point_group:POINTGROUP, occupied_mos: dict, monomer:str) -> str:
+
+
+def get_mo_schemata(point_group:POINTGROUP, occupied_mos: dict, monomer:MonomerPositions) -> str:
     """
     get benzene (HOMOs + LUMOs) MO diagramm in a latex format (tikz)
     :param occupied_mos: occupation numbers of the included orbitals, given as number per symmetry
-    :param monomer: "left" / "right"; information about what data in the occupied_mos dict is needed
+    :param monomer: MonomerPositions.left / MonomerPositions.right; information about what data in the occupied_mos dict is needed
     :return: tikz-block of the mo scheme
     """
+
+    if monomer.value == MonomerPositions.isolated.value:
+        basic_tikz_element_isolated_monomer = f"""
+            % oberste MOs:
+            \draw[thick] ({x_left},{height_upper_mos}) -- ({x_left + width},{height_upper_mos})
+                node[pos=0, left] {{{point_group.label["oben_links"]}}}
+                ;
+            \draw[thick] ({x_right},{height_upper_mos}) -- ({x_right + width},{height_upper_mos})
+                node[pos=1, right] {{{point_group.label["oben_rechts"]}}}
+                ;
+            % unterste MOs:
+            \draw[thick] ({x_left},{height_lower_mos}) -- ({x_left + width},{height_lower_mos})
+                node[pos=0, left] {{{point_group.label["unten_links"]}}}
+                ;
+            \draw[thick] ({x_right},{height_lower_mos}) -- ({x_right + width},{height_lower_mos})
+                node[pos=1, right] {{{point_group.label["unten_rechts"]}}}
+                ;
+        """
+        return basic_tikz_element_isolated_monomer
+
     electrons = []
     if point_group.label["oben_links"] in occupied_mos.keys():
         if occupied_mos[ point_group.label["oben_links"] ][monomer] > 0:
@@ -66,26 +89,29 @@ def get_mo_schemata(point_group:POINTGROUP, occupied_mos: dict, monomer:str) -> 
 
 def get_total_mo_schemata(point_group:POINTGROUP, occupied_mos:dict) -> str:
     """
-    get a mo diagramm for a benzene on the "left" and one on the "right" = combine two monomer mo diagramms to one dimer mo diagramm;
+    get a mo diagramm for a benzene on the MonomerPositions.left and one on the MonomerPositions.right = combine two monomer mo diagramms to one dimer mo diagramm;
     :param occupied_mos: occupation numbers of the included orbitals, given as number per symmetry
     :return: equation with tikz environments representing the mo diagramms, Einzufassen in \[ und\] für Latex-Nutzung
     """
-    basic_tikz_element_left = get_mo_schemata(point_group=point_group, occupied_mos=occupied_mos, monomer="left")
-    basic_tikz_element_right = get_mo_schemata(point_group=point_group, occupied_mos=occupied_mos, monomer="right")
+    basic_tikz_element_left = get_mo_schemata(point_group=point_group, occupied_mos=occupied_mos, monomer=MonomerPositions.left)
+    basic_tikz_element_right = get_mo_schemata(point_group=point_group, occupied_mos=occupied_mos, monomer=MonomerPositions.right)
 
-    total_tikz_object = r"\begin{tikzpicture}" + basic_tikz_element_left
-    total_tikz_object+= r"\end{tikzpicture} \qquad \begin{tikzpicture}" + basic_tikz_element_right
-    total_tikz_object+= r"\end{tikzpicture}"
+    total_tikz_object = wrap_tikzpicture(basic_tikz_element_left)
+    total_tikz_object+= r"\qquad " + wrap_tikzpicture(basic_tikz_element_right)
 
     return total_tikz_object
 
 
+def wrap_tikzpicture(tikzpicture:str) -> str:
+    # complete_str = r"\begin{tikzpicture}"  + tikzpicture + "\n"+ r"\end{tikzpicture}"
+    return r"\begin{tikzpicture}"  + tikzpicture.rstrip("\n") + "\n"+ r"\end{tikzpicture}"
+
 
 if __name__ == '__main__':
     occupied_mos = {
-        "b1u": {"left": 1, "right": 0},
-        "au": {"left": 0, "right": 1},
-        "b2g": {"left": 1, "right": 2},
-        "b3g": {"left": 2, "right": 1},
+        "b1u": {MonomerPositions.left: 1, MonomerPositions.right: 0},
+        "au": {MonomerPositions.left: 0, MonomerPositions.right: 1},
+        "b2g": {MonomerPositions.left: 1, MonomerPositions.right: 2},
+        "b3g": {MonomerPositions.left: 2, MonomerPositions.right: 1},
     }
     print(r"\left\lbrace" + get_total_mo_schemata(occupied_mos=occupied_mos)+ r"\right\rbrace")

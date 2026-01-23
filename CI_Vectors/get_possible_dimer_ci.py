@@ -25,25 +25,25 @@ def get_possible_dimer_ci(ci_vector_left, ci_vector_right):
     mono_order = find_choices_in_monomer_ci(ci_vector_left, ci_vector_right)
 
     # 2. Branching zum Erzeugen aller möglichen Kombinationen
-    dimer_poss = [{"left": [], "right": []}]  # Start mit leerer Sequenz
+    dimer_poss = [{MonomerPositions.left: [], MonomerPositions.right: []}]  # Start mit leerer Sequenz
 
     for entry in mono_order:
         new_list = []
         if len(entry) == 1:
             for seq in dimer_poss:
-                seq["left"].append(entry)
-                seq["right"].append(entry)
+                seq[MonomerPositions.left].append(entry)
+                seq[MonomerPositions.right].append(entry)
                 new_list.append(seq)
         else:
             a, b = entry
             for seq in dimer_poss:
                 seq_copy = copy.deepcopy(seq)
-                seq["left"].append(a)
-                seq["right"].append(b)
+                seq[MonomerPositions.left].append(a)
+                seq[MonomerPositions.right].append(b)
                 new_list.append(seq)
 
-                seq_copy["left"].append(b)
-                seq_copy["right"].append(a)
+                seq_copy[MonomerPositions.left].append(b)
+                seq_copy[MonomerPositions.right].append(a)
                 new_list.append(seq_copy)
 
         dimer_poss = new_list
@@ -51,7 +51,7 @@ def get_possible_dimer_ci(ci_vector_left, ci_vector_right):
     # combine to full list:
     dimer_possibilities = []
     for i in dimer_poss:
-        list = i["left"] + i["right"]
+        list = i[MonomerPositions.left] + i[MonomerPositions.right]
         dimer_possibilities.append("".join(list))
 
     # count occurences:

@@ -3,6 +3,7 @@ from typing import Tuple, List
 
 from symmetries.PointGroups import POINTGROUP
 from symmetries.dimer_occ_state import dimer_occ_state
+from symmetries.general_functionalities.monomer_positions import MonomerPositions
 from symmetries.linear_combinations.linear_combination_of_dimeroccstates import linear_combination_of_dimeroccstates
 from symmetries.switch_monomers import switch_monomers
 
@@ -46,18 +47,18 @@ def all_products(point_group:POINTGROUP, monomer_combinations:bool=True, detaile
             if number_unpaired == 4:
                 if point_group == POINTGROUP.D2h:
                     occupied_mos = {
-                        "b1u": {"left": monomer_a[2], "right": monomer_b[2]},#antibindend
-                        "au":  {"left": monomer_a[3], "right": monomer_b[3]},#antibindend
-                        "b2g": {"left": monomer_a[0], "right": monomer_b[0]},# bindend (erste OCC)
-                        "b3g": {"left": monomer_a[1], "right": monomer_b[1]},# bindend (erste OCC)
+                        "b1u": {MonomerPositions.left: monomer_a[2], MonomerPositions.right: monomer_b[2]},#antibindend
+                        "au":  {MonomerPositions.left: monomer_a[3], MonomerPositions.right: monomer_b[3]},#antibindend
+                        "b2g": {MonomerPositions.left: monomer_a[0], MonomerPositions.right: monomer_b[0]},# bindend (erste OCC)
+                        "b3g": {MonomerPositions.left: monomer_a[1], MonomerPositions.right: monomer_b[1]},# bindend (erste OCC)
                     }
                     print("occupied mos", occupied_mos)
                 else:# C2v und C2h
                     occupied_mos = {
-                        "b2*": {"left": monomer_a[2], "right": monomer_b[2]},  # antibindend
-                        "a2*": {"left": monomer_a[3], "right": monomer_b[3]},  # antibindend
-                        "a2": {"left": monomer_a[0], "right": monomer_b[0]},  # bindend (erste OCC)
-                        "b2": {"left": monomer_a[1], "right": monomer_b[1]},  # bindend (erste OCC)
+                        "b2*": {MonomerPositions.left: monomer_a[2], MonomerPositions.right: monomer_b[2]},  # antibindend
+                        "a2*": {MonomerPositions.left: monomer_a[3], MonomerPositions.right: monomer_b[3]},  # antibindend
+                        "a2": {MonomerPositions.left: monomer_a[0], MonomerPositions.right: monomer_b[0]},  # bindend (erste OCC)
+                        "b2": {MonomerPositions.left: monomer_a[1], MonomerPositions.right: monomer_b[1]},  # bindend (erste OCC)
                     }
                 d = dimer_occ_state(occupied_mos=occupied_mos,point_group=point_group)
                 d2 = dimer_occ_state(occupied_mos=switch_monomers(occupied_mos),point_group=point_group)

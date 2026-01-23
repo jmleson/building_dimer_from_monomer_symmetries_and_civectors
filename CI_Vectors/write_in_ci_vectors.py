@@ -2,6 +2,7 @@ from fractions import Fraction
 
 from CI_Vectors.get_possible_dimer_ci import get_possible_dimer_ci
 from symmetries.dimer_occ_state import dimer_occ_state
+from symmetries.general_functionalities.monomer_positions import MonomerPositions
 from symmetries.linear_combinations import \
     linear_combination_of_dimeroccstates
 
@@ -29,10 +30,10 @@ def dimer_summand_to_dimer(summand:dimer_occ_state):
     content = ""
     # print("dimer_summand_to_dimer", summand, type(summand))
     # molpro order: Ag + B3u + B2u + B1g   +   B1u + B2g + B3g + Au
-    ci_vector_left = (f'{summand.occupied_mos["b1u"]["left"]}{summand.occupied_mos["b2g"]["left"]}'
-                      + f'{summand.occupied_mos["b3g"]["left"]}{summand.occupied_mos["au"]["left"]}')
-    ci_vector_right = (f'{summand.occupied_mos["b1u"]["right"]}{summand.occupied_mos["b2g"]["right"]}'
-                       + f'{summand.occupied_mos["b3g"]["right"]}{summand.occupied_mos["au"]["right"]}')
+    ci_vector_left = (f'{summand.occupied_mos["b1u"][MonomerPositions.left]}{summand.occupied_mos["b2g"][MonomerPositions.left]}'
+                      + f'{summand.occupied_mos["b3g"][MonomerPositions.left]}{summand.occupied_mos["au"][MonomerPositions.left]}')
+    ci_vector_right = (f'{summand.occupied_mos["b1u"][MonomerPositions.right]}{summand.occupied_mos["b2g"][MonomerPositions.right]}'
+                       + f'{summand.occupied_mos["b3g"][MonomerPositions.right]}{summand.occupied_mos["au"][MonomerPositions.right]}')
 
     ci_vector_right = ci_vector_right.replace("1", "a").replace(" ", "0")
     ci_vector_left = ci_vector_left.replace("1", "a").replace(" ", "0")
