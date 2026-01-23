@@ -1,4 +1,5 @@
 from symmetries.PointGroups import POINTGROUP
+from symmetries.format_irred_representations import format_irred_representations
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
 
 height_upper_mos = 0
@@ -20,7 +21,7 @@ up_left_bottom = f"\draw[-> , thick] ({x_left + arrow_x+padding}, {height_lower_
 down_right_bottom = f"\draw[<- , thick] ({x_right + arrow_x-padding}, {height_lower_mos - arrow_height}) -- ({x_right + arrow_x-padding}, {height_lower_mos+arrow_height}); "
 up_right_bottom = f" \draw[-> , thick] ({x_right + arrow_x+padding}, {height_lower_mos - arrow_height}) -- ({x_right + arrow_x+padding}, {height_lower_mos+arrow_height}); "
 
-basic_tikz_element = f"""
+basic_tikz_element = fr"""
     % oberste MOs:
     \draw[thick] ({x_left},{height_upper_mos}) -- ({x_left + width},{height_upper_mos}); % erster Strich
     \draw[thick] ({x_right},{height_upper_mos}) -- ({x_right + width},{height_upper_mos}); % zweiter Strich
@@ -42,20 +43,20 @@ def get_mo_schemata(point_group:POINTGROUP, occupied_mos: dict, monomer:MonomerP
     """
 
     if monomer.value == MonomerPositions.isolated.value:
-        basic_tikz_element_isolated_monomer = f"""
+        basic_tikz_element_isolated_monomer = fr"""
             % oberste MOs:
             \draw[thick] ({x_left},{height_upper_mos}) -- ({x_left + width},{height_upper_mos})
-                node[pos=0, left] {{{point_group.label["oben_links"]}}}
+                node[pos=0, left] {{${format_irred_representations(point_group.label["oben_links"])}$}}
                 ;
             \draw[thick] ({x_right},{height_upper_mos}) -- ({x_right + width},{height_upper_mos})
-                node[pos=1, right] {{{point_group.label["oben_rechts"]}}}
+                node[pos=1, right] {{${format_irred_representations(point_group.label["oben_rechts"])}$}}
                 ;
             % unterste MOs:
             \draw[thick] ({x_left},{height_lower_mos}) -- ({x_left + width},{height_lower_mos})
-                node[pos=0, left] {{{point_group.label["unten_links"]}}}
+                node[pos=0, left] {{${format_irred_representations(point_group.label["unten_links"])}$}}
                 ;
             \draw[thick] ({x_right},{height_lower_mos}) -- ({x_right + width},{height_lower_mos})
-                node[pos=1, right] {{{point_group.label["unten_rechts"]}}}
+                node[pos=1, right] {{${format_irred_representations(point_group.label["unten_rechts"])}$}}
                 ;
         """
         return basic_tikz_element_isolated_monomer

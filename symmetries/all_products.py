@@ -52,7 +52,7 @@ def all_products(point_group:POINTGROUP, monomer_combinations:bool=True, detaile
                         "b2g": {MonomerPositions.left: monomer_a[0], MonomerPositions.right: monomer_b[0]},# bindend (erste OCC)
                         "b3g": {MonomerPositions.left: monomer_a[1], MonomerPositions.right: monomer_b[1]},# bindend (erste OCC)
                     }
-                    print("occupied mos", occupied_mos)
+                    # print("occupied mos", occupied_mos)
                 else:# C2v und C2h
                     occupied_mos = {
                         "b2*": {MonomerPositions.left: monomer_a[2], MonomerPositions.right: monomer_b[2]},  # antibindend
