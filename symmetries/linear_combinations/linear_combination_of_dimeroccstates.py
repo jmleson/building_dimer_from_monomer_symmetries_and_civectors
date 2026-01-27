@@ -56,6 +56,7 @@ class linear_combination_of_dimeroccstates:
 
     def build_linear_kombination(self, detailed:bool=False):
         if not self.check_valitity():
+            print("state invalid!")
             return
         parts= []
         for i in self.dimer_occ_states:

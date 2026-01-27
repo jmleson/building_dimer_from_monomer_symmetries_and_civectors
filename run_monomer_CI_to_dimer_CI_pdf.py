@@ -2,10 +2,12 @@ from CI_Vectors.get_product_terms import get_product_terms
 from Molecule import Molecule
 from get_linear_combined_states_results import get_linear_combined_states_results
 from latex.basic_latex_header import basic_latex_header
+from symmetries.get_latex_file_for_all_combinations import orbitals_and_their_symmetry_chapter
 
 
 def get_file_ci_vectors(molecule:Molecule):
     content = basic_latex_header()
+    content += orbitals_and_their_symmetry_chapter(molecule=molecule)
 
     content += get_product_terms(molecule=molecule)
     content += "\n" + r"\newpage" + "\n"

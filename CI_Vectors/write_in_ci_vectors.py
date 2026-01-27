@@ -7,18 +7,18 @@ from symmetries.linear_combinations import \
     linear_combination_of_dimeroccstates
 
 
-def write_in_ci_vectors(l:linear_combination_of_dimeroccstates):
-    content = "\nbzw. in CI-Vektoren geschrieben: \n $$"
+def write_in_ci_vectors(l:linear_combination_of_dimeroccstates, break_after_number_of_terms:int=5):
+    content = "\nwritten in CI Vectors: \n $$"
     dimer_ci_vectors = []
     counter = 0
     for summand in l.dimer_occ_states:
         # print("summand", summand, type(summand))
         content_tmp, dimer_ci_vectors_tmp = dimer_summand_to_dimer(summand=summand)
         dimer_ci_vectors += dimer_ci_vectors_tmp
-        if counter >= 5:
+        if counter >= break_after_number_of_terms:
             content += " $$ $$ "
         counter += 1
-        counter %= 6
+        counter %= break_after_number_of_terms+1
         content += content_tmp
 
     content += "$$\n\n"  # Monomer-Ci-Vektoren ergänzt

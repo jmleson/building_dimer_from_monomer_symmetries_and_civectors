@@ -11,9 +11,9 @@ def get_latex_file_for_d2h_symmetry_options(content:str, molecule:Molecule) -> N
     :param content: content of to-be latex file
     :return:
     """
-    start = basic_latex_header() + r"\section{Orbitals And Their Symmetry}%Orbitale und deren Symmetrie "  + "\n"
+    start = basic_latex_header()
 
-    chapter1, molecule = orbitals_and_their_symmetry_chapter(molecule=molecule)
+    chapter1 = orbitals_and_their_symmetry_chapter(molecule=molecule)
 
 
     end= r"\end{document}"
@@ -27,7 +27,7 @@ def get_latex_file_for_d2h_symmetry_options(content:str, molecule:Molecule) -> N
 
 def orbitals_and_their_symmetry_chapter(molecule:Molecule):
     point_group = molecule.get_point_group()
-    start = ""
+    start = r"\section{Orbitals And Their Symmetry}%Orbitale und deren Symmetrie "  + "\n"
     # if point_group == POINTGROUP.D2h:
     #     start += r"%In der Sortierung: oben rechts $a_u$, oben links $b_{1u}$, unten links $b_{2g}$ und unten rechts $b_{3g}$ folgt: \\"
     # elif point_group == POINTGROUP.C2v or point_group == POINTGROUP.C2h:
@@ -53,7 +53,7 @@ def orbitals_and_their_symmetry_chapter(molecule:Molecule):
               "The orbital order within the group of monomer orbitals follows the above mentioned definition. ")
 
 
-    start += r"\vspace{2cm}"
+    start += r"\\ \\"
     start += " The transformation of monomer orbitals into dimer orbitals is given by knowing the negative and positive linera combinations of monomer orbitals into dimer orbitals. "
     start += "Transforming this known equation system leads to: " + "\n"
     start += r"\begin{subequations}\begin{gather}" + "\n"
@@ -62,5 +62,5 @@ def orbitals_and_their_symmetry_chapter(molecule:Molecule):
                                         for monomer, combination in point_group.mo_pairs.items() ] )
     start += r"\end{gather}\end{subequations}" + "\n"
 
-    return start, molecule
+    return start + r"\newpage" + "\n\n"
 

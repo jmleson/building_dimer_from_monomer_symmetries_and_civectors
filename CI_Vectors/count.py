@@ -6,6 +6,10 @@ from fractions import Fraction
 def combine_sequences(data):
     combined = defaultdict(Fraction)
 
+    # data_sorted = sorted(data, key=lambda x: x["sequence"])
+    # for k in data_sorted:
+    #     print(k["factor"], " ", k["sequence"], end = " \t ")
+
     for element in data:
         if isinstance(element, dict) and "sequence" in element:
             seq = element["sequence"]

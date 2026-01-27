@@ -64,3 +64,11 @@ def get_possible_dimer_ci(ci_vector_left, ci_vector_right):
         # print(seq, "→", count)
         counted_dimer_possibilities.append({"count": count, "sequence": seq})
     return counted_dimer_possibilities
+
+
+
+if __name__ == "__main__":
+    x = get_possible_dimer_ci("02aa", "0a2a")
+    for i in x:
+        print(i)
+    print(len(x))

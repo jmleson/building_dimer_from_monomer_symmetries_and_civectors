@@ -40,7 +40,7 @@ class handeling_mos(object):
             sorted_combination = [i for i in combination]  # copy
             for i in sorted_combination:
                 if i not in self.point_group.choices_irreduzible_representations_molpro_ordered:
-                    raise Exception(f"{i} bzw. sein Format ist keine passende irreduzible Darstellung")
+                    raise Exception(f"{i}, or, its formatting is not a suitable irreducible representation")
             sorted_combination = sorted(sorted_combination,
                                         key=lambda x: self.point_group.choices_irreduzible_representations_molpro_ordered.index(x))
             # check sign (number of switches within order equal -> sign stays, otherwise sign gets changed):
