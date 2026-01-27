@@ -1,11 +1,11 @@
 from CI_Vectors.get_linear_combined_states import get_linear_combined_states
 from CI_Vectors.get_product_terms import get_product_terms
-from symmetries.group_theory.PointGroups import POINTGROUP
+from symmetries.Molecule import Molecule
 
 
 
 
-def get_file_ci_vectors(point_group:POINTGROUP):
+def get_file_ci_vectors(molecule:Molecule):
     content = r"""
         \documentclass{article}
         \usepackage[a4paper, left=1cm, right=1cm, top=2cm, bottom=2cm]{geometry}
@@ -24,16 +24,17 @@ def get_file_ci_vectors(point_group:POINTGROUP):
         \newpage
         """
 
-    content += get_product_terms(point_group=point_group)
+    content += get_product_terms(molecule=molecule)
     content += "\n" + r"\newpage" + "\n"
-    content += get_linear_combined_states(point_group=point_group)
+    content += get_linear_combined_states(molecule=molecule)
 
     end= r"\end{document}"
-    with open(f"CI-vektoren-theoretisch_{point_group.name}.tex", "w") as file:
+    with open(f"resulting_tex_files/CI-vektoren-theoretisch_{molecule.name}.tex", "w") as file:
         file.write(content + end)
 
 
 
 
 if __name__ == "__main__":
-    get_file_ci_vectors(point_group=POINTGROUP.D2h)
+    molecule = Molecule.C6H6
+    get_file_ci_vectors(molecule=molecule)

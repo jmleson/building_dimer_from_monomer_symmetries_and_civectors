@@ -20,6 +20,7 @@ class POINTGROUP(Enum):
         obj._value_ = value
         if value == "d2h":
             obj.total_symmetric = "ag"
+            obj.my_ordering_monomer = ("b2g", "b3g", "au", "b1u")#Todo
             obj.choices_irreduzible_representations_molpro_ordered = ('ag', 'b3u', 'b2u', 'b1g', 'b1u', 'b2g', 'b3g', 'au')
             obj.choices_irreduzible_representations_molpro_ordered_monomer = ('ag', 'b3u', 'b2u', 'b1g', 'b1u', 'b2g', 'b3g', 'au')
             obj.mo_pairs = {  # !sortiert; ! brauchen Vorzeichen

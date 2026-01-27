@@ -29,11 +29,17 @@ def dimer_summand_to_dimer(summand:dimer_occ_state):
     dimer_ci_vectors = []
     content = ""
     # print("dimer_summand_to_dimer", summand, type(summand))
-    # molpro order: Ag + B3u + B2u + B1g   +   B1u + B2g + B3g + Au
-    ci_vector_left = (f'{summand.occupied_mos["b1u"][MonomerPositions.left]}{summand.occupied_mos["b2g"][MonomerPositions.left]}'
-                      + f'{summand.occupied_mos["b3g"][MonomerPositions.left]}{summand.occupied_mos["au"][MonomerPositions.left]}')
-    ci_vector_right = (f'{summand.occupied_mos["b1u"][MonomerPositions.right]}{summand.occupied_mos["b2g"][MonomerPositions.right]}'
-                       + f'{summand.occupied_mos["b3g"][MonomerPositions.right]}{summand.occupied_mos["au"][MonomerPositions.right]}')
+    summand.occupied_mos.keys()
+    ci_vector_left = "".join(
+        str(summand.occupied_mos[irrep][MonomerPositions.left])
+        for irrep in summand.point_group.choices_irreduzible_representations_molpro_ordered
+        if irrep in summand.occupied_mos
+    )
+    ci_vector_right = "".join(
+        str(summand.occupied_mos[irrep][MonomerPositions.right])
+        for irrep in summand.point_group.choices_irreduzible_representations_molpro_ordered
+        if irrep in summand.occupied_mos
+    )
 
     ci_vector_right = ci_vector_right.replace("1", "a").replace(" ", "0")
     ci_vector_left = ci_vector_left.replace("1", "a").replace(" ", "0")

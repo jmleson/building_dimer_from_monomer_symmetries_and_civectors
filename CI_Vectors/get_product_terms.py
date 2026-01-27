@@ -3,6 +3,7 @@ from fractions import Fraction
 
 from CI_Vectors.count import combine_sequences
 from CI_Vectors.write_in_ci_vectors import write_in_ci_vectors
+from symmetries.Molecule import Molecule
 from symmetries.linear_combinations import \
     linear_combination_of_dimeroccstates
 from symmetries.group_theory.PointGroups import POINTGROUP
@@ -40,9 +41,9 @@ def draw(l:linear_combination_of_dimeroccstates, point_group: POINTGROUP):
     content += "\n\n" + r"\end{minipage}" + "\n" + r"\vspace{0.5cm}" + "\n" + r"\hrule" + "\n" + r"\vspace{0.5cm}" + "\n\n"
     return content
 
-def get_product_terms(point_group:POINTGROUP):
+def get_product_terms(molecule:Molecule):
     content = r"\section{Multiplications}" + "\n"
-    combinations = get_monomer_combinations(point_group=point_group)
+    combinations = get_monomer_combinations(molecule=molecule)
 
     for combination in combinations:
         # content += "\n\n" + r"\begin{minipage}{\linewidth}" + "\n"
@@ -52,9 +53,9 @@ def get_product_terms(point_group:POINTGROUP):
         # molpro_2 = state_2.replace("i^3 b_{2u}", "1.3").replace("i^3 b_{3u}", "2.2").replace("e^3 b_{2u}", "2.3").replace("e^3 b_{3u}", "1.2")
         # content += state_1 + " * " + state_2 + r" \quad = \quad " + molpro_1 + " * " + molpro_2 + ":\n\n"
         # split monomers-occupations:
-        l = get_linear_combination_of_dimeroccstates_from_combinations(combination=combination, point_group=POINTGROUP.D2h)
+        l = get_linear_combination_of_dimeroccstates_from_combinations(combination=combination, molecule=molecule)
         # print(l.name)
-        content += draw(l=l, point_group=point_group)
+        content += draw(l=l, point_group=molecule.get_point_group() )
         # content += "\n\n" + r"\end{minipage}" + "\n" + r"\vspace{0.5cm}" + "\n" + r"\hrule" + "\n" + r"\vspace{0.5cm}" + "\n\n"
 
     return content

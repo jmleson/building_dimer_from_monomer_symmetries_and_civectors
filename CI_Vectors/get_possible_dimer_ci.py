@@ -1,6 +1,9 @@
 import copy
 from collections import Counter
 
+from symmetries.general_functionalities.monomer_positions import MonomerPositions
+
+
 def find_choices_in_monomer_ci(ci_vector_left, ci_vector_right):
     # Combining CI-Vectors to Dimer-CI-Vectors:
     mono_order = []
