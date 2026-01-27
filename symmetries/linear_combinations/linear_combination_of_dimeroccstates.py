@@ -1,11 +1,11 @@
 from typing import List
 
+from latex.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
+from latex.signed_number_to_latex_number import signed_number_to_latex_number
 from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.mathematics.term_step import term_step
 from symmetries.dimer_occ_state import dimer_occ_state
-from symmetries.latex.format_irred_representations import format_irred_representations
-from symmetries.latex.latex_equation_types import latex_equation_types, get_expression_as_latex_formula
-from symmetries.latex.signed_number_to_latex_number import signed_number_to_latex_number
+from latex.format_irred_representations import format_irred_representations
 from symmetries.mathematics.switch_monomers import switch_monomers
 
 

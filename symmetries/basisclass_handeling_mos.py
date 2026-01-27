@@ -2,8 +2,8 @@ from collections import defaultdict
 from itertools import product
 from typing import List, Tuple, Dict
 
+from latex.signed_number_to_latex_number import signed_number_to_latex_number
 from symmetries.group_theory.multipling_irred import multipling_irred
-from symmetries.latex.signed_number_to_latex_number import signed_number_to_latex_number
 from symmetries.general_functionalities.count_swaps import count_swaps
 
 

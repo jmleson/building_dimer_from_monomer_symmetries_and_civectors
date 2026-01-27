@@ -3,7 +3,7 @@ from fractions import Fraction
 
 from CI_Vectors.count import combine_sequences
 from CI_Vectors.write_in_ci_vectors import write_in_ci_vectors
-from symmetries.Molecule import Molecule
+from Molecule import Molecule
 from symmetries.linear_combinations import \
     linear_combination_of_dimeroccstates
 from symmetries.group_theory.PointGroups import POINTGROUP
@@ -21,24 +21,26 @@ def fraction_to_tex(frac: Fraction) -> str:
 
 
 
-def draw(l:linear_combination_of_dimeroccstates, point_group: POINTGROUP):
+def draw(l:linear_combination_of_dimeroccstates, point_group: POINTGROUP, detailed:bool=True):
     content = "\n\n" + r"\begin{minipage}{\linewidth}" + "\n"
 
     l.name = l.name.replace("and", "*")
     content += l.name
+
     if point_group == POINTGROUP.D2h:# FALL C6H6 !!! TODO
         content += r" \quad = \quad "
         name = (l.name.replace("i^3 b_{2u}", "1.3").replace("i^3 b_{3u}", "2.2")
-                .replace("e^3 b_{2u}", "2.3").replace("e^3 b_{3u}", "1.2"))
+                    .replace("e^3 b_{2u}", "2.3").replace("e^3 b_{3u}", "1.2"))
         content += name + "\n"
 
     content += l.draw() + "\n\n"
     content_tmp, dimer_ci_vectors = write_in_ci_vectors(l=l)
-    content += content_tmp
+    if detailed:
+        content += content_tmp
 
     content += dimer_ci_vectors_to_added_up_sequence(dimer_ci_vectors=dimer_ci_vectors)
 
-    content += "\n\n" + r"\end{minipage}" + "\n" + r"\vspace{0.5cm}" + "\n" + r"\hrule" + "\n" + r"\vspace{0.5cm}" + "\n\n"
+    content += "\n\n" + r"\end{minipage}" + "\n" + r"\vspace{0.5cm}" + "\n"
     return content
 
 def get_product_terms(molecule:Molecule):
@@ -64,7 +66,7 @@ def dimer_ci_vectors_to_added_up_sequence(dimer_ci_vectors:list):
     content = ""
     dimer_ci_vectors = combine_sequences(data=dimer_ci_vectors)
     # add dimer-CI-vectors:
-    content += "\n\n bildet folgende mögliche Dimerkombinationen:\n"
+    content += "\n\n forms the following possible dimer combinations:\n"
     counter = 0
     content += "\n$$"  # ! needed, s. if below
     for i in dimer_ci_vectors:

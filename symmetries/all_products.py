@@ -1,7 +1,7 @@
 import itertools
 from typing import Tuple, List
 
-from symmetries.Molecule import Molecule
+from Molecule import Molecule
 from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.dimer_occ_state import dimer_occ_state
 from symmetries.general_functionalities.monomer_positions import MonomerPositions

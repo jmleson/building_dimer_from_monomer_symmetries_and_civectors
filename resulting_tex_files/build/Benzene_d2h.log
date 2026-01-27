@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.28)  26 JAN 2026 15:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.28)  27 JAN 2026 13:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -557,34 +557,43 @@ LaTeX Info: Redefining \Relbar on input line 970.
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 9.
+(/usr/share/texlive/texmf-dist/tex/latex/physics/physics.sty
+Package: physics 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2025-01-18 L3 programming layer (loader) 
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count318
 \l__pdf_internal_box=\box65
-)
+))
+Package: xparse 2024-08-16 L3 Experimental document command parser
+))
+Package hyperref Info: Option `colorlinks' set `true' on input line 10.
+
 (build/Benzene_d2h.aux)
 \openout1 = `Benzene_d2h.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -620,7 +629,7 @@ LaTeX Font Info:    ... okay on input line 10.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 10.
+Package hyperref Info: Link coloring ON on input line 12.
 (build/Benzene_d2h.out) (build/Benzene_d2h.out)
 \@outlinefile=\write4
 \openout4 = `Benzene_d2h.out'.
@@ -641,16 +650,8 @@ Package hyperref Info: Link coloring ON on input line 10.
 \everyMPtoPDFconversion=\toks37
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -1431,13 +1432,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 3848--3850
  []
 
 
-
-[48]
-Overfull \hbox (13.34146pt too wide) detected at line 4029
+Overfull \hbox (13.34146pt too wide) detected at line 4033
 []
  []
 
 
+
+[48]
 
 [49]
 Overfull \vbox (114.43372pt too high) has occurred while \output is active []
@@ -1445,48 +1446,66 @@ Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 [50]
-Underfull \hbox (badness 10000) detected at line 4087
+Underfull \hbox (badness 10000) detected at line 4091
  []$[]   \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 8 [] + 8 []  $ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4087--4089
+Underfull \hbox (badness 10000) in paragraph at lines 4091--4093
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4087--4089
+Underfull \hbox (badness 10000) in paragraph at lines 4091--4093
 
  []
 
 
-
-[51]
-Overfull \hbox (13.34146pt too wide) detected at line 4268
+Overfull \hbox (13.34146pt too wide) detected at line 4274
 []
  []
 
 
 
-[52]
+[51]
 Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 4334--4336
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4334--4336
+
+ []
+
+
+Overfull \hbox (13.34146pt too wide) detected at line 4519
+[]
+ []
+
+
+
 [53]
-Underfull \hbox (badness 10000) in paragraph at lines 4328--4330
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4328--4330
-
- []
+Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 
 [54]
-Overfull \hbox (13.34146pt too wide) detected at line 4511
+Underfull \hbox (badness 10000) in paragraph at lines 4579--4581
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4579--4581
+
+ []
+
+
+Overfull \hbox (13.34146pt too wide) detected at line 4762
 []
  []
 
@@ -1498,72 +1517,110 @@ Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 [56]
-Underfull \hbox (badness 10000) in paragraph at lines 4571--4573
+Underfull \hbox (badness 10000) in paragraph at lines 4818--4821
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4571--4573
+Underfull \hbox (badness 10000) in paragraph at lines 4818--4821
 
+ []
+
+
+Overfull \hbox (13.34146pt too wide) detected at line 5004
+[]
  []
 
 
 
 [57]
-Overfull \hbox (13.34146pt too wide) detected at line 4752
-[]
- []
-
-
-
-[58]
 Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 
+[58]
+Underfull \hbox (badness 10000) detected at line 5062
+ []$[]   \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 8 [] + 8 []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5062--5064
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5062--5064
+
+ []
+
+
+Overfull \hbox (13.34146pt too wide) detected at line 5245
+[]
+ []
+
+
+
 [59]
-Underfull \hbox (badness 10000) in paragraph at lines 4808--4811
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4808--4811
-
- []
+Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 
 [60]
-Overfull \hbox (13.34146pt too wide) detected at line 4992
-[]
+Underfull \hbox (badness 10000) in paragraph at lines 5305--5307
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5305--5307
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5314--5315
+
  []
 
 
 
 [61]
-Overfull \vbox (114.43372pt too high) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 5437--5439
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5437--5439
+
+ []
+
+
+Overfull \hbox (13.34146pt too wide) detected at line 5622
+[]
+ []
 
 
 
 [62]
-Underfull \hbox (badness 10000) detected at line 5050
- []$[]   \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 8 [] + 8 []  $ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5050--5052
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5050--5052
-
- []
+Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 
 [63]
-Overfull \hbox (13.34146pt too wide) detected at line 5231
+Underfull \hbox (badness 10000) detected at line 5680
+ []$[]   \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 8 [] + 8 []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5680--5682
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5680--5682
+
+ []
+
+
+Overfull \hbox (13.34146pt too wide) detected at line 5863
 []
  []
 
@@ -1575,36 +1632,39 @@ Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 5291--5293
+Underfull \hbox (badness 10000) in paragraph at lines 5923--5925
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5291--5293
+Underfull \hbox (badness 10000) in paragraph at lines 5923--5925
 
+ []
+
+
+Overfull \hbox (13.34146pt too wide) detected at line 6108
+[]
  []
 
 
 
 [66]
-Underfull \hbox (badness 10000) in paragraph at lines 5298--5299
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5421--5423
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5421--5423
-
- []
+Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 
 [67]
-Overfull \hbox (13.34146pt too wide) detected at line 5602
+Underfull \hbox (badness 10000) in paragraph at lines 6168--6170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6168--6170
+
+ []
+
+
+Overfull \hbox (13.34146pt too wide) detected at line 6351
 []
  []
 
@@ -1616,28 +1676,38 @@ Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 [69]
-Underfull \hbox (badness 10000) detected at line 5660
- []$[]   \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 8 [] + 8 []  $ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5660--5662
+Underfull \hbox (badness 10000) in paragraph at lines 6407--6410
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5660--5662
+Underfull \hbox (badness 10000) in paragraph at lines 6407--6410
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6417--6418
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6540--6542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6540--6542
+
+ []
+
+
+Overfull \hbox (13.34146pt too wide) detected at line 6725
+[]
  []
 
 
 
 [70]
-Overfull \hbox (13.34146pt too wide) detected at line 5841
-[]
- []
-
-
 
 [71]
 Overfull \vbox (114.43372pt too high) has occurred while \output is active []
@@ -1645,153 +1715,62 @@ Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 [72]
-Underfull \hbox (badness 10000) in paragraph at lines 5901--5903
+Underfull \hbox (badness 10000) detected at line 6783
+ []$[]   \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 8 [] + 8 []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6783--6785
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5901--5903
+Underfull \hbox (badness 10000) in paragraph at lines 6783--6785
 
+ []
+
+
+Overfull \hbox (13.34146pt too wide) detected at line 6966
+[]
  []
 
 
 
 [73]
-Overfull \hbox (13.34146pt too wide) detected at line 6084
-[]
- []
+Overfull \vbox (114.43372pt too high) has occurred while \output is active []
 
 
 
 [74]
-Overfull \vbox (114.43372pt too high) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 7026--7028
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7026--7028
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7035--7036
+
+ []
 
 
 
 [75]
-Underfull \hbox (badness 10000) in paragraph at lines 6144--6146
+Underfull \hbox (badness 10000) in paragraph at lines 7158--7160
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6144--6146
-
- []
-
-
-
-[76]
-Overfull \hbox (13.34146pt too wide) detected at line 6325
-[]
- []
-
-
-
-[77]
-Overfull \vbox (114.43372pt too high) has occurred while \output is active []
-
-
-
-[78]
-Underfull \hbox (badness 10000) in paragraph at lines 6381--6384
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6381--6384
+Underfull \hbox (badness 10000) in paragraph at lines 7158--7160
 
  []
 
 
 
-[79]
-Underfull \hbox (badness 10000) in paragraph at lines 6389--6390
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6512--6514
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6512--6514
-
- []
-
-
-
-[80]
-Overfull \hbox (13.34146pt too wide) detected at line 6693
-[]
- []
-
-
-
-[81]
-Overfull \vbox (114.43372pt too high) has occurred while \output is active []
-
-
-
-[82]
-Underfull \hbox (badness 10000) detected at line 6751
- []$[]   \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 8 [] + 8 []  $ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6751--6753
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6751--6753
-
- []
-
-
-
-[83]
-Overfull \hbox (13.34146pt too wide) detected at line 6932
-[]
- []
-
-
-
-[84]
-Overfull \vbox (114.43372pt too high) has occurred while \output is active []
-
-
-
-[85]
-Underfull \hbox (badness 10000) in paragraph at lines 6992--6994
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6992--6994
-
- []
-
-
-
-[86]
-Underfull \hbox (badness 10000) in paragraph at lines 6999--7000
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7122--7124
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7122--7124
-
- []
-
-
-
-[87] (build/Benzene_d2h.aux)
+[76] (build/Benzene_d2h.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1800,13 +1779,13 @@ Package rerunfilecheck Info: File `Benzene_d2h.out' has not changed.
 (rerunfilecheck)             Checksum: C630FB77BC53DF2D6FE5965A303DA6BD;1396.
  ) 
 Here is how much of TeX's memory you used:
- 21957 strings out of 473197
- 426074 string characters out of 5718604
- 845417 words of memory out of 5000000
- 44803 multiletter control sequences out of 15000+600000
+ 22487 strings out of 473197
+ 432288 string characters out of 5718604
+ 865688 words of memory out of 5000000
+ 45338 multiletter control sequences out of 15000+600000
  560204 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,20n,107p,484b,705s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,20n,107p,484b,712s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -1817,10 +1796,10 @@ t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
 public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb>
-Output written on build/Benzene_d2h.pdf (87 pages, 330757 bytes).
+Output written on build/Benzene_d2h.pdf (76 pages, 327151 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
- 375 compressed objects within 4 object streams
- 103 named destinations out of 1000 (max. 500000)
+ 440 PDF objects out of 1000 (max. 8388607)
+ 338 compressed objects within 4 object streams
+ 92 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

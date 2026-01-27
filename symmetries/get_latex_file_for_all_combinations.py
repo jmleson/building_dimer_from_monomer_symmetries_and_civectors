@@ -1,12 +1,8 @@
-from symmetries.Molecule import Molecule
-from symmetries.group_theory.PointGroups import POINTGROUP
-from symmetries.all_products import all_products
-from symmetries.latex.format_irred_representations import format_irred_representations
+from Molecule import Molecule
+from latex.basic_latex_header import basic_latex_header
+from latex.format_irred_representations import format_irred_representations
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
-from symmetries.get_mo_schema import get_mo_schemata, wrap_tikzpicture
-from symmetries.linear_combinations.linear_combination_monomer_states import get_monomer_state_linear_combinations
-from symmetries.linear_combinations.linear_combinations_of_combined_monomer_states import \
-    linear_combinations_of_combined_monomer_states
+from get_mo_schema import get_mo_schemata, wrap_tikzpicture
 
 
 def get_latex_file_for_d2h_symmetry_options(content:str, molecule:Molecule) -> None :
@@ -15,23 +11,7 @@ def get_latex_file_for_d2h_symmetry_options(content:str, molecule:Molecule) -> N
     :param content: content of to-be latex file
     :return:
     """
-    start = r"""
-    \documentclass{article}
-    \usepackage[a4paper, left=1cm, right=1cm, top=2cm, bottom=2cm]{geometry}
-    \usepackage{hyperref} % für anklickbare Bezüge 
-    \usepackage{tikz} % für MO-Schemata
-    \usepackage{amsmath}
-    
-    \setlength{\parindent}{0pt}
-    \hypersetup{colorlinks=true, linkcolor=black, citecolor=black}% damit Referenzen nicht in PDF umklammert
-    \begin{document}
-    
-    \pagestyle{empty}
-    \tableofcontents 
-    \newpage 
-    
-    \section{Orbitals And Their Symmetry}%Orbitale und deren Symmetrie
-    """
+    start = basic_latex_header() + r"\section{Orbitals And Their Symmetry}%Orbitale und deren Symmetrie "  + "\n"
 
     chapter1, molecule = orbitals_and_their_symmetry_chapter(molecule=molecule)
 

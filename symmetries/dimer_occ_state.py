@@ -1,15 +1,15 @@
 import copy
 from typing import Dict, List
 
+from latex.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
 from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.basisclass_handeling_mos import handeling_mos
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
 from symmetries.mathematics.term_step import term_step
-from symmetries.latex.format_irred_representations import format_irred_representations
-from symmetries.get_mo_schema import get_total_mo_schemata
+from latex.format_irred_representations import format_irred_representations
+from get_mo_schema import get_total_mo_schemata
 from symmetries.group_theory.get_total_symmety_from_list_of_irred import get_total_symmety_from_list_of_irred
-from symmetries.latex.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
-from symmetries.latex.signed_number_to_latex_number import signed_number_to_latex_number
+from latex.signed_number_to_latex_number import signed_number_to_latex_number
 from symmetries.mathematics.split_expression_into_sums import split_expression_into_sums, split_sum_into_parts
 from symmetries.mathematics.switch_monomers import switch_monomers
 

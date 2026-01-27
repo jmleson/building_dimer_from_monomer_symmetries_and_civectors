@@ -1,5 +1,5 @@
 from symmetries.group_theory.PointGroups import POINTGROUP
-from symmetries.latex.format_irred_representations import format_irred_representations
+from latex.format_irred_representations import format_irred_representations
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
 
 height_upper_mos = 0

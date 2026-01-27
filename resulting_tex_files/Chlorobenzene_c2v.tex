@@ -4,17 +4,17 @@
     \usepackage{hyperref} % für anklickbare Bezüge 
     \usepackage{tikz} % für MO-Schemata
     \usepackage{amsmath}
-    
+    \usepackage{physics}
+
     \setlength{\parindent}{0pt}
     \hypersetup{colorlinks=true, linkcolor=black, citecolor=black}% damit Referenzen nicht in PDF umklammert
-    \begin{document}
     
+    \begin{document}
     \pagestyle{empty}
     \tableofcontents 
     \newpage 
-    
-    \section{Orbitals And Their Symmetry}%Orbitale und deren Symmetrie
-    
+    \section{Orbitals And Their Symmetry}%Orbitale und deren Symmetrie 
+
 %\includegraphics[scale=0.125]{img/DimerZOrbitalordnung-C6H5Cl-C2v-gesamt-MO-beiWW.pdf}
 \vspace{2cm}
 We use the following order of orbitals here (assuming degeneracy of LUMOs and HOMOs): 
@@ -882,7 +882,7 @@ b_2^{r} = -a_1+b_2\end{gather}\end{subequations}
 \draw[-> , thick] (0.35, -0.85) -- (0.35, -0.35); 
  \draw[-> , thick] (1.35, -0.85) -- (1.35, -0.35); 
 \draw[<- , thick] (1.15, -0.85) -- (1.15, -0.35); 
-\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $a_1,b_1$\begin{multline*}=+\left(\left|(b_2^{*r}) \cdot (a_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*l})\right|\right)+\left(\left|(b_2^{*l}) \cdot (a_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*r})\right|\right)\end{multline*}
+\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $b_1,a_1$\begin{multline*}=+\left(\left|(b_2^{*r}) \cdot (a_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*l})\right|\right)+\left(\left|(b_2^{*l}) \cdot (a_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*r})\right|\right)\end{multline*}
 \begin{multline*}
 =+4\left|\underbrace{a_1^{*} b_1 b_1^{*} a_2}_{a_2}\right|-4\left|\underbrace{b_1 b_2^{*} a_2 a_2^{*}}_{a_2}\right|
 \end{multline*}
@@ -934,7 +934,7 @@ b_2^{r} = -a_1+b_2\end{gather}\end{subequations}
 \draw[-> , thick] (0.35, -0.85) -- (0.35, -0.35); 
  \draw[-> , thick] (1.35, -0.85) -- (1.35, -0.35); 
 \draw[<- , thick] (1.15, -0.85) -- (1.15, -0.35); 
-\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $a_1,b_1$\begin{multline*}=+\left(\left|(b_2^{*r}) \cdot (a_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*l})\right|\right)-\left(\left|(b_2^{*l}) \cdot (a_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*r})\right|\right)\end{multline*}
+\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $b_1,a_1$\begin{multline*}=+\left(\left|(b_2^{*r}) \cdot (a_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*l})\right|\right)-\left(\left|(b_2^{*l}) \cdot (a_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*r})\right|\right)\end{multline*}
 \begin{multline*}
 =-4\left|\underbrace{a_1^{*} b_1 a_2 a_2^{*}}_{b_1}\right|-4\left|\underbrace{b_1 b_1^{*} b_2^{*} a_2}_{b_1}\right|
 \end{multline*}
@@ -986,7 +986,7 @@ b_2^{r} = -a_1+b_2\end{gather}\end{subequations}
 \draw[-> , thick] (0.35, -0.85) -- (0.35, -0.35); 
  \draw[-> , thick] (1.35, -0.85) -- (1.35, -0.35); 
 \draw[<- , thick] (1.15, -0.85) -- (1.15, -0.35); 
-\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $a_1,b_1$\begin{multline*}=+\left(\left|(b_2^{r}) \cdot (a_2^{l}) \cdot (a_2^{*l}) \cdot (a_2^{*r})\right|\right)+\left(\left|(b_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*l}) \cdot (a_2^{*r})\right|\right)\end{multline*}
+\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $b_1,a_1$\begin{multline*}=+\left(\left|(b_2^{r}) \cdot (a_2^{l}) \cdot (a_2^{*l}) \cdot (a_2^{*r})\right|\right)+\left(\left|(b_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*l}) \cdot (a_2^{*r})\right|\right)\end{multline*}
 \begin{multline*}
 =-4\left|\underbrace{a_1 b_1 b_1^{*} a_2^{*}}_{a_2}\right|+4\left|\underbrace{b_1^{*} b_2 a_2 a_2^{*}}_{a_2}\right|
 \end{multline*}
@@ -1038,7 +1038,7 @@ b_2^{r} = -a_1+b_2\end{gather}\end{subequations}
 \draw[-> , thick] (0.35, -0.85) -- (0.35, -0.35); 
  \draw[-> , thick] (1.35, -0.85) -- (1.35, -0.35); 
 \draw[<- , thick] (1.15, -0.85) -- (1.15, -0.35); 
-\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $a_1,b_1$\begin{multline*}=+\left(\left|(b_2^{r}) \cdot (a_2^{l}) \cdot (a_2^{*l}) \cdot (a_2^{*r})\right|\right)-\left(\left|(b_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*l}) \cdot (a_2^{*r})\right|\right)\end{multline*}
+\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $b_1,a_1$\begin{multline*}=+\left(\left|(b_2^{r}) \cdot (a_2^{l}) \cdot (a_2^{*l}) \cdot (a_2^{*r})\right|\right)-\left(\left|(b_2^{l}) \cdot (a_2^{r}) \cdot (a_2^{*l}) \cdot (a_2^{*r})\right|\right)\end{multline*}
 \begin{multline*}
 =+4\left|\underbrace{a_1 b_1^{*} a_2 a_2^{*}}_{b_1}\right|+4\left|\underbrace{b_1 b_1^{*} b_2 a_2^{*}}_{b_1}\right|
 \end{multline*}
@@ -1354,7 +1354,7 @@ b_2^{r} = -a_1+b_2\end{gather}\end{subequations}
 \draw[-> , thick] (0.35, -0.85) -- (0.35, -0.35); 
  \draw[-> , thick] (1.35, -0.85) -- (1.35, -0.35); 
 \draw[<- , thick] (1.15, -0.85) -- (1.15, -0.35); 
-\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $a_1,b_1$\begin{multline*}=+\left(\left|(b_2^{r}) \cdot (b_2^{*l}) \cdot (b_2^{*r}) \cdot (a_2^{l})\right|\right)+\left(\left|(b_2^{l}) \cdot (b_2^{*l}) \cdot (b_2^{*r}) \cdot (a_2^{r})\right|\right)\end{multline*}
+\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $b_1,a_1$\begin{multline*}=+\left(\left|(b_2^{r}) \cdot (b_2^{*l}) \cdot (b_2^{*r}) \cdot (a_2^{l})\right|\right)+\left(\left|(b_2^{l}) \cdot (b_2^{*l}) \cdot (b_2^{*r}) \cdot (a_2^{r})\right|\right)\end{multline*}
 \begin{multline*}
 =+4\left|\underbrace{a_1 a_1^{*} b_1 b_2^{*}}_{a_2}\right|-4\left|\underbrace{a_1^{*} b_2 b_2^{*} a_2}_{a_2}\right|
 \end{multline*}
@@ -1406,7 +1406,7 @@ b_2^{r} = -a_1+b_2\end{gather}\end{subequations}
 \draw[-> , thick] (0.35, -0.85) -- (0.35, -0.35); 
  \draw[-> , thick] (1.35, -0.85) -- (1.35, -0.35); 
 \draw[<- , thick] (1.15, -0.85) -- (1.15, -0.35); 
-\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $a_1,b_1$\begin{multline*}=+\left(\left|(b_2^{r}) \cdot (b_2^{*l}) \cdot (b_2^{*r}) \cdot (a_2^{l})\right|\right)-\left(\left|(b_2^{l}) \cdot (b_2^{*l}) \cdot (b_2^{*r}) \cdot (a_2^{r})\right|\right)\end{multline*}
+\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $b_1,a_1$\begin{multline*}=+\left(\left|(b_2^{r}) \cdot (b_2^{*l}) \cdot (b_2^{*r}) \cdot (a_2^{l})\right|\right)-\left(\left|(b_2^{l}) \cdot (b_2^{*l}) \cdot (b_2^{*r}) \cdot (a_2^{r})\right|\right)\end{multline*}
 \begin{multline*}
 =-4\left|\underbrace{a_1 a_1^{*} b_2^{*} a_2}_{b_1}\right|-4\left|\underbrace{a_1^{*} b_1 b_2 b_2^{*}}_{b_1}\right|
 \end{multline*}
@@ -1510,7 +1510,7 @@ b_2^{r} = -a_1+b_2\end{gather}\end{subequations}
 \draw[-> , thick] (0.35, -0.85) -- (0.35, -0.35); 
 \draw[<- , thick] (0.15, -0.85) -- (0.15, -0.35); 
  \draw[-> , thick] (1.35, -0.85) -- (1.35, -0.35); 
-\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $a_1,b_1$\begin{multline*}=+\left(\left|(b_2^{l}) \cdot (b_2^{r}) \cdot (b_2^{*r}) \cdot (a_2^{*l})\right|\right)+\left(\left|(b_2^{l}) \cdot (b_2^{r}) \cdot (b_2^{*l}) \cdot (a_2^{*r})\right|\right)\end{multline*}
+\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $b_1,a_1$\begin{multline*}=+\left(\left|(b_2^{l}) \cdot (b_2^{r}) \cdot (b_2^{*r}) \cdot (a_2^{*l})\right|\right)+\left(\left|(b_2^{l}) \cdot (b_2^{r}) \cdot (b_2^{*l}) \cdot (a_2^{*r})\right|\right)\end{multline*}
 \begin{multline*}
 =-4\left|\underbrace{a_1 a_1^{*} b_1^{*} b_2}_{a_2}\right|+4\left|\underbrace{a_1 b_2 b_2^{*} a_2^{*}}_{a_2}\right|
 \end{multline*}
@@ -1562,7 +1562,7 @@ b_2^{r} = -a_1+b_2\end{gather}\end{subequations}
 \draw[-> , thick] (0.35, -0.85) -- (0.35, -0.35); 
 \draw[<- , thick] (0.15, -0.85) -- (0.15, -0.35); 
  \draw[-> , thick] (1.35, -0.85) -- (1.35, -0.35); 
-\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $a_1,b_1$\begin{multline*}=+\left(\left|(b_2^{l}) \cdot (b_2^{r}) \cdot (b_2^{*r}) \cdot (a_2^{*l})\right|\right)-\left(\left|(b_2^{l}) \cdot (b_2^{r}) \cdot (b_2^{*l}) \cdot (a_2^{*r})\right|\right)\end{multline*}
+\end{tikzpicture}}\right)\]enthaltene Monomer-Symmetrien = $b_1,a_1$\begin{multline*}=+\left(\left|(b_2^{l}) \cdot (b_2^{r}) \cdot (b_2^{*r}) \cdot (a_2^{*l})\right|\right)-\left(\left|(b_2^{l}) \cdot (b_2^{r}) \cdot (b_2^{*l}) \cdot (a_2^{*r})\right|\right)\end{multline*}
 \begin{multline*}
 =+4\left|\underbrace{a_1 a_1^{*} b_2 a_2^{*}}_{b_1}\right|+4\left|\underbrace{a_1 b_1^{*} b_2 b_2^{*}}_{b_1}\right|
 \end{multline*}
@@ -3808,9 +3808,13 @@ $$
 \end{multline*}
 \\\\
 
- \newpage
+ 
 
-plus combination: $i^3 a_1$ and $e^3 a_1$ + $e^3 a_1$ and $i^3 a_1$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+
+\hrule
+\vspace{0.5cm}
+
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -4047,9 +4051,11 @@ $$
 \end{multline*}
 \\\\
 
- \newpage
+ 
+\hrule
+\vspace{0.5cm}
 
-minus combination: $i^3 a_1$ and $e^3 a_1$ - $e^3 a_1$ and $i^3 a_1$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -4290,9 +4296,11 @@ $$
 
  
 
-\newpage
 
-plus combination: $i^3 a_1$ and $e^3 b_{1}$ + $e^3 b_{1}$ and $i^3 a_1$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+\hrule
+\vspace{0.5cm}
+
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -4518,9 +4526,11 @@ $$
 \end{multline*}
 \\\\
 
- \newpage
+ 
+\hrule
+\vspace{0.5cm}
 
-minus combination: $i^3 a_1$ and $e^3 b_{1}$ - $e^3 b_{1}$ and $i^3 a_1$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -4749,9 +4759,11 @@ $$
 
  
 
-\newpage
 
-plus combination: $i^3 a_1$ and $i^3 b_{1}$ + $i^3 b_{1}$ and $i^3 a_1$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+\hrule
+\vspace{0.5cm}
+
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -4977,9 +4989,11 @@ $$
 \end{multline*}
 \\\\
 
- \newpage
+ 
+\hrule
+\vspace{0.5cm}
 
-minus combination: $i^3 a_1$ and $i^3 b_{1}$ - $i^3 b_{1}$ and $i^3 a_1$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -5208,7 +5222,9 @@ $$
 
  
 
-\newpage
+
+\hrule
+\vspace{0.5cm}
 
 identical $e^3 a_1$ and $e^3 a_1$\\
 \[ +\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -5336,9 +5352,13 @@ $$
 \end{multline*}
 \\\\
 
- \newpage
+ 
 
-plus combination: $e^3 a_1$ and $e^3 b_{1}$ + $e^3 b_{1}$ and $e^3 a_1$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+
+\hrule
+\vspace{0.5cm}
+
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -5564,9 +5584,11 @@ $$
 \end{multline*}
 \\\\
 
- \newpage
+ 
+\hrule
+\vspace{0.5cm}
 
-minus combination: $e^3 a_1$ and $e^3 b_{1}$ - $e^3 b_{1}$ and $e^3 a_1$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -5795,9 +5817,11 @@ $$
 
  
 
-\newpage
 
-plus combination: $e^3 a_1$ and $i^3 b_{1}$ + $i^3 b_{1}$ and $e^3 a_1$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+\hrule
+\vspace{0.5cm}
+
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -6023,9 +6047,11 @@ $$
 \end{multline*}
 \\\\
 
- \newpage
+ 
+\hrule
+\vspace{0.5cm}
 
-minus combination: $e^3 a_1$ and $i^3 b_{1}$ - $i^3 b_{1}$ and $e^3 a_1$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -6254,7 +6280,9 @@ $$
 
  
 
-\newpage
+
+\hrule
+\vspace{0.5cm}
 
 identical $e^3 b_{1}$ and $e^3 b_{1}$\\
 \[ +\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -6382,9 +6410,13 @@ $$
 \end{multline*}
 \\\\
 
- \newpage
+ 
 
-plus combination: $e^3 b_{1}$ and $i^3 b_{1}$ + $i^3 b_{1}$ and $e^3 b_{1}$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+
+\hrule
+\vspace{0.5cm}
+
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -6621,9 +6653,11 @@ $$
 \end{multline*}
 \\\\
 
- \newpage
+ 
+\hrule
+\vspace{0.5cm}
 
-minus combination: $e^3 b_{1}$ and $i^3 b_{1}$ - $i^3 b_{1}$ and $e^3 b_{1}$ \[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
+\[ \begin{array}{c}+\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
     % oberste MOs:
     \draw[thick] (0,0) -- (0.5,0); % erster Strich
     \draw[thick] (1,0) -- (1.5,0); % zweiter Strich
@@ -6864,7 +6898,9 @@ $$
 
  
 
-\newpage
+
+\hrule
+\vspace{0.5cm}
 
 identical $i^3 b_{1}$ and $i^3 b_{1}$\\
 \[ +\left(\text{\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -6992,6 +7028,10 @@ $$
 \end{multline*}
 \\\\
 
- \newpage
+ 
+
+
+\hrule
+\vspace{0.5cm}
 
 \end{document}
