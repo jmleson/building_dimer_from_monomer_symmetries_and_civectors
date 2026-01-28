@@ -42,14 +42,14 @@ class Molecule(Enum):
         if self.value == Molecule.C6H6.value:
             first_sym = 3
             always_positive_ci_part_1stsym = {"b1u": 1, "b2g": 1, "b3g": 2, "au": 0}
-            sign_changing_ci_part_1stsym = {"b1u": 0, "b2g": 2, "b3g": 1, "au": 1}
+            sign_changing_ci_part_1stsym = {"b1u": 0, "b2g": 1, "b3g": 2, "au": 1}
             name_1, initial_combination_1 = "$i^3 b_{2u}$", "-"  # state 1 in sym 3
             name_2, initial_combination_2 = "$e^3 b_{2u}$", "+"  # state 2 in sym 3
 
             second_sym = 2
             always_positive_ci_part_2ndsym = {"b1u": 1, "b2g": 1, "b3g": 2, "au": 0}
             sign_changing_ci_part_2ndsym = {"b1u": 0, "b2g": 2, "b3g": 1, "au": 1}
-            name_3, initial_combination_3 = "$e^3 b_{3u}$", "-"# state 1 in sym 2
+            name_3, initial_combination_3 = "$e^3 b_{3u}$", "-" # state 1 in sym 2
             name_4, initial_combination_4 = "$i^3 b_{3u}$", "+" # state 2 in sym 2
         elif self.value == Molecule.C6H5Cl.value or self.value == Molecule.C6H5Cl_rotated.value:
             # <- same triplet calculation since these are monomer properties

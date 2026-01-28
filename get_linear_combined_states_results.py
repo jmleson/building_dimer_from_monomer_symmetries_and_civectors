@@ -6,9 +6,6 @@ from symmetries.linear_combinations.linear_combination_monomer_states import get
 from symmetries.linear_combinations.linear_combination_of_dimeroccstates import linear_combination_of_dimeroccstates
 
 
-
-
-
 def get_linear_combined_states_results(molecule:Molecule, print_ci_vectors:bool, print_symmetries:bool, detailed:bool=False):
     combined_monomer_states = get_monomer_state_linear_combinations(molecule=molecule, detailed=True)[1]
 

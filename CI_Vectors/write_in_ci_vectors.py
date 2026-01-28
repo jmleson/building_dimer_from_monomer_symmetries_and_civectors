@@ -3,6 +3,7 @@ from fractions import Fraction
 from CI_Vectors.get_possible_dimer_ci import get_possible_dimer_ci
 from symmetries.dimer_occ_state import dimer_occ_state
 from symmetries.general_functionalities.monomer_positions import MonomerPositions
+from symmetries.group_theory.PointGroups import POINTGROUP
 from symmetries.linear_combinations import \
     linear_combination_of_dimeroccstates
 
@@ -25,24 +26,25 @@ def write_in_ci_vectors(l:linear_combination_of_dimeroccstates, break_after_numb
     return content, dimer_ci_vectors
 
 
+
+def occupied_mos_to_ci(occupied_mos:dict, monomerposition:MonomerPositions, point_group:POINTGROUP):
+    ci_vector = "".join(
+        str(occupied_mos[irrep][monomerposition])
+        for irrep in point_group.choices_irreduzible_representations_molpro_ordered
+        if irrep in occupied_mos.keys()
+    )
+    ci_vector = ci_vector.replace("1", "a").replace(" ", "0")
+    return ci_vector
+
 def dimer_summand_to_dimer(summand:dimer_occ_state):
     dimer_ci_vectors = []
     content = ""
     # print("dimer_summand_to_dimer", summand, type(summand))
-    summand.occupied_mos.keys()
-    ci_vector_left = "".join(
-        str(summand.occupied_mos[irrep][MonomerPositions.left])
-        for irrep in summand.point_group.choices_irreduzible_representations_molpro_ordered
-        if irrep in summand.occupied_mos
-    )
-    ci_vector_right = "".join(
-        str(summand.occupied_mos[irrep][MonomerPositions.right])
-        for irrep in summand.point_group.choices_irreduzible_representations_molpro_ordered
-        if irrep in summand.occupied_mos
-    )
-
-    ci_vector_right = ci_vector_right.replace("1", "a").replace(" ", "0")
-    ci_vector_left = ci_vector_left.replace("1", "a").replace(" ", "0")
+    # summand.occupied_mos.keys()
+    ci_vector_left = occupied_mos_to_ci(occupied_mos=summand.occupied_mos, monomerposition=MonomerPositions.left,
+                                        point_group=summand.point_group)
+    ci_vector_right = occupied_mos_to_ci(occupied_mos=summand.occupied_mos, monomerposition=MonomerPositions.right,
+                                         point_group=summand.point_group)
 
     factor = summand.sign_and_factor
     if factor == 0:

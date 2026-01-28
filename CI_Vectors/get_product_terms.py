@@ -34,7 +34,7 @@ def draw(l:linear_combination_of_dimeroccstates, point_group: POINTGROUP, detail
         content += name + "\n"
 
     content += l.draw() + "\n\n"
-    content_tmp, dimer_ci_vectors = write_in_ci_vectors(l=l)
+    content_tmp, dimer_ci_vectors = write_in_ci_vectors(l=l, break_after_number_of_terms=4)
     if detailed:
         content += content_tmp
     # print(content_tmp)
