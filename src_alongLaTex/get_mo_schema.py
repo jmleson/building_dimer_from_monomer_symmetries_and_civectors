@@ -67,7 +67,7 @@ def get_mo_schemata(point_group:POINTGROUP, occupied_mos: dict, monomer:MonomerP
             electrons.append(up_left_top)
         if occupied_mos[ point_group.label["oben_links"] ][monomer] > 1:
             electrons.append(down_left_top)
-    if point_group.label["oben_rechts"]  in occupied_mos.keys():
+    if point_group.label["oben_rechts"] in occupied_mos.keys():
         if occupied_mos[ point_group.label["oben_rechts"] ][monomer] > 0:
             electrons.append(up_right_top)
         if occupied_mos[ point_group.label["oben_rechts"] ][monomer] > 1:

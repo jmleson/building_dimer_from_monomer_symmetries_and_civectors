@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.28)  16 FEB 2026 11:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.28)  16 FEB 2026 12:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**C6H6.tex
-(./C6H6.tex
+**Benzene_d2h.tex
+(./Benzene_d2h.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -575,8 +575,8 @@ Package: xparse 2024-08-16 L3 Experimental document command parser
 Package hyperref Info: Option `colorlinks' set `true' on input line 10.
 
 (/home/judith/Schreibtisch/Promotion/building_dimer_from_monomer_symmetries_and
-_civectors/out/C6H6.aux)
-\openout1 = `C6H6.aux'.
+_civectors/out/Benzene_d2h.aux)
+\openout1 = `Benzene_d2h.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -634,11 +634,11 @@ LaTeX Font Info:    ... okay on input line 12.
 Package hyperref Info: Link coloring ON on input line 12.
 
 (/home/judith/Schreibtisch/Promotion/building_dimer_from_monomer_symmetries_and
-_civectors/out/C6H6.out)
+_civectors/out/Benzene_d2h.out)
 (/home/judith/Schreibtisch/Promotion/building_dimer_from_monomer_symmetries_and
-_civectors/out/C6H6.out)
+_civectors/out/Benzene_d2h.out)
 \@outlinefile=\write4
-\openout4 = `C6H6.out'.
+\openout4 = `Benzene_d2h.out'.
 
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -664,323 +664,61 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 (/home/judith/Schreibtisch/Promotion/building_dimer_from_monomer_symmetries_and
-_civectors/out/C6H6.toc)
+_civectors/out/Benzene_d2h.toc)
 \tf@toc=\write5
-\openout5 = `C6H6.toc'.
+\openout5 = `Benzene_d2h.toc'.
 
 
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
 
 
 [2]
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 493
-[]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 521
- []$[]   \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 8 [] + 8 []  $ 
- []
-
-
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 521--522
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 521--522
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 709
-[]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 737
- []$[]   \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 8 [] + 8 []  $ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 737--738
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 737--738
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 925
-[]
- []
-
-
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 954--955
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 954--955
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 1142
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1171--1172
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1171--1172
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 1359
-[]
- []
-
-
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 1388--1389
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1388--1389
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 1576
-[]
- []
-
-
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 1605--1606
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1605--1606
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1731--1732
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1731--1732
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 1919
-[]
- []
-
-
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 1948--1949
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1948--1949
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 2136
-[]
- []
-
-
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 2165--2166
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2165--2166
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 2353
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2382--2383
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2382--2383
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 2570
-[]
- []
-
-
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 2599--2600
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2599--2600
-
- []
-
-
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 2725--2726
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2725--2726
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 2913
-[]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 2941
- []$[]   \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 8 [] + 8 []  $ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2941--2942
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2941--2942
-
- []
-
-
-Overfull \hbox (13.34146pt too wide) detected at line 3129
-[]
- []
-
-
-
-[12]
-Underfull \hbox (badness 10000) detected at line 3157
- []$[]   \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 8 [] + 8 []  $ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3157--3158
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3157--3158
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3283--3284
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3283--3284
-
- []
-
-
-
-[13]
-
-[14]
 (/home/judith/Schreibtisch/Promotion/building_dimer_from_monomer_symmetries_and
-_civectors/out/C6H6.aux)
+_civectors/out/Benzene_d2h.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-Package rerunfilecheck Warning: File `C6H6.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `C6H6.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  690C94A2BA33089F3F9356B432A868A5;710.
+Package rerunfilecheck Info: File `Benzene_d2h.out' has not changed.
+(rerunfilecheck)             Checksum: D6B8F6AB8B3BEDEAB181CF624056A4B5;187.
  ) 
 Here is how much of TeX's memory you used:
- 21589 strings out of 473197
- 408034 string characters out of 5718604
- 865759 words of memory out of 5000000
- 44505 multiletter control sequences out of 15000+600000
- 559896 words of font info for 40 fonts, out of 8000000 for 9000
+ 20638 strings out of 473197
+ 381276 string characters out of 5718604
+ 764492 words of memory out of 5000000
+ 43575 multiletter control sequences out of 15000+600000
+ 560204 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,15n,107p,802b,770s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+ 102i,8n,107p,477b,580s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb>
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb>
 Output written on /home/judith/Schreibtisch/Promotion/building_dimer_from_monom
-er_symmetries_and_civectors/out/C6H6.pdf (14 pages, 123781 bytes).
+er_symmetries_and_civectors/out/Benzene_d2h.pdf (2 pages, 79516 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 28 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
+ 6 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

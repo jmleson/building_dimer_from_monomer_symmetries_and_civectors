@@ -1,7 +1,7 @@
 import copy
 from typing import Dict, List
 
-from src_alongLaTex.latex.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
+from src.latex.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
 from src_alongLaTex.symmetries.group_theory.PointGroups import POINTGROUP
 from src_alongLaTex.symmetries.basisclass_handeling_mos import handeling_mos
 from src_alongLaTex.symmetries.general_functionalities.monomer_positions import MonomerPositions

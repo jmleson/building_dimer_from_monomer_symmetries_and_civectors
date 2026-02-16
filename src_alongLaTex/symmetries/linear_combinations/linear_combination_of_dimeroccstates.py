@@ -1,6 +1,6 @@
 from typing import List
 
-from src_alongLaTex.latex.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
+from src.latex.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
 from src_alongLaTex.latex.signed_number_to_latex_number import signed_number_to_latex_number
 from src_alongLaTex.symmetries.group_theory.PointGroups import POINTGROUP
 from src_alongLaTex.symmetries.mathematics.term_step import term_step

@@ -7,6 +7,7 @@ class latex_equation_types(Enum):
     DISPLAYED = {"start": "$$", "end": "$$"}
     MULTLINE = {"start":  r"\begin{multline*}" , "end": r"\end{multline*}"}
     BASIC = {"start": r"\[", "end": r"\]"}
+    SUBEQ = {"start": r"\begin{subequations}\begin{gather*}"+"\n", "end": "\n"+r"\end{gather*}\end{subequations}"}
 
 
 
