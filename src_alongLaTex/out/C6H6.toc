@@ -1,0 +1,3 @@
+\contentsline {section}{\numberline {1}Orbitals And Their Symmetry}{2}{section.1}%
+\contentsline {section}{\numberline {2}Monomer States and Configurations}{3}{section.2}%
+\contentsline {section}{\numberline {3}Linear Combinations: 16 Monomer- / 8 Dimer-States}{4}{section.3}%
