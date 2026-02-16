@@ -1,6 +1,7 @@
 import unittest
 
 from src.CI_ORDERING import CI_ORDERING
+from src.Molecule import Molecule
 from src.MonomerOccupation import MonomerOccupation
 from src.MonomerState import MonomerState
 from src.Sign import SIGN
@@ -47,10 +48,18 @@ class TestMonomerState(unittest.TestCase):
 
         m = MonomerState(label="i^3 b_{2u}", point_group=p, symmetry_index = 3 )
         m.set_monomer_occupations(always_positive_monomer_occupation=m1, additive_monomer_occupation=m2, combination=SIGN.MINUS)
-
         m.latex_picture(draw_label=False)
-
         assert m.latex_ci_equation(order=CI_ORDERING.molpro) == r"\left|a2a0\right| - \left|0a2a\right|"
+
+
+    def test_getting_monomer_states(self):
+        triplets = Molecule.C6H6.get_ci_vectors_triplets()
+        strings = [t.latex_ci_equation(order = CI_ORDERING.molpro) for t in triplets]
+        assert len(strings) == 4
+        assert r"\left|a2a0\right| - \left|0a2a\right|" in strings
+        assert r"\left|a2a0\right| + \left|0a2a\right|" in strings
+        assert r"\left|aa20\right| - \left|02aa\right|" in strings
+        assert r"\left|aa20\right| + \left|02aa\right|" in strings
 
 
 
