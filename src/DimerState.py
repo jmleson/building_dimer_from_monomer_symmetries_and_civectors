@@ -57,16 +57,16 @@ class DimerState:
             eq += "multiplied out:\n"
             eq += self.monomer_determinants(multiplied_out=True)
 
-            eq += self.get_multiplied_out_determinants()
+            # eq += self.get_multiplied_out_determinants()
 
         return eq + "\n" + r"\vspace{0.5cm}" + "\n"
 
 
     def get_multiplied_out_determinants(self):
         eq = get_array_environment(
-            [i.get_multiplied_out_determinants() for i in self.dimer_occupations],
+            [i.get_multiplied_out_determinants()+"\n" for i in self.dimer_occupations[0:1]],
             breaking_after=6)
-        return get_expression_as_latex_formula(eq, latex_equation_types.MULTLINE)
+        return get_expression_as_latex_formula(eq, latex_equation_types.MULTLINE)+"\n"
 
 
     def latex_picture(self,draw_label:bool=False):

@@ -14,5 +14,4 @@ def get_dimer_states_and_configurations(molecule:Molecule, ordering:CI_ORDERING)
         start += r"\hrule" + "\n" + r"\vspace{0.5cm}" + "\n"
 
 
-
     return start + r"\newpage" + "\n\n"

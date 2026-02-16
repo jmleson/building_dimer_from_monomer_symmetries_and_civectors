@@ -3,6 +3,9 @@ import unittest
 from src.DimerOccupation import DimerOccupation
 from src.Molecule import Molecule
 from src.building_blocks.MonomerOccupation import MonomerOccupation
+from src.latex.basic_latex_header import basic_latex_header
+from src.latex.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
+from src.latex.wrap_tikz_picture import wrap_tikz_picture
 from src.mathematics.Sign import SIGN
 from src.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
 from src.symmetries.POINTGROUP import POINTGROUP
@@ -60,6 +63,7 @@ class TestDimerStates(unittest.TestCase):
         d.multiply_out()
         assert len(d.determinants) == 4*4
 
-        print( d.get_multiplied_out_determinants() )
+        strings = [det.determinants_string() for det in d.determinants]
+        assert r"+1 \cdot{} \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1g} }_{a_{g}}\right|" in strings
 
 

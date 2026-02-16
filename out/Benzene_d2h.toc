@@ -1,2 +1,0 @@
-\contentsline {section}{\numberline {1}Orbitals And Their Symmetry}{2}{section.1}%
-\contentsline {section}{\numberline {2}Monomer States and Configurations}{3}{section.2}%

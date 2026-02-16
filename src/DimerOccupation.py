@@ -37,9 +37,7 @@ class DimerOccupation:
 
     def get_multiplied_out_determinants(self):
         self.multiply_out()
-        eq = ""
-        for det in self.determinants:
-            eq += det.determinants()
+        eq = "\n".join([det.determinants_string() for det in self.determinants])
         return eq
 
 

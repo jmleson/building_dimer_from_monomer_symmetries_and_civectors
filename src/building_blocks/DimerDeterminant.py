@@ -9,12 +9,11 @@ class DimerDeterminant():
     def __init__(self, orbital_symmetry_labels:list[str], sign:SIGN, point_group:POINTGROUP):
         self.orbitals = [Orbital(sym_label=i.replace("-","").replace("+",""),
                                  occupation=1, point_group=point_group)
-                         for i in orbital_symmetry_labels]
+                         for i in orbital_symmetry_labels]#TODO sortieren
         self.point_group = point_group
 
         self.sign = sign
         self.prefactor = 1
-
 
     def determine_symmetry(self):
         sym = self.point_group.total_symmetric
@@ -22,14 +21,33 @@ class DimerDeterminant():
             sym = self.point_group.product(sym, i.sym_label)
         return sym
 
-
-    def determinants(self):
+    def determinants_string(self):
         eq = self.sign.value + str(abs(self.prefactor)) + r" \cdot{} \left| "
-        eq += r"\underbrace{"
+        eq += r"\underbrace{ "
         inbetween = "".join(
             [format_irred_representations(i.sym_label) for i in self.orbitals ]
         )
-        eq += inbetween + "_{" + format_irred_representations(self.determine_symmetry())  + r"}"
+        eq += inbetween + " }_{" + format_irred_representations(self.determine_symmetry())  + r"}"
         return eq + r"\right|"
+
+
+    def addable(self, other):
+        if not isinstance(other, DimerDeterminant):
+            return False
+        if self.point_group.value != other.point_group.value:
+            return False
+        if len(self.orbitals) != len(other.orbitals):
+            return False
+        for i in range(len(self.orbitals)):
+            if self.orbitals[i] != other.orbitals[i]:
+                return False
+        return True
+
+    def __eq__(self, other):
+        if not self.addable(other):
+            return False
+        if self.prefactor != other.prefactor:
+            return False
+        return True
 
 

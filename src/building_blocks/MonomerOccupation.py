@@ -82,15 +82,12 @@ class MonomerOccupation:
         return orbitals
 
     def monomer_determinant_content(self, side:str, multiplied_out:bool):
-        eq = (r"\left(" +
-              "".join(
-                  [format_irred_representations(i)
-                   for i in self.get_single_occupied_orbital_labels(side, multiplied_out)
-                  ]
-              ) + r"\right)")
+        eq = "".join(
+                      [r"\left(" + format_irred_representations(i) + r"\right)"
+                       for i in self.get_single_occupied_orbital_labels(side, multiplied_out)
+                      ]
+                  )
         return eq
-
-
 
 
     def __eq__(self, other):
