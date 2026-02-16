@@ -56,8 +56,10 @@ class MonomerOccupation:
         else:
             raise Exception("nyi")
 
-        ranking = {label: i for i, label in enumerate(order)}
-
+        ranking = {
+            **{label: i for i, label in enumerate(order)},
+            **{label + "*": i + 0.5 for i, label in enumerate(order)},
+        }
         orbitals.sort(key=lambda orb: ranking[orb.sym_label])
 
         return orbitals

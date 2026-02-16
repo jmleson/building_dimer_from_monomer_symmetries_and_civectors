@@ -23,14 +23,14 @@ class TestMonomerState(unittest.TestCase):
 
         s = m.latex_picture(draw_label=False)
         s = s.replace(" ", "").replace("\t", "").replace("\n", "").replace("%lowerMOs:", "").replace("%upperMOs:", "")
-        assert s == "\draw[thick](0,-0.6)--(0.5,-0.6)%node[pos=0,left]{$b_{2g}$}%;\draw[thick](1,-0.6)--(1.5,-0.6)%%node[pos=1,right]{$b_{3g}$};\draw[thick](0,0)--(0.5,0)%node[pos=0,left]{$b_{1u}$}%;\draw[thick](1,0)--(1.5,0)%%node[pos=1,right]{$a_{u}$};"
+        assert s == r"\draw[thick](0,-0.6)--(0.5,-0.6)%node[pos=0,left]{$b_{2g}$};;\draw[thick](1,-0.6)--(1.5,-0.6)%node[pos=1,right]{$b_{3g}$};;\draw[thick](0,0)--(0.5,0)%node[pos=0,left]{$b_{1u}$};;\draw[thick](1,0)--(1.5,0)%node[pos=1,right]{$a_{u}$};;"
         s = [i for i in s.split(";") if len(i) > 0]
         assert len(s) == 4
 
 
         s = m.latex_picture(draw_label=True)
         s = s.replace(" ", "").replace("\t", "").replace("\n", "").replace("%lowerMOs:", "").replace("%upperMOs:", "")
-        assert s == "\draw[thick](0,-0.6)--(0.5,-0.6)node[pos=0,left]{$b_{2g}$};\draw[thick](1,-0.6)--(1.5,-0.6)node[pos=1,right]{$b_{3g}$};\draw[thick](0,0)--(0.5,0)node[pos=0,left]{$b_{1u}$};\draw[thick](1,0)--(1.5,0)node[pos=1,right]{$a_{u}$};"
+        assert s == r"\draw[thick](0,-0.6)--(0.5,-0.6)node[pos=0,left]{$b_{2g}$};;\draw[thick](1,-0.6)--(1.5,-0.6)node[pos=1,right]{$b_{3g}$};;\draw[thick](0,0)--(0.5,0)node[pos=0,left]{$b_{1u}$};;\draw[thick](1,0)--(1.5,0)node[pos=1,right]{$a_{u}$};;"
         s = [i for i in s.split(";") if len(i) > 0]
         assert len(s) == 4
 
@@ -46,7 +46,7 @@ class TestMonomerState(unittest.TestCase):
         m2.set_occupation({"b1u": 0, "b2g": 1, "b3g": 2, "au": 1})
         assert m2.latex_ci_equation(order=CI_ORDERING.molpro) == r"\left|0a2a\right|"
 
-        m = MonomerState(label="i^3 b_{2u}", point_group=p, symmetry_index = 3 )
+        m = MonomerState(label="i^3 b_{2u}", point_group=p, molpro_symmetry_number= 3)
         m.set_monomer_occupations(always_positive_monomer_occupation=m1, additive_monomer_occupation=m2, combination=SIGN.MINUS)
         m.latex_picture(draw_label=False)
         assert m.latex_ci_equation(order=CI_ORDERING.molpro) == r"\left|a2a0\right| - \left|0a2a\right|"
@@ -60,6 +60,18 @@ class TestMonomerState(unittest.TestCase):
         assert r"\left|a2a0\right| + \left|0a2a\right|" in strings
         assert r"\left|aa20\right| - \left|02aa\right|" in strings
         assert r"\left|aa20\right| + \left|02aa\right|" in strings
+
+        triplets_Cl = Molecule.C6H5Cl.get_ci_vectors_triplets()
+        strings_Cl = [t.latex_ci_equation(order=CI_ORDERING.molpro) for t in triplets_Cl]
+        assert len(strings_Cl) == 4
+        assert r"\left|aa20\right| - \left|20aa\right|" in strings_Cl
+        assert r"\left|aa20\right| + \left|20aa\right|" in strings_Cl
+        assert r"\left|2aa0\right| - \left|a02a\right|" in strings_Cl
+        assert r"\left|2aa0\right| + \left|a02a\right|" in strings_Cl
+
+        # triplets_rotated_Cl = Molecule.C6H5Cl_rotated.get_ci_vectors_triplets()
+        # strings_rotated_Cl = [t.latex_ci_equation(order=CI_ORDERING.molpro) for t in triplets_rotated_Cl]
+        # assert strings_rotated_Cl == strings_Cl
 
 
 

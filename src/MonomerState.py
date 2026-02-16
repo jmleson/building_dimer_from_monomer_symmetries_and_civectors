@@ -7,12 +7,12 @@ from src.symmetries.POINTGROUP import POINTGROUP
 
 class MonomerState:
 
-    def __init__(self, point_group:POINTGROUP, label:str, symmetry_index:int):
-        if symmetry_index >= len(point_group.choices_irreduzible_representations_molpro_ordered):
+    def __init__(self, point_group:POINTGROUP, label:str, molpro_symmetry_number:int):
+        if molpro_symmetry_number >= len(point_group.choices_irreduzible_representations_molpro_ordered):
             raise Exception("wrong symmetry index")
         self.point_group = point_group
         self.label = label
-        self.symmetry_index = symmetry_index
+        self.symmetry_index = molpro_symmetry_number
 
         self.always_positive_monomer_occupation = None
         self.additive_monomer_occupation = None
