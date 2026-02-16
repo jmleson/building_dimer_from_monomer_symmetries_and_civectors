@@ -2,9 +2,9 @@ import unittest
 
 from src.CI_ORDERING import CI_ORDERING
 from src.Molecule import Molecule
-from src.MonomerOccupation import MonomerOccupation
-from src.MonomerState import MonomerState
-from src.Sign import SIGN
+from src.building_blocks.MonomerOccupation import MonomerOccupation
+from src.building_blocks.MonomerState import MonomerState
+from src.building_blocks.Sign import SIGN
 from src.symmetries.POINTGROUP import POINTGROUP
 
 
@@ -51,19 +51,27 @@ class TestMonomerState(unittest.TestCase):
         m.latex_picture(draw_label=False)
         assert m.latex_ci_equation(order=CI_ORDERING.molpro) == r"\left|a2a0\right| - \left|0a2a\right|"
 
+        assert m.get_multiplicity() == 3
+
 
     def test_getting_monomer_states(self):
         triplets = Molecule.C6H6.get_ci_vectors_triplets()
         strings = [t.latex_ci_equation(order = CI_ORDERING.molpro) for t in triplets]
-        assert len(strings) == 4
+        assert len(strings) == 6
+        assert r"\left|aaaa\right|" in strings
+        assert r"\left|0220\right|" in strings
         assert r"\left|a2a0\right| - \left|0a2a\right|" in strings
         assert r"\left|a2a0\right| + \left|0a2a\right|" in strings
         assert r"\left|aa20\right| - \left|02aa\right|" in strings
         assert r"\left|aa20\right| + \left|02aa\right|" in strings
+        multiplicities = [t.get_multiplicity() for t in triplets]
+        assert sorted(multiplicities) == [1, 3, 3, 3, 3, 5]
 
         triplets_Cl = Molecule.C6H5Cl.get_ci_vectors_triplets()
         strings_Cl = [t.latex_ci_equation(order=CI_ORDERING.molpro) for t in triplets_Cl]
-        assert len(strings_Cl) == 4
+        assert len(strings_Cl) == 6
+        assert r"\left|aaaa\right|" in strings
+        assert r"\left|0220\right|" in strings
         assert r"\left|aa20\right| - \left|20aa\right|" in strings_Cl
         assert r"\left|aa20\right| + \left|20aa\right|" in strings_Cl
         assert r"\left|2aa0\right| - \left|a02a\right|" in strings_Cl

@@ -1,5 +1,5 @@
 from src.Molecule import Molecule
-from src.MonomerOccupation import MonomerOccupation
+from src.building_blocks.MonomerOccupation import MonomerOccupation
 from src.latex.format_irred_representations import format_irred_representations
 from src.latex.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
 from src.latex.wrap_tikz_picture import wrap_tikz_picture

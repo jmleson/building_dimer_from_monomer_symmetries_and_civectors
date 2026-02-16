@@ -1,8 +1,8 @@
 from enum import Enum
 
-from src.MonomerOccupation import MonomerOccupation
-from src.MonomerState import MonomerState
-from src.Sign import SIGN
+from src.building_blocks.MonomerOccupation import MonomerOccupation
+from src.building_blocks.MonomerState import MonomerState
+from src.building_blocks.Sign import SIGN
 from src.symmetries.POINTGROUP import POINTGROUP
 
 
@@ -31,6 +31,19 @@ class Molecule(Enum):
         return ""
 
     def get_ci_vectors_triplets(self):
+        s = MonomerOccupation(point_group=self.get_point_group())
+        s.set_occupation({"left_bottom": 2, "right_bottom": 2, "left_top": 0, "right_top": 0})
+        singlet = MonomerState(label="S", molpro_symmetry_number=1, point_group=self.get_point_group())
+        singlet.set_monomer_occupations(always_positive_monomer_occupation=s,
+                                      additive_monomer_occupation=None, combination=SIGN.PLUS)
+
+        q = MonomerOccupation(point_group=self.get_point_group())
+        q.set_occupation({"left_bottom": 1, "right_bottom": 1, "left_top": 1, "right_top": 1})
+        quintet = MonomerState(label="Q", molpro_symmetry_number=1, point_group=self.get_point_group())
+        quintet.set_monomer_occupations(always_positive_monomer_occupation=q,
+                                        additive_monomer_occupation=None, combination=SIGN.PLUS)
+
+
         if self.value == Molecule.C6H6.value:
             always_positive_m = MonomerOccupation(point_group=self.get_point_group())
             always_positive_m.set_occupation({"b1u": 1, "b2g": 2, "b3g": 1, "au": 0})
@@ -96,4 +109,4 @@ class Molecule(Enum):
         else:
             raise Exception("to be defined: triplet ci vectors")
 
-        return [triplet_1, triplet_2, triplet_3, triplet_4]
+        return [singlet, quintet, triplet_1, triplet_2, triplet_3, triplet_4]

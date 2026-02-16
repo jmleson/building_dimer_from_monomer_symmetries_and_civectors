@@ -1,5 +1,5 @@
 from src.CI_ORDERING import CI_ORDERING
-from src.Orbital import Orbital
+from src.building_blocks.Orbital import Orbital
 
 
 class MonomerOccupation:

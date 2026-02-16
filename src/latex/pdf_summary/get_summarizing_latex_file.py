@@ -15,7 +15,9 @@ def get_summarizing_latex_file(molecule:Molecule, order:CI_ORDERING):
 
     chapter1 = orbitals_and_their_symmetry_chapter(molecule=molecule)
 
-    chapter2 = get_monomer_states_and_configurations(molecule=molecule, order=order)
+    chapter2, monomer_states = get_monomer_states_and_configurations(molecule=molecule, order=order)
+
+    # content = get_dimer_states_and_configurations(molecule=molecule, order=order)
 
     end = r"\end{document}"
     with open(f"src/resulting_tex_files/{molecule.value}_{molecule.get_point_group().value}.tex", "w") as file:
@@ -27,4 +29,4 @@ def get_summarizing_latex_file(molecule:Molecule, order:CI_ORDERING):
 
 
 if __name__ == '__main__':
-    tikz = get_summarizing_latex_file(Molecule.C6H5Cl, order=CI_ORDERING.molpro)
+    tikz = get_summarizing_latex_file(Molecule.C6H6, order=CI_ORDERING.molpro)
