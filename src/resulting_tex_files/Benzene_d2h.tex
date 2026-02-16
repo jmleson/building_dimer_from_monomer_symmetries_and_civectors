@@ -19,23 +19,27 @@
 \vspace{2cm}
 We use the following order of orbitals here (assuming degeneracy of LUMOs and HOMOs): 
 
-$$\begin{tikzpicture}[baseline={(current bounding box.center)}]% lower MOs:
+$$\begin{tikzpicture}[baseline={(current bounding box.center)}]
+% lower MOs:
 \draw[thick] (0,-0.6) -- (0.5,-0.6)node[pos=0, left] {$b_{2g}$}
-;\draw[thick] (1,-0.6) -- (1.5,-0.6)node[pos=1, right] {$b_{3g}$}
-;% upper MOs:
+;;\draw[thick] (1,-0.6) -- (1.5,-0.6)node[pos=1, right] {$b_{3g}$}
+;;
+% upper MOs:
 \draw[thick] (0,0) -- (0.5,0)node[pos=0, left] {$b_{1u}$}
-;\draw[thick] (1,0) -- (1.5,0)node[pos=1, right] {$a_{u}$}
-;
+;;\draw[thick] (1,0) -- (1.5,0)node[pos=1, right] {$a_{u}$}
+;;
 \end{tikzpicture}$$
 In the following, we will leave out the explicit labeling by orbital symmetry. Each monomer will simply be written as:
 
-$$\begin{tikzpicture}[baseline={(current bounding box.center)}]% lower MOs:
-\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}%
-;\draw[thick] (1,-0.6) -- (1.5,-0.6)%%node[pos=1, right] {$b_{3g}$}
-;% upper MOs:
-\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}%
-;\draw[thick] (1,0) -- (1.5,0)%%node[pos=1, right] {$a_{u}$}
-;
+$$\begin{tikzpicture}[baseline={(current bounding box.center)}]
+% lower MOs:
+\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
+;;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
+;;
+% upper MOs:
+\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
+;;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
+;;
 \end{tikzpicture}$$
 where the character of the orbital is defined by its position. \\ \\ 
 
@@ -51,6 +55,105 @@ b_{1u}^{r} = -a_{g}+b_{1u}  \\
 b_{2g}^{r} = -b_{3u}+b_{2g}  \\
 b_{3g}^{r} = -b_{2u}+b_{3g}
 \end{gather*}\end{subequations}
+\newpage
+
+\section{Monomer States and Configurations} 
+\[i^3 b_{2u} = 
+ \quad + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
+% lower MOs:
+\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
+;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; 
+ \draw[<-, thick] (0.15, -0.85) -- (0.15, -0.35) ; ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
+;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; ;
+% upper MOs:
+\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
+;\draw[->, thick] (0.35, -0.25) -- (0.35, 0.25) ; ;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
+;;
+\end{tikzpicture}\right) 
+- \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
+% lower MOs:
+\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
+;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
+;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; 
+ \draw[<-, thick] (1.15, -0.85) -- (1.15, -0.35) ; ;
+% upper MOs:
+\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
+;;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
+;\draw[->, thick] (1.35, -0.25) -- (1.35, 0.25) ; ;
+\end{tikzpicture}\right) 
+ \quad = \left|a2a0\right| - \left|0a2a\right|\]
+\[e^3 b_{2u} = 
+ \quad + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
+% lower MOs:
+\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
+;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; 
+ \draw[<-, thick] (0.15, -0.85) -- (0.15, -0.35) ; ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
+;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; ;
+% upper MOs:
+\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
+;\draw[->, thick] (0.35, -0.25) -- (0.35, 0.25) ; ;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
+;;
+\end{tikzpicture}\right) 
++ \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
+% lower MOs:
+\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
+;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
+;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; 
+ \draw[<-, thick] (1.15, -0.85) -- (1.15, -0.35) ; ;
+% upper MOs:
+\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
+;;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
+;\draw[->, thick] (1.35, -0.25) -- (1.35, 0.25) ; ;
+\end{tikzpicture}\right) 
+ \quad = \left|a2a0\right| + \left|0a2a\right|\]
+\[e^3 b_{3u} = 
+ \quad + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
+% lower MOs:
+\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
+;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
+;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; 
+ \draw[<-, thick] (1.15, -0.85) -- (1.15, -0.35) ; ;
+% upper MOs:
+\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
+;\draw[->, thick] (0.35, -0.25) -- (0.35, 0.25) ; ;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
+;;
+\end{tikzpicture}\right) 
+- \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
+% lower MOs:
+\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
+;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; 
+ \draw[<-, thick] (0.15, -0.85) -- (0.15, -0.35) ; ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
+;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; ;
+% upper MOs:
+\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
+;;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
+;\draw[->, thick] (1.35, -0.25) -- (1.35, 0.25) ; ;
+\end{tikzpicture}\right) 
+ \quad = \left|aa20\right| - \left|02aa\right|\]
+\[i^3 b_{3u} = 
+ \quad + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
+% lower MOs:
+\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
+;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
+;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; 
+ \draw[<-, thick] (1.15, -0.85) -- (1.15, -0.35) ; ;
+% upper MOs:
+\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
+;\draw[->, thick] (0.35, -0.25) -- (0.35, 0.25) ; ;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
+;;
+\end{tikzpicture}\right) 
++ \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
+% lower MOs:
+\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
+;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; 
+ \draw[<-, thick] (0.15, -0.85) -- (0.15, -0.35) ; ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
+;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; ;
+% upper MOs:
+\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
+;;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
+;\draw[->, thick] (1.35, -0.25) -- (1.35, 0.25) ; ;
+\end{tikzpicture}\right) 
+ \quad = \left|aa20\right| + \left|02aa\right|\]
 \newpage
 
 \end{document}

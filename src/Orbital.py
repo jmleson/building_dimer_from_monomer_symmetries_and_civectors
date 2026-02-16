@@ -10,6 +10,11 @@ class Orbital():
         self.occupation = occupation
         self.sym_label = sym_label
 
+    def get_occupation_string(self):
+        if self.occupation == 1:
+            return "a"
+        return str(self.occupation)
+
     def latex_picture(self, x_left, height, node_position:str, draw_label:bool=False):
         if node_position not in ["left", "right"]:
             raise Exception("Invalid node position")
@@ -19,21 +24,23 @@ class Orbital():
         arrow_x = 0.25
 
         basic_tikz_element =  fr"""\draw[thick] ({x_left},{height}) -- ({x_left + width},{height})"""
-        if not draw_label:
-            basic_tikz_element += "%"
         if node_position == "left":
-            basic_tikz_element += fr"""node[pos=0, left] {{${format_irred_representations(self.sym_label)}$}}"""
-        if not draw_label:
-            basic_tikz_element += "%"
-        if node_position == "right":
-            basic_tikz_element += fr"""node[pos=1, right] {{${format_irred_representations(self.sym_label)}$}}"""
+            if not draw_label:
+                basic_tikz_element += "%"
+            basic_tikz_element += fr"""node[pos=0, left] {{${format_irred_representations(self.sym_label)}$}}""" + "\n"
 
+        if node_position == "right":
+            if not draw_label:
+                basic_tikz_element += "%"
+            basic_tikz_element += fr"""node[pos=1, right] {{${format_irred_representations(self.sym_label)}$}}""" + "\n"
+
+        basic_tikz_element += ";"
         electrons = []
         if self.occupation > 0:
-            up_left_top = fr"\draw[->, thick] ({x_left + arrow_x + padding}, {height - arrow_height}) -- ({x_left + arrow_x + padding}, {height + arrow_height}); "
+            up_left_top = fr"\draw[->, thick] ({x_left + arrow_x + padding}, {height - arrow_height}) -- ({x_left + arrow_x + padding}, {height + arrow_height}) ; "
             electrons.append(up_left_top)
         if self.occupation > 1:
-            down_left_top = fr" \draw[<-, thick] ({x_left + arrow_x - padding}, {height - arrow_height}) -- ({x_left + arrow_x - padding}, {height + arrow_height}); "
+            down_left_top = fr" \draw[<-, thick] ({x_left + arrow_x - padding}, {height - arrow_height}) -- ({x_left + arrow_x - padding}, {height + arrow_height}) ; "
             electrons.append(down_left_top)
-        return basic_tikz_element + "\n".join([e for e in electrons])+ "\n" + ";"
+        return basic_tikz_element + "\n".join([e for e in electrons]) + ";"
 
