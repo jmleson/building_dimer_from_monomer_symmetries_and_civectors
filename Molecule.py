@@ -41,7 +41,7 @@ class Molecule(Enum):
     def get_ci_vectors_triplets(self):
         if self.value == Molecule.C6H6.value:
             first_sym = 3
-            always_positive_ci_part_1stsym = {"b1u": 1, "b2g": 1, "b3g": 2, "au": 0}
+            always_positive_ci_part_1stsym = {"b1u": 1, "b2g": 2, "b3g": 1, "au": 0}#!
             sign_changing_ci_part_1stsym = {"b1u": 0, "b2g": 1, "b3g": 2, "au": 1}
             name_1, initial_combination_1 = "$i^3 b_{2u}$", "-"  # state 1 in sym 3
             name_2, initial_combination_2 = "$e^3 b_{2u}$", "+"  # state 2 in sym 3

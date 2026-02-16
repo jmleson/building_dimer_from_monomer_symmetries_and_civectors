@@ -58,10 +58,13 @@ def dimer_summand_to_dimer(summand:dimer_occ_state):
                 + r" \cdot " + r"\left|" f" {ci_vector_right} " + r"\right|" + " \n")
 
     counted_dimer_possibilities = get_possible_dimer_ci(ci_vector_left, ci_vector_right)
-    number_total = sum([c["count"] for c in counted_dimer_possibilities])
+    number_total = sum([abs(c["count"]) for c in counted_dimer_possibilities])
 
     for ci in counted_dimer_possibilities:
-        factor = Fraction(summand.sign_and_factor, number_total) * ci["count"]
+        if number_total == 0:
+            factor = 0
+        else:
+            factor = Fraction(summand.sign_and_factor, number_total) * ci["count"]
         item = {"factor": factor, "sequence": ci["sequence"]}
         dimer_ci_vectors.append(item)
     return content, dimer_ci_vectors

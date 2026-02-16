@@ -19,6 +19,11 @@ class linear_combination_of_dimeroccstates:
     def add(self, other):
         for d in other.dimer_occ_states:
             self.dimer_occ_states.append(d)
+
+    def change_sign(self):
+        for d in range(len(self.dimer_occ_states)):
+            self.dimer_occ_states[d].sign_and_factor = -self.dimer_occ_states[d].sign_and_factor
+            # self.dimer_occ_states[d].set_up()
     
     def check_validity(self):
         for d in range(len(self.dimer_occ_states)):

@@ -4,7 +4,7 @@ from typing import List, Tuple, Dict
 
 from latex.signed_number_to_latex_number import signed_number_to_latex_number
 from symmetries.group_theory.multipling_irred import multipling_irred
-from symmetries.general_functionalities.count_swaps import count_swaps
+from symmetries.general_functionalities.count_swaps import count_swaps_unique
 
 
 class handeling_mos(object):
@@ -44,7 +44,7 @@ class handeling_mos(object):
             sorted_combination = sorted(sorted_combination,
                                         key=lambda x: self.point_group.choices_irreduzible_representations_molpro_ordered.index(x))
             # check sign (number of switches within order equal -> sign stays, otherwise sign gets changed):
-            counted_swaps_between_lists = count_swaps(sorted_combination, combination, print_error=False)
+            counted_swaps_between_lists = count_swaps_unique(sorted_combination, combination, print_error=False)
             if counted_swaps_between_lists % 2 == 1:
                 product_term_sorted["amount"] = -product_term["amount"]
 
