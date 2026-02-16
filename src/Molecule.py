@@ -2,7 +2,7 @@ from enum import Enum
 
 from src.building_blocks.MonomerOccupation import MonomerOccupation
 from src.building_blocks.MonomerState import MonomerState
-from src.building_blocks.Sign import SIGN
+from src.mathematics.Sign import SIGN
 from src.symmetries.POINTGROUP import POINTGROUP
 
 

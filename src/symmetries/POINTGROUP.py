@@ -1,5 +1,8 @@
 from enum import Enum
 
+from src.symmetries.c2h_product import c2h_product
+from src.symmetries.c2v_product import c2v_product
+from src.symmetries.d2h_product import d2h_product
 
 
 class POINTGROUP(Enum):
@@ -29,6 +32,7 @@ class POINTGROUP(Enum):
                 "b3g^{r}": "-b2u+b3g"
             }
             obj.label_ordering_in_monomer_occupation = {"left_top": "b1u", "right_top": "au", "left_bottom": "b2g", "right_bottom": "b3g"}
+            obj.product = d2h_product
         elif value == "c2v":
             obj.total_symmetric = "a1"
             obj.choices_irreduzible_representations_molpro_ordered = ('a1', 'a1*', 'b1', 'b1*', 'b2', 'b2*', 'a2', 'a2*')
@@ -43,6 +47,7 @@ class POINTGROUP(Enum):
                 "b2^{r}":   "-a1+b2"
             }
             obj.label_ordering_in_monomer_occupation = {"left_top": "b2*", "right_top": "a2*", "left_bottom": "a2", "right_bottom": "b2"}
+            obj.product = c2v_product
         elif value == "c2h":
             obj.total_symmetric = "ag"
             obj.choices_irreduzible_representations_molpro_ordered = ('ag', 'ag*', 'bg', 'bg*', 'bu', 'bu*', 'au', 'au*')#Dimer
@@ -57,6 +62,7 @@ class POINTGROUP(Enum):
                 "b2^{r}":   "-ag+bu"
             }
             obj.label_ordering_in_monomer_occupation = {"left_top": "b2*", "right_top": "a2*", "left_bottom": "a2", "right_bottom": "b2"}
+            obj.product = c2h_product
         else:
             raise Exception("No class logic for this point group.")
         return obj

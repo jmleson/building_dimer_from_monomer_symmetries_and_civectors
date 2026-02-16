@@ -1,16 +1,18 @@
 from src.CI_ORDERING import CI_ORDERING
 from src.building_blocks.Orbital import Orbital
+from src.latex.format_irred_representations import format_irred_representations
+from src.symmetries.POINTGROUP import POINTGROUP
 
 
 class MonomerOccupation:
 
-    def __init__(self, point_group):
+    def __init__(self, point_group:POINTGROUP):
         self.point_group = point_group
 
-        self.left_bottom = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["left_bottom"])
-        self.right_bottom = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["right_bottom"])
-        self.left_top = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["left_top"])
-        self.right_top = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["right_top"])
+        self.left_bottom = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["left_bottom"], point_group=point_group)
+        self.right_bottom = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["right_bottom"], point_group=point_group)
+        self.left_top = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["left_top"], point_group=point_group)
+        self.right_top = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["right_top"], point_group=point_group)
 
         self.initially_occupied_orbitals = [self.left_bottom, self.right_bottom]
         self.initially_unoccupied_orbitals = [self.left_top, self.right_top]
@@ -48,25 +50,55 @@ class MonomerOccupation:
 
         return tikz
 
-    def get_orbitals_in_order(self, order: CI_ORDERING):
+    def get_orbitals_in_order(self, ordering: CI_ORDERING):
         orbitals = self.initially_occupied_orbitals + self.initially_unoccupied_orbitals
 
-        if order == CI_ORDERING.molpro:
-            order = self.point_group.choices_irreduzible_representations_molpro_ordered
+        if ordering == CI_ORDERING.molpro:
+            ordering = self.point_group.choices_irreduzible_representations_molpro_ordered
         else:
             raise Exception("nyi")
 
         ranking = {
-            **{label: i for i, label in enumerate(order)},
-            **{label + "*": i + 0.5 for i, label in enumerate(order)},
+            **{label: i for i, label in enumerate(ordering)},
+            **{label + "*": i + 0.5 for i, label in enumerate(ordering)},
         }
         orbitals.sort(key=lambda orb: ranking[orb.sym_label])
 
         return orbitals
 
-    def latex_ci_equation(self, order:CI_ORDERING):
+    def latex_ci_equation(self, ordering:CI_ORDERING):
         eq = r"\left|"
-        for i in self.get_orbitals_in_order(order=order):
+        for i in self.get_orbitals_in_order(ordering=ordering):
             eq += i.get_occupation_string()
         eq += r"\right|"
         return eq
+
+
+    def get_single_occupied_orbital_labels(self, side:str, multiplied_out:bool) -> list[str]:
+        orbitals = []
+        for i in self.get_orbitals_in_order(ordering = CI_ORDERING.molpro):
+            if i.occupation == 1:
+                orbitals.append( i.get_sym_string(side, multiplied_out=multiplied_out) )
+        return orbitals
+
+    def monomer_determinant_content(self, side:str, multiplied_out:bool):
+        eq = (r"\left(" +
+              "".join(
+                  [format_irred_representations(i)
+                   for i in self.get_single_occupied_orbital_labels(side, multiplied_out)
+                  ]
+              ) + r"\right)")
+        return eq
+
+
+
+
+    def __eq__(self, other):
+        if not isinstance(other, MonomerOccupation):
+            return NotImplemented
+        return (self.right_bottom == other.right_bottom
+                and self.left_bottom == other.left_bottom
+                and self.right_top == other.right_top
+                and self.left_top == other.left_top)
+
+

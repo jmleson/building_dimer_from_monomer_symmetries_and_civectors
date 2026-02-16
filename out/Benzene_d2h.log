@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.28)  16 FEB 2026 14:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.28)  16 FEB 2026 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -667,54 +667,199 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
-
+Underfull \hbox (badness 10000) detected at line 66
+ []$[]   \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] [] \OT1/cmr/m/n/10 + 1 \OM
+S/cmsy/m/n/10 ^^A [] []  $ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
+Underfull \hbox (badness 10000) detected at line 69
+ []$[]  []  $ 
+ []
 
+Runaway argument?
++1 \cdot {} \left | \underbrace {a_{g}b_{3u}b_{2u}b_{1g}_{a_{g}}\right \ETC.
+./Benzene_d2h.tex:71: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.71 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:71: Missing $ inserted.
+<inserted text> 
+                $
+l.71 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:71: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.71 
+     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:71: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.71 
+     
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:73: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.73 \end{minipage}
+                   \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 124
+ []$[]   \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] [] ^^@ \OT1/cmr/m/n/10 1 \
+OMS/cmsy/m/n/10 ^^A [] []  $ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+Underfull \hbox (badness 10000) detected at line 127
+ []$[]  []  $ 
+ []
 
+Runaway argument?
++1 \cdot {} \left | \underbrace {a_{g}b_{3u}b_{2u}b_{1g}_{a_{g}}\right \ETC.
+./Benzene_d2h.tex:129: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.129 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:129: Missing $ inserted.
+<inserted text> 
+                $
+l.129 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:129: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.129 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:129: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.129 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:131: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.131 \end{minipage}
+                    \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 230
+ []$[]   \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] [] ^^@ \OT1/cmr/m/n/10 1 \
+OMS/cmsy/m/n/10 ^^A [] [] ^^@ \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^A [] [] \OT1
+/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] []  $ 
  []
 
 
+Underfull \hbox (badness 10000) detected at line 233
+ []$[]  []  $ 
+ []
 
-[1
+Runaway argument?
++1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_{2u}_{a_{g}}\right \ETC.
+./Benzene_d2h.tex:235: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.235 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+./Benzene_d2h.tex:235: Missing $ inserted.
+<inserted text> 
+                $
+l.235 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:235: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.235 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:235: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.235 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:237: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.237 \end{minipage}
+                    \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -732,37 +877,1174 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
+Overfull \hbox (106.88437pt too wide) detected at line 426
+ []$[]  []  $ 
+ []
 
-[2]
+
+Underfull \hbox (badness 10000) detected at line 429
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_\ETC.
+./Benzene_d2h.tex:433: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.433 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:433: Missing $ inserted.
+<inserted text> 
+                $
+l.433 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:433: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.433 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:433: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.433 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:435: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.435 \end{minipage}
+                    \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (106.88437pt too wide) detected at line 624
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 627
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_\ETC.
+./Benzene_d2h.tex:631: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.631 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:631: Missing $ inserted.
+<inserted text> 
+                $
+l.631 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:631: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.631 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:631: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.631 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:633: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.633 \end{minipage}
+                    \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (106.88437pt too wide) detected at line 822
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 825
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_\ETC.
+./Benzene_d2h.tex:829: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.829 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:829: Missing $ inserted.
+<inserted text> 
+                $
+l.829 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:829: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.829 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:829: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.829 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:831: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.831 \end{minipage}
+                    \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (106.88437pt too wide) detected at line 1020
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1023
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_\ETC.
+./Benzene_d2h.tex:1027: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.1027 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:1027: Missing $ inserted.
+<inserted text> 
+                $
+l.1027 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:1027: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.1027 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:1027: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.1027 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:1029: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.1029 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (106.88437pt too wide) detected at line 1218
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1221
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_\ETC.
+./Benzene_d2h.tex:1225: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.1225 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:1225: Missing $ inserted.
+<inserted text> 
+                $
+l.1225 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:1225: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.1225 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:1225: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.1225 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:1227: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.1227 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (106.88437pt too wide) detected at line 1416
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1419
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_\ETC.
+./Benzene_d2h.tex:1423: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.1423 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:1423: Missing $ inserted.
+<inserted text> 
+                $
+l.1423 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:1423: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.1423 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:1423: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.1423 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:1425: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.1425 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 1524
+ []$[]   \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] [] \OT1/cmr/m/n/10 + 1 \OM
+S/cmsy/m/n/10 ^^A [] [] \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] [] \OT1/cmr
+/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1527
+ []$[]  []  $ 
+ []
+
+Runaway argument?
++1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_{2u}_{a_{g}}\right \ETC.
+./Benzene_d2h.tex:1529: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.1529 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:1529: Missing $ inserted.
+<inserted text> 
+                $
+l.1529 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:1529: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.1529 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:1529: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.1529 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:1531: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.1531 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (106.88437pt too wide) detected at line 1720
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1723
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_\ETC.
+./Benzene_d2h.tex:1727: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.1727 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:1727: Missing $ inserted.
+<inserted text> 
+                $
+l.1727 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:1727: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.1727 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:1727: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.1727 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:1729: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.1729 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (106.88437pt too wide) detected at line 1918
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1921
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_\ETC.
+./Benzene_d2h.tex:1925: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.1925 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:1925: Missing $ inserted.
+<inserted text> 
+                $
+l.1925 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:1925: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.1925 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:1925: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.1925 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:1927: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.1927 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (106.88437pt too wide) detected at line 2116
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2119
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_\ETC.
+./Benzene_d2h.tex:2123: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.2123 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:2123: Missing $ inserted.
+<inserted text> 
+                $
+l.2123 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:2123: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.2123 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:2123: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.2123 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:2125: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.2125 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (106.88437pt too wide) detected at line 2314
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2317
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{2u}a_{g}b_\ETC.
+./Benzene_d2h.tex:2321: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.2321 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:2321: Missing $ inserted.
+<inserted text> 
+                $
+l.2321 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:2321: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.2321 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:2321: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.2321 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:2323: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.2323 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 2422
+ []$[]   \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] [] ^^@ \OT1/cmr/m/n/10 1 \
+OMS/cmsy/m/n/10 ^^A [] [] ^^@ \OT1/cmr/m/n/10 1 \OMS/cmsy/m/n/10 ^^A [] [] \OT1
+/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2425
+ []$[]  []  $ 
+ []
+
+Runaway argument?
++1 \cdot {} \left | \underbrace {a_{g}b_{3u}a_{g}b_{3u}_{a_{g}}\right \ETC.
+./Benzene_d2h.tex:2427: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.2427 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:2427: Missing $ inserted.
+<inserted text> 
+                $
+l.2427 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:2427: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.2427 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:2427: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.2427 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:2429: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.2429 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (106.88437pt too wide) detected at line 2618
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2621
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{3u}a_{g}b_\ETC.
+./Benzene_d2h.tex:2625: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.2625 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:2625: Missing $ inserted.
+<inserted text> 
+                $
+l.2625 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:2625: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.2625 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:2625: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.2625 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:2627: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.2627 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \hbox (106.88437pt too wide) detected at line 2816
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2819
+ []$[]  []  $ 
+ []
+
+Runaway argument?
+\begin {array}{c} +1 \cdot {} \left | \underbrace {a_{g}b_{3u}a_{g}b_\ETC.
+./Benzene_d2h.tex:2823: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.2823 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:2823: Missing $ inserted.
+<inserted text> 
+                $
+l.2823 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:2823: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.2823 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:2823: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.2823 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:2825: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.2825 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 2924
+ []$[]   \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] [] \OT1/cmr/m/n/10 + 1 \OM
+S/cmsy/m/n/10 ^^A [] [] \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] [] \OT1/cmr
+/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2927
+ []$[]  []  $ 
+ []
+
+Runaway argument?
++1 \cdot {} \left | \underbrace {a_{g}b_{3u}a_{g}b_{3u}_{a_{g}}\right \ETC.
+./Benzene_d2h.tex:2929: Paragraph ended before \multline* was complete.
+<to be read again> 
+                   \par 
+l.2929 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Benzene_d2h.tex:2929: Missing $ inserted.
+<inserted text> 
+                $
+l.2929 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Benzene_d2h.tex:2929: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.2929 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Benzene_d2h.tex:2929: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.2929 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Benzene_d2h.tex:2931: Extra }, or forgotten \endgroup.
+\endminipage ...pagefalse \color@endgroup \egroup 
+                                                  \expandafter \@iiiparbox \...
+l.2931 \end{minipage}
+                     \hrule
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+./Benzene_d2h.tex:2935: LaTeX Error: \begin{minipage} on input line 2827 ended 
+by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2935 \end{document}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
 (/home/judith/Schreibtisch/Promotion/building_dimer_from_monomer_symmetries_and
 _civectors/out/Benzene_d2h.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `Benzene_d2h.out' has not changed.
-(rerunfilecheck)             Checksum: BA1518D2C872D342448FBBB583A49F34;404.
- ) 
+
+
+Package rerunfilecheck Warning: File `Benzene_d2h.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Benzene_d2h.out':
+(rerunfilecheck)             Before: 7009D3018E7AC570B10BF81B1EE082F6;141
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+./Benzene_d2h.tex:2935: You can't use `\end' in internal vertical mode.
+\enddocument ...cument/end}\deadcycles \z@ \@@end 
+                                                  
+l.2935 \end{document}
+                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+./Benzene_d2h.tex:2935: LaTeX Error: \begin{minipage} on input line 2827 ended 
+by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2935 \end{document}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./Benzene_d2h.tex:2935: Missing } inserted.
+<inserted text> 
+                }
+l.2935 \end{document}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+)
+! Emergency stop.
+<*> Benzene_d2h.tex
+                   
+*** (job aborted, no legal \end found)
+
+ 
 Here is how much of TeX's memory you used:
- 20663 strings out of 473197
- 381733 string characters out of 5718604
- 768492 words of memory out of 5000000
- 43604 multiletter control sequences out of 15000+600000
+ 20860 strings out of 473197
+ 387686 string characters out of 5718604
+ 1241997 words of memory out of 5000000
+ 43807 multiletter control sequences out of 15000+600000
  559896 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,8n,107p,477b,620s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb>
-Output written on /home/judith/Schreibtisch/Promotion/building_dimer_from_monom
-er_symmetries_and_civectors/out/Benzene_d2h.pdf (2 pages, 78519 bytes).
-PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 29 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 102i,50n,107p,8803b,1279s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -1,6 +1,6 @@
 from src.CI_ORDERING import CI_ORDERING
 from src.building_blocks.MonomerOccupation import MonomerOccupation
-from src.building_blocks.Sign import SIGN
+from src.mathematics.Sign import SIGN
 from src.latex.wrap_tikz_picture import wrap_tikz_picture
 from src.symmetries.POINTGROUP import POINTGROUP
 
@@ -40,22 +40,29 @@ class MonomerState:
         self.always_positive_monomer_occupation = always_positive_monomer_occupation
         self.additive_monomer_occupation = additive_monomer_occupation
 
-    def to_latex(self, order:CI_ORDERING):
+    def to_latex(self, ordering:CI_ORDERING):
         eq = f"{self.label} = \n " + r"\quad "
         eq += self.latex_picture(draw_label=False)
         eq += r" \quad = "
-        eq += self.latex_ci_equation(order=order)
+        eq += self.latex_ci_equation(ordering=ordering)
         return eq
 
-    def latex_picture(self, draw_label:bool=False) -> None:
+    def latex_picture(self, draw_label:bool=False) -> str:
         eq = SIGN.PLUS.value + r" \left(" + wrap_tikz_picture( self.always_positive_monomer_occupation.latex_picture(draw_label=draw_label) ) + r"\right) " +"\n"
         if self.additive_monomer_occupation is not None:
             eq += self.combination.value + r" \left(" + wrap_tikz_picture( self.additive_monomer_occupation.latex_picture(draw_label=draw_label) ) + r"\right) " +"\n"
         return eq
 
-    def latex_ci_equation(self, order:CI_ORDERING):
-        eq = f"{self.always_positive_monomer_occupation.latex_ci_equation(order=order)}"
+    def latex_ci_equation(self, ordering:CI_ORDERING):
+        eq = f"{self.always_positive_monomer_occupation.latex_ci_equation(ordering=ordering)}"
         if self.additive_monomer_occupation is not None:
-            eq += f" {self.combination.value} {self.additive_monomer_occupation.latex_ci_equation(order=order)}"
+            eq += f" {self.combination.value} {self.additive_monomer_occupation.latex_ci_equation(ordering=ordering)}"
         return eq
+
+    def __eq__(self, other):
+        if not isinstance(other, MonomerState):
+            return NotImplemented
+        return (self.combination.value == other.combination.value and
+                self.always_positive_monomer_occupation == other.always_positive_monomer_occupation and
+                self.additive_monomer_occupation == other.additive_monomer_occupation)
 

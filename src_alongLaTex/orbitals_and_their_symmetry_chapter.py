@@ -23,13 +23,13 @@ def orbitals_and_their_symmetry_chapter(molecule:Molecule):
     labeled_monomer_orbitals = wrap_tikzpicture(get_mo_schemata(occupied_mos=empty_mos, monomer=MonomerPositions.isolated, point_group=point_group))
     unlabeled_monomer_orbitals = labeled_monomer_orbitals.replace("node", "%node")
 
-    start += "We use the following order of orbitals here (assuming degeneracy of LUMOs and HOMOs): "+ "\n"
+    start += "We use the following ordering of orbitals here (assuming degeneracy of LUMOs and HOMOs): "+ "\n"
     start += "$$" + "\n" + labeled_monomer_orbitals + "\n" + "$$" + "\n"
     start += "In the following, we will leave out the explicit labeling by orbital symmetry. Each monomer will simply be written as:\n"
     start +=  "$$" + "\n" + unlabeled_monomer_orbitals + "\n" + "$$" + "\n"
     start += "where the character of the orbital is defined by its position. \n\n"
     start += ("Dimer configurations will be written as their monomer occupations, by writing one monomer to the left and one to the right. "
-              "The orbital order within the group of monomer orbitals follows the above mentioned definition. ")
+              "The orbital ordering within the group of monomer orbitals follows the above mentioned definition. ")
 
 
     start += r"\\ \\"

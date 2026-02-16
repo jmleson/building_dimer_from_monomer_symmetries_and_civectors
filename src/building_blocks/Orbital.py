@@ -1,11 +1,16 @@
 from src.latex.format_irred_representations import format_irred_representations
+from src.symmetries.POINTGROUP import POINTGROUP
 
 
 class Orbital():
 
-    def __init__(self, sym_label:str, occupation:int=0):
+    def __init__(self, point_group:POINTGROUP, sym_label:str, occupation:int=0):
         if occupation not in [0, 1, 2]:
             raise Exception("Invalid occupation")
+
+        self.point_group = point_group
+        if sym_label not in point_group.choices_irreduzible_representations_molpro_ordered:
+            raise Exception("wrong sym_label")
 
         self.occupation = occupation
         self.sym_label = sym_label
@@ -14,6 +19,16 @@ class Orbital():
         if self.occupation == 1:
             return "a"
         return str(self.occupation)
+
+    def get_sym_string(self, side:str, multiplied_out:bool) -> str:
+        if side not in ["l", "r"]:
+            raise Exception("strange parameter (side)")
+        s = self.sym_label + "^{" + side + "}"
+        if multiplied_out:
+            for key, value in self.point_group.mo_pairs.items():
+                s = s.replace(key, value)
+        return s
+
 
     def latex_picture(self, x_left, height, node_position:str, draw_label:bool=False):
         if node_position not in ["left", "right"]:
@@ -44,3 +59,7 @@ class Orbital():
             electrons.append(down_left_top)
         return basic_tikz_element + "\n".join([e for e in electrons]) + ";"
 
+    def __eq__(self, other):
+        if not isinstance(other, Orbital):
+            return NotImplemented
+        return self.sym_label == other.sym_label and self.occupation == other.occupation
