@@ -18,12 +18,14 @@ class DimerState:
         self.combination = combination
 
         self.point_group = point_group
-
-
         self.ordering = ordering
+
         self.dimer_occupations = []
+
         self.full_list_of_determinants = []
-        self.summed_up_list_of_determinants = []
+        self.summed_up_list_of_determinants_sym = []
+        self.summed_up_list_of_determinants_ci = []
+
         self.symmetry = "unknown"
 
 
@@ -49,19 +51,26 @@ class DimerState:
                         sign = SIGN.PLUS if sign == self.combination else SIGN.MINUS
                         d = DimerOccupation(j, i, sign=sign, point_group=self.point_group)
                         self.dimer_occupations.append(d)
-                else:
-                    print(self.monomer_state_1.get_multiplicity(), self.monomer_state_2.get_multiplicity(), flush=True)
+                # else: S-Q case
+                #     print(self.monomer_state_1.get_multiplicity(), self.monomer_state_2.get_multiplicity(), flush=True)
 
 
     def to_latex(self, detailed:bool=False):
         eq = get_expression_as_latex_formula(self.get_label() , latex_equation_types.BASIC) + "\n"
         eq += get_expression_as_latex_formula(self.latex_picture(draw_label=False), latex_equation_types.BASIC) + "\n"
 
+        if not detailed:# otherwise the printing function do this automatically
+            self.get_determinants()
+            self.sum_up_determinants()
+
         eq += "\n" + bold("written in CI vectors:") + "\n\n"
         if detailed:
             eq += "monomer ci vectors:\n"
             eq += self.written_in_monomer_ci_vectors()
-        eq += self.written_in_dimer_ci_vectors()
+            eq += "substitution by dimer:\n"
+            eq += self.written_in_dimer_ci_vectors(summed_up=False)
+            eq += "summed up:\n"
+        eq += self.written_in_dimer_ci_vectors(summed_up=True)
 
         eq += "\n" + bold("or, expressed in terms of symmetry:") + "\n\n"
         if detailed:
@@ -71,10 +80,8 @@ class DimerState:
             eq += self.monomer_determinants(multiplied_out=True)
             eq += "multiplied out:\n"
             eq += self.get_multiplied_out_determinants(summed_up=False)
-            eq += "summarized:\n"
-        else:
-            self.get_determinants()
-            self.sum_up_determinants()
+            eq += "summed up:\n"
+
         eq += self.get_multiplied_out_determinants(summed_up=True)
 
         return eq + "\n" + r"\vspace{0.5cm}" + "\n"
@@ -87,15 +94,15 @@ class DimerState:
             full_list_of_determinants.extend(i.determinants)
         self.full_list_of_determinants = full_list_of_determinants
 
-    def sum_up_determinants(self):
+    def sum_up_regarding(self, regarding:str):
         list_of_determinants = []
         used_indices = []
         for i in range(len(self.full_list_of_determinants)):
             factor = self.full_list_of_determinants[i].get_factor()
             if i in used_indices:
                 continue
-            for j in range(i+1,len(self.full_list_of_determinants)):
-                if self.full_list_of_determinants[i].addable(self.full_list_of_determinants[j]):
+            for j in range(i + 1, len(self.full_list_of_determinants)):
+                if self.full_list_of_determinants[i].addable(self.full_list_of_determinants[j], regarding=regarding):
                     used_indices.append(j)
                     factor += self.full_list_of_determinants[j].get_factor()
             if factor != 0:
@@ -103,9 +110,13 @@ class DimerState:
                 copied_det.set_factor(factor)
                 list_of_determinants.append(copied_det)
             used_indices.append(i)
-        self.summed_up_list_of_determinants = list_of_determinants
+        return list_of_determinants
 
-        sym = set([det.determine_symmetry() for det in self.summed_up_list_of_determinants])
+    def sum_up_determinants(self):
+        self.summed_up_list_of_determinants_sym = self.sum_up_regarding(regarding="symmetry")
+        self.summed_up_list_of_determinants_ci = self.sum_up_regarding(regarding="ci vector")
+
+        sym = set([det.determine_symmetry() for det in self.summed_up_list_of_determinants_sym])
         if len(sym) == 1:
             self.symmetry = list(sym)[0]
         elif len(sym) == 0:
@@ -122,7 +133,7 @@ class DimerState:
             list_of_determinants = self.full_list_of_determinants
         else:
             self.sum_up_determinants()
-            list_of_determinants = self.summed_up_list_of_determinants
+            list_of_determinants = self.summed_up_list_of_determinants_sym
 
         full_list_of_determinants = [det.determinants_string() for det in list_of_determinants]
         eq = get_array_environment(full_list_of_determinants, breaking_after=6)
@@ -136,7 +147,7 @@ class DimerState:
             list_of_determinants = self.full_list_of_determinants
         else:
             self.sum_up_determinants()
-            list_of_determinants = self.summed_up_list_of_determinants
+            list_of_determinants = self.summed_up_list_of_determinants_ci
 
         full_list_of_determinants = [det.latex_ci_equation(ordering=self.ordering) for det in list_of_determinants]
         eq = get_array_environment(full_list_of_determinants, breaking_after=6)
