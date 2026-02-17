@@ -1,4 +1,4 @@
-def get_table(number_of_columns: int, content_lines: list[str]) -> str:
+def get_table(number_of_columns: int, content_lines: list[str], break_line_distance=0.1) -> str:
 
     if number_of_columns <= 0:
         raise ValueError("number_of_columns must be positive")
@@ -9,7 +9,7 @@ def get_table(number_of_columns: int, content_lines: list[str]) -> str:
     for line in content_lines:
         stripped = line.rstrip()
         if not stripped.endswith(r"\\"):
-            stripped += r" \\[0.1cm] "
+            stripped += r" \\ ["+str(break_line_distance) + "cm] "
         processed_lines.append(stripped)
 
     table = [

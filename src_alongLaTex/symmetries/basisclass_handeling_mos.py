@@ -4,7 +4,7 @@ from typing import List, Tuple, Dict
 
 from src_alongLaTex.latex.signed_number_to_latex_number import signed_number_to_latex_number
 from src_alongLaTex.symmetries.group_theory.multipling_irred import multipling_irred
-from src_alongLaTex.symmetries.general_functionalities.count_swaps import count_swaps_unique
+from src.mathematics.count_swaps import count_swaps_unique
 
 
 class handeling_mos(object):

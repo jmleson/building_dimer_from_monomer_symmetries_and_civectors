@@ -3,10 +3,12 @@ import re
 from src.CI_ORDERING import CI_ORDERING
 from src.building_blocks.DimerDeterminant import DimerDeterminant
 from src.building_blocks.MonomerOccupation import MonomerOccupation
+from src.latex.format_irred_representations import format_irred_representations
 from src.mathematics.Sign import SIGN, build_product_from_signs_in_str, split_string_into_signed_parts
 from src.latex.wrap_tikz_picture import wrap_tikz_picture
 from src.symmetries.POINTGROUP import POINTGROUP
 from src.mathematics.get_all_combinations import get_all_combinations
+from src.mathematics.count_swaps import count_swaps_unique
 
 
 class DimerOccupation:
@@ -65,16 +67,45 @@ class DimerOccupation:
         return orbitals
 
 
+    def find_switching_sign(self, possibility, prior_latex_ci:str):
+        parts = re.split(r'(?<=\{[0-2]\})', prior_latex_ci)
+        prior_latex_ci_singles = [i for i in parts if r"{1}" in i]
+        prior_latex_ci_singles = "".join(prior_latex_ci_singles)
+
+        possibility_sym_labels = [i["sign"].value + i["sym_label"] for i in possibility if i["occupation"] == 1]
+
+        sorted_now = {}
+        for i in possibility_sym_labels:
+            sorted_now[format_irred_representations(i)] = self.point_group.choices_irreduzible_representations_molpro_ordered.index(i.replace("+","").replace("-",""))
+        sorted_now = dict(sorted(sorted_now.items(), key=lambda item: item[1]))
+        ordering_now = list(sorted_now.keys())
+
+        prior_sym_labels = [format_irred_representations(i) for i in possibility_sym_labels]
+        sorted_before = {i: prior_latex_ci_singles.find(i) for i in prior_sym_labels}
+        sorted_before = dict(sorted(sorted_before.items(), key=lambda item: item[1]))
+        ordering_before = list(sorted_before.keys())
+
+        if ordering_before == ordering_now:
+            return SIGN.PLUS
+
+        counted_swaps_between_lists = count_swaps_unique(ordering_before, ordering_now, print_error=False)
+        if counted_swaps_between_lists % 2 == 1:
+            return SIGN.MINUS
+        return SIGN.PLUS
+
+
+
     def multiply_out(self, ordering:CI_ORDERING):
         if len(self.determinants) > 0:
             return
-        # print("$$", self.monomer_occupation_1.latex_ci_equation(ordering=ordering, multiplied_out=False),
-        #       self.monomer_occupation_2.latex_ci_equation(ordering=ordering, multiplied_out=False), "$$"
-        #       )
-        # print("$$",
-        #       self.monomer_occupation_1.latex_ci_equation(ordering=ordering, multiplied_out=True),
-        #       self.monomer_occupation_2.latex_ci_equation(ordering=ordering, multiplied_out=True), "$$"
-        #       )
+        print("\n$$", self.monomer_occupation_1.latex_ci_equation(ordering=ordering, multiplied_out=False),
+              self.monomer_occupation_2.latex_ci_equation(ordering=ordering, multiplied_out=False), "$$"
+              )
+        latex_ci = self.written_in_monomer_ci_vectors(ordering=ordering, multiplied_out=True)
+        print("$$",
+              self.monomer_occupation_1.latex_ci_equation(ordering=ordering, multiplied_out=True),
+              self.monomer_occupation_2.latex_ci_equation(ordering=ordering, multiplied_out=True), "$$"
+              )
 
         monomer_LC_and_OCC_1 = [i.get_occupation_string(multiplied_out=True) for i in self.monomer_occupation_1.get_orbitals_in_order(ordering=ordering)]
         monomer_LC_and_OCC_2 = [i.get_occupation_string(multiplied_out=True) for i in self.monomer_occupation_2.get_orbitals_in_order(ordering=ordering)]
@@ -91,8 +122,10 @@ class DimerOccupation:
         possibilities = get_all_combinations(choices_1, choices_2)
 
         for possibility in possibilities:
-            signs = [i["sign"] for i in possibility if i["occupation"] ==1] + [self.sign, sign_of_definite_orbitals]
+            signs = [i["sign"] for i in possibility if i["occupation"] == 1] + [
+                self.sign, sign_of_definite_orbitals, self.find_switching_sign(possibility, prior_latex_ci=latex_ci)]
             sign = build_product_from_signs_in_str("".join([s.value for s in signs]))
+
             orbital_symmetry_labels_occ0 = [i["sym_label"] for i in possibility if i["occupation"] == 0]
             orbital_symmetry_labels_occ1 = [i["sym_label"] for i in possibility if i["occupation"] == 1]
             orbital_symmetry_labels_occ2 = [i["sym_label"] for i in possibility if i["occupation"] == 2]
@@ -107,6 +140,7 @@ class DimerOccupation:
                 continue
             if not len(orbital_symmetry_labels_occ1) + 2 * len(orbital_symmetry_labels_occ2) == 8:
                 continue
+            # check no duplicates:
             assert len(orbital_symmetry_labels_occ0 + orbital_symmetry_labels_occ1 + orbital_symmetry_labels_occ2) == len(set(orbital_symmetry_labels_occ0 + orbital_symmetry_labels_occ1 + orbital_symmetry_labels_occ2))
 
             det = DimerDeterminant(orbital_symmetry_labels_occ1=orbital_symmetry_labels_occ1,

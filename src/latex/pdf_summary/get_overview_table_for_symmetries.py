@@ -22,7 +22,8 @@ def get_overview_table_for_symmetries(molecule:Molecule, ordering:CI_ORDERING) -
         else:
             symmetries[d.symmetry] += 1
 
-    conclusion = r"\n\n\n$\Rightarrow{}$ "
+    conclusion = "\n\n\n"+ r"$\Rightarrow{}$ "
     conclusion += " and ".join([fr"{count}x ${format_irred_representations(sym)}$" for sym, count in symmetries.items()])
+    conclusion += "\n\n"
 
     return start + get_table(content_lines=table, number_of_columns=2) + conclusion
