@@ -109,7 +109,4 @@ class Molecule(Enum):
         else:
             raise Exception("to be defined: triplet ci vectors")
 
-        return [#singlet, quintet, #TODO re-include
-                triplet_1
-            #, triplet_2, triplet_3, triplet_4
-        ]
+        return [singlet, quintet, triplet_1, triplet_2, triplet_3, triplet_4]

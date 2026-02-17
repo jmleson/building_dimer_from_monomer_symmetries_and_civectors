@@ -23,12 +23,14 @@ class DimerOccupation:
         self.sign = sign
         self.prefactor = 1
 
+
     def latex_picture(self,draw_label:bool=False):
         eq = self.sign.value + r" \left(" + wrap_tikz_picture( self.monomer_occupation_1.latex_picture(draw_label=draw_label) ) + "\n"
         eq += r"\quad" + wrap_tikz_picture( self.monomer_occupation_2.latex_picture(draw_label=draw_label) ) + r"\right) " + "\n"
         return eq
 
     def written_in_monomer_ci_vectors(self, ordering:CI_ORDERING, multiplied_out:bool):
+        assert self.monomer_occupation_1.side != self.monomer_occupation_2.side
         eq = self.sign.value
         if abs(self.prefactor) != 1:
             eq += str(abs(self.prefactor)) + r" \cdot{} "
@@ -77,19 +79,19 @@ class DimerOccupation:
         monomer_LC_and_OCC_1 = [i.get_occupation_string(multiplied_out=True) for i in self.monomer_occupation_1.get_orbitals_in_order(ordering=ordering)]
         monomer_LC_and_OCC_2 = [i.get_occupation_string(multiplied_out=True) for i in self.monomer_occupation_2.get_orbitals_in_order(ordering=ordering)]
 
-        monomer_LC_and_OCC_1 = [i.replace(SIGN.MINUS.value, SIGN.PLUS.value) for i in monomer_LC_and_OCC_1]
-        monomer_LC_and_OCC_2 = [i.replace(SIGN.MINUS.value, SIGN.PLUS.value) for i in monomer_LC_and_OCC_2]
-        common_values = list(set(monomer_LC_and_OCC_1) & set(monomer_LC_and_OCC_2))
+        monomer_LC_and_OCC_1_absolute = [i.replace(SIGN.MINUS.value, SIGN.PLUS.value) for i in monomer_LC_and_OCC_1]
+        monomer_LC_and_OCC_2_absolute = [i.replace(SIGN.MINUS.value, SIGN.PLUS.value) for i in monomer_LC_and_OCC_2]
+        common_values = list(set(monomer_LC_and_OCC_1_absolute) & set(monomer_LC_and_OCC_2_absolute))
         definite_orbitals = self._get_orbital_occ_list(common_values)
         sign_of_definite_orbitals = SIGN.PLUS
 
-        choices_1 = self._get_orbital_occ_list([i for i in monomer_LC_and_OCC_1 if i not in common_values])
-        choices_2 = self._get_orbital_occ_list([i for i in monomer_LC_and_OCC_2 if i not in common_values])
+        choices_1 = self._get_orbital_occ_list([i for i in monomer_LC_and_OCC_1 if i.replace(SIGN.MINUS.value, SIGN.PLUS.value) not in common_values])
+        choices_2 = self._get_orbital_occ_list([i for i in monomer_LC_and_OCC_2 if i.replace(SIGN.MINUS.value, SIGN.PLUS.value) not in common_values])
 
         possibilities = get_all_combinations(choices_1, choices_2)
 
         for possibility in possibilities:
-            signs = [i["sign"] for i in possibility]+[self.sign, sign_of_definite_orbitals]
+            signs = [i["sign"] for i in possibility if i["occupation"] ==1] + [self.sign, sign_of_definite_orbitals]
             sign = build_product_from_signs_in_str("".join([s.value for s in signs]))
             orbital_symmetry_labels_occ0 = [i["sym_label"] for i in possibility if i["occupation"] == 0]
             orbital_symmetry_labels_occ1 = [i["sym_label"] for i in possibility if i["occupation"] == 1]

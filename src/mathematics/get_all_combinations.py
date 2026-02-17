@@ -34,14 +34,15 @@ def get_all_combinations(possibilities_1, possibilities_2):
 
 if __name__ == "__main__":
     possibilities_1 = [
-        {"sym_label": "a", "sign": "+", "paired_label": "b", "occupation": 1},
-        {"sym_label": "b", "sign": "+", "paired_label": "a", "occupation": 1}
+        {"sym_label": "a", "sign": "+", "paired_label": "b", "occupation": 1, "name": "1"},
+        {"sym_label": "b", "sign": "-", "paired_label": "a", "occupation": 1, "name": "2"}
     ]
 
     possibilities_2 = [
-        {"sym_label": "a", "sign": "-", "paired_label": "b", "occupation": 0},
-        {"sym_label": "b", "sign": "-", "paired_label": "a", "occupation": 0}
+        {"sym_label": "a", "sign": "-", "paired_label": "b", "occupation": 0, "name": "3"},
+        {"sym_label": "b", "sign": "+", "paired_label": "a", "occupation": 0, "name": "4"}
     ]
 
     for combo in get_all_combinations(possibilities_1, possibilities_2):
         print(combo)
+

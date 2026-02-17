@@ -1,20 +1,18 @@
 import unittest
 
+from src.CI_ORDERING import CI_ORDERING
 from src.DimerOccupation import DimerOccupation
 from src.Molecule import Molecule
 from src.building_blocks.MonomerOccupation import MonomerOccupation
-from src.latex.basic_latex_header import basic_latex_header
-from src.latex.latex_equation_types import get_expression_as_latex_formula, latex_equation_types
-from src.latex.wrap_tikz_picture import wrap_tikz_picture
-from src.mathematics.Sign import SIGN
 from src.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
+from src.mathematics.Sign import SIGN
 from src.symmetries.POINTGROUP import POINTGROUP
 
 
 class TestDimerStates(unittest.TestCase):
 
     def test_generation(self):
-        dimer_states = get_dimer_states_from_monomer_states(molecule=Molecule.C6H6)
+        dimer_states = get_dimer_states_from_monomer_states(molecule=Molecule.C6H6, ordering=CI_ORDERING.molpro)
         assert len(dimer_states) == 18
         strings = [d.get_label() for d in dimer_states]
         # assert "S * Q + Q * S" in strings
@@ -60,10 +58,10 @@ class TestDimerStates(unittest.TestCase):
         q.set_occupation({"b1u": 1, "b2g": 1, "b3g": 1, "au": 1})
 
         d = DimerOccupation(monomer_occupation_1=s, monomer_occupation_2=q, sign=SIGN.PLUS, point_group=p)
-        d.multiply_out()
+        d.multiply_out(ordering=CI_ORDERING.molpro)
         assert len(d.determinants) == 4*4
 
         strings = [det.determinants_string() for det in d.determinants]
-        assert r"+1 \cdot{} \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1g} }_{a_{g}}\right|" in strings
+        assert r"+ \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1g} }_{a_{g}}\right|" in strings
 
 

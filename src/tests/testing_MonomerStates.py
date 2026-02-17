@@ -41,22 +41,22 @@ class TestMonomerState(unittest.TestCase):
 
         m1 = MonomerOccupation(point_group=p)
         m1.set_occupation({"b1u": 1, "b2g": 2, "b3g": 1, "au": 0})
-        assert m1.latex_ci_equation(ordering=CI_ORDERING.molpro) == r"\left|a2a0\right|"
+        assert m1.latex_ci_equation(ordering=CI_ORDERING.molpro, multiplied_out=False, short_version=True) == r"\left|a2a0\right|"
 
         m2 = MonomerOccupation(point_group=p)
         m2.set_occupation({"b1u": 0, "b2g": 1, "b3g": 2, "au": 1})
-        assert m2.latex_ci_equation(ordering=CI_ORDERING.molpro) == r"\left|0a2a\right|"
+        assert m2.latex_ci_equation(ordering=CI_ORDERING.molpro, multiplied_out=False, short_version=True) == r"\left|0a2a\right|"
 
         ms1 = MonomerState(label="i^3 b_{2u}", point_group=p, molpro_symmetry_number= 3)
         ms1.set_monomer_occupations(always_positive_monomer_occupation=m1, additive_monomer_occupation=m2, combination=SIGN.MINUS)
         ms1.latex_picture(draw_label=False)
-        assert ms1.latex_ci_equation(order=CI_ORDERING.molpro) == r"\left|a2a0\right| - \left|0a2a\right|"
+        assert ms1.latex_ci_equation(ordering=CI_ORDERING.molpro, multiplied_out=False, short_version=True) == r"\left|a2a0\right| - \left|0a2a\right|"
         assert ms1.get_multiplicity() == 3
 
         ms2 = MonomerState(label="i^3 b_{2u}", point_group=p, molpro_symmetry_number=3)
         ms2.set_monomer_occupations(always_positive_monomer_occupation=m1, additive_monomer_occupation=m2,
                                   combination=SIGN.PLUS)
-        assert ms2.latex_ci_equation(order=CI_ORDERING.molpro) == r"\left|a2a0\right| + \left|0a2a\right|"
+        assert ms2.latex_ci_equation(ordering=CI_ORDERING.molpro, multiplied_out=False, short_version=True) == r"\left|a2a0\right| + \left|0a2a\right|"
         assert ms2.get_multiplicity() == 3
 
         assert ms1 == copy.deepcopy(ms1)
@@ -65,7 +65,7 @@ class TestMonomerState(unittest.TestCase):
 
     def test_getting_monomer_states(self):
         triplets = Molecule.C6H6.get_ci_vectors_triplets()
-        strings = [t.latex_ci_equation(ordering= CI_ORDERING.molpro) for t in triplets]
+        strings = [t.latex_ci_equation(ordering=CI_ORDERING.molpro, multiplied_out=False, short_version=True) for t in triplets]
         assert len(strings) == 6
         assert r"\left|aaaa\right|" in strings
         assert r"\left|0220\right|" in strings
@@ -77,7 +77,7 @@ class TestMonomerState(unittest.TestCase):
         assert sorted(multiplicities) == [1, 3, 3, 3, 3, 5]
 
         triplets_Cl = Molecule.C6H5Cl.get_ci_vectors_triplets()
-        strings_Cl = [t.latex_ci_equation(ordering=CI_ORDERING.molpro) for t in triplets_Cl]
+        strings_Cl = [t.latex_ci_equation(ordering=CI_ORDERING.molpro, multiplied_out=False, short_version=True) for t in triplets_Cl]
         assert len(strings_Cl) == 6
         assert r"\left|aaaa\right|" in strings
         assert r"\left|0220\right|" in strings

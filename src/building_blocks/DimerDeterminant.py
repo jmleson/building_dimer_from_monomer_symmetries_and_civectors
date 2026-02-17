@@ -1,6 +1,7 @@
 from src.CI_ORDERING import CI_ORDERING
 from src.building_blocks.Orbital import Orbital
 from src.latex.format_irred_representations import format_irred_representations
+from src.latex.underbrace import underbrace
 from src.mathematics.Sign import SIGN
 from src.symmetries.POINTGROUP import POINTGROUP
 from src.symmetries.ordering_orbitals_by_symmetry_order import ordering_orbitals_by_symmetry_order
@@ -38,7 +39,7 @@ class DimerDeterminant(object):
         if number_of_electrons != 8:
             print(self.latex_ci_equation(),"\t"," electrons =", number_of_electrons, flush=True)
             # print("!!! number_of_electrons should be 8")
-            raise Exception("number_of_electrons should be 16")
+            raise Exception("number_of_electrons should be 8")
 
     def get_factor(self):
         if self.sign == SIGN.PLUS:
@@ -98,7 +99,7 @@ class DimerDeterminant(object):
                 return o
         return None
 
-    def latex_ci_equation(self):
+    def latex_ci_equation(self, short_version:bool=False):
         if len(self.single_occupied_orbitals + self.unoccupied_orbitals) > 8:
             raise Exception("more than 8 orbitals are impossible")
 
@@ -112,11 +113,16 @@ class DimerDeterminant(object):
             orbital = self.find_orbital(sym_label=orbital_sym)
             if orbital is None:
                 orbital = Orbital(sym_label=orbital_sym, occupation=2, point_group=self.point_group)
-            s += orbital.get_occupation_string(multiplied_out=False)
+            s += orbital.get_occupation_string(multiplied_out=False, molpro_notation=short_version)
 
+        if not short_version:
+            main = underbrace(s, info=self.determine_symmetry())
+            main = format_irred_representations(main)
+        else:
+            main = s
         if self.get_factor() != 1 and self.get_factor() != -1:
-            return self.sign.value + str(abs(self.prefactor)) + r" \cdot \left|" + format_irred_representations(s) + r"\right|"
-        return self.sign.value + r"\left|" + format_irred_representations(s) + r"\right|"
+            return self.sign.value + str(abs(self.prefactor)) + r" \cdot \left|" + main + r"\right|"
+        return self.sign.value + r"\left|" + main + r"\right|"
 
     def __eq__(self, other):
         if not self.addable(other, regarding="ci vector"):

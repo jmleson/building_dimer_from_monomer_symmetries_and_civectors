@@ -45,11 +45,11 @@ class DimerState:
                   (self.monomer_state_2.combination, self.monomer_state_2.additive_monomer_occupation)]:
                 if i is not None and j is not None:
                     sign = SIGN.PLUS if sign_i == sign_j else SIGN.MINUS
-                    d = DimerOccupation(i, j, sign=sign, point_group=self.point_group)
+                    d = DimerOccupation(copy.deepcopy(i), copy.deepcopy(j), sign=sign, point_group=self.point_group)
                     self.dimer_occupations.append(d)
                     if self.monomer_state_1 != self.monomer_state_2:
                         sign = SIGN.PLUS if sign == self.combination else SIGN.MINUS
-                        d = DimerOccupation(j, i, sign=sign, point_group=self.point_group)
+                        d = DimerOccupation(copy.deepcopy(j), copy.deepcopy(i), sign=sign, point_group=self.point_group)
                         self.dimer_occupations.append(d)
                 # else: S-Q case
                 #     print(self.monomer_state_1.get_multiplicity(), self.monomer_state_2.get_multiplicity(), flush=True)
@@ -123,8 +123,8 @@ class DimerState:
             self.symmetry = list(sym)[0]
         elif len(sym) == 0:
             self.symmetry = self.point_group.total_symmetric
-        # else:
-        #     raise Exception(f"no symmetry found: more than one symmetry remaining {sym}")#TODO reactivate
+        else:
+            raise Exception(f"no symmetry found: more than one symmetry remaining {sym}")#
         return
 
 

@@ -1,6 +1,7 @@
 from src.CI_ORDERING import CI_ORDERING
 from src.building_blocks.Orbital import Orbital
 from src.latex.format_irred_representations import format_irred_representations
+from src.latex.underbrace import underbrace
 from src.symmetries.POINTGROUP import POINTGROUP
 from src.symmetries.ordering_orbitals_by_symmetry_order import ordering_orbitals_by_symmetry_order
 
@@ -17,11 +18,13 @@ class MonomerOccupation:
 
         self.initially_occupied_orbitals = [self.left_bottom, self.right_bottom]
         self.initially_unoccupied_orbitals = [self.left_top, self.right_top]
+        self.side = None
 
 
     def set_side(self, side:str):
         if side not in ["l", "r", None]:
             raise Exception("strange parameter (side)")
+        self.side = side
         self.left_bottom.side = side
         self.right_bottom.side = side
         self.left_top.side = side
@@ -63,12 +66,26 @@ class MonomerOccupation:
         orbitals = self.initially_occupied_orbitals + self.initially_unoccupied_orbitals
         return ordering_orbitals_by_symmetry_order(orbitals=orbitals, ordering=ordering, point_group=self.point_group)
 
-    def latex_ci_equation(self, ordering:CI_ORDERING, multiplied_out:bool):
-        eq = r"\left|"
+
+    def determine_symmetry(self):
+        sym = self.point_group.total_symmetric
+        for i in [self.left_bottom, self.right_bottom, self.left_top, self.right_top]:
+            if i.occupation == 1:
+                sym = self.point_group.product(sym, i.sym_label)
+        return sym
+
+    def latex_ci_equation(self, ordering:CI_ORDERING, multiplied_out:bool, short_version:bool=False):
+        main = ""
         for i in self.get_orbitals_in_order(ordering=ordering):
-            eq += format_irred_representations(i.get_occupation_string(multiplied_out=multiplied_out))
-        eq += r"\right|"
-        return eq
+            main += format_irred_representations(i.get_occupation_string(multiplied_out=multiplied_out, molpro_notation=short_version))
+
+        if not short_version:
+            symmetry = self.determine_symmetry()
+            if self.side:
+                symmetry += r"^{" + self.side + r"}"
+            main = underbrace(main, info=symmetry)
+            main = format_irred_representations(main)
+        return r"\left|" + main + r"\right|"
 
 
     def get_single_occupied_orbital_labels(self, side:str, multiplied_out:bool) -> list[str]:
