@@ -4,7 +4,7 @@ from src.symmetries.POINTGROUP import POINTGROUP
 
 class Orbital():
 
-    def __init__(self, point_group:POINTGROUP, sym_label:str, occupation:int=0):
+    def __init__(self, point_group:POINTGROUP, sym_label:str, occupation:int=0, side:str=None):
         if occupation not in [0, 1, 2]:
             raise Exception("Invalid occupation")
 
@@ -14,16 +14,21 @@ class Orbital():
 
         self.occupation = occupation
         self.sym_label = sym_label
+        self.side = side # object is a dimer orbital if side is None, else (l/r) it is a monomer orbital
 
-    def get_occupation_string(self):
-        if self.occupation == 1:
-            return "a"
-        return str(self.occupation)
+    def get_occupation_string(self, multiplied_out:bool, molpro_notation:bool=False):
+        if molpro_notation:
+            if self.occupation == 1:
+                return "a"
+            return str(self.occupation)
+        return f"({self.get_sym_string(multiplied_out=multiplied_out)})^{{{self.occupation}}}"
 
-    def get_sym_string(self, side:str, multiplied_out:bool) -> str:
-        if side not in ["l", "r"]:
+    def get_sym_string(self, multiplied_out:bool) -> str:
+        if self.side not in ["l", "r", None]:
             raise Exception("strange parameter (side)")
-        s = self.sym_label + "^{" + side + "}"
+        s = self.sym_label
+        if self.side: # = is monomer
+            s += "^{" + self.side + "}"
         if multiplied_out:
             for key, value in self.point_group.mo_pairs.items():
                 s = s.replace(key, value)

@@ -19,6 +19,14 @@ class MonomerOccupation:
         self.initially_unoccupied_orbitals = [self.left_top, self.right_top]
 
 
+    def set_side(self, side:str):
+        if side not in ["l", "r", None]:
+            raise Exception("strange parameter (side)")
+        self.left_bottom.side = side
+        self.right_bottom.side = side
+        self.left_top.side = side
+        self.right_top.side = side
+
     def set_occupation(self, occupation:dict):
         if "left_bottom" in occupation:
             self.left_bottom.occupation = occupation["left_bottom"]
@@ -55,28 +63,32 @@ class MonomerOccupation:
         orbitals = self.initially_occupied_orbitals + self.initially_unoccupied_orbitals
         return ordering_orbitals_by_symmetry_order(orbitals=orbitals, ordering=ordering, point_group=self.point_group)
 
-    def latex_ci_equation(self, ordering:CI_ORDERING):
+    def latex_ci_equation(self, ordering:CI_ORDERING, multiplied_out:bool):
         eq = r"\left|"
         for i in self.get_orbitals_in_order(ordering=ordering):
-            eq += i.get_occupation_string()
+            eq += format_irred_representations(i.get_occupation_string(multiplied_out=multiplied_out))
         eq += r"\right|"
         return eq
 
 
     def get_single_occupied_orbital_labels(self, side:str, multiplied_out:bool) -> list[str]:
-        return self._get_x_occupied_orbital_labels(side=side, multiplied_out=multiplied_out, occupation_number=1)
+        self.set_side(side)
+        return self._get_x_occupied_orbital_labels(multiplied_out=multiplied_out, occupation_number=1)
 
     def get_double_occupied_orbital_labels(self, side:str, multiplied_out:bool) -> list[str]:
-        return self._get_x_occupied_orbital_labels(side=side, multiplied_out=multiplied_out, occupation_number=2)
+        self.set_side(side)
+        return self._get_x_occupied_orbital_labels(multiplied_out=multiplied_out, occupation_number=2)
 
     def get_unoccupied_orbital_labels(self, side:str, multiplied_out:bool) -> list[str]:
-        return self._get_x_occupied_orbital_labels(side=side, multiplied_out=multiplied_out, occupation_number=0)
+        self.set_side(side)
+        return self._get_x_occupied_orbital_labels(multiplied_out=multiplied_out, occupation_number=0)
 
-    def _get_x_occupied_orbital_labels(self, occupation_number:int, side:str, multiplied_out:bool) -> list[str]:
+    def _get_x_occupied_orbital_labels(self, occupation_number:int, multiplied_out:bool) -> list[str]:
+        # ! parameter side (l / r / None) needs to be defined beforehand!
         orbitals = []
         for i in self.get_orbitals_in_order(ordering=CI_ORDERING.molpro):
             if i.occupation == occupation_number:
-                orbitals.append(i.get_sym_string(side, multiplied_out=multiplied_out))
+                orbitals.append(i.get_sym_string(multiplied_out=multiplied_out))
         return orbitals
 
 

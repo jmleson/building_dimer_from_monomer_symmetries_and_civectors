@@ -40,11 +40,11 @@ class MonomerState:
         self.always_positive_monomer_occupation = always_positive_monomer_occupation
         self.additive_monomer_occupation = additive_monomer_occupation
 
-    def to_latex(self, ordering:CI_ORDERING):
+    def to_latex(self, ordering:CI_ORDERING, multiplied_out:bool):
         eq = f"{self.label} = \n " + r"\quad "
         eq += self.latex_picture(draw_label=False)
         eq += r" \quad = "
-        eq += self.latex_ci_equation(ordering=ordering)
+        eq += self.latex_ci_equation(ordering=ordering, multiplied_out=multiplied_out)
         return eq
 
     def latex_picture(self, draw_label:bool=False) -> str:
@@ -53,10 +53,10 @@ class MonomerState:
             eq += self.combination.value + r" \left(" + wrap_tikz_picture( self.additive_monomer_occupation.latex_picture(draw_label=draw_label) ) + r"\right) " +"\n"
         return eq
 
-    def latex_ci_equation(self, ordering:CI_ORDERING):
-        eq = f"{self.always_positive_monomer_occupation.latex_ci_equation(ordering=ordering)}"
+    def latex_ci_equation(self, ordering:CI_ORDERING, multiplied_out:bool):
+        eq = f"{self.always_positive_monomer_occupation.latex_ci_equation(ordering=ordering, multiplied_out=multiplied_out)}"
         if self.additive_monomer_occupation is not None:
-            eq += f" {self.combination.value} {self.additive_monomer_occupation.latex_ci_equation(ordering=ordering)}"
+            eq += f" {self.combination.value} {self.additive_monomer_occupation.latex_ci_equation(ordering=ordering, multiplied_out=multiplied_out)}"
         return eq
 
     def __eq__(self, other):

@@ -15,6 +15,8 @@ def split_string_into_signed_parts(s:str):
 
 
 def build_product_from_signs_in_str(s:str):
+    if len(s) == 0:
+        return SIGN.PLUS
     if not s[0] in ["+", "-"]:
         raise Exception("possibly missing sign at start of term!")
     signs = "".join(re.findall(r"[+-]", s))

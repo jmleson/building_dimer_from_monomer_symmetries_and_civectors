@@ -10,21 +10,21 @@ class TestDimerDeterminant(unittest.TestCase):
 
     p = POINTGROUP.D2h
 
-    d1 = DimerDeterminant(orbital_symmetry_labels= ["+ag", "-b1u", "+b2g", "-au"], sign=SIGN.PLUS,
+    d1 = DimerDeterminant(orbital_symmetry_labels_occ1= ["+ag", "-b1u", "+b2g", "-au"], sign=SIGN.PLUS,
                           point_group=p, ordering=CI_ORDERING.molpro)
-    d2 = DimerDeterminant(orbital_symmetry_labels= ["+ag", "-b1u", "+b2g", "-au"], sign=SIGN.MINUS,
+    d2 = DimerDeterminant(orbital_symmetry_labels_occ1= ["+ag", "-b1u", "+b2g", "-au"], sign=SIGN.MINUS,
                           point_group=p, ordering=CI_ORDERING.molpro)
-    d3 = DimerDeterminant(orbital_symmetry_labels= ["+ag", "-b1u", "+b2g", "-au"], sign=SIGN.MINUS,
+    d3 = DimerDeterminant(orbital_symmetry_labels_occ1= ["+ag", "-b1u", "+b2g", "-au"], sign=SIGN.MINUS,
                           point_group=p, ordering=CI_ORDERING.molpro)
     zero_occ = d3.format_orbitals_with_occupation_x(orbital_symmetry_labels=["b3g", "b2u"], occupation=0)
     d3.orbitals_of_even_electron_number.extend(zero_occ)
 
-    d4 = DimerDeterminant(orbital_symmetry_labels= ["+ag", "-b1u", "+b2g", "-au"], sign=SIGN.PLUS,
+    d4 = DimerDeterminant(orbital_symmetry_labels_occ1= ["+ag", "-b1u", "+b2g", "-au"], sign=SIGN.PLUS,
                           point_group=p, ordering=CI_ORDERING.molpro)
     zero_occ = d4.format_orbitals_with_occupation_x(orbital_symmetry_labels=["b3g", "b2u"], occupation=0)
     d4.orbitals_of_even_electron_number.extend(zero_occ)
 
-    d5 = DimerDeterminant(orbital_symmetry_labels= ["+ag", "-b1u", "+b2g", "-au"], sign=SIGN.PLUS,
+    d5 = DimerDeterminant(orbital_symmetry_labels_occ1= ["+ag", "-b1u", "+b2g", "-au"], sign=SIGN.PLUS,
                           point_group=p, ordering=CI_ORDERING.molpro)
     zero_occ = d5.format_orbitals_with_occupation_x(orbital_symmetry_labels=["b3u", "b2u"], occupation=0)
     d5.orbitals_of_even_electron_number.extend(zero_occ)

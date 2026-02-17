@@ -8,24 +8,37 @@ from src.symmetries.ordering_orbitals_by_symmetry_order import ordering_orbitals
 
 class DimerDeterminant(object):
 
-    def __init__(self, orbital_symmetry_labels:list[str], sign:SIGN, point_group:POINTGROUP, ordering:CI_ORDERING):
+    def __init__(self, orbital_symmetry_labels_occ1:list[str], orbital_symmetry_labels_occ0:list[str],
+                 sign:SIGN, point_group:POINTGROUP, ordering:CI_ORDERING):
         self.point_group = point_group
         self.ordering = ordering
 
-        self.single_occupied_orbitals = self.format_orbitals_with_occupation_x(orbital_symmetry_labels=orbital_symmetry_labels, occupation=1)
-
-        self.orbitals_of_even_electron_number = []
+        self.single_occupied_orbitals = self._format_orbitals_with_occupation_x(orbital_symmetry_labels=orbital_symmetry_labels_occ1, occupation=1)
+        self.unoccupied_orbitals = self._format_orbitals_with_occupation_x(orbital_symmetry_labels=orbital_symmetry_labels_occ0, occupation=0)
 
         self.sign = sign
         self.prefactor = 1
 
+        self._check_number_of_electrons()
 
-    def format_orbitals_with_occupation_x(self, orbital_symmetry_labels, occupation:int):
+
+    def _format_orbitals_with_occupation_x(self, orbital_symmetry_labels, occupation:int):
         orbitals = [Orbital(sym_label=i.replace("-", "").replace("+", ""), occupation=occupation, point_group=self.point_group)
                     for i in orbital_symmetry_labels]
-        return ordering_orbitals_by_symmetry_order(orbitals=orbitals, ordering=self.ordering,
-                                                                            point_group=self.point_group)
+        return ordering_orbitals_by_symmetry_order(orbitals=orbitals, ordering=self.ordering, point_group=self.point_group)
 
+    def _check_number_of_electrons(self):
+        number_of_electrons = 0
+        for orbital_sym in self.point_group.choices_irreduzible_representations_molpro_ordered:# order does not matter
+            orbital = self.find_orbital(sym_label=orbital_sym)
+            if orbital is None:
+                number_of_electrons += 2
+            else:
+                number_of_electrons += orbital.occupation
+        if number_of_electrons != 8:
+            print(self.latex_ci_equation(),"\t"," electrons =", number_of_electrons, flush=True)
+            # print("!!! number_of_electrons should be 8")
+            raise Exception("number_of_electrons should be 16")
 
     def get_factor(self):
         if self.sign == SIGN.PLUS:
@@ -71,42 +84,39 @@ class DimerDeterminant(object):
             if self.single_occupied_orbitals[i] != other.single_occupied_orbitals[i]:
                 return False
         if regarding == "ci vector":
-            if len(self.orbitals_of_even_electron_number) != len(other.orbitals_of_even_electron_number):
+            if len(self.unoccupied_orbitals) != len(other.unoccupied_orbitals):
                 return False
-            for i in range(len(self.orbitals_of_even_electron_number)):
-                if self.orbitals_of_even_electron_number[i] != other.orbitals_of_even_electron_number[i]:
+            for i in range(len(self.unoccupied_orbitals)):
+                if self.unoccupied_orbitals[i] != other.unoccupied_orbitals[i]:
                     return False
         return True
 
     def find_orbital(self, sym_label:str):
-        orbitals = self.single_occupied_orbitals + self.orbitals_of_even_electron_number
+        orbitals = self.single_occupied_orbitals + self.unoccupied_orbitals
         for o in orbitals:
             if o.sym_label == sym_label:
                 return o
         return None
 
-    def latex_ci_equation(self, ordering: CI_ORDERING):
-        if len(self.orbitals_of_even_electron_number) == 0:
-            raise Exception("orbital of occupation != 1 have to be set for this")
-        if len(self.single_occupied_orbitals + self.orbitals_of_even_electron_number) > 8:
-            raise Exception("more than 8 orbitals impossible ")
+    def latex_ci_equation(self):
+        if len(self.single_occupied_orbitals + self.unoccupied_orbitals) > 8:
+            raise Exception("more than 8 orbitals are impossible")
 
-        if ordering == CI_ORDERING.molpro:
+        if self.ordering == CI_ORDERING.molpro:
             order = self.point_group.choices_irreduzible_representations_molpro_ordered
         else:
             raise Exception("nyi")
-
 
         s = ""
         for orbital_sym in order:
             orbital = self.find_orbital(sym_label=orbital_sym)
             if orbital is None:
                 orbital = Orbital(sym_label=orbital_sym, occupation=2, point_group=self.point_group)
-            s+= orbital.get_occupation_string()
+            s += orbital.get_occupation_string(multiplied_out=False)
 
         if self.get_factor() != 1 and self.get_factor() != -1:
-            return self.sign.value + str(abs(self.prefactor)) + r" \cdot \left|" + s + r"\right|"
-        return self.sign.value + r"\left|" + s + r"\right|"
+            return self.sign.value + str(abs(self.prefactor)) + r" \cdot \left|" + format_irred_representations(s) + r"\right|"
+        return self.sign.value + r"\left|" + format_irred_representations(s) + r"\right|"
 
     def __eq__(self, other):
         if not self.addable(other, regarding="ci vector"):

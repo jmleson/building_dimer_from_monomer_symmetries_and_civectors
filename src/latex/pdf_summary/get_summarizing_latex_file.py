@@ -34,4 +34,4 @@ def get_summarizing_latex_file(molecule:Molecule, ordering:CI_ORDERING, detailed
 
 
 if __name__ == '__main__':
-    tikz = get_summarizing_latex_file(Molecule.C6H6, ordering=CI_ORDERING.molpro, detailed=False)
+    tikz = get_summarizing_latex_file(Molecule.C6H6, ordering=CI_ORDERING.molpro, detailed=True)
