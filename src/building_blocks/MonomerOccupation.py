@@ -2,6 +2,7 @@ from src.CI_ORDERING import CI_ORDERING
 from src.building_blocks.Orbital import Orbital
 from src.latex.format_irred_representations import format_irred_representations
 from src.symmetries.POINTGROUP import POINTGROUP
+from src.symmetries.ordering_orbitals_by_symmetry_order import ordering_orbitals_by_symmetry_order
 
 
 class MonomerOccupation:
@@ -52,19 +53,7 @@ class MonomerOccupation:
 
     def get_orbitals_in_order(self, ordering: CI_ORDERING):
         orbitals = self.initially_occupied_orbitals + self.initially_unoccupied_orbitals
-
-        if ordering == CI_ORDERING.molpro:
-            ordering = self.point_group.choices_irreduzible_representations_molpro_ordered
-        else:
-            raise Exception("nyi")
-
-        ranking = {
-            **{label: i for i, label in enumerate(ordering)},
-            **{label + "*": i + 0.5 for i, label in enumerate(ordering)},
-        }
-        orbitals.sort(key=lambda orb: ranking[orb.sym_label])
-
-        return orbitals
+        return ordering_orbitals_by_symmetry_order(orbitals=orbitals, ordering=ordering, point_group=self.point_group)
 
     def latex_ci_equation(self, ordering:CI_ORDERING):
         eq = r"\left|"

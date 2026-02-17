@@ -35,15 +35,14 @@ class DimerOccupation:
         eq += r"\right|"
         return eq
 
-    def get_multiplied_out_determinants(self):
-        self.multiply_out()
-        eq = "\n".join([det.determinants_string() for det in self.determinants])
-        return eq
+    # def get_multiplied_out_determinants(self) -> list[str]:
+    #     self.multiply_out()
+    #     return [det.determinants_string() for det in self.determinants]
 
 
-    def multiply_out(self):
+    def multiply_out(self, ordering:CI_ORDERING):
         terms = self.monomer_occupation_1.get_single_occupied_orbital_labels(side="l", multiplied_out=True)
-        terms.extend(self.monomer_occupation_2.get_single_occupied_orbital_labels(side="l", multiplied_out=True))
+        terms.extend(self.monomer_occupation_2.get_single_occupied_orbital_labels(side="r", multiplied_out=True))
         terms = [split_string_into_signed_parts(term) for term in terms]
         assert len(terms) == 4 # number of unpaired electrons in monomer
         ''' 4 possible cases for left * right
@@ -59,7 +58,9 @@ class DimerOccupation:
                     for d in terms[3]:
                         total_product_string = a+b+c+d
                         sign = build_product_from_signs_in_str(total_product_string)
-                        det = DimerDeterminant([a,b,c,d], sign=sign, point_group=self.point_group)
+                        sign = sign.PLUS if sign == self.sign else sign.MINUS
+                        det = DimerDeterminant([a,b,c,d], sign=sign,
+                                               point_group=self.point_group, ordering=ordering)
                         self.determinants.append(det)
         return
 

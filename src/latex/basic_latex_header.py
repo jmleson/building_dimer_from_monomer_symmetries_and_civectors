@@ -7,6 +7,8 @@ def basic_latex_header():
     \usepackage{tikz} % für MO-Schemata
     \usepackage{amsmath}
     \usepackage{physics}
+    
+    \allowdisplaybreaks
 
     \setlength{\parindent}{0pt}
     \hypersetup{colorlinks=true, linkcolor=black, citecolor=black}% damit Referenzen nicht in PDF umklammert
