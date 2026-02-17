@@ -11,6 +11,5 @@ def get_monomer_states_and_configurations(molecule:Molecule, ordering:CI_ORDERIN
     for triplet_sym in monomer_states:
         eq = triplet_sym.to_latex(ordering=ordering)
         start += get_expression_as_latex_formula(eq, latex_equation_types.BASIC) + "\n"
-        break
 
     return start + r"\newpage" + "\n\n"

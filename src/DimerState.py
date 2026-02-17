@@ -3,6 +3,7 @@ import copy
 from src.CI_ORDERING import CI_ORDERING
 from src.DimerOccupation import DimerOccupation
 from src.building_blocks.MonomerState import MonomerState
+from src.latex.bold import bold
 from src.mathematics.Sign import SIGN
 from src.latex.get_array_environment import get_array_environment
 from src.latex.latex_equation_types import latex_equation_types, get_expression_as_latex_formula
@@ -56,9 +57,13 @@ class DimerState:
         eq = get_expression_as_latex_formula(self.get_label() , latex_equation_types.BASIC) + "\n"
         eq += get_expression_as_latex_formula(self.latex_picture(draw_label=False), latex_equation_types.BASIC) + "\n"
 
-        eq += "written in CI vectors:\n"
-        eq += self.written_in_monomer_ci_vectors()
-        eq += "or, expressed in terms of symmetry:\n"
+        eq += "\n" + bold("written in CI vectors:") + "\n\n"
+        if detailed:
+            eq += "monomer ci vectors:\n"
+            eq += self.written_in_monomer_ci_vectors()
+        eq += self.written_in_dimer_ci_vectors()
+
+        eq += "\n" + bold("or, expressed in terms of symmetry:") + "\n\n"
         if detailed:
             eq += "monomer determinants:\n"
             eq += self.monomer_determinants(multiplied_out=False)
@@ -67,7 +72,10 @@ class DimerState:
             eq += "multiplied out:\n"
             eq += self.get_multiplied_out_determinants(summed_up=False)
             eq += "summarized:\n"
-            eq += self.get_multiplied_out_determinants(summed_up=True)
+        else:
+            self.get_determinants()
+            self.sum_up_determinants()
+        eq += self.get_multiplied_out_determinants(summed_up=True)
 
         return eq + "\n" + r"\vspace{0.5cm}" + "\n"
 
@@ -125,7 +133,11 @@ class DimerState:
         eq = get_array_environment([i.latex_picture(draw_label=draw_label) for i in self.dimer_occupations])
         return eq
 
-    def written_in_monomer_ci_vectors(self):
+
+    def written_in_dimer_ci_vectors(self) -> str:
+        return "tbi\n\n"
+
+    def written_in_monomer_ci_vectors(self) -> str:
         eq = get_array_environment([d.written_in_monomer_ci_vectors(ordering=self.ordering) for d in self.dimer_occupations],
                                    breaking_after=4)
         return get_expression_as_latex_formula(eq, latex_equation_types.DISPLAYED)
