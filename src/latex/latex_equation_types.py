@@ -5,7 +5,7 @@ class latex_equation_types(Enum):
     """ kinds of latex environments, that induce an equation """
     INLINE = {"start":"$", "end": "$"}
     DISPLAYED = {"start": "$$", "end": "$$"}
-    MULTLINE = {"start":  r"\begin{multline*}" , "end": r"\end{multline*}"}
+    MULTLINE = {"start":  "\n"+r"\begin{multline*}" , "end": r"\end{multline*}"+"\n"}
     BASIC = {"start": r"\[", "end": r"\]"}
     SUBEQ = {"start": r"\begin{subequations}\begin{gather*}"+"\n", "end": "\n"+r"\end{gather*}\end{subequations}"}
 

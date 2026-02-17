@@ -5,7 +5,7 @@ def multipling_irred(product_term:dict, point_group:POINTGROUP) -> None:
     """
     multiplying all irreducible representations of an orbital determinant
        to get the total symmetry of the term
-    :param product_term: determinant of dimer orbitals, given by amount, equational form, factors, forbidden
+    :param product_term: determinant of dimer single_occupied_orbitals, given by amount, equational form, factors, forbidden
     :return: (saved in factors as one single irreducible representation)
     """
     while len(product_term["factors"]) > 1:

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.28)  17 FEB 2026 09:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.28)  17 FEB 2026 09:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -667,23 +667,30 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--47
-
+Underfull \hbox (badness 10000) detected at line 72
+ []$[]  []  $ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--47
-
+Underfull \hbox (badness 10000) detected at line 79
+ []$[]   \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] [] \OT1/cmr/m/n/10 + 1 \OM
+S/cmsy/m/n/10 ^^A [] []  $ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
+Underfull \hbox (badness 10000) detected at line 84
+ []$[]  []  $ 
+ []
 
+
+Underfull \hbox (badness 10000) detected at line 89
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 95
+ []$[]  []  $ 
  []
 
 
@@ -695,30 +702,31 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 155
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 162
+ []$[]   \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 ^^A [] [] ^^@ \OT1/cmr/m/n/10 1 \
+OMS/cmsy/m/n/10 ^^A [] []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 167
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 172
+ []$[]  []  $ 
+ []
+
 
 
 [2]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 245
- []$[]  []  $ 
- []
-
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 309
+Underfull \hbox (badness 10000) detected at line 178
  []$[]  []  $ 
  []
 
@@ -731,76 +739,31 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) detected at line 419
+Underfull \hbox (badness 10000) detected at line 286
  []$[]  []  $ 
  []
 
 
 
 [3]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 617
+Underfull \hbox (badness 10000) detected at line 295
  []$[]  []  $ 
  []
 
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) detected at line 815
+Underfull \hbox (badness 10000) detected at line 300
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 305
  []$[]  []  $ 
  []
 
 
 
 [4]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 1013
+Underfull \hbox (badness 10000) detected at line 311
  []$[]  []  $ 
  []
 
@@ -820,159 +783,39 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 1211
- []$[]  []  $ 
- []
-
 
 
 [5]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 1409
- []$[]  []  $ 
- []
-
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 1607
+Underfull \hbox (badness 10000) detected at line 507
  []$[]  []  $ 
  []
 
 
 
 [6]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 1717
+Underfull \hbox (badness 10000) detected at line 516
  []$[]  []  $ 
  []
 
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) detected at line 1915
+Underfull \hbox (badness 10000) detected at line 521
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 526
  []$[]  []  $ 
  []
 
 
 
 [7]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 2113
- []$[]  []  $ 
- []
-
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 2311
- []$[]  []  $ 
- []
+Overfull \vbox (199.50067pt too high) has occurred while \output is active []
 
 
 
 [8]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 2509
+Underfull \hbox (badness 10000) detected at line 532
  []$[]  []  $ 
  []
 
@@ -984,105 +827,684 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) detected at line 2619
+Underfull \hbox (badness 10000) detected at line 728
  []$[]  []  $ 
  []
 
 
 
 [9]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 2817
+Underfull \hbox (badness 10000) detected at line 737
  []$[]  []  $ 
  []
 
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) detected at line 3015
+Underfull \hbox (badness 10000) detected at line 742
  []$[]  []  $ 
  []
 
 
 
 [10]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 3125
+Underfull \hbox (badness 10000) detected at line 747
  []$[]  []  $ 
  []
 
 
 
 [11]
-./Benzene_d2h.tex:3161: Undefined control sequence.
-l.3161 \end{table}\n
-                    \n\n$\Rightarrow{}$ 7x $a_{g}$ and 3x $b_{1u}$ and 4x $b...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./Benzene_d2h.tex:3161: Undefined control sequence.
-l.3161 \end{table}\n\n
-                      \n$\Rightarrow{}$ 7x $a_{g}$ and 3x $b_{1u}$ and 4x $b...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./Benzene_d2h.tex:3161: Undefined control sequence.
-l.3161 \end{table}\n\n\n
-                        $\Rightarrow{}$ 7x $a_{g}$ and 3x $b_{1u}$ and 4x $b...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Overfull \vbox (199.50067pt too high) has occurred while \output is active []
 
 
 
 [12]
+Underfull \hbox (badness 10000) detected at line 753
+ []$[]  []  $ 
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 949
+ []$[]  []  $ 
+ []
+
+
+
+[13]
+Underfull \hbox (badness 10000) detected at line 958
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 963
+ []$[]  []  $ 
+ []
+
+
+
+[14]
+Underfull \hbox (badness 10000) detected at line 968
+ []$[]  []  $ 
+ []
+
+
+
+[15]
+Overfull \vbox (211.1113pt too high) has occurred while \output is active []
+
+
+
+[16]
+Underfull \hbox (badness 10000) detected at line 974
+ []$[]  []  $ 
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 1170
+ []$[]  []  $ 
+ []
+
+
+
+[17]
+Underfull \hbox (badness 10000) detected at line 1179
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1184
+ []$[]  []  $ 
+ []
+
+
+
+[18]
+Underfull \hbox (badness 10000) detected at line 1189
+ []$[]  []  $ 
+ []
+
+
+
+[19]
+Overfull \vbox (211.1113pt too high) has occurred while \output is active []
+
+
+
+[20]
+Underfull \hbox (badness 10000) detected at line 1195
+ []$[]  []  $ 
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 1391
+ []$[]  []  $ 
+ []
+
+
+
+[21]
+Underfull \hbox (badness 10000) detected at line 1400
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1405
+ []$[]  []  $ 
+ []
+
+
+
+[22]
+Underfull \hbox (badness 10000) detected at line 1410
+ []$[]  []  $ 
+ []
+
+
+
+[23]
+Overfull \vbox (211.1113pt too high) has occurred while \output is active []
+
+
+
+[24]
+Underfull \hbox (badness 10000) detected at line 1416
+ []$[]  []  $ 
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 1612
+ []$[]  []  $ 
+ []
+
+
+
+[25]
+Underfull \hbox (badness 10000) detected at line 1621
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1626
+ []$[]  []  $ 
+ []
+
+
+
+[26]
+Underfull \hbox (badness 10000) detected at line 1631
+ []$[]  []  $ 
+ []
+
+
+
+[27]
+Overfull \vbox (211.1113pt too high) has occurred while \output is active []
+
+
+
+[28]
+Underfull \hbox (badness 10000) detected at line 1637
+ []$[]  []  $ 
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 1745
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1754
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1759
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1764
+ []$[]  []  $ 
+ []
+
+
+
+[29]
+Underfull \hbox (badness 10000) detected at line 1770
+ []$[]  []  $ 
+ []
+
+
+
+[30]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 1966
+ []$[]  []  $ 
+ []
+
+
+
+[31]
+Underfull \hbox (badness 10000) detected at line 1975
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1980
+ []$[]  []  $ 
+ []
+
+
+
+[32]
+Underfull \hbox (badness 10000) detected at line 1985
+ []$[]  []  $ 
+ []
+
+
+
+[33]
+Overfull \vbox (211.1113pt too high) has occurred while \output is active []
+
+
+
+[34]
+Underfull \hbox (badness 10000) detected at line 1991
+ []$[]  []  $ 
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 2187
+ []$[]  []  $ 
+ []
+
+
+
+[35]
+Underfull \hbox (badness 10000) detected at line 2196
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2201
+ []$[]  []  $ 
+ []
+
+
+
+[36]
+Underfull \hbox (badness 10000) detected at line 2206
+ []$[]  []  $ 
+ []
+
+
+
+[37]
+Overfull \vbox (211.1113pt too high) has occurred while \output is active []
+
+
+
+[38]
+Underfull \hbox (badness 10000) detected at line 2212
+ []$[]  []  $ 
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 2408
+ []$[]  []  $ 
+ []
+
+
+
+[39]
+Underfull \hbox (badness 10000) detected at line 2417
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2422
+ []$[]  []  $ 
+ []
+
+
+
+[40]
+Underfull \hbox (badness 10000) detected at line 2427
+ []$[]  []  $ 
+ []
+
+
+
+[41]
+Overfull \vbox (211.1113pt too high) has occurred while \output is active []
+
+
+
+[42]
+Underfull \hbox (badness 10000) detected at line 2433
+ []$[]  []  $ 
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 2629
+ []$[]  []  $ 
+ []
+
+
+
+[43]
+Underfull \hbox (badness 10000) detected at line 2638
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2643
+ []$[]  []  $ 
+ []
+
+
+
+[44]
+Underfull \hbox (badness 10000) detected at line 2648
+ []$[]  []  $ 
+ []
+
+
+
+[45]
+Overfull \vbox (211.1113pt too high) has occurred while \output is active []
+
+
+
+[46]
+Underfull \hbox (badness 10000) detected at line 2654
+ []$[]  []  $ 
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 2762
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2771
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2776
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2781
+ []$[]  []  $ 
+ []
+
+
+
+[47]
+Underfull \hbox (badness 10000) detected at line 2787
+ []$[]  []  $ 
+ []
+
+
+
+[48]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 2983
+ []$[]  []  $ 
+ []
+
+
+
+[49]
+Underfull \hbox (badness 10000) detected at line 2992
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2997
+ []$[]  []  $ 
+ []
+
+
+
+[50]
+Underfull \hbox (badness 10000) detected at line 3002
+ []$[]  []  $ 
+ []
+
+
+
+[51]
+Overfull \vbox (199.50067pt too high) has occurred while \output is active []
+
+
+
+[52]
+Underfull \hbox (badness 10000) detected at line 3008
+ []$[]  []  $ 
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 3204
+ []$[]  []  $ 
+ []
+
+
+
+[53]
+Underfull \hbox (badness 10000) detected at line 3213
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3218
+ []$[]  []  $ 
+ []
+
+
+
+[54]
+Underfull \hbox (badness 10000) detected at line 3223
+ []$[]  []  $ 
+ []
+
+
+
+[55]
+Overfull \vbox (199.50067pt too high) has occurred while \output is active []
+
+
+
+[56]
+Underfull \hbox (badness 10000) detected at line 3229
+ []$[]  []  $ 
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 10000) detected at line 3337
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3346
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3351
+ []$[]  []  $ 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3356
+ []$[]  []  $ 
+ []
+
+
+
+[57]
+Underfull \hbox (badness 10000) detected at line 3362
+ []$[]  []  $ 
+ []
+
+
+
+[58]
 (/home/judith/Schreibtisch/Promotion/building_dimer_from_monomer_symmetries_and
 _civectors/out/Benzene_d2h.aux)
  ***********
@@ -1090,16 +1512,16 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `Benzene_d2h.out' has not changed.
-(rerunfilecheck)             Checksum: A0B21C8AF162AE05EB8E3717930D5D60;686.
+(rerunfilecheck)             Checksum: 7009D3018E7AC570B10BF81B1EE082F6;141.
  ) 
 Here is how much of TeX's memory you used:
- 20921 strings out of 473197
- 388786 string characters out of 5718604
- 887030 words of memory out of 5000000
- 43849 multiletter control sequences out of 15000+600000
+ 20920 strings out of 473197
+ 388063 string characters out of 5718604
+ 868329 words of memory out of 5000000
+ 43806 multiletter control sequences out of 15000+600000
  560204 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,22n,107p,1221b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,20n,107p,8355b,686s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -1111,10 +1533,10 @@ public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb>
 Output written on /home/judith/Schreibtisch/Promotion/building_dimer_from_monom
-er_symmetries_and_civectors/out/Benzene_d2h.pdf (12 pages, 144912 bytes).
+er_symmetries_and_civectors/out/Benzene_d2h.pdf (58 pages, 278338 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 325 PDF objects out of 1000 (max. 8388607)
+ 242 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

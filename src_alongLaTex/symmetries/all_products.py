@@ -12,8 +12,8 @@ from src_alongLaTex.symmetries.mathematics.switch_monomers import switch_monomer
 
 def get_possible_occs() -> List[Tuple]:
     """
-    calculates all possible states with 4 electrons in 4 orbitals, where:
-        amount of electrons in binding orbitals >= number of electrons in upper two orbitls
+    calculates all possible states with 4 electrons in 4 single_occupied_orbitals, where:
+        amount of electrons in binding single_occupied_orbitals >= number of electrons in upper two orbitls
     <-> singlett, quintett, and 4 triplett states
     :return: list of 4 tuples containing the occupation numbers of different states
     """

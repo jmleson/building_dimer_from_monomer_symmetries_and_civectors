@@ -5,6 +5,7 @@ from src.building_blocks.MonomerOccupation import MonomerOccupation
 from src.mathematics.Sign import SIGN, build_product_from_signs_in_str, split_string_into_signed_parts
 from src.latex.wrap_tikz_picture import wrap_tikz_picture
 from src.symmetries.POINTGROUP import POINTGROUP
+from src.symmetries.ordering_orbitals_by_symmetry_order import ordering_orbitals_by_symmetry_order
 
 
 class DimerOccupation:
@@ -61,6 +62,19 @@ class DimerOccupation:
                         sign = sign.PLUS if sign == self.sign else sign.MINUS
                         det = DimerDeterminant([a,b,c,d], sign=sign,
                                                point_group=self.point_group, ordering=ordering)
+
+                        # orbitals_occ_0 = self.monomer_occupation_1.get_unoccupied_orbital_labels(side="l", multiplied_out=True)
+                        # orbitals_occ_0.extend( self.monomer_occupation_2.get_unoccupied_orbital_labels(side="r", multiplied_out=True) )
+                        orbitals_occ_0_terms = [split_string_into_signed_parts(term) for term in terms]
+                        orbitals_occ_0_flat = [item for row in orbitals_occ_0_terms for item in row]
+                        det.orbitals_of_even_electron_number.extend( det.format_orbitals_with_occupation_x(orbitals_occ_0_flat, occupation=0) )
+
+                        # orbitals_occ_2 = self.monomer_occupation_1.get_double_occupied_orbital_labels(side="l", multiplied_out=True)
+                        # orbitals_occ_2.extend( self.monomer_occupation_2.get_double_occupied_orbital_labels(side="r", multiplied_out=True) )
+                        # orbitals_occ_2_terms = [split_string_into_signed_parts(term) for term in orbitals_occ_0]
+                        # orbitals_occ_2_flat = [item for row in orbitals_occ_2_terms for item in row]
+                        # det.orbitals_of_even_electron_number.extend( det.format_orbitals_with_occupation_x(orbitals_occ_2_flat, occupation=2) )
+
                         self.determinants.append(det)
         return
 

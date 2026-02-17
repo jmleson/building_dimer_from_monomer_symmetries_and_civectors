@@ -10,7 +10,7 @@ class Orbital():
 
         self.point_group = point_group
         if sym_label not in point_group.choices_irreduzible_representations_molpro_ordered:
-            raise Exception("wrong sym_label")
+            raise Exception(f"wrong sym_label {sym_label}")
 
         self.occupation = occupation
         self.sym_label = sym_label
@@ -63,3 +63,6 @@ class Orbital():
         if not isinstance(other, Orbital):
             return NotImplemented
         return self.sym_label == other.sym_label and self.occupation == other.occupation
+
+    def __hash__(self):
+        return hash((self.sym_label, self.occupation))

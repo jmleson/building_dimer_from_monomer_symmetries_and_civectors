@@ -37,7 +37,7 @@ basic_tikz_element = fr"""
 def get_mo_schemata(point_group:POINTGROUP, occupied_mos: dict, monomer:MonomerPositions) -> str:
     """
     get benzene (HOMOs + LUMOs) MO diagramm in a latex format (tikz)
-    :param occupied_mos: occupation numbers of the included orbitals, given as number per symmetry
+    :param occupied_mos: occupation numbers of the included single_occupied_orbitals, given as number per symmetry
     :param monomer: MonomerPositions.left / MonomerPositions.right; information about what data in the occupied_mos dict is needed
     :return: tikz-block of the mo scheme
     """
@@ -91,7 +91,7 @@ def get_mo_schemata(point_group:POINTGROUP, occupied_mos: dict, monomer:MonomerP
 def get_total_mo_schemata(point_group:POINTGROUP, occupied_mos:dict) -> str:
     r"""
     get a mo diagramm for a benzene on the MonomerPositions.left and one on the MonomerPositions.right = combine two monomer mo diagramms to one dimer mo diagramm;
-    :param occupied_mos: occupation numbers of the included orbitals, given as number per symmetry
+    :param occupied_mos: occupation numbers of the included single_occupied_orbitals, given as number per symmetry
     :return: equation with tikz environments representing the mo diagramms, Einzufassen in \[ und\] für Latex-Nutzung
     """
     basic_tikz_element_left = get_mo_schemata(point_group=point_group, occupied_mos=occupied_mos, monomer=MonomerPositions.left)

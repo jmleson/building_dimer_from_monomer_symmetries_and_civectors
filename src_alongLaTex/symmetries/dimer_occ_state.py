@@ -16,7 +16,7 @@ from src_alongLaTex.symmetries.mathematics.switch_monomers import switch_monomer
 
 class dimer_occ_state(handeling_mos):
     """
-    state of two monomer orbital configuration = unit / set of orbitals
+    state of two monomer orbital configuration = unit / set of single_occupied_orbitals
     """
 
     def __init__(self, point_group: POINTGROUP, occupied_mos:Dict, sign_and_factor:int=+1) -> None:
@@ -53,7 +53,7 @@ class dimer_occ_state(handeling_mos):
 
     def get_total_mo_schemata(self,as_raw_ticzpicture:bool=False) -> str:
         """
-        getting a latex formatted drawing of the orbitals and their occupations
+        getting a latex formatted drawing of the single_occupied_orbitals and their occupations
         :param as_raw_ticzpicture: when False, mo schema is added with prefactor and parentheses
         :return: mo diagramm (tikz)
         """
@@ -66,7 +66,7 @@ class dimer_occ_state(handeling_mos):
 
     def set_initial_equations(self) -> None:
         """
-        calculate the equation that is at the start of the calculation = single occupied orbitals that are relevant for the determinant
+        calculate the equation that is at the start of the calculation = single occupied single_occupied_orbitals that are relevant for the determinant
         :return: (initial_equation is set up)
         """
         left = []
@@ -116,7 +116,7 @@ class dimer_occ_state(handeling_mos):
 
     def combine_terms(self) -> None:
         """
-        calculate the summands that arise from the initial equation of single occupied dimer orbitals
+        calculate the summands that arise from the initial equation of single occupied dimer single_occupied_orbitals
         :return: (dimermo_equation is set up)
         """
         combined_terms, sorted_terms, combined_sorted_evaluated = super().combine_terms(split_factors=self.split_factors)
@@ -140,7 +140,7 @@ class dimer_occ_state(handeling_mos):
 
     def set_equation_as_dimer_orbitals(self) -> None:
         r"""
-        convert equation of monomer-orbitals into corresponding dimer orbital combination:
+        convert equation of monomer-single_occupied_orbitals into corresponding dimer orbital combination:
         replaces e.g. a_u^{r} by something like b2u-b2g
         :return:
             dimermo_equation.formatted enthält \cdot zwischen Termen, formatted hat Determinantenstriche

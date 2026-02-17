@@ -26,12 +26,12 @@ def get_summarizing_latex_file(molecule:Molecule, ordering:CI_ORDERING, detailed
     end = r"\end{document}"
     with open(f"src/resulting_tex_files/{molecule.value}_{molecule.get_point_group().value}.tex", "w") as file:
         file.write(start
-                   + chapter1
-                   + chapter2
+                   # + chapter1
+                   # + chapter2
                    + chapter3
-                   + chapter4
+                   # + chapter4
                    + end)
 
 
 if __name__ == '__main__':
-    tikz = get_summarizing_latex_file(Molecule.C6H6, ordering=CI_ORDERING.molpro, detailed=False)
+    tikz = get_summarizing_latex_file(Molecule.C6H6, ordering=CI_ORDERING.molpro, detailed=True)

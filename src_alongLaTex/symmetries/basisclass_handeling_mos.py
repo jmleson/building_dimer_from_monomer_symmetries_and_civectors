@@ -15,7 +15,7 @@ class handeling_mos(object):
     def combine_terms(self, split_factors:List[List[str]]) -> Tuple[List[Dict], List[Dict], List[Dict]]:
         """
         ausmultiplizieren, Bilden der Produkte von irred. Darstellungen
-        :param split_factors: list of 2-item lists, that represent the monomer orbitals by dimer orbitals
+        :param split_factors: list of 2-item lists, that represent the monomer single_occupied_orbitals by dimer single_occupied_orbitals
         :return: list of all terms (expressed as dict)
                 1.) plain result
                 2.) sorted result

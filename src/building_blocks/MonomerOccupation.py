@@ -64,11 +64,21 @@ class MonomerOccupation:
 
 
     def get_single_occupied_orbital_labels(self, side:str, multiplied_out:bool) -> list[str]:
+        return self._get_x_occupied_orbital_labels(side=side, multiplied_out=multiplied_out, occupation_number=1)
+
+    def get_double_occupied_orbital_labels(self, side:str, multiplied_out:bool) -> list[str]:
+        return self._get_x_occupied_orbital_labels(side=side, multiplied_out=multiplied_out, occupation_number=2)
+
+    def get_unoccupied_orbital_labels(self, side:str, multiplied_out:bool) -> list[str]:
+        return self._get_x_occupied_orbital_labels(side=side, multiplied_out=multiplied_out, occupation_number=0)
+
+    def _get_x_occupied_orbital_labels(self, occupation_number:int, side:str, multiplied_out:bool) -> list[str]:
         orbitals = []
-        for i in self.get_orbitals_in_order(ordering = CI_ORDERING.molpro):
-            if i.occupation == 1:
-                orbitals.append( i.get_sym_string(side, multiplied_out=multiplied_out) )
+        for i in self.get_orbitals_in_order(ordering=CI_ORDERING.molpro):
+            if i.occupation == occupation_number:
+                orbitals.append(i.get_sym_string(side, multiplied_out=multiplied_out))
         return orbitals
+
 
     def monomer_determinant_content(self, side:str, multiplied_out:bool):
         eq = "".join(

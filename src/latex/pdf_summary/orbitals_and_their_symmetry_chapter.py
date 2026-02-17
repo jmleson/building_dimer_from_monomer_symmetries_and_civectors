@@ -28,15 +28,15 @@ def orbitals_and_their_symmetry_chapter(molecule:Molecule):
     monomer_simple = wrap_tikz_picture(monomer_occupation.latex_picture(draw_label=False))
     monomer_simple = get_expression_as_latex_formula(monomer_simple, latex_equation_types.DISPLAYED)
 
-    start += "We use the following ordering of orbitals here (assuming degeneracy of LUMOs and HOMOs): "+ "\n"
+    start += "We use the following ordering of single_occupied_orbitals here (assuming degeneracy of LUMOs and HOMOs): "+ "\n"
     start += "\n" + monomer_with_labels + "\n"
     start += "In the following, we will leave out the explicit labeling by orbital symmetry. Each monomer will simply be written as:\n"
     start +=  "\n" + monomer_simple  + "\n"
     start += "where the character of the orbital is defined by its position. " + r"\\ \\ " + "\n\n\n"
     start += ("Dimer configurations will be written as their monomer occupations, by writing one monomer to the left and one to the right. "
-              "The orbital ordering within the group of monomer orbitals follows the above mentioned definition. ")
+              "The orbital ordering within the group of monomer single_occupied_orbitals follows the above mentioned definition. ")
     start += r"\\ \\"
-    start += " The transformation of monomer orbitals into dimer orbitals is given by knowing the negative and positive linear combinations of monomer orbitals into dimer orbitals. "
+    start += " The transformation of monomer single_occupied_orbitals into dimer single_occupied_orbitals is given by knowing the negative and positive linear combinations of monomer single_occupied_orbitals into dimer single_occupied_orbitals. "
     start += "Transforming this known equation system leads to: " + "\n"
 
     combination_str = r"  \\" + "\n"

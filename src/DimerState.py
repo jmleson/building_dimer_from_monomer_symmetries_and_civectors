@@ -67,7 +67,7 @@ class DimerState:
         if detailed:
             eq += "monomer determinants:\n"
             eq += self.monomer_determinants(multiplied_out=False)
-            eq += "substitution by dimer orbitals:\n"
+            eq += "substitution by dimer:\n"
             eq += self.monomer_determinants(multiplied_out=True)
             eq += "multiplied out:\n"
             eq += self.get_multiplied_out_determinants(summed_up=False)
@@ -129,13 +129,18 @@ class DimerState:
         return get_expression_as_latex_formula(eq, latex_equation_types.MULTLINE)+"\n"
 
 
-    def latex_picture(self,draw_label:bool=False):
-        eq = get_array_environment([i.latex_picture(draw_label=draw_label) for i in self.dimer_occupations])
-        return eq
 
+    def written_in_dimer_ci_vectors(self, summed_up:bool=False) -> str:
+        if not summed_up:
+            self.get_determinants()
+            list_of_determinants = self.full_list_of_determinants
+        else:
+            self.sum_up_determinants()
+            list_of_determinants = self.summed_up_list_of_determinants
 
-    def written_in_dimer_ci_vectors(self) -> str:
-        return "tbi\n\n"
+        full_list_of_determinants = [det.latex_ci_equation(ordering=self.ordering) for det in list_of_determinants]
+        eq = get_array_environment(full_list_of_determinants, breaking_after=6)
+        return get_expression_as_latex_formula(eq, latex_equation_types.MULTLINE)+"\n"
 
     def written_in_monomer_ci_vectors(self) -> str:
         eq = get_array_environment([d.written_in_monomer_ci_vectors(ordering=self.ordering) for d in self.dimer_occupations],
@@ -147,4 +152,8 @@ class DimerState:
                                    breaking_after=4 if not multiplied_out else 2)
         return get_expression_as_latex_formula(eq, latex_equation_types.MULTLINE)
 
+
+    def latex_picture(self,draw_label:bool=False):
+        eq = get_array_environment([i.latex_picture(draw_label=draw_label) for i in self.dimer_occupations])
+        return eq
 
