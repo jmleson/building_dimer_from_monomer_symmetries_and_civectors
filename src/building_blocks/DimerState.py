@@ -109,6 +109,7 @@ class DimerState:
         if len(sym) == 1:
             self.symmetry = list(sym)[0]
         elif len(sym) == 0:
+            print("! all terms cancel -> totally symmetric irred chosen for dimer state symmetry", flush=True)
             self.symmetry = self.point_group.total_symmetric
         else:
             raise Exception(f"no symmetry found: more than one symmetry remaining {sym}")#
