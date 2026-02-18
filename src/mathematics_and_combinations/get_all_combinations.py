@@ -14,7 +14,9 @@ def is_valid_combination(combo):
                 return False
         else:
             raise Exception("unknown paired label")
-    if not len(combo) in [4, 8]:
+    if not len(combo) in [4, 8,
+                          2, 6# for debugging cases only
+                          ]:
         raise Exception(f"invalid combination{len(combo)}")
     return True
 
