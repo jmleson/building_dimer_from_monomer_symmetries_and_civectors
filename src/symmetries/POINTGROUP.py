@@ -20,7 +20,7 @@ class POINTGROUP(Enum):
         obj._value_ = value
         if value == "d2h":
             obj.total_symmetric = "ag"
-            obj.choices_irreduzible_representations_molpro_ordered = ('ag', 'b3u', 'b2u', 'b1g', 'b1u', 'b2g', 'b3g', 'au')
+            obj.irreduzible_representations_molpro_ordered = ('ag', 'b3u', 'b2u', 'b1g', 'b1u', 'b2g', 'b3g', 'au')
             obj.mo_pairs = {  # !sortiert; ! brauchen Vorzeichen
                 "au^{l}" : "+b1g+au" ,
                 "b1u^{l}": "+ag+b1u" ,
@@ -35,7 +35,9 @@ class POINTGROUP(Enum):
             obj.product = d2h_product
         elif value == "c2v":
             obj.total_symmetric = "a1"
-            obj.choices_irreduzible_representations_molpro_ordered = ('a1', 'a1*', 'b1', 'b1*', 'b2', 'b2*', 'a2', 'a2*')
+            obj.irreduzible_representations_molpro_ordered = ('a1', 'a1*', 'b1', 'b1*', 'b2', 'b2*', 'a2', 'a2*')
+            # INFO only * as additive marker allowed!
+            #       (otherwise e.g. sorting fails, because occurence of "a1*" can be taken to be the index for "a1" in a search)
             obj.mo_pairs = {  # !sortiert; ! brauchen Vorzeichen
                 "a2*^{l}":  "+b1*+a2*",#*
                 "b2*^{l}":  "+a1*+b2*",#*
@@ -50,8 +52,11 @@ class POINTGROUP(Enum):
             obj.product = c2v_product
         elif value == "c2h":
             obj.total_symmetric = "ag"
-            obj.choices_irreduzible_representations_molpro_ordered = ('ag', 'ag*', 'bg', 'bg*', 'bu', 'bu*', 'au', 'au*')#Dimer
+            obj.irreduzible_representations_molpro_ordered = ("ag", "ag*", "au", "au*", "bu", "bu*", "bg", "bg*")#'ag', 'ag*', 'bg', 'bg*', 'bu', 'bu*', 'au', 'au*')#Dimer
+            # INFO only * as additive marker allowed!
+            #       (otherwise e.g. sorting fails, because occurence of "a1*" can be taken to be the index for "a1" in a search)
             obj.mo_pairs = {  # !sortiert; ! brauchen Vorzeichen
+                # C2v   :    C2h
                 "a2*^{l}":  "+au*+bg*",#*
                 "b2*^{l}":  "+ag*+bu*",#*
                 "a2^{l}":   "+au+bg",

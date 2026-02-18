@@ -8,7 +8,7 @@ from src.building_blocks.DimerOccupation import DimerOccupation
 from src.symmetries.Molecule import Molecule
 from src.building_blocks.MonomerOccupation import MonomerOccupation
 from src.building_blocks.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
-from src.mathematics.Sign import SIGN
+from src.mathematics_and_combinations.Sign import SIGN
 from src.symmetries.POINTGROUP import POINTGROUP
 
 

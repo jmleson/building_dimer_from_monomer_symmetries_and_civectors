@@ -9,8 +9,13 @@ class Orbital():
             raise Exception("Invalid occupation")
 
         self.point_group = point_group
-        if sym_label not in point_group.choices_irreduzible_representations_molpro_ordered:
-            raise Exception(f"wrong sym_label {sym_label}")
+        if sym_label not in self.point_group.irreduzible_representations_molpro_ordered:
+            if self.point_group == POINTGROUP.C2h and side is not None:
+                if sym_label not in POINTGROUP.C2v.irreduzible_representations_molpro_ordered:
+                    # INFO: Exception, because monomer has different point group than dimer
+                    raise Exception(f"wrong sym_label {sym_label} for monomer orbital")
+            else:
+                raise Exception(f"wrong sym_label {sym_label}")
 
         self.occupation = occupation
         self.sym_label = sym_label

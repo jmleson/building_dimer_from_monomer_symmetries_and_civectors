@@ -29,7 +29,7 @@ def write_in_ci_vectors(l: linear_combination_of_dimeroccstates, break_after_num
 def occupied_mos_to_ci(occupied_mos:dict, monomerposition:MonomerPositions, point_group:POINTGROUP):
     ci_vector = "".join(
         str(occupied_mos[irrep][monomerposition])
-        for irrep in point_group.choices_irreduzible_representations_molpro_ordered
+        for irrep in point_group.irreduzible_representations_molpro_ordered
         if irrep in occupied_mos.keys()
     )
     ci_vector = ci_vector.replace("1", "a").replace(" ", "0")

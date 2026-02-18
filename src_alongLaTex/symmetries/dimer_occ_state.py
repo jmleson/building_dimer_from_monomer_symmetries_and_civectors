@@ -89,7 +89,7 @@ class dimer_occ_state(handeling_mos):
         self.add_monomer_sym(right_sym)
         # sort:
         choices = []
-        for i in self.point_group.choices_irreduzible_representations_molpro_ordered_monomer:
+        for i in self.point_group.irreduzible_representations_molpro_ordered_monomer:
             choices.append("(" + i + "^{l})")
             choices.append("(" + i + "^{r})")
         sorted_combination = sorted(total, key=lambda x: choices.index(x))

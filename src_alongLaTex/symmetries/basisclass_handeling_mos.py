@@ -39,10 +39,10 @@ class handeling_mos(object):
                            combination]  # ! muss von combination verschiedenen Namen haben!
             sorted_combination = [i for i in combination]  # copy
             for i in sorted_combination:
-                if i not in self.point_group.choices_irreduzible_representations_molpro_ordered:
+                if i not in self.point_group.irreduzible_representations_molpro_ordered:
                     raise Exception(f"{i}, or, its formatting is not a suitable irreducible representation")
             sorted_combination = sorted(sorted_combination,
-                                        key=lambda x: self.point_group.choices_irreduzible_representations_molpro_ordered.index(x))
+                                        key=lambda x: self.point_group.irreduzible_representations_molpro_ordered.index(x))
             # check sign (number of switches within ordering equal -> sign stays, otherwise sign gets changed):
             counted_swaps_between_lists = count_swaps_unique(sorted_combination, combination, print_error=False)
             if counted_swaps_between_lists % 2 == 1:

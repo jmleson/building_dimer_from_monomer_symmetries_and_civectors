@@ -2,6 +2,8 @@ from itertools import product
 
 
 def is_valid_combination(combo):
+    if len(combo) == 0:
+        return True
     by_label = {d["sym_label"]: d for d in combo}
 
     for d in combo:
@@ -12,7 +14,8 @@ def is_valid_combination(combo):
                 return False
         else:
             raise Exception("unknown paired label")
-
+    if not len(combo) in [4, 8]:
+        raise Exception(f"invalid combination{len(combo)}")
     return True
 
 

@@ -2,7 +2,7 @@ from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.building_blocks.Orbital import Orbital
 from src.latex.format_irred_representations import format_irred_representations
 from src.latex.underbrace import underbrace
-from src.mathematics.Sign import SIGN
+from src.mathematics_and_combinations.Sign import SIGN
 from src.symmetries.POINTGROUP import POINTGROUP
 from src.symmetries.ordering_orbitals_by_symmetry_order import ordering_orbitals_by_symmetry_order
 
@@ -30,7 +30,7 @@ class DimerDeterminant(object):
 
     def _check_number_of_electrons(self):
         number_of_electrons = 0
-        for orbital_sym in self.point_group.choices_irreduzible_representations_molpro_ordered:# order does not matter
+        for orbital_sym in self.point_group.irreduzible_representations_molpro_ordered:# order does not matter
             orbital = self.find_orbital(sym_label=orbital_sym)
             if orbital is None:
                 number_of_electrons += 2
@@ -56,7 +56,7 @@ class DimerDeterminant(object):
     def determine_symmetry(self):
         sym = self.point_group.total_symmetric
         for i in self.single_occupied_orbitals:
-            sym = self.point_group.product(sym, i.sym_label)
+            sym = self.point_group.product(sym, i.sym_label.replace("*",""))
         return sym
 
     def determinants_string(self):
@@ -104,7 +104,7 @@ class DimerDeterminant(object):
             raise Exception("more than 8 orbitals are impossible")
 
         if self.ordering == CI_ORDERING.molpro:
-            order = self.point_group.choices_irreduzible_representations_molpro_ordered
+            order = self.point_group.irreduzible_representations_molpro_ordered
         else:
             raise Exception("nyi")
 

@@ -3,7 +3,7 @@ import copy
 from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.building_blocks.DimerOccupation import DimerOccupation
 from src.building_blocks.MonomerState import MonomerState
-from src.mathematics.Sign import SIGN
+from src.mathematics_and_combinations.Sign import SIGN
 from src.latex.get_array_environment import get_array_environment
 from src.latex.latex_equation_types import latex_equation_types, get_expression_as_latex_formula
 from src.symmetries.POINTGROUP import POINTGROUP

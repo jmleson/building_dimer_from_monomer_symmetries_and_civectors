@@ -1,6 +1,6 @@
 from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.building_blocks.MonomerOccupation import MonomerOccupation
-from src.mathematics.Sign import SIGN
+from src.mathematics_and_combinations.Sign import SIGN
 from src.latex.wrap_tikz_picture import wrap_tikz_picture
 from src.symmetries.POINTGROUP import POINTGROUP
 
@@ -8,7 +8,7 @@ from src.symmetries.POINTGROUP import POINTGROUP
 class MonomerState:
 
     def __init__(self, point_group:POINTGROUP, label:str, molpro_symmetry_number:int):
-        if molpro_symmetry_number >= len(point_group.choices_irreduzible_representations_molpro_ordered):
+        if molpro_symmetry_number >= len(point_group.irreduzible_representations_molpro_ordered):
             raise Exception("wrong symmetry index")
         self.point_group = point_group
         self.label = label

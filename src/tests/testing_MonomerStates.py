@@ -5,7 +5,7 @@ from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.symmetries.Molecule import Molecule
 from src.building_blocks.MonomerOccupation import MonomerOccupation
 from src.building_blocks.MonomerState import MonomerState
-from src.mathematics.Sign import SIGN
+from src.mathematics_and_combinations.Sign import SIGN
 from src.symmetries.POINTGROUP import POINTGROUP
 
 

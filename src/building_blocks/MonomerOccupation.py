@@ -11,10 +11,10 @@ class MonomerOccupation:
     def __init__(self, point_group:POINTGROUP):
         self.point_group = point_group
 
-        self.left_bottom = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["left_bottom"], point_group=point_group)
-        self.right_bottom = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["right_bottom"], point_group=point_group)
-        self.left_top = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["left_top"], point_group=point_group)
-        self.right_top = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["right_top"], point_group=point_group)
+        self.left_bottom = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["left_bottom"], point_group=self.point_group, side="l")# dummy side so that C2h case fits for Orbital symmetry
+        self.right_bottom = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["right_bottom"], point_group=self.point_group, side="l")# dummy side so that C2h case fits for Orbital symmetry
+        self.left_top = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["left_top"], point_group=self.point_group, side="l")# dummy side so that C2h case fits for Orbital symmetry
+        self.right_top = Orbital(sym_label=point_group.label_ordering_in_monomer_occupation["right_top"], point_group=self.point_group, side="l")# dummy side so that C2h case fits for Orbital symmetry
 
         self.initially_occupied_orbitals = [self.left_bottom, self.right_bottom]
         self.initially_unoccupied_orbitals = [self.left_top, self.right_top]
@@ -71,7 +71,10 @@ class MonomerOccupation:
         sym = self.point_group.total_symmetric
         for i in [self.left_bottom, self.right_bottom, self.left_top, self.right_top]:
             if i.occupation == 1:
-                sym = self.point_group.product(sym, i.sym_label)
+                if self.left_bottom.side is not None and self.point_group == POINTGROUP.C2h:
+                    sym = POINTGROUP.C2v.product(sym, i.sym_label.replace("*", ""))
+                else:
+                    sym = self.point_group.product(sym, i.sym_label.replace("*",""))
         return sym
 
     def latex_ci_equation(self, ordering:CI_ORDERING, multiplied_out:bool, short_version:bool=False):

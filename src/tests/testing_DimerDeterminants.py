@@ -2,7 +2,7 @@ import unittest
 
 from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.building_blocks.DimerDeterminant import DimerDeterminant
-from src.mathematics.Sign import SIGN
+from src.mathematics_and_combinations.Sign import SIGN
 from src.symmetries.POINTGROUP import POINTGROUP
 
 

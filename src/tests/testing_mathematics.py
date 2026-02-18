@@ -1,6 +1,6 @@
 import unittest
 
-from src.mathematics.Sign import SIGN, build_product_from_signs_in_str
+from src.mathematics_and_combinations.Sign import SIGN, build_product_from_signs_in_str
 
 
 class TestMathematics(unittest.TestCase):

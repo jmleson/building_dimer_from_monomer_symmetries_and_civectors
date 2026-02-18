@@ -4,11 +4,12 @@ from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.building_blocks.DimerDeterminant import DimerDeterminant
 from src.building_blocks.MonomerOccupation import MonomerOccupation
 from src.latex.format_irred_representations import format_irred_representations
-from src.mathematics.Sign import SIGN, build_product_from_signs_in_str, split_string_into_signed_parts
+from src.mathematics_and_combinations.Sign import SIGN, build_product_from_signs_in_str, split_string_into_signed_parts
 from src.latex.wrap_tikz_picture import wrap_tikz_picture
 from src.symmetries.POINTGROUP import POINTGROUP
-from src.mathematics.get_all_combinations import get_all_combinations
-from src.mathematics.count_swaps import count_swaps_unique
+from src.mathematics_and_combinations.get_all_combinations import get_all_combinations
+from src.mathematics_and_combinations.count_swaps import count_swaps_unique
+from src.mathematics_and_combinations.get_irred_with_sign_and_asterics_from_equation_part import get_irred_with_sign_and_asterics_from_equation_part
 
 
 class DimerOccupation:
@@ -68,26 +69,43 @@ class DimerOccupation:
 
 
     def find_switching_sign(self, possibility, prior_latex_ci:str):
-        parts = re.split(r'(?<=\{[0-2]\})', prior_latex_ci)
-        prior_latex_ci_singles = [i for i in parts if r"{1}" in i]
-        prior_latex_ci_singles = "".join(prior_latex_ci_singles)
+        if len(possibility) == 0:
+            # case of exactly identical ci vectors on left and right monomer
+            return SIGN.PLUS
 
-        possibility_sym_labels = [i["sign"].value + i["sym_label"] for i in possibility if i["occupation"] == 1]
+        parts = re.split(r'(?<=\{[0-2]\})', prior_latex_ci)# list[str]
+        prior_latex_ci_singles = [i for i in parts if r"{1}" in i]
+        prior_latex_ci_singles = "".join(prior_latex_ci_singles)# str
+
+        possibility_sym_labels = [i["sign"].value + i["sym_label"] for i in possibility if i["occupation"] == 1]#list[str], e.g. ['+b1u', '+b3u', '+b3g', '+b1g']
 
         sorted_now = {}
         for i in possibility_sym_labels:
-            sorted_now[format_irred_representations(i)] = self.point_group.choices_irreduzible_representations_molpro_ordered.index(i.replace("+","").replace("-",""))
-        sorted_now = dict(sorted(sorted_now.items(), key=lambda item: item[1]))
-        ordering_now = list(sorted_now.keys())
+            irred = i.replace("+","").replace("-","")
+            sorted_now[format_irred_representations(i)] = self.point_group.irreduzible_representations_molpro_ordered.index(irred)
+        sorted_now = dict(sorted(sorted_now.items(), key=lambda item: item[1]))# dict, e.g. {'+b_{1g}': 3, '+b_{1u}': 4, '+b_{3g}': 6, '+b_{3u}': 1}
+        ordering_now = list(sorted_now.keys())# list[str]
 
-        prior_sym_labels = [format_irred_representations(i) for i in possibility_sym_labels]
-        sorted_before = {i: prior_latex_ci_singles.find(i) for i in prior_sym_labels}
+        prior_sym_labels = [format_irred_representations(i) for i in possibility_sym_labels]# list[str], length=4 / 2
+        if not "*" in prior_latex_ci_singles:
+            sorted_before = {i: prior_latex_ci_singles.find(i) for i in prior_sym_labels}
+        else:
+            # ! searching for "a_2" might find "a_2^{*}"
+            matches = get_irred_with_sign_and_asterics_from_equation_part(prior_latex_ci_singles)
+            sorted_before = {i: matches.index(i) for i in prior_sym_labels}
+            if -1 in sorted_before.values():
+                raise Exception("irred not found")
+
         sorted_before = dict(sorted(sorted_before.items(), key=lambda item: item[1]))
-        ordering_before = list(sorted_before.keys())
+        ordering_before = list(sorted_before.keys())# list[str]
+
+        if len(ordering_before) != len(ordering_now):
+            raise Exception("order should have same length, this is the whole point here!")
+        if len(ordering_before) not in [2, 4]:
+            raise Warning(f"strange length of list with single occupied orbitals {len(ordering_before)}")
 
         if ordering_before == ordering_now:
             return SIGN.PLUS
-
         counted_swaps_between_lists = count_swaps_unique(ordering_before, ordering_now, print_error=False)
         if counted_swaps_between_lists % 2 == 1:
             return SIGN.MINUS
@@ -116,6 +134,7 @@ class DimerOccupation:
         definite_orbitals = self._get_orbital_occ_list(common_values)
         sign_of_definite_orbitals = SIGN.PLUS
 
+        # print([i for i in monomer_LC_and_OCC_1 if i.replace(SIGN.MINUS.value, SIGN.PLUS.value) not in common_values], flush=True)
         choices_1 = self._get_orbital_occ_list([i for i in monomer_LC_and_OCC_1 if i.replace(SIGN.MINUS.value, SIGN.PLUS.value) not in common_values])
         choices_2 = self._get_orbital_occ_list([i for i in monomer_LC_and_OCC_2 if i.replace(SIGN.MINUS.value, SIGN.PLUS.value) not in common_values])
 

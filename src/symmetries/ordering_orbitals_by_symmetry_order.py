@@ -4,8 +4,13 @@ from src.symmetries.POINTGROUP import POINTGROUP
 
 
 def ordering_orbitals_by_symmetry_order(orbitals:list[Orbital], point_group:POINTGROUP, ordering:CI_ORDERING):
+    if len(orbitals) == 0:
+        return
     if ordering == CI_ORDERING.molpro:
-        ordering = point_group.choices_irreduzible_representations_molpro_ordered
+        if point_group == POINTGROUP.C2h and orbitals[0].side is not None:
+            ordering = POINTGROUP.C2v.irreduzible_representations_molpro_ordered
+        else:
+            ordering = point_group.irreduzible_representations_molpro_ordered
     else:
         raise Exception("nyi")
 

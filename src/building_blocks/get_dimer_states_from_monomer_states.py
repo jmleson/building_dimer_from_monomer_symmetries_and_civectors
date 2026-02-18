@@ -1,7 +1,7 @@
 from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.building_blocks.DimerState import DimerState
 from src.symmetries.Molecule import Molecule
-from src.mathematics.Sign import SIGN
+from src.mathematics_and_combinations.Sign import SIGN
 
 
 def get_dimer_states_from_monomer_states(molecule:Molecule, ordering:CI_ORDERING):

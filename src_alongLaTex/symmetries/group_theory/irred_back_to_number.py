@@ -9,7 +9,7 @@ def irred_back_to_number(point_group:POINTGROUP, string:str):
     :param string: irreduzible representation(s)
     :return:
     """
-    ordered_list = point_group.choices_irreduzible_representations_molpro_ordered
+    ordered_list = point_group.irreduzible_representations_molpro_ordered
     # if point_group == POINTGROUP.C2v:# * zur Unterscheidung von Orbitalen gl. Symmetrie enthalten
     #     ordered_list = [i for i in ordered_list if "*" not in i]
     #     string = string.replace("*","")

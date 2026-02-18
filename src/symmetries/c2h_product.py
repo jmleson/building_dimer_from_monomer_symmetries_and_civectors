@@ -6,6 +6,9 @@ def c2h_product(factor_1:str, factor_2:str) -> str:
     :param factor_2: 2nd irreducible representation
     :return: factor_1 x factor_2
     """
+    factor_1 = factor_1.replace("a1", "ag")# in case totally symmetric part of C2v was used
+    factor_2 = factor_2.replace("a1", "ag")# in case totally symmetric part of C2v was used
+
     if factor_1 == "ag":
         return factor_2
     if factor_2 == "ag":
