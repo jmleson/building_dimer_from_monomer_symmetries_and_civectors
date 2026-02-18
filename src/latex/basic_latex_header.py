@@ -15,6 +15,6 @@ def basic_latex_header():
 
     \begin{document}
     \pagestyle{empty}
-    %\tableofcontents 
-    %\newpage 
+    \tableofcontents 
+    \newpage 
     """

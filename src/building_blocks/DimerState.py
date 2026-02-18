@@ -1,11 +1,8 @@
 import copy
 
-from numpy.version import short_version
-
-from src.CI_ORDERING import CI_ORDERING
-from src.DimerOccupation import DimerOccupation
+from src.symmetries.CI_ORDERING import CI_ORDERING
+from src.building_blocks.DimerOccupation import DimerOccupation
 from src.building_blocks.MonomerState import MonomerState
-from src.latex.bold import bold
 from src.mathematics.Sign import SIGN
 from src.latex.get_array_environment import get_array_environment
 from src.latex.latex_equation_types import latex_equation_types, get_expression_as_latex_formula
@@ -25,7 +22,6 @@ class DimerState:
         self.dimer_occupations = []
 
         self.full_list_of_determinants = []
-        self.summed_up_list_of_determinants_sym = []
         self.summed_up_list_of_determinants_ci = []
 
         self.symmetry = "unknown"
@@ -65,27 +61,17 @@ class DimerState:
             self.get_determinants()
             self.sum_up_determinants()
 
-        eq += "\n" + bold("written in CI vectors:") + "\n\n"
         eq += "monomer ci vectors:\n"
         eq += self.written_in_monomer_ci_vectors(multiplied_out=False)
-        eq += "substitution by dimer:\n"
-        eq += self.written_in_monomer_ci_vectors(multiplied_out=True)
+        eq += "substitution by dimer orbitals:\n"
+        eq += self.written_in_monomer_ci_vectors(multiplied_out=True, detailed=detailed)
         if detailed:
-            eq += "dimer ci vectors:"
+            eq += "multiplied out dimer ci vectors:\n"
             eq += get_expression_as_latex_formula(self.written_in_dimer_ci_vectors(summed_up=False), latex_equation_types.MULTLINE)+"\n"
-        eq += "summed up:\n"
+            eq += "summed up:\n"
+        else:
+            eq += "(multiplied out and summed up) dimer ci vectors:\n"
         eq += get_expression_as_latex_formula(self.written_in_dimer_ci_vectors(summed_up=True), latex_equation_types.MULTLINE)+"\n"
-
-        # eq += "\n" + bold("or, expressed in terms of symmetry:") + "\n\n"
-        # if detailed:
-        #     eq += "monomer determinants:\n"
-        #     eq += self.monomer_determinants(multiplied_out=False)
-        #     eq += "substitution by dimer:\n"
-        #     eq += self.monomer_determinants(multiplied_out=True)
-        #     eq += "multiplied out:\n"
-        #     eq += self.get_multiplied_out_determinants(summed_up=False)
-        #     eq += "summed up:\n"
-        eq += self.get_multiplied_out_determinants(summed_up=True)
 
         return eq + "\n" + r"\vspace{0.5cm}" + "\n"
 
@@ -129,21 +115,6 @@ class DimerState:
         return
 
 
-
-    def get_multiplied_out_determinants(self, summed_up:bool = False):#
-        if not summed_up:
-            self.get_determinants()
-            list_of_determinants = self.full_list_of_determinants
-        else:
-            self.sum_up_determinants()
-            list_of_determinants = self.summed_up_list_of_determinants_sym
-
-        full_list_of_determinants = [det.determinants_string() for det in list_of_determinants]
-        eq = get_array_environment(full_list_of_determinants, breaking_after=6)
-        return get_expression_as_latex_formula(eq, latex_equation_types.MULTLINE)+"\n"
-
-
-
     def written_in_dimer_ci_vectors(self, summed_up:bool=False, short_version:bool=False) -> str:
         if not summed_up:
             self.get_determinants()
@@ -153,19 +124,23 @@ class DimerState:
             list_of_determinants = self.summed_up_list_of_determinants_ci
 
         full_list_of_determinants = [det.latex_ci_equation(short_version=short_version) for det in list_of_determinants]
-        eq = get_array_environment(full_list_of_determinants, breaking_after=4 if short_version else 2)
+        eq = get_array_environment(full_list_of_determinants, breaking_after=6 if short_version else 2)
         return eq
 
-    def written_in_monomer_ci_vectors(self, multiplied_out:bool) -> str:
-        eq = get_array_environment([d.written_in_monomer_ci_vectors(ordering=self.ordering,multiplied_out=multiplied_out)
+    def written_in_monomer_ci_vectors(self, multiplied_out:bool, detailed:bool=False) -> str:
+        if not detailed and multiplied_out:
+            eq = self.dimer_occupations[0].written_in_monomer_ci_vectors(ordering=self.ordering,
+                                                                         multiplied_out=multiplied_out) + r" + \hdots "
+        else:
+            eq = get_array_environment([d.written_in_monomer_ci_vectors(ordering=self.ordering,multiplied_out=multiplied_out)
                                     for d in self.dimer_occupations],
-                                   breaking_after=1 if multiplied_out else 4)
+                                   breaking_after=1 if multiplied_out else 2)
         return get_expression_as_latex_formula(eq, latex_equation_types.DISPLAYED)
 
-    def monomer_determinants(self, multiplied_out:bool):
-        eq = get_array_environment([i.monomer_determinants(multiplied_out=multiplied_out) for i in self.dimer_occupations],
-                                   breaking_after=4 if not multiplied_out else 2)
-        return get_expression_as_latex_formula(eq, latex_equation_types.MULTLINE)
+    # def monomer_determinants(self, multiplied_out:bool):
+    #     eq = get_array_environment([i.monomer_determinants(multiplied_out=multiplied_out) for i in self.dimer_occupations],
+    #                                breaking_after=4 if not multiplied_out else 2)
+    #     return get_expression_as_latex_formula(eq, latex_equation_types.MULTLINE)
 
 
     def latex_picture(self,draw_label:bool=False):

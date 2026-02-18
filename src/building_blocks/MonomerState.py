@@ -1,4 +1,4 @@
-from src.CI_ORDERING import CI_ORDERING
+from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.building_blocks.MonomerOccupation import MonomerOccupation
 from src.mathematics.Sign import SIGN
 from src.latex.wrap_tikz_picture import wrap_tikz_picture

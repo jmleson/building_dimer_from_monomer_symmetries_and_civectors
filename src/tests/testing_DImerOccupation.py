@@ -1,7 +1,7 @@
 import unittest
 
-from src.CI_ORDERING import CI_ORDERING
-from src.DimerOccupation import DimerOccupation
+from src.symmetries.CI_ORDERING import CI_ORDERING
+from src.building_blocks.DimerOccupation import DimerOccupation
 from src.building_blocks.MonomerOccupation import MonomerOccupation
 from src.latex.format_irred_representations import format_irred_representations
 from src.mathematics.Sign import SIGN

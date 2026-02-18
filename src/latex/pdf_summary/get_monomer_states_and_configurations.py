@@ -1,5 +1,5 @@
-from src.CI_ORDERING import CI_ORDERING
-from src.Molecule import Molecule
+from src.symmetries.CI_ORDERING import CI_ORDERING
+from src.symmetries.Molecule import Molecule
 from src.latex.latex_equation_types import latex_equation_types, get_expression_as_latex_formula
 
 

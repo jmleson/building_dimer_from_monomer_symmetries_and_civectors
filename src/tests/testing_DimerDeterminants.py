@@ -1,8 +1,6 @@
 import unittest
 
-from numpy.version import short_version
-
-from src.CI_ORDERING import CI_ORDERING
+from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.building_blocks.DimerDeterminant import DimerDeterminant
 from src.mathematics.Sign import SIGN
 from src.symmetries.POINTGROUP import POINTGROUP

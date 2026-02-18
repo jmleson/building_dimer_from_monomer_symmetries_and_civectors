@@ -2,12 +2,12 @@ import re
 import unittest
 from typing import Tuple
 
-from src import DimerState
-from src.CI_ORDERING import CI_ORDERING
-from src.DimerOccupation import DimerOccupation
-from src.Molecule import Molecule
+from src.building_blocks import DimerState
+from src.symmetries.CI_ORDERING import CI_ORDERING
+from src.building_blocks.DimerOccupation import DimerOccupation
+from src.symmetries.Molecule import Molecule
 from src.building_blocks.MonomerOccupation import MonomerOccupation
-from src.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
+from src.building_blocks.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
 from src.mathematics.Sign import SIGN
 from src.symmetries.POINTGROUP import POINTGROUP
 
@@ -79,7 +79,8 @@ class TestDimerStates(unittest.TestCase):
         return flipped
 
 
-    def find_dimer_state_by_label_and_set_up_for_testing(self, dimer_states:list[DimerState], label:str) -> Tuple[DimerState, list[str]]:
+    def find_dimer_state_by_label_and_set_up_for_testing(self, dimer_states:list[DimerState], label:str) -> Tuple[
+        DimerState, list[str]]:
         for i in dimer_states:
             if i.get_label() == label:
                 i.get_product_terms()

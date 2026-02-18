@@ -1,6 +1,6 @@
-from src.CI_ORDERING import CI_ORDERING
-from src.DimerState import DimerState
-from src.Molecule import Molecule
+from src.symmetries.CI_ORDERING import CI_ORDERING
+from src.building_blocks.DimerState import DimerState
+from src.symmetries.Molecule import Molecule
 from src.mathematics.Sign import SIGN
 
 

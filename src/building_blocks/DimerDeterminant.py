@@ -1,4 +1,4 @@
-from src.CI_ORDERING import CI_ORDERING
+from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.building_blocks.Orbital import Orbital
 from src.latex.format_irred_representations import format_irred_representations
 from src.latex.underbrace import underbrace

@@ -1,4 +1,4 @@
-from src.CI_ORDERING import CI_ORDERING
+from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.building_blocks.Orbital import Orbital
 from src.symmetries.POINTGROUP import POINTGROUP
 

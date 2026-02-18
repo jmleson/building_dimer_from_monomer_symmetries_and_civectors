@@ -13,8 +13,8 @@
 
     \begin{document}
     \pagestyle{empty}
-    %\tableofcontents 
-    %\newpage 
+    \tableofcontents 
+    \newpage 
     \section{Orbitals And Their Symmetry}%Orbitale und deren Symmetrie 
 
 %\includegraphics[scale=0.125]{img/DimerZOrbitalordnung-gesamt-MO-C6H6-beiWW.pdf}
@@ -185,7 +185,8 @@ b_{3g}^{r} = -b_{2u}+b_{3g}
 \newpage
 
 \section{Linear Combinations} 
-\begin{minipage}{\linewidth}
+
+\subsection{\boldmath $S * Q + Q * S$}
 \[S * Q + Q * S\]
 \[+ \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
 % lower MOs:
@@ -232,31 +233,22 @@ b_{3g}^{r} = -b_{2u}+b_{3g}
 ;;
 \end{tikzpicture}\right) 
 \]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
-$$+\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{a_{g}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{a_{g}^{r}}\right|$$substitution by dimer:
 $$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{a_{g}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{a_{g}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{a_{g}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{a_{g}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{a_{g}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+2 \cdot{}  \left| \underbrace{ b_{1u}b_{2g}b_{3g}a_{u} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{1u}b_{2g} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{1u}b_{3g} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1u}a_{u} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{1g}b_{2g}b_{3g} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{2g}a_{u} }_{a_{g}}\right| \\[0.5cm] +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{3g}a_{u} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1g} }_{a_{g}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $S * Q - Q * S$}
 \[S * Q - Q * S\]
 \[+ \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
 % lower MOs:
@@ -303,31 +295,22 @@ $$\begin{array}{c}
 ;;
 \end{tikzpicture}\right) 
 \]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
-$$+\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{a_{g}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{a_{g}^{r}}\right|$$substitution by dimer:
 $$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{a_{g}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{a_{g}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{a_{g}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{a_{g}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{a_{g}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{a_{g}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{b_{1u}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{b_{1u}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{b_{1u}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{b_{1u}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{b_{1u}}\right| -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{b_{1u}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{b_{1u}}\right| -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{b_{1u}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+2 \cdot{}  \left| \underbrace{ b_{1g}b_{1u}b_{2g}b_{3g} }_{b_{1u}}\right| -2 \cdot{}  \left| \underbrace{ b_{2u}b_{1u}b_{2g}a_{u} }_{b_{1u}}\right| +2 \cdot{}  \left| \underbrace{ b_{3u}b_{1u}b_{3g}a_{u} }_{b_{1u}}\right| +2 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1g}b_{1u} }_{b_{1u}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{2g}b_{3g}a_{u} }_{b_{1u}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1g}b_{2g} }_{b_{1u}}\right| \\[0.5cm] +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1g}b_{3g} }_{b_{1u}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}a_{u} }_{b_{1u}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $i^3 b_{2u} * i^3 b_{2u}$}
 \[i^3 b_{2u} * i^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -420,33 +403,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +\left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| +\left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+ \left| \underbrace{ a_{g}b_{2u}b_{1u}b_{3g} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{2g}a_{u} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{1g}b_{2g}b_{3g} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1g} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{3g}a_{u} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{1u}b_{2g} }_{a_{g}}\right| \\[0.5cm] +2 \cdot{}  \left| \underbrace{ b_{1u}b_{2g}b_{3g}a_{u} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1u}a_{u} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{1u}b_{3g} }_{a_{g}}\right| + \left| \underbrace{ b_{3u}b_{1g}b_{2g}a_{u} }_{a_{g}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $i^3 b_{2u} * e^3 b_{2u} + e^3 b_{2u} * i^3 b_{2u}$}
 \[i^3 b_{2u} * e^3 b_{2u} + e^3 b_{2u} * i^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -627,31 +599,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}+2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1u}b_{3g} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{2g}a_{u} }_{a_{g}}\right|\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $i^3 b_{2u} * e^3 b_{2u} - e^3 b_{2u} * i^3 b_{2u}$}
 \[i^3 b_{2u} * e^3 b_{2u} - e^3 b_{2u} * i^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -832,33 +795,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +4 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{b_{1u}}\right| -4 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{b_{1u}}\right| \\[0.5cm] +4 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{b_{1u}}\right| +4 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{b_{1u}}\right| \\[0.5cm] -4 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{b_{1u}}\right| -4 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{b_{1u}}\right| \\[0.5cm] +4 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{b_{1u}}\right| -4 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{b_{1u}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+4 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1g}b_{2g} }_{b_{1u}}\right| -4 \cdot{}  \left| \underbrace{ a_{g}b_{2g}b_{3g}a_{u} }_{b_{1u}}\right| +4 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}a_{u} }_{b_{1u}}\right| +4 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1g}b_{3g} }_{b_{1u}}\right| -4 \cdot{}  \left| \underbrace{ b_{2u}b_{1u}b_{2g}a_{u} }_{b_{1u}}\right| -4 \cdot{}  \left| \underbrace{ b_{1g}b_{1u}b_{2g}b_{3g} }_{b_{1u}}\right| \\[0.5cm] +4 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1g}b_{1u} }_{b_{1u}}\right| -4 \cdot{}  \left| \underbrace{ b_{3u}b_{1u}b_{3g}a_{u} }_{b_{1u}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $i^3 b_{2u} * e^3 b_{3u} + e^3 b_{3u} * i^3 b_{2u}$}
 \[i^3 b_{2u} * e^3 b_{3u} + e^3 b_{3u} * i^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -1039,33 +991,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{b_{1g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{b_{1g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{b_{1g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{b_{1g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{b_{1g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{b_{1g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{b_{1g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{b_{1g}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1u}b_{2g} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1u}b_{3g} }_{b_{1g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{3g}a_{u} }_{b_{1g}}\right| -2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{1u}b_{3g} }_{b_{1g}}\right| -2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{1u}b_{2g} }_{b_{1g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2g}a_{u} }_{b_{1g}}\right| \\[0.5cm] +2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{3g}a_{u} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{2g}a_{u} }_{b_{1g}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $i^3 b_{2u} * e^3 b_{3u} - e^3 b_{3u} * i^3 b_{2u}$}
 \[i^3 b_{2u} * e^3 b_{3u} - e^3 b_{3u} * i^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -1246,33 +1187,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{a_{u}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{a_{u}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{u}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{u}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{u}}\right| -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{u}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{a_{u}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{a_{u}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
--2 \cdot{}  \left| \underbrace{ a_{g}b_{1u}b_{2g}b_{3g} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1u} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1g}b_{3g} }_{a_{u}}\right| -2 \cdot{}  \left| \underbrace{ b_{2u}b_{1u}b_{3g}a_{u} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ b_{3u}b_{1u}b_{2g}a_{u} }_{a_{u}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1g}b_{2g} }_{a_{u}}\right| \\[0.5cm] -2 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1g}a_{u} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ b_{1g}b_{2g}b_{3g}a_{u} }_{a_{u}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $i^3 b_{2u} * i^3 b_{3u} + i^3 b_{3u} * i^3 b_{2u}$}
 \[i^3 b_{2u} * i^3 b_{3u} + i^3 b_{3u} * i^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -1453,33 +1383,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{b_{1g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{b_{1g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{b_{1g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{b_{1g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{b_{1g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{b_{1g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{b_{1g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{b_{1g}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1u}b_{2g} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1u}b_{3g} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{3g}a_{u} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{1u}b_{3g} }_{b_{1g}}\right| -2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{1u}b_{2g} }_{b_{1g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2g}a_{u} }_{b_{1g}}\right| \\[0.5cm] -2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{3g}a_{u} }_{b_{1g}}\right| -2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{2g}a_{u} }_{b_{1g}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $i^3 b_{2u} * i^3 b_{3u} - i^3 b_{3u} * i^3 b_{2u}$}
 \[i^3 b_{2u} * i^3 b_{3u} - i^3 b_{3u} * i^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -1660,33 +1579,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{a_{u}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{a_{u}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{u}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{u}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{u}}\right| -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{u}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{a_{u}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{a_{u}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
--2 \cdot{}  \left| \underbrace{ a_{g}b_{1u}b_{2g}b_{3g} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1u} }_{a_{u}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1g}b_{3g} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ b_{2u}b_{1u}b_{3g}a_{u} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ b_{3u}b_{1u}b_{2g}a_{u} }_{a_{u}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1g}b_{2g} }_{a_{u}}\right| \\[0.5cm] +2 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1g}a_{u} }_{a_{u}}\right| -2 \cdot{}  \left| \underbrace{ b_{1g}b_{2g}b_{3g}a_{u} }_{a_{u}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $e^3 b_{2u} * e^3 b_{2u}$}
 \[e^3 b_{2u} * e^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -1779,33 +1687,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +\left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| +\left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+ \left| \underbrace{ a_{g}b_{2u}b_{1u}b_{3g} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{2g}a_{u} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{1g}b_{2g}b_{3g} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1g} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{3g}a_{u} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{1u}b_{2g} }_{a_{g}}\right| \\[0.5cm] -2 \cdot{}  \left| \underbrace{ b_{1u}b_{2g}b_{3g}a_{u} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1u}a_{u} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{1u}b_{3g} }_{a_{g}}\right| + \left| \underbrace{ b_{3u}b_{1g}b_{2g}a_{u} }_{a_{g}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $e^3 b_{2u} * e^3 b_{3u} + e^3 b_{3u} * e^3 b_{2u}$}
 \[e^3 b_{2u} * e^3 b_{3u} + e^3 b_{3u} * e^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -1986,33 +1883,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{b_{1g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{b_{1g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{b_{1g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{b_{1g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{b_{1g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{b_{1g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{b_{1g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{b_{1g}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1u}b_{2g} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1u}b_{3g} }_{b_{1g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{3g}a_{u} }_{b_{1g}}\right| -2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{1u}b_{3g} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{1u}b_{2g} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2g}a_{u} }_{b_{1g}}\right| \\[0.5cm] -2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{3g}a_{u} }_{b_{1g}}\right| -2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{2g}a_{u} }_{b_{1g}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $e^3 b_{2u} * e^3 b_{3u} - e^3 b_{3u} * e^3 b_{2u}$}
 \[e^3 b_{2u} * e^3 b_{3u} - e^3 b_{3u} * e^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -2193,33 +2079,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{a_{u}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{a_{u}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{u}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{u}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{u}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{u}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{a_{u}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{a_{u}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
--2 \cdot{}  \left| \underbrace{ a_{g}b_{1u}b_{2g}b_{3g} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1u} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1g}b_{3g} }_{a_{u}}\right| -2 \cdot{}  \left| \underbrace{ b_{2u}b_{1u}b_{3g}a_{u} }_{a_{u}}\right| -2 \cdot{}  \left| \underbrace{ b_{3u}b_{1u}b_{2g}a_{u} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1g}b_{2g} }_{a_{u}}\right| \\[0.5cm] +2 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1g}a_{u} }_{a_{u}}\right| -2 \cdot{}  \left| \underbrace{ b_{1g}b_{2g}b_{3g}a_{u} }_{a_{u}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $e^3 b_{2u} * i^3 b_{3u} + i^3 b_{3u} * e^3 b_{2u}$}
 \[e^3 b_{2u} * i^3 b_{3u} + i^3 b_{3u} * e^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -2400,33 +2275,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{b_{1g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{b_{1g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{b_{1g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{b_{1g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{b_{1g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{b_{1g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{b_{1g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{b_{1g}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1u}b_{2g} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1u}b_{3g} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{3g}a_{u} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{1u}b_{3g} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{1u}b_{2g} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2g}a_{u} }_{b_{1g}}\right| \\[0.5cm] +2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{3g}a_{u} }_{b_{1g}}\right| +2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{2g}a_{u} }_{b_{1g}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $e^3 b_{2u} * i^3 b_{3u} - i^3 b_{3u} * e^3 b_{2u}$}
 \[e^3 b_{2u} * i^3 b_{3u} - i^3 b_{3u} * e^3 b_{2u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -2607,33 +2471,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{1}}_{b_{2u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{0}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{1}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{1}}_{b_{2u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{0}}_{b_{2u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{a_{u}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{a_{u}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{u}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{u}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{u}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{u}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{a_{u}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{a_{u}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
--2 \cdot{}  \left| \underbrace{ a_{g}b_{1u}b_{2g}b_{3g} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1u} }_{a_{u}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1g}b_{3g} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ b_{2u}b_{1u}b_{3g}a_{u} }_{a_{u}}\right| -2 \cdot{}  \left| \underbrace{ b_{3u}b_{1u}b_{2g}a_{u} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1g}b_{2g} }_{a_{u}}\right| \\[0.5cm] -2 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1g}a_{u} }_{a_{u}}\right| +2 \cdot{}  \left| \underbrace{ b_{1g}b_{2g}b_{3g}a_{u} }_{a_{u}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $e^3 b_{3u} * e^3 b_{3u}$}
 \[e^3 b_{3u} * e^3 b_{3u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -2726,33 +2579,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +\left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| +\left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+ \left| \underbrace{ a_{g}b_{3u}b_{1u}b_{2g} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{3g}a_{u} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1g} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{1g}b_{2g}b_{3g} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{2g}a_{u} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{1u}b_{3g} }_{a_{g}}\right| \\[0.5cm] +2 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1u}a_{u} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ b_{1u}b_{2g}b_{3g}a_{u} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{1u}b_{2g} }_{a_{g}}\right| + \left| \underbrace{ b_{2u}b_{1g}b_{3g}a_{u} }_{a_{g}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $e^3 b_{3u} * i^3 b_{3u} + i^3 b_{3u} * e^3 b_{3u}$}
 \[e^3 b_{3u} * i^3 b_{3u} + i^3 b_{3u} * e^3 b_{3u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -2933,31 +2775,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}+2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1u}b_{2g} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{3g}a_{u} }_{a_{g}}\right|\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $e^3 b_{3u} * i^3 b_{3u} - i^3 b_{3u} * e^3 b_{3u}$}
 \[e^3 b_{3u} * i^3 b_{3u} - i^3 b_{3u} * e^3 b_{3u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -3138,33 +2971,22 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] -\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +4 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{b_{1u}}\right| -4 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{b_{1u}}\right| \\[0.5cm] +4 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{b_{1u}}\right| +4 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{b_{1u}}\right| \\[0.5cm] -4 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{b_{1u}}\right| -4 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{b_{1u}}\right| \\[0.5cm] +4 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{b_{1u}}\right| -4 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{b_{1u}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+4 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{1g}b_{3g} }_{b_{1u}}\right| -4 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}a_{u} }_{b_{1u}}\right| +4 \cdot{}  \left| \underbrace{ a_{g}b_{2g}b_{3g}a_{u} }_{b_{1u}}\right| +4 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{1g}b_{2g} }_{b_{1u}}\right| -4 \cdot{}  \left| \underbrace{ b_{3u}b_{1u}b_{3g}a_{u} }_{b_{1u}}\right| -4 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1g}b_{1u} }_{b_{1u}}\right| \\[0.5cm] +4 \cdot{}  \left| \underbrace{ b_{1g}b_{1u}b_{2g}b_{3g} }_{b_{1u}}\right| -4 \cdot{}  \left| \underbrace{ b_{2u}b_{1u}b_{2g}a_{u} }_{b_{1u}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
+\newpage
 
-\end{minipage}\hrule
-\vspace{0.5cm}
-\begin{minipage}{\linewidth}
+\subsection{\boldmath $i^3 b_{3u} * i^3 b_{3u}$}
 \[i^3 b_{3u} * i^3 b_{3u}\]
 \[\begin{array}{c}
 + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
@@ -3257,32 +3079,20 @@ $$\begin{array}{c}
 \end{tikzpicture}\right) 
 
 \end{array}\]
-
-\textbf{written in CI vectors:}
-
 monomer ci vectors:
 $$\begin{array}{c}
-+\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right|
-\end{array}$$substitution by dimer:
-$$\begin{array}{c}
-+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(+a_{g}+b_{1u})^{0}(+b_{3u}+b_{2g})^{2}(+b_{2u}+b_{3g})^{1}(+b_{1g}+a_{u})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{0}(-b_{3u}+b_{2g})^{2}(-b_{2u}+b_{3g})^{1}(-b_{1g}+a_{u})^{1}}_{b_{3u}^{r}}\right|
-\end{array}$$summed up:
++\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{1}(b_{2g}^{l})^{1}(b_{3g}^{l})^{2}(a_{u}^{l})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right| \\[0.5cm] +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{1}(b_{2g}^{r})^{1}(b_{3g}^{r})^{2}(a_{u}^{r})^{0}}_{b_{3u}^{r}}\right| +\left|\underbrace{(b_{1u}^{l})^{0}(b_{2g}^{l})^{2}(b_{3g}^{l})^{1}(a_{u}^{l})^{1}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(b_{1u}^{r})^{0}(b_{2g}^{r})^{2}(b_{3g}^{r})^{1}(a_{u}^{r})^{1}}_{b_{3u}^{r}}\right|
+\end{array}$$substitution by dimer orbitals:
+$$+\left|\underbrace{(+a_{g}+b_{1u})^{1}(+b_{3u}+b_{2g})^{1}(+b_{2u}+b_{3g})^{2}(+b_{1g}+a_{u})^{0}}_{b_{3u}^{l}}\right| \cdot{} \left|\underbrace{(-a_{g}+b_{1u})^{1}(-b_{3u}+b_{2g})^{1}(-b_{2u}+b_{3g})^{2}(-b_{1g}+a_{u})^{0}}_{b_{3u}^{r}}\right| + \hdots $$(multiplied out and summed up) dimer ci vectors:
 
 \begin{multline*}\begin{array}{c}
 +\left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| -2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{1}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{0}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{2}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] -2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{1}(b_{2u})^{1}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{2}(b_{3g})^{2}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{2}(b_{1g})^{0}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{1}(b_{2g})^{1}(b_{3g})^{2}(a_{u})^{0}}_{a_{g}}\right| +\left|\underbrace{(a_{g})^{0}(b_{3u})^{2}(b_{2u})^{1}(b_{1g})^{1}(b_{1u})^{0}(b_{2g})^{2}(b_{3g})^{1}(a_{u})^{1}}_{a_{g}}\right|
 \end{array}\end{multline*}
 
 
-\begin{multline*}\begin{array}{c}
-+ \left| \underbrace{ a_{g}b_{3u}b_{1u}b_{2g} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{3g}a_{u} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{3u}b_{2u}b_{1g} }_{a_{g}}\right| -2 \cdot{}  \left| \underbrace{ a_{g}b_{1g}b_{2g}b_{3g} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ a_{g}b_{2u}b_{2g}a_{u} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ b_{3u}b_{1g}b_{1u}b_{3g} }_{a_{g}}\right| \\[0.5cm] -2 \cdot{}  \left| \underbrace{ b_{3u}b_{2u}b_{1u}a_{u} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ b_{1u}b_{2g}b_{3g}a_{u} }_{a_{g}}\right| +2 \cdot{}  \left| \underbrace{ b_{2u}b_{1g}b_{1u}b_{2g} }_{a_{g}}\right| + \left| \underbrace{ b_{2u}b_{1g}b_{3g}a_{u} }_{a_{g}}\right|
-\end{array}\end{multline*}
-
-
 \vspace{0.5cm}
 
-
-\end{minipage}\hrule
-\vspace{0.5cm}
+\newpage
 \newpage
 
 \section{Symmetry Conclusion} 
@@ -3317,65 +3127,63 @@ $i^3 b_{3u} * i^3 b_{3u} \displaystyle $ & $a_{g} \displaystyle $ \\ [0.1cm]
 
 $\Rightarrow{}$ 7x $a_{g}$ and 3x $b_{1u}$ and 4x $b_{1g}$ and 4x $a_{u}$
 
+
+\newpage
 \section{CI Vector Conclusion} 
-\begin{table}[ht]
-\centering
-\begin{tabular}{cc}
-\hline
-Dimer State & CI Vectors \\ [1cm] 
-\hline
-\hline $S * Q + Q * S \displaystyle $ & $ \begin{array}{c}
-+2 \cdot \left|0220aaaa\right| +2 \cdot \left|02aaaa20\right| -2 \cdot \left|0a2aa2a0\right| +2 \cdot \left|0aa0a22a\right| \\[0.5cm] +2 \cdot \left|a22a0aa0\right| -2 \cdot \left|a2a00a2a\right| +2 \cdot \left|aa2002aa\right| +2 \cdot \left|aaaa0220\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $S * Q - Q * S \displaystyle $ & $ \begin{array}{c}
-+2 \cdot \left|022aaaa0\right| -2 \cdot \left|02a0aa2a\right| +2 \cdot \left|0a20a2aa\right| +2 \cdot \left|0aaaa220\right| \\[0.5cm] -2 \cdot \left|a2200aaa\right| -2 \cdot \left|a2aa0a20\right| +2 \cdot \left|aa2a02a0\right| -2 \cdot \left|aaa0022a\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $i^3 b_{2u} * i^3 b_{2u} \displaystyle $ & $ \begin{array}{c}
-+\left|a2a0a2a0\right| -2 \cdot \left|a2a00a2a\right| -2 \cdot \left|a22a0aa0\right| +2 \cdot \left|aaaa0220\right| \\[0.5cm] -2 \cdot \left|aa2002aa\right| -2 \cdot \left|02aaaa20\right| +2 \cdot \left|0220aaaa\right| -2 \cdot \left|0aa0a22a\right| \\[0.5cm] -2 \cdot \left|0a2aa2a0\right| +\left|0a2a0a2a\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $i^3 b_{2u} * e^3 b_{2u} + e^3 b_{2u} * i^3 b_{2u} \displaystyle $ & $ +2 \cdot \left|a2a0a2a0\right| -2 \cdot \left|0a2a0a2a\right| \displaystyle $ \\ [1cm] 
-\hline $i^3 b_{2u} * e^3 b_{2u} - e^3 b_{2u} * i^3 b_{2u} \displaystyle $ & $ \begin{array}{c}
-+4 \cdot \left|a2aa0a20\right| -4 \cdot \left|a2200aaa\right| +4 \cdot \left|aaa0022a\right| +4 \cdot \left|aa2a02a0\right| \\[0.5cm] -4 \cdot \left|02a0aa2a\right| -4 \cdot \left|022aaaa0\right| +4 \cdot \left|0aaaa220\right| -4 \cdot \left|0a20a2aa\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $i^3 b_{2u} * e^3 b_{3u} + e^3 b_{3u} * i^3 b_{2u} \displaystyle $ & $ \begin{array}{c}
-+2 \cdot \left|a2a0aa20\right| +2 \cdot \left|aa20a2a0\right| -2 \cdot \left|a2a002aa\right| -2 \cdot \left|02aaa2a0\right| \\[0.5cm] -2 \cdot \left|0a2aaa20\right| -2 \cdot \left|aa200a2a\right| +2 \cdot \left|0a2a02aa\right| +2 \cdot \left|02aa0a2a\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $i^3 b_{2u} * e^3 b_{3u} - e^3 b_{3u} * i^3 b_{2u} \displaystyle $ & $ \begin{array}{c}
--2 \cdot \left|a220aaa0\right| +2 \cdot \left|aaa0a220\right| +2 \cdot \left|a2aa02a0\right| -2 \cdot \left|02a0a2aa\right| \\[0.5cm] +2 \cdot \left|0a20aa2a\right| -2 \cdot \left|aa2a0a20\right| -2 \cdot \left|0aaa022a\right| +2 \cdot \left|022a0aaa\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $i^3 b_{2u} * i^3 b_{3u} + i^3 b_{3u} * i^3 b_{2u} \displaystyle $ & $ \begin{array}{c}
-+2 \cdot \left|a2a0aa20\right| +2 \cdot \left|aa20a2a0\right| +2 \cdot \left|a2a002aa\right| +2 \cdot \left|02aaa2a0\right| \\[0.5cm] -2 \cdot \left|0a2aaa20\right| -2 \cdot \left|aa200a2a\right| -2 \cdot \left|0a2a02aa\right| -2 \cdot \left|02aa0a2a\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $i^3 b_{2u} * i^3 b_{3u} - i^3 b_{3u} * i^3 b_{2u} \displaystyle $ & $ \begin{array}{c}
--2 \cdot \left|a220aaa0\right| +2 \cdot \left|aaa0a220\right| -2 \cdot \left|a2aa02a0\right| +2 \cdot \left|02a0a2aa\right| \\[0.5cm] +2 \cdot \left|0a20aa2a\right| -2 \cdot \left|aa2a0a20\right| +2 \cdot \left|0aaa022a\right| -2 \cdot \left|022a0aaa\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $e^3 b_{2u} * e^3 b_{2u} \displaystyle $ & $ \begin{array}{c}
-+\left|a2a0a2a0\right| +2 \cdot \left|a2a00a2a\right| +2 \cdot \left|a22a0aa0\right| -2 \cdot \left|aaaa0220\right| \\[0.5cm] +2 \cdot \left|aa2002aa\right| +2 \cdot \left|02aaaa20\right| -2 \cdot \left|0220aaaa\right| +2 \cdot \left|0aa0a22a\right| \\[0.5cm] +2 \cdot \left|0a2aa2a0\right| +\left|0a2a0a2a\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $e^3 b_{2u} * e^3 b_{3u} + e^3 b_{3u} * e^3 b_{2u} \displaystyle $ & $ \begin{array}{c}
-+2 \cdot \left|a2a0aa20\right| +2 \cdot \left|aa20a2a0\right| -2 \cdot \left|a2a002aa\right| -2 \cdot \left|02aaa2a0\right| \\[0.5cm] +2 \cdot \left|0a2aaa20\right| +2 \cdot \left|aa200a2a\right| -2 \cdot \left|0a2a02aa\right| -2 \cdot \left|02aa0a2a\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $e^3 b_{2u} * e^3 b_{3u} - e^3 b_{3u} * e^3 b_{2u} \displaystyle $ & $ \begin{array}{c}
--2 \cdot \left|a220aaa0\right| +2 \cdot \left|aaa0a220\right| +2 \cdot \left|a2aa02a0\right| -2 \cdot \left|02a0a2aa\right| \\[0.5cm] -2 \cdot \left|0a20aa2a\right| +2 \cdot \left|aa2a0a20\right| +2 \cdot \left|0aaa022a\right| -2 \cdot \left|022a0aaa\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $e^3 b_{2u} * i^3 b_{3u} + i^3 b_{3u} * e^3 b_{2u} \displaystyle $ & $ \begin{array}{c}
-+2 \cdot \left|a2a0aa20\right| +2 \cdot \left|aa20a2a0\right| +2 \cdot \left|a2a002aa\right| +2 \cdot \left|02aaa2a0\right| \\[0.5cm] +2 \cdot \left|0a2aaa20\right| +2 \cdot \left|aa200a2a\right| +2 \cdot \left|0a2a02aa\right| +2 \cdot \left|02aa0a2a\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $e^3 b_{2u} * i^3 b_{3u} - i^3 b_{3u} * e^3 b_{2u} \displaystyle $ & $ \begin{array}{c}
--2 \cdot \left|a220aaa0\right| +2 \cdot \left|aaa0a220\right| -2 \cdot \left|a2aa02a0\right| +2 \cdot \left|02a0a2aa\right| \\[0.5cm] -2 \cdot \left|0a20aa2a\right| +2 \cdot \left|aa2a0a20\right| -2 \cdot \left|0aaa022a\right| +2 \cdot \left|022a0aaa\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $e^3 b_{3u} * e^3 b_{3u} \displaystyle $ & $ \begin{array}{c}
-+\left|aa20aa20\right| -2 \cdot \left|aa2002aa\right| -2 \cdot \left|aaaa0220\right| +2 \cdot \left|a22a0aa0\right| \\[0.5cm] -2 \cdot \left|a2a00a2a\right| -2 \cdot \left|0a2aa2a0\right| +2 \cdot \left|0aa0a22a\right| -2 \cdot \left|0220aaaa\right| \\[0.5cm] -2 \cdot \left|02aaaa20\right| +\left|02aa02aa\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $e^3 b_{3u} * i^3 b_{3u} + i^3 b_{3u} * e^3 b_{3u} \displaystyle $ & $ +2 \cdot \left|aa20aa20\right| -2 \cdot \left|02aa02aa\right| \displaystyle $ \\ [1cm] 
-\hline $e^3 b_{3u} * i^3 b_{3u} - i^3 b_{3u} * e^3 b_{3u} \displaystyle $ & $ \begin{array}{c}
-+4 \cdot \left|aa2a02a0\right| -4 \cdot \left|aaa0022a\right| +4 \cdot \left|a2200aaa\right| +4 \cdot \left|a2aa0a20\right| \\[0.5cm] -4 \cdot \left|0a20a2aa\right| -4 \cdot \left|0aaaa220\right| +4 \cdot \left|022aaaa0\right| -4 \cdot \left|02a0aa2a\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline $i^3 b_{3u} * i^3 b_{3u} \displaystyle $ & $ \begin{array}{c}
-+\left|aa20aa20\right| +2 \cdot \left|aa2002aa\right| +2 \cdot \left|aaaa0220\right| -2 \cdot \left|a22a0aa0\right| \\[0.5cm] +2 \cdot \left|a2a00a2a\right| +2 \cdot \left|0a2aa2a0\right| -2 \cdot \left|0aa0a22a\right| +2 \cdot \left|0220aaaa\right| \\[0.5cm] +2 \cdot \left|02aaaa20\right| +\left|02aa02aa\right|
-\end{array} \displaystyle $ \\ [1cm] 
-\hline
-\end{tabular}
-\end{table}
+Dimer States and Their CI Vectors:
+\begin{itemize}
+\item \boldmath$S * Q + Q * S \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++2 \cdot \left|0220aaaa\right| +2 \cdot \left|02aaaa20\right| -2 \cdot \left|0a2aa2a0\right| +2 \cdot \left|0aa0a22a\right| +2 \cdot \left|a22a0aa0\right| -2 \cdot \left|a2a00a2a\right| \\[0.5cm] +2 \cdot \left|aa2002aa\right| +2 \cdot \left|aaaa0220\right|
+\end{array}$$
+\item \boldmath$S * Q - Q * S \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++2 \cdot \left|022aaaa0\right| -2 \cdot \left|02a0aa2a\right| +2 \cdot \left|0a20a2aa\right| +2 \cdot \left|0aaaa220\right| -2 \cdot \left|a2200aaa\right| -2 \cdot \left|a2aa0a20\right| \\[0.5cm] +2 \cdot \left|aa2a02a0\right| -2 \cdot \left|aaa0022a\right|
+\end{array}$$
+\item \boldmath$i^3 b_{2u} * i^3 b_{2u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++\left|a2a0a2a0\right| -2 \cdot \left|a2a00a2a\right| -2 \cdot \left|a22a0aa0\right| +2 \cdot \left|aaaa0220\right| -2 \cdot \left|aa2002aa\right| -2 \cdot \left|02aaaa20\right| \\[0.5cm] +2 \cdot \left|0220aaaa\right| -2 \cdot \left|0aa0a22a\right| -2 \cdot \left|0a2aa2a0\right| +\left|0a2a0a2a\right|
+\end{array}$$
+\item \boldmath$i^3 b_{2u} * e^3 b_{2u} + e^3 b_{2u} * i^3 b_{2u} \displaystyle $\unboldmath : \quad$$+2 \cdot \left|a2a0a2a0\right| -2 \cdot \left|0a2a0a2a\right|$$
+\item \boldmath$i^3 b_{2u} * e^3 b_{2u} - e^3 b_{2u} * i^3 b_{2u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++4 \cdot \left|a2aa0a20\right| -4 \cdot \left|a2200aaa\right| +4 \cdot \left|aaa0022a\right| +4 \cdot \left|aa2a02a0\right| -4 \cdot \left|02a0aa2a\right| -4 \cdot \left|022aaaa0\right| \\[0.5cm] +4 \cdot \left|0aaaa220\right| -4 \cdot \left|0a20a2aa\right|
+\end{array}$$
+\item \boldmath$i^3 b_{2u} * e^3 b_{3u} + e^3 b_{3u} * i^3 b_{2u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++2 \cdot \left|a2a0aa20\right| +2 \cdot \left|aa20a2a0\right| -2 \cdot \left|a2a002aa\right| -2 \cdot \left|02aaa2a0\right| -2 \cdot \left|0a2aaa20\right| -2 \cdot \left|aa200a2a\right| \\[0.5cm] +2 \cdot \left|0a2a02aa\right| +2 \cdot \left|02aa0a2a\right|
+\end{array}$$
+\item \boldmath$i^3 b_{2u} * e^3 b_{3u} - e^3 b_{3u} * i^3 b_{2u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
+-2 \cdot \left|a220aaa0\right| +2 \cdot \left|aaa0a220\right| +2 \cdot \left|a2aa02a0\right| -2 \cdot \left|02a0a2aa\right| +2 \cdot \left|0a20aa2a\right| -2 \cdot \left|aa2a0a20\right| \\[0.5cm] -2 \cdot \left|0aaa022a\right| +2 \cdot \left|022a0aaa\right|
+\end{array}$$
+\item \boldmath$i^3 b_{2u} * i^3 b_{3u} + i^3 b_{3u} * i^3 b_{2u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++2 \cdot \left|a2a0aa20\right| +2 \cdot \left|aa20a2a0\right| +2 \cdot \left|a2a002aa\right| +2 \cdot \left|02aaa2a0\right| -2 \cdot \left|0a2aaa20\right| -2 \cdot \left|aa200a2a\right| \\[0.5cm] -2 \cdot \left|0a2a02aa\right| -2 \cdot \left|02aa0a2a\right|
+\end{array}$$
+\item \boldmath$i^3 b_{2u} * i^3 b_{3u} - i^3 b_{3u} * i^3 b_{2u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
+-2 \cdot \left|a220aaa0\right| +2 \cdot \left|aaa0a220\right| -2 \cdot \left|a2aa02a0\right| +2 \cdot \left|02a0a2aa\right| +2 \cdot \left|0a20aa2a\right| -2 \cdot \left|aa2a0a20\right| \\[0.5cm] +2 \cdot \left|0aaa022a\right| -2 \cdot \left|022a0aaa\right|
+\end{array}$$
+\item \boldmath$e^3 b_{2u} * e^3 b_{2u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++\left|a2a0a2a0\right| +2 \cdot \left|a2a00a2a\right| +2 \cdot \left|a22a0aa0\right| -2 \cdot \left|aaaa0220\right| +2 \cdot \left|aa2002aa\right| +2 \cdot \left|02aaaa20\right| \\[0.5cm] -2 \cdot \left|0220aaaa\right| +2 \cdot \left|0aa0a22a\right| +2 \cdot \left|0a2aa2a0\right| +\left|0a2a0a2a\right|
+\end{array}$$
+\item \boldmath$e^3 b_{2u} * e^3 b_{3u} + e^3 b_{3u} * e^3 b_{2u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++2 \cdot \left|a2a0aa20\right| +2 \cdot \left|aa20a2a0\right| -2 \cdot \left|a2a002aa\right| -2 \cdot \left|02aaa2a0\right| +2 \cdot \left|0a2aaa20\right| +2 \cdot \left|aa200a2a\right| \\[0.5cm] -2 \cdot \left|0a2a02aa\right| -2 \cdot \left|02aa0a2a\right|
+\end{array}$$
+\item \boldmath$e^3 b_{2u} * e^3 b_{3u} - e^3 b_{3u} * e^3 b_{2u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
+-2 \cdot \left|a220aaa0\right| +2 \cdot \left|aaa0a220\right| +2 \cdot \left|a2aa02a0\right| -2 \cdot \left|02a0a2aa\right| -2 \cdot \left|0a20aa2a\right| +2 \cdot \left|aa2a0a20\right| \\[0.5cm] +2 \cdot \left|0aaa022a\right| -2 \cdot \left|022a0aaa\right|
+\end{array}$$
+\item \boldmath$e^3 b_{2u} * i^3 b_{3u} + i^3 b_{3u} * e^3 b_{2u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++2 \cdot \left|a2a0aa20\right| +2 \cdot \left|aa20a2a0\right| +2 \cdot \left|a2a002aa\right| +2 \cdot \left|02aaa2a0\right| +2 \cdot \left|0a2aaa20\right| +2 \cdot \left|aa200a2a\right| \\[0.5cm] +2 \cdot \left|0a2a02aa\right| +2 \cdot \left|02aa0a2a\right|
+\end{array}$$
+\item \boldmath$e^3 b_{2u} * i^3 b_{3u} - i^3 b_{3u} * e^3 b_{2u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
+-2 \cdot \left|a220aaa0\right| +2 \cdot \left|aaa0a220\right| -2 \cdot \left|a2aa02a0\right| +2 \cdot \left|02a0a2aa\right| -2 \cdot \left|0a20aa2a\right| +2 \cdot \left|aa2a0a20\right| \\[0.5cm] -2 \cdot \left|0aaa022a\right| +2 \cdot \left|022a0aaa\right|
+\end{array}$$
+\item \boldmath$e^3 b_{3u} * e^3 b_{3u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++\left|aa20aa20\right| -2 \cdot \left|aa2002aa\right| -2 \cdot \left|aaaa0220\right| +2 \cdot \left|a22a0aa0\right| -2 \cdot \left|a2a00a2a\right| -2 \cdot \left|0a2aa2a0\right| \\[0.5cm] +2 \cdot \left|0aa0a22a\right| -2 \cdot \left|0220aaaa\right| -2 \cdot \left|02aaaa20\right| +\left|02aa02aa\right|
+\end{array}$$
+\item \boldmath$e^3 b_{3u} * i^3 b_{3u} + i^3 b_{3u} * e^3 b_{3u} \displaystyle $\unboldmath : \quad$$+2 \cdot \left|aa20aa20\right| -2 \cdot \left|02aa02aa\right|$$
+\item \boldmath$e^3 b_{3u} * i^3 b_{3u} - i^3 b_{3u} * e^3 b_{3u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++4 \cdot \left|aa2a02a0\right| -4 \cdot \left|aaa0022a\right| +4 \cdot \left|a2200aaa\right| +4 \cdot \left|a2aa0a20\right| -4 \cdot \left|0a20a2aa\right| -4 \cdot \left|0aaaa220\right| \\[0.5cm] +4 \cdot \left|022aaaa0\right| -4 \cdot \left|02a0aa2a\right|
+\end{array}$$
+\item \boldmath$i^3 b_{3u} * i^3 b_{3u} \displaystyle $\unboldmath : \quad$$\begin{array}{c}
++\left|aa20aa20\right| +2 \cdot \left|aa2002aa\right| +2 \cdot \left|aaaa0220\right| -2 \cdot \left|a22a0aa0\right| +2 \cdot \left|a2a00a2a\right| +2 \cdot \left|0a2aa2a0\right| \\[0.5cm] -2 \cdot \left|0aa0a22a\right| +2 \cdot \left|0220aaaa\right| +2 \cdot \left|02aaaa20\right| +\left|02aa02aa\right|
+\end{array}$$
+
+\end{itemize}
+
 
 \end{document}

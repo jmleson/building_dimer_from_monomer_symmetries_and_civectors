@@ -1,6 +1,6 @@
-from src.CI_ORDERING import CI_ORDERING
-from src.Molecule import Molecule
-from src.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
+from src.symmetries.CI_ORDERING import CI_ORDERING
+from src.symmetries.Molecule import Molecule
+from src.building_blocks.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
 from src.latex.format_irred_representations import format_irred_representations
 from src.latex.get_table import get_table
 

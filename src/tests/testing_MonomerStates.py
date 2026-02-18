@@ -1,8 +1,8 @@
 import copy
 import unittest
 
-from src.CI_ORDERING import CI_ORDERING
-from src.Molecule import Molecule
+from src.symmetries.CI_ORDERING import CI_ORDERING
+from src.symmetries.Molecule import Molecule
 from src.building_blocks.MonomerOccupation import MonomerOccupation
 from src.building_blocks.MonomerState import MonomerState
 from src.mathematics.Sign import SIGN

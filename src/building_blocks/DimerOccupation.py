@@ -1,6 +1,6 @@
 import re
 
-from src.CI_ORDERING import CI_ORDERING
+from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.building_blocks.DimerDeterminant import DimerDeterminant
 from src.building_blocks.MonomerOccupation import MonomerOccupation
 from src.latex.format_irred_representations import format_irred_representations
@@ -98,14 +98,14 @@ class DimerOccupation:
     def multiply_out(self, ordering:CI_ORDERING):
         if len(self.determinants) > 0:
             return
-        print("\n$$", self.monomer_occupation_1.latex_ci_equation(ordering=ordering, multiplied_out=False),
-              self.monomer_occupation_2.latex_ci_equation(ordering=ordering, multiplied_out=False), "$$"
-              )
+        # print("\n$$", self.monomer_occupation_1.latex_ci_equation(ordering=ordering, multiplied_out=False),
+        #       self.monomer_occupation_2.latex_ci_equation(ordering=ordering, multiplied_out=False), "$$"
+        #       )
         latex_ci = self.written_in_monomer_ci_vectors(ordering=ordering, multiplied_out=True)
-        print("$$",
-              self.monomer_occupation_1.latex_ci_equation(ordering=ordering, multiplied_out=True),
-              self.monomer_occupation_2.latex_ci_equation(ordering=ordering, multiplied_out=True), "$$"
-              )
+        # print("$$",
+        #       self.monomer_occupation_1.latex_ci_equation(ordering=ordering, multiplied_out=True),
+        #       self.monomer_occupation_2.latex_ci_equation(ordering=ordering, multiplied_out=True), "$$"
+        #       )
 
         monomer_LC_and_OCC_1 = [i.get_occupation_string(multiplied_out=True) for i in self.monomer_occupation_1.get_orbitals_in_order(ordering=ordering)]
         monomer_LC_and_OCC_2 = [i.get_occupation_string(multiplied_out=True) for i in self.monomer_occupation_2.get_orbitals_in_order(ordering=ordering)]

@@ -1,5 +1,5 @@
-from src.CI_ORDERING import CI_ORDERING
-from src.Molecule import Molecule
+from src.symmetries.CI_ORDERING import CI_ORDERING
+from src.symmetries.Molecule import Molecule
 from src.latex.basic_latex_header import basic_latex_header
 from src.latex.pdf_summary.get_dimer_states_and_configurations import get_dimer_states_and_configurations
 from src.latex.pdf_summary.get_monomer_states_and_configurations import get_monomer_states_and_configurations
