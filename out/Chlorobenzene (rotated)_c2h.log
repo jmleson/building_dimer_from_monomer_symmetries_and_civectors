@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.28)  18 FEB 2026 13:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.28)  18 FEB 2026 13:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -574,7 +574,8 @@ Package: xparse 2024-08-16 L3 Experimental document command parser
 ))
 Package hyperref Info: Option `colorlinks' set `true' on input line 12.
 
-No file "Chlorobenzene (rotated)_c2h".aux.
+(/home/judith/Schreibtisch/Promotion/building_dimer_from_monomer_symmetries_and
+_civectors/out/Chlorobenzene (rotated)_c2h.aux)
 \openout1 = `"Chlorobenzene (rotated)_c2h.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
@@ -595,6 +596,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -630,8 +632,14 @@ LaTeX Font Info:    ... okay on input line 14.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 14.
+
+(/home/judith/Schreibtisch/Promotion/building_dimer_from_monomer_symmetries_and
+_civectors/out/Chlorobenzene (rotated)_c2h.out)
+(/home/judith/Schreibtisch/Promotion/building_dimer_from_monomer_symmetries_and
+_civectors/out/Chlorobenzene (rotated)_c2h.out)
 \@outlinefile=\write4
 \openout4 = `"Chlorobenzene (rotated)_c2h.out"'.
+
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -655,7 +663,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-No file "Chlorobenzene (rotated)_c2h".toc.
+(/home/judith/Schreibtisch/Promotion/building_dimer_from_monomer_symmetries_and
+_civectors/out/Chlorobenzene (rotated)_c2h.toc)
 \tf@toc=\write5
 \openout5 = `"Chlorobenzene (rotated)_c2h.toc"'.
 
@@ -1683,23 +1692,15 @@ _civectors/out/Chlorobenzene (rotated)_c2h.aux)
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-Package rerunfilecheck Warning: File `"Chlorobenzene (rotated)_c2h".out' has ch
-anged.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `"Chlorobenzene (rotated)_c2h".out':
-
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  1B91D266B2F630807D998E856A39179B;4458.
+Package rerunfilecheck Info: File `"Chlorobenzene (rotated)_c2h".out' has not c
+hanged.
+(rerunfilecheck)             Checksum: 1B91D266B2F630807D998E856A39179B;4458.
  ) 
 Here is how much of TeX's memory you used:
- 21002 strings out of 473197
- 389380 string characters out of 5718604
- 813525 words of memory out of 5000000
- 43879 multiletter control sequences out of 15000+600000
+ 21037 strings out of 473197
+ 390858 string characters out of 5718604
+ 813564 words of memory out of 5000000
+ 43906 multiletter control sequences out of 15000+600000
  569167 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,20n,107p,1593b,684s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1719,11 +1720,11 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf
 /fonts/type1/public/cm-super/sfrm1000.pfb>
 Output written on "/home/judith/Schreibtisch/Promotion/building_dimer_from_mono
-mer_symmetries_and_civectors/out/Chlorobenzene (rotated)_c2h.pdf" (24 pages, 22
-2476 bytes).
+mer_symmetries_and_civectors/out/Chlorobenzene (rotated)_c2h.pdf" (24 pages, 23
+5157 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
+ 324 PDF objects out of 1000 (max. 8388607)
+ 263 compressed objects within 3 object streams
  50 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

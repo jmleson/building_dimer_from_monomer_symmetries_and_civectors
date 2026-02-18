@@ -1,7 +1,7 @@
 import copy
 from typing import List
 
-from src_alongLaTex.sort_swap_count import sort_swap_count
+from src.mathematics_and_combinations.sort_swap_count import sort_swap_count
 
 
 def count_swaps_unique(list1:List, list2:List, print_error=True) -> int:

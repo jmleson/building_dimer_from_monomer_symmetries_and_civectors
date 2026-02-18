@@ -27,7 +27,7 @@ def get_summarizing_latex_file(molecule:Molecule, ordering:CI_ORDERING, detailed
     chapter5 = get_overview_table_for_civectors(molecule=molecule, ordering=ordering)
 
     end = r"\end{document}"
-    with open(f"src/resulting_tex_files/{molecule.value}_{molecule.get_point_group().value}.tex", "w") as file:
+    with open(f"resulting_tex_files/{molecule.value}_{molecule.get_point_group().value}.tex", "w") as file:
         file.write(start
                    + chapter1
                    + chapter2
