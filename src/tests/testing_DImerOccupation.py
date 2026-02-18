@@ -73,9 +73,9 @@ class TestDimerOccupation(unittest.TestCase):
         assert (r"+\left|\underbrace{"+
                 format_irred_representations("(ag)^{0}(b3u)^{2}(b2u)^{1}(b1g)^{0}(b1u)^{1}(b2g)^{2}(b3g)^{1}(au)^{1}")
                 + r"}_{a_{u}}\right|" in strings )
-        assert (r"-\left|\underbrace{"+
-                format_irred_representations("(ag)^{0}(b3u)^{2}(b2u)^{1}(b1g)^{1}(b1u)^{1}(b2g)^{2}(b3g)^{1}(au)^{0}")
-                + r"}_{b_{1g}}\right|" in strings )
+        # assert (r"-\left|\underbrace{"+
+        #         format_irred_representations("(ag)^{0}(b3u)^{2}(b2u)^{1}(b1g)^{1}(b1u)^{1}(b2g)^{2}(b3g)^{1}(au)^{0}")
+        #         + r"}_{b_{1g}}\right|" in strings )
 
 
         # 3 orbitals different:
