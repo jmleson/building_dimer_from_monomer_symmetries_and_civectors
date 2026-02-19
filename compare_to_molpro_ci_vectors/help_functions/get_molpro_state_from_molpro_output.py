@@ -11,14 +11,31 @@ def get_molpro_state_from_molpro_output(data: str, column_index: int):
 
     for line in lines:
         parts = line.split()
-        patterns.append(parts[:8])
-        numbers.append([float(x) for x in parts[8:]])
+
+        try:
+            after_occupations = 8
+            if not all(len(p) == 1 for p in parts[:after_occupations]):
+                raise Exception("not Benzene-like")
+            occupations = parts[:after_occupations]
+        except:
+            try:
+                after_occupations = 4
+                if not any(len(p) == 3 for p in parts[:after_occupations]):
+                    raise Exception("not Chlorobenzene-like")
+                occupations = [p if len(p) < 3 else p[1:] for p in parts[:after_occupations]]
+            except:
+                raise Exception("no pattern found")
+
+        patterns.append("".join(occupations))
+        numbers.append([float(x) for x in parts[after_occupations:]])
 
     variants = []
     for i in range(len(patterns)):
         x = numbers[i][column_index]
-        if abs(x) > 0.01:          # Filter: nur wenn Betrag > 0.01
-            s = sign_char(x) + "".join(patterns[i])
+        if abs(x) > 0.2:          # ! needs to be carefully chosen
+            # in C6H5Cl molpro prints ci vectors with factor 0.12173379, that do NOT belong to the main parts according to our derivation
+            # however, some parts < 0.3 need to be included
+            s = sign_char(x) + patterns[i]
             variants.append(s)
 
     return variants
@@ -26,7 +43,7 @@ def get_molpro_state_from_molpro_output(data: str, column_index: int):
 
 
 
-### INCLUDED TESTS: 
+### INCLUDED TESTS:
 data = """
      0 2 a a 0 2 a a      0.00000000     -0.00000022      0.00000155      0.34701928      0.35836745     -0.70190036      0.49380170
      a a 2 0 a a 2 0     -0.00000000     -0.00000022     -0.00000155      0.34701931      0.35836748      0.70190036      0.49380166
@@ -65,3 +82,26 @@ variants_root_5 = [
 ]
 variants = get_molpro_state_from_molpro_output(data, column_index=4)
 assert variants ==  variants_root_5
+
+Cl_data_sym_3 = """
+ 2a0 20 22a aa     -0.34467191     -0.34424105     -0.34702251
+ 22a aa 2a0 20      0.34467191      0.34424105      0.34702251
+ 220 a0 2aa 2a     -0.34467191      0.34424105      0.34702251
+ 2aa 2a 220 a0      0.34467191     -0.34424105     -0.34702251
+ 22a 20 2a0 aa      0.34467191      0.34424191     -0.34702181
+ 2a0 aa 22a 20     -0.34467191     -0.34424191      0.34702181
+ 2aa a0 220 2a     -0.34467191      0.34424191     -0.34702181
+ 220 2a 2aa a0      0.34467191     -0.34424191      0.34702181
+"""
+variants_root_Cl = [
+    "-a0202aaa",
+    "+2aaaa020",
+    "-20a0aa2a",
+    "+aa2a20a0",
+    "+2a20a0aa",
+    "-a0aa2a20",
+    "-aaa0202a",
+    "+202aaaa0",
+]
+variants = get_molpro_state_from_molpro_output(Cl_data_sym_3, column_index=0)
+assert variants == variants_root_Cl

@@ -1,7 +1,7 @@
 import re
 
-
-from get_molpro_state_from_molpro_output import get_molpro_state_from_molpro_output
+from compare_to_molpro_ci_vectors.help_functions.get_molpro_state_from_molpro_output import \
+    get_molpro_state_from_molpro_output
 from src.building_blocks.DimerState import DimerState
 
 
@@ -20,13 +20,16 @@ def find_dimer_state_by_molpro_variants(data:str, dimer_states:list[DimerState],
     variants_according_to_molpro = get_molpro_state_from_molpro_output(data, row_index)
 
     fitting_dimer_states = []
+    infos = []
     for d in dimer_states:
         d.get_product_terms()
         d.get_determinants()
         d.sum_up_determinants()
-        if check_if_dimer_state_fits_molpro_results(dimer_state=d, variants_according_to_molpro=variants_according_to_molpro):
+        check, info = check_if_dimer_state_fits_molpro_results(dimer_state=d, variants_according_to_molpro=variants_according_to_molpro)
+        if check:
             fitting_dimer_states.append(d)
-    return fitting_dimer_states
+        infos.append(info)
+    return fitting_dimer_states, infos
 
 
 
@@ -41,9 +44,21 @@ def check_if_dimer_state_fits_molpro_results(dimer_state:DimerState, variants_ac
     all_molpro = all(v in simplified_ci_vectors for v in variants_according_to_molpro)
     all_sign_switched = all(v in simplified_ci_vectors for v in sign_switched_variants)
     if all_molpro or all_sign_switched:
-        return True
+        return True, ""
     else:
-        return False
+        all_molpro = [v in simplified_ci_vectors for v in variants_according_to_molpro]
+        all_sign_switched = [v in simplified_ci_vectors for v in sign_switched_variants]
+        max_found = max(len(all_molpro), len(all_sign_switched))
+        if len(variants_according_to_molpro) > len(simplified_ci_vectors):
+            info = "more states in Molpro"
+        elif len(variants_according_to_molpro) < len(simplified_ci_vectors):
+            info = "more states in Molpro"
+        else:
+            if max_found == len(variants_according_to_molpro):
+                info = "ci vectors fitting, but signs are differing"
+            else:
+                info = "ci vectors unfitting"
+        return False, info
 
 
 

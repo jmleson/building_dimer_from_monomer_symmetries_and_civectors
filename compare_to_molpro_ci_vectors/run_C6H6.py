@@ -1,12 +1,11 @@
 
-from compare_to_molpro_ci_vectors.search_all_states import search_all_states
+from compare_to_molpro_ci_vectors.help_functions.search_all_states import search_all_states
 from src.building_blocks.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
 from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.symmetries.Molecule import Molecule
 
 
-
-
+# INFO: Results form Z200, C6H6-x2:
 data_sym_1 = """
  0 2 a a 0 2 a a      0.00000000     -0.00000022      0.00000155      0.34701928      0.35836745     -0.70190036      0.49380170
  a a 2 0 a a 2 0     -0.00000000     -0.00000022     -0.00000155      0.34701931      0.35836748      0.70190036      0.49380166
