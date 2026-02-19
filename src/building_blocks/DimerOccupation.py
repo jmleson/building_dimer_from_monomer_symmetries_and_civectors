@@ -68,7 +68,7 @@ class DimerOccupation:
         return orbitals
 
 
-    def find_switching_sign(self, possibility, prior_latex_ci:str):
+    def find_switching_sign(self, possibility, prior_latex_ci:str, ordering:CI_ORDERING):
         if len(possibility) == 0:
             # case of exactly identical ci vectors on left and right monomer
             return SIGN.PLUS
@@ -82,7 +82,10 @@ class DimerOccupation:
         sorted_now = {}
         for i in possibility_sym_labels:
             irred = i.replace("+","").replace("-","")
-            sorted_now[format_irred_representations(i)] = self.point_group.irreduzible_representations_molpro_ordered.index(irred)
+            if ordering == CI_ORDERING.molpro:
+                sorted_now[format_irred_representations(i)] = self.point_group.irreduzible_representations_molpro_ordered.index(irred)
+            else:
+                sorted_now[format_irred_representations(i)] = self.point_group.irreduzible_representations_orbital_ordered.index(irred)
         sorted_now = dict(sorted(sorted_now.items(), key=lambda item: item[1]))# dict, e.g. {'+b_{1g}': 3, '+b_{1u}': 4, '+b_{3g}': 6, '+b_{3u}': 1}
         ordering_now = list(sorted_now.keys())# list[str]
 
@@ -142,7 +145,7 @@ class DimerOccupation:
 
         for possibility in possibilities:
             signs = [i["sign"] for i in possibility if i["occupation"] == 1] + [
-                self.sign, sign_of_definite_orbitals, self.find_switching_sign(possibility, prior_latex_ci=latex_ci)]
+                self.sign, sign_of_definite_orbitals, self.find_switching_sign(possibility, prior_latex_ci=latex_ci, ordering=ordering)]
             sign = build_product_from_signs_in_str("".join([s.value for s in signs]))
 
             orbital_symmetry_labels_occ0 = [i["sym_label"] for i in possibility if i["occupation"] == 0]

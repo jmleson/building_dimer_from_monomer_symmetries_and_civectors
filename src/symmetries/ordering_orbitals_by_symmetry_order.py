@@ -12,7 +12,10 @@ def ordering_orbitals_by_symmetry_order(orbitals:list[Orbital], point_group:POIN
         else:
             ordering = point_group.irreduzible_representations_molpro_ordered
     else:
-        raise Exception("nyi")
+        if point_group == POINTGROUP.C2h and orbitals[0].side is not None:
+            ordering = POINTGROUP.C2v.irreduzible_representations_orbital_ordered
+        else:
+            ordering = point_group.irreduzible_representations_orbital_ordered
 
     ranking = {
         **{label: i for i, label in enumerate(ordering)},

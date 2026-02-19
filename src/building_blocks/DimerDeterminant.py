@@ -106,7 +106,7 @@ class DimerDeterminant(object):
         if self.ordering == CI_ORDERING.molpro:
             order = self.point_group.irreduzible_representations_molpro_ordered
         else:
-            raise Exception("nyi")
+            order = self.point_group.irreduzible_representations_orbital_ordered
 
         s = ""
         for orbital_sym in order:
