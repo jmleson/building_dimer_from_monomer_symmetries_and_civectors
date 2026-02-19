@@ -25,6 +25,7 @@ def find_dimer_state_by_molpro_variants(data:str, dimer_states:list[DimerState],
         d.get_product_terms()
         d.get_determinants()
         d.sum_up_determinants()
+
         check, info = check_if_dimer_state_fits_molpro_results(dimer_state=d, variants_according_to_molpro=variants_according_to_molpro)
         if check:
             fitting_dimer_states.append(d)
@@ -50,14 +51,14 @@ def check_if_dimer_state_fits_molpro_results(dimer_state:DimerState, variants_ac
         all_sign_switched = [v in simplified_ci_vectors for v in sign_switched_variants]
         max_found = max(len(all_molpro), len(all_sign_switched))
         if len(variants_according_to_molpro) > len(simplified_ci_vectors):
-            info = "more states in Molpro"
+            info = f"{dimer_state.get_label()}: more states in Molpro"
         elif len(variants_according_to_molpro) < len(simplified_ci_vectors):
-            info = "more states in Molpro"
+            info = f"{dimer_state.get_label()}: less states in Molpro"
         else:
             if max_found == len(variants_according_to_molpro):
-                info = "ci vectors fitting, but signs are differing"
+                info = f"{dimer_state.get_label()}: ci vectors fitting, but signs are differing"
             else:
-                info = "ci vectors unfitting"
+                info = f"{dimer_state.get_label()}: ci vectors unfitting"
         return False, info
 
 

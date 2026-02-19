@@ -1,5 +1,6 @@
 
-from compare_to_molpro_ci_vectors.help_functions.search_all_states import search_all_states
+from compare_to_molpro_ci_vectors.help_functions.search_all_states import search_all_states, \
+    get_table_off_all_states_agreeing_with_molpro
 from src.building_blocks.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
 from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.symmetries.Molecule import Molecule
@@ -63,4 +64,6 @@ info = [
     {"sym": 3,  "data": data_sym_3, "number of states": 3, "root offset": 0+7+4     },
     {"sym": 4,  "data": data_sym_4, "number of states": 4, "root offset": 0+7+4+3   },
 ]
-search_all_states(dimer_states=dimer_states, info=info)
+# search_all_states(dimer_states=dimer_states, info=info)
+
+get_table_off_all_states_agreeing_with_molpro(dimer_states=dimer_states, info=info)
