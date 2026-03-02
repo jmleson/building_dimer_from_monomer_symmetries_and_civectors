@@ -9,7 +9,7 @@ from src.symmetries.POINTGROUP import POINTGROUP
 class Molecule(Enum):
     C6H6 = "Benzene"
     C6H5Cl = "Chlorobenzene"
-    C6H5Cl_rotated = "Chlorobenzene (rotated)"
+    C6H5Cl_rotated = "Chlorobenzene(rotated)"
 
     def get_point_group(self):
         if self.value == Molecule.C6H6.value:

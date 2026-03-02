@@ -18,26 +18,26 @@ class TestDimerStates(unittest.TestCase):
         dimer_states = get_dimer_states_from_monomer_states(molecule=Molecule.C6H6, ordering=CI_ORDERING.molpro)
         assert len(dimer_states) == 18
         strings = [d.get_label() for d in dimer_states]
-        assert "S * Q + Q * S" in strings
-        assert "S * Q - Q * S" in strings
-        assert "i^3 b_{2u} * i^3 b_{2u}" in strings
-        assert "i^3 b_{2u} * e^3 b_{2u} + e^3 b_{2u} * i^3 b_{2u}" in strings
-        assert "i^3 b_{2u} * e^3 b_{2u} - e^3 b_{2u} * i^3 b_{2u}" in strings
-        assert "i^3 b_{2u} * e^3 b_{3u} + e^3 b_{3u} * i^3 b_{2u}" in strings
-        assert "i^3 b_{2u} * e^3 b_{3u} - e^3 b_{3u} * i^3 b_{2u}" in strings
-        assert "i^3 b_{2u} * i^3 b_{3u} + i^3 b_{3u} * i^3 b_{2u}" in strings
-        assert "i^3 b_{2u} * i^3 b_{3u} - i^3 b_{3u} * i^3 b_{2u}" in strings
-        assert "e^3 b_{2u} * e^3 b_{2u}" in strings
-        assert "e^3 b_{2u} * e^3 b_{3u} + e^3 b_{3u} * e^3 b_{2u}" in strings
-        assert "e^3 b_{2u} * e^3 b_{3u} - e^3 b_{3u} * e^3 b_{2u}" in strings
-        assert "e^3 b_{2u} * i^3 b_{3u} + i^3 b_{3u} * e^3 b_{2u}" in strings
-        assert "e^3 b_{2u} * i^3 b_{3u} - i^3 b_{3u} * e^3 b_{2u}" in strings
-        assert "e^3 b_{3u} * e^3 b_{3u}" in strings
-        assert "e^3 b_{3u} * i^3 b_{3u} + i^3 b_{3u} * e^3 b_{3u}" in strings
-        assert "e^3 b_{3u} * i^3 b_{3u} - i^3 b_{3u} * e^3 b_{3u}" in strings
-        assert "i^3 b_{3u} * i^3 b_{3u}" in strings
+        assert "S \otimes Q + Q \otimes S" in strings
+        assert "S \otimes Q - Q \otimes S" in strings
+        assert "i^3 b_{2u} \otimes i^3 b_{2u}" in strings
+        assert "i^3 b_{2u} \otimes e^3 b_{2u} + e^3 b_{2u} \otimes i^3 b_{2u}" in strings
+        assert "i^3 b_{2u} \otimes e^3 b_{2u} - e^3 b_{2u} \otimes i^3 b_{2u}" in strings
+        assert "i^3 b_{2u} \otimes e^3 b_{3u} + e^3 b_{3u} \otimes i^3 b_{2u}" in strings
+        assert "i^3 b_{2u} \otimes e^3 b_{3u} - e^3 b_{3u} \otimes i^3 b_{2u}" in strings
+        assert "i^3 b_{2u} \otimes i^3 b_{3u} + i^3 b_{3u} \otimes i^3 b_{2u}" in strings
+        assert "i^3 b_{2u} \otimes i^3 b_{3u} - i^3 b_{3u} \otimes i^3 b_{2u}" in strings
+        assert "e^3 b_{2u} \otimes e^3 b_{2u}" in strings
+        assert "e^3 b_{2u} \otimes e^3 b_{3u} + e^3 b_{3u} \otimes e^3 b_{2u}" in strings
+        assert "e^3 b_{2u} \otimes e^3 b_{3u} - e^3 b_{3u} \otimes e^3 b_{2u}" in strings
+        assert "e^3 b_{2u} \otimes i^3 b_{3u} + i^3 b_{3u} \otimes e^3 b_{2u}" in strings
+        assert "e^3 b_{2u} \otimes i^3 b_{3u} - i^3 b_{3u} \otimes e^3 b_{2u}" in strings
+        assert "e^3 b_{3u} \otimes e^3 b_{3u}" in strings
+        assert "e^3 b_{3u} \otimes i^3 b_{3u} + i^3 b_{3u} \otimes e^3 b_{3u}" in strings
+        assert "e^3 b_{3u} \otimes i^3 b_{3u} - i^3 b_{3u} \otimes e^3 b_{3u}" in strings
+        assert "i^3 b_{3u} \otimes i^3 b_{3u}" in strings
 
-        assert "i^3 b_{2u} * i^3 b_{2u}" == strings[2]
+        assert "i^3 b_{2u} \otimes i^3 b_{2u}" == strings[2]
         d_triplet_1 = dimer_states[2]
         d_triplet_1.get_product_terms()
         assert len(d_triplet_1.dimer_occupations) == 4
@@ -87,7 +87,7 @@ class TestDimerStates(unittest.TestCase):
                 i.get_determinants()
                 i.sum_up_determinants()
 
-                ci_vectors = [i.latex_ci_equation(short_version=True) for i in i.summed_up_list_of_determinants_ci]
+                ci_vectors = [j.latex_ci_equation(short_version=True) for j in i.summed_up_list_of_determinants_ci]
                 simplified_ci_vectors = [
                     ('+' if '+' in i else '-') + re.search(r'\\left\|(.*?)\\right\|', i).group(1)
                     for i in ci_vectors
@@ -99,7 +99,7 @@ class TestDimerStates(unittest.TestCase):
     def test_end_results(self):
         dimer_states = get_dimer_states_from_monomer_states(molecule=Molecule.C6H6, ordering=CI_ORDERING.molpro)
 
-        sq_plus, simplified_ci_vectors = self.find_dimer_state_by_label_and_set_up_for_testing(dimer_states=dimer_states, label="S * Q + Q * S")
+        sq_plus, simplified_ci_vectors = self.find_dimer_state_by_label_and_set_up_for_testing(dimer_states=dimer_states, label="S \otimes Q + Q \otimes S")
         assert "+a22a0aa0" in simplified_ci_vectors
         assert "+aaaa0220" in simplified_ci_vectors
         assert "+0aa0a22a" in simplified_ci_vectors
@@ -110,7 +110,7 @@ class TestDimerStates(unittest.TestCase):
         assert "+02aaaa20" in simplified_ci_vectors
 
 
-        sq_minus, simplified_ci_vectors = self.find_dimer_state_by_label_and_set_up_for_testing(dimer_states=dimer_states, label="S * Q - Q * S")
+        sq_minus, simplified_ci_vectors = self.find_dimer_state_by_label_and_set_up_for_testing(dimer_states=dimer_states, label="S \otimes Q - Q \otimes S")
         variants_according_to_molpro = [
             "+a2aa0a20",
             "-aa2a02a0",
@@ -127,7 +127,7 @@ class TestDimerStates(unittest.TestCase):
         assert all_molpro or all_sign_switched, "Sign inconsistency / wrong ci vectors"
 
 
-        root1, simplified_ci_vectors = self.find_dimer_state_by_label_and_set_up_for_testing(dimer_states, label ="i^3 b_{2u} * i^3 b_{2u}")
+        root1, simplified_ci_vectors = self.find_dimer_state_by_label_and_set_up_for_testing(dimer_states, label ="i^3 b_{2u} \otimes i^3 b_{2u}")
         assert len(simplified_ci_vectors) == 10
         assert root1.symmetry == "ag"
         variants_according_to_molpro = [
@@ -146,7 +146,7 @@ class TestDimerStates(unittest.TestCase):
         assert all_molpro, " wrong ci vectors"
 
         root2, simplified_ci_vectors = self.find_dimer_state_by_label_and_set_up_for_testing(dimer_states,
-                                                       label="i^3 b_{2u} * e^3 b_{2u} + e^3 b_{2u} * i^3 b_{2u}")
+                                                       label="i^3 b_{2u} \otimes e^3 b_{2u} + e^3 b_{2u} \otimes i^3 b_{2u}")
         assert len(simplified_ci_vectors) == 2
         assert root1.symmetry == "ag"
 

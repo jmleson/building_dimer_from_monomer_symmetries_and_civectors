@@ -9,11 +9,14 @@ def get_table(number_of_columns: int, content_lines: list[str], break_line_dista
     for line in content_lines:
         stripped = line.rstrip()
         if not stripped.endswith(r"\\"):
-            stripped += r" \\ ["+str(break_line_distance) + "cm] "
+            if break_line_distance == 0:
+                stripped += r" \\ "
+            else:
+                stripped += r" \\["+str(break_line_distance) + "cm] "
         processed_lines.append(stripped)
 
     table = [
-        r"\begin{table}[ht]",
+        r"\begin{table}[H]",
         r"\centering",
         rf"\begin{{tabular}}{{{column_format}}}",
         r"\hline",

@@ -36,9 +36,9 @@ class DimerOccupation:
         assert self.monomer_occupation_1.side != self.monomer_occupation_2.side
         eq = self.sign.value
         if abs(self.prefactor) != 1:
-            eq += str(abs(self.prefactor)) + r" \cdot{} "
+            eq += str(abs(self.prefactor)) + r" \otimes{} "
         eq += self.monomer_occupation_1.latex_ci_equation(ordering=ordering, multiplied_out=multiplied_out)
-        eq += r" \cdot{} "
+        eq += r" \otimes{} "
         eq += self.monomer_occupation_2.latex_ci_equation(ordering=ordering, multiplied_out=multiplied_out)
         return eq
 

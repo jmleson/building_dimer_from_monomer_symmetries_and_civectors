@@ -4,7 +4,7 @@ from compare_to_molpro_ci_vectors.help_functions.search_all_states import search
 from src.building_blocks.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
 from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.symmetries.Molecule import Molecule
-
+from src.symmetries.POINTGROUP import POINTGROUP
 
 # INFO: Results form Z200, C6H5Cl-x2 (rotated):
 data_sym_1 = """
@@ -66,4 +66,4 @@ info = [
 ]
 # search_all_states(dimer_states=dimer_states, info=info)
 
-get_table_off_all_states_agreeing_with_molpro(dimer_states=dimer_states, info=info)
+get_table_off_all_states_agreeing_with_molpro(dimer_states=dimer_states, info=info, point_group=POINTGROUP.C2h)

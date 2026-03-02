@@ -7,6 +7,7 @@ def basic_latex_header():
     \usepackage{tikz} % für MO-Schemata
     \usepackage{amsmath}
     \usepackage{physics}
+    \usepackage{float} % to anchor tables 
     
     \allowdisplaybreaks
 

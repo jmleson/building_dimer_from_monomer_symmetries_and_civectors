@@ -29,9 +29,9 @@ class DimerState:
 
     def get_label(self):
         if self.monomer_state_1 == self.monomer_state_2:
-            label = f"{self.monomer_state_1.label} * {self.monomer_state_2.label}"
+            label = fr"{self.monomer_state_1.label} \otimes {self.monomer_state_2.label}"
         else:
-            label = f"{self.monomer_state_1.label} * {self.monomer_state_2.label} {self.combination.value} {self.monomer_state_2.label} * {self.monomer_state_1.label}"
+            label = fr"{self.monomer_state_1.label} \otimes {self.monomer_state_2.label} {self.combination.value} {self.monomer_state_2.label} \otimes {self.monomer_state_1.label}"
         return label
 
 
