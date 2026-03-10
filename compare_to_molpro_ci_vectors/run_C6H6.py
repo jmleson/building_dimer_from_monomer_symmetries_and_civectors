@@ -1,12 +1,30 @@
 
 from compare_to_molpro_ci_vectors.help_functions.search_all_states import search_all_states, \
     get_table_off_all_states_agreeing_with_molpro
+from compare_to_molpro_ci_vectors.read_out_to_data_sym import read_out_data_sym
 from src.building_blocks.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
 from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.symmetries.Molecule import Molecule
 from src.symmetries.POINTGROUP import POINTGROUP
 
-# INFO: Results form Z200, C6H6-x2:
+
+
+
+
+#INFO check first whether this procedure is representative:
+for molekuel in [
+    "C6H6", "C4H4N2", "C6Cl6",
+    #"C6F6"#TODO
+                 ]:
+    path = f"compare_to_molpro_ci_vectors/data_storage/"
+    read_out_data_sym(path=path, molekuel=molekuel, ci_vector_dismiss_limit = 0.2)
+
+
+
+
+
+
+# INFO: Results from Z200, C6H6-x2:
 data_sym_1 = """
  0 2 a a 0 2 a a      0.00000000     -0.00000022      0.00000155      0.34701928      0.35836745     -0.70190036      0.49380170
  a a 2 0 a a 2 0     -0.00000000     -0.00000022     -0.00000155      0.34701931      0.35836748      0.70190036      0.49380166
@@ -67,4 +85,7 @@ info = [
 # search_all_states(dimer_states=dimer_states, info=info)
 
 
-get_table_off_all_states_agreeing_with_molpro(dimer_states=dimer_states, info=info, point_group=POINTGROUP.D2h)
+table = get_table_off_all_states_agreeing_with_molpro(dimer_states=dimer_states, info=info,
+                                                      point_group=POINTGROUP.D2h, ci_vector_dismiss_limit=0.2)
+
+print("\n" + table + "\n")

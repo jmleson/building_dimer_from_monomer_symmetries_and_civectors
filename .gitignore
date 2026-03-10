@@ -21,3 +21,5 @@ MANIFEST
 # Others:
 .idea/
 **__pycache__**
+**out
+compare_to_molpro_ci_vectors/data_storage/

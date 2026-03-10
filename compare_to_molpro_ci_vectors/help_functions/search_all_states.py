@@ -1,4 +1,4 @@
-from compare_to_molpro_ci_vectors.help_functions.find_roots_3_and_4 import find_dimer_state_by_molpro_variants
+from compare_to_molpro_ci_vectors.help_functions.check_if_dimer_state_fits_molpro_results import find_dimer_state_by_molpro_variants
 from src.latex.format_irred_representations import format_irred_representations
 from src.latex.get_table import get_table
 from src.symmetries.POINTGROUP import POINTGROUP
@@ -26,14 +26,15 @@ def search_all_states(dimer_states, info:list[dict]):
 
 
 
-def get_table_off_all_states_agreeing_with_molpro(dimer_states, point_group:POINTGROUP, info:list[dict]):
+def get_table_off_all_states_agreeing_with_molpro(dimer_states, point_group:POINTGROUP, info:list[dict], ci_vector_dismiss_limit:float):
     """
     :param info: e.g. [{"sym": 1, "data": data_1, "number of states": 7, "root offset": 0}, ...]
     """
     lines = ["root (no.sym) & symmetry & linear combination by monomer states"]
     for sym in info:
         for i in range(sym["number of states"]):
-            d, infos = find_dimer_state_by_molpro_variants(data=sym["data"], dimer_states=dimer_states, row_index=i)
+            d, infos = find_dimer_state_by_molpro_variants(data=sym["data"], dimer_states=dimer_states,
+                                                           row_index=i, ci_vector_dismiss_limit=ci_vector_dismiss_limit)
             if len(d) == 1:
                 name =  f"\troot {sym['root offset']+ i} ({i+1}.{sym['sym']})"
                 lc =  d[0].get_label()
@@ -46,7 +47,8 @@ def get_table_off_all_states_agreeing_with_molpro(dimer_states, point_group:POIN
 
                 line = " & ".join([name, f"${format_irred_representations(symmetry)}$", f"${lc} = {lc_molpro_notation}$"])
                 lines.append(line)
-    s = get_table(number_of_columns=3, content_lines=lines, break_line_distance=0)
-    print("\n", s, "\n")
+    s = get_table(number_of_columns=3, content_lines=lines, break_line_distance=0.1)
+    # print("\n", s, "\n")
+    return s
 
 

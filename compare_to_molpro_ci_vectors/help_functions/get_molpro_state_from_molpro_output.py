@@ -3,7 +3,7 @@
 def sign_char(x):
     return "+" if x >= 0 else "-"
 
-def get_molpro_state_from_molpro_output(data: str, column_index: int):
+def get_molpro_state_from_molpro_output(data: str, column_index: int, ci_vector_dismiss_limit:float):
     # Parse lines
     lines = data.strip().split("\n")
     patterns = []
@@ -32,7 +32,7 @@ def get_molpro_state_from_molpro_output(data: str, column_index: int):
     variants = []
     for i in range(len(patterns)):
         x = numbers[i][column_index]
-        if abs(x) > 0.2:          # ! needs to be carefully chosen
+        if abs(x) > ci_vector_dismiss_limit:          # ! needs to be carefully chosen
             # in C6H5Cl molpro prints ci vectors with factor 0.12173379, that do NOT belong to the main parts according to our derivation
             # however, some parts < 0.3 need to be included
             s = sign_char(x) + patterns[i]
@@ -58,7 +58,7 @@ data = """
      0 a 2 a a 2 a 0     -0.34495841     -0.24281346      0.00000005      0.00566500     -0.35269802      0.00000002      0.24689764
      0 2 a a a a 2 0      0.34495841     -0.24281346      0.00000005      0.00566500     -0.35269802      0.00000002      0.24689764
 """
-variants = get_molpro_state_from_molpro_output(data, column_index = 3)
+variants = get_molpro_state_from_molpro_output(data, column_index = 3, ci_vector_dismiss_limit=0.2)
 variants_root_4 = [
         "+02aa02aa",
         "+aa20aa20",
@@ -80,7 +80,7 @@ variants_root_5 = [
         "-0a2aa2a0" ,
         "-02aaaa20" ,
 ]
-variants = get_molpro_state_from_molpro_output(data, column_index=4)
+variants = get_molpro_state_from_molpro_output(data, column_index=4, ci_vector_dismiss_limit = 0.2)
 assert variants ==  variants_root_5
 
 Cl_data_sym_3 = """
@@ -103,5 +103,5 @@ variants_root_Cl = [
     "-aaa0202a",
     "+202aaaa0",
 ]
-variants = get_molpro_state_from_molpro_output(Cl_data_sym_3, column_index=0)
+variants = get_molpro_state_from_molpro_output(Cl_data_sym_3, column_index=0, ci_vector_dismiss_limit = 0.2)
 assert variants == variants_root_Cl

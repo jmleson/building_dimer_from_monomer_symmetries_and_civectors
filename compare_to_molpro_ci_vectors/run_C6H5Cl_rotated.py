@@ -1,10 +1,18 @@
 
 from compare_to_molpro_ci_vectors.help_functions.search_all_states import search_all_states, \
     get_table_off_all_states_agreeing_with_molpro
+from compare_to_molpro_ci_vectors.read_out_to_data_sym import read_out_data_sym
 from src.building_blocks.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
 from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.symmetries.Molecule import Molecule
 from src.symmetries.POINTGROUP import POINTGROUP
+
+#INFO check first whether this procedure is representative:
+molekuel = "C6H5Clrotated"
+path = f"compare_to_molpro_ci_vectors/data_storage/"
+read_out_data_sym(path=path, molekuel=molekuel, ci_vector_dismiss_limit = 0.2)
+
+
 
 # INFO: Results form Z200, C6H5Cl-x2 (rotated):
 data_sym_1 = """
@@ -54,7 +62,7 @@ data_sym_4 = """
 
 
 
-dimer_states = get_dimer_states_from_monomer_states(molecule=Molecule.C6H5Cl_rotated, ordering=CI_ORDERING.molpro)
+dimer_states = get_dimer_states_from_monomer_states(molecule=Molecule.C6H5Cl_rotated, ordering=CI_ORDERING.molpro, ci_vector_dismiss_limit=0.2)
 
 
 
@@ -66,4 +74,4 @@ info = [
 ]
 # search_all_states(dimer_states=dimer_states, info=info)
 
-get_table_off_all_states_agreeing_with_molpro(dimer_states=dimer_states, info=info, point_group=POINTGROUP.C2h)
+get_table_off_all_states_agreeing_with_molpro(dimer_states=dimer_states, info=info, point_group=POINTGROUP.C2h, ci_vector_dismiss_limit=0.2)

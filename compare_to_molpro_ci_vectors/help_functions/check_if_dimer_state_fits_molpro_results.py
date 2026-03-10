@@ -16,8 +16,8 @@ def flip_sign_variants(variants: list[str]) -> list[str]:
             raise ValueError(f"Variant has no leading sign: {v}")
     return flipped
 
-def find_dimer_state_by_molpro_variants(data:str, dimer_states:list[DimerState], row_index:int):
-    variants_according_to_molpro = get_molpro_state_from_molpro_output(data, row_index)
+def find_dimer_state_by_molpro_variants(data:str, dimer_states:list[DimerState], row_index:int, ci_vector_dismiss_limit:float):
+    variants_according_to_molpro = get_molpro_state_from_molpro_output(data, row_index, ci_vector_dismiss_limit=ci_vector_dismiss_limit)
 
     fitting_dimer_states = []
     infos = []
