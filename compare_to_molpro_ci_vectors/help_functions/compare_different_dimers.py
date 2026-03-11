@@ -31,8 +31,10 @@ def compare_different_dimers(molecule_of_theory: Molecule, molecule_of_molpro:st
         if info is None:
             continue
 
+
+
         table_information = get_table_info_all_states_agreeing_with_molpro(dimer_states=dimer_states,
-                                                                          point_group=POINTGROUP.D2h, silent=True,
+                                                                          point_group=molecule_of_theory.get_point_group(), silent=True,
                                                                           info=info, molecule_of_molpro=molecule_of_molpro,
                                                                           ci_vector_dismiss_limit=ci_vector_dismiss_limit)
 
