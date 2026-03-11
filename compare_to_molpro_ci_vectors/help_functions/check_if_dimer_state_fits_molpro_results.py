@@ -1,7 +1,6 @@
 import re
 
-from compare_to_molpro_ci_vectors.help_functions.get_molpro_state_from_molpro_output import \
-    get_molpro_state_from_molpro_output
+
 from src.building_blocks.DimerState import DimerState
 
 
@@ -16,21 +15,6 @@ def flip_sign_variants(variants: list[str]) -> list[str]:
             raise ValueError(f"Variant has no leading sign: {v}")
     return flipped
 
-def find_dimer_state_by_molpro_variants(data:str, dimer_states:list[DimerState], row_index:int, ci_vector_dismiss_limit:float):
-    variants_according_to_molpro = get_molpro_state_from_molpro_output(data, row_index, ci_vector_dismiss_limit=ci_vector_dismiss_limit)
-
-    fitting_dimer_states = []
-    infos = []
-    for d in dimer_states:
-        d.get_product_terms()
-        d.get_determinants()
-        d.sum_up_determinants()
-
-        check, info = check_if_dimer_state_fits_molpro_results(dimer_state=d, variants_according_to_molpro=variants_according_to_molpro)
-        if check:
-            fitting_dimer_states.append(d)
-        infos.append(info)
-    return fitting_dimer_states, infos
 
 
 

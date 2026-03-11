@@ -1,86 +1,40 @@
-
-from compare_to_molpro_ci_vectors.help_functions.search_all_states import search_all_states, \
-    get_table_off_all_states_agreeing_with_molpro
-from compare_to_molpro_ci_vectors.read_out_to_data_sym import read_out_data_sym
-from src.building_blocks.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
-from src.symmetries.CI_ORDERING import CI_ORDERING
+from compare_to_molpro_ci_vectors.help_functions.compare_different_dimers import compare_different_dimers
+from compare_to_molpro_ci_vectors.help_functions.make_hashable import make_hashable
 from src.symmetries.Molecule import Molecule
-from src.symmetries.POINTGROUP import POINTGROUP
-
-
-#INFO check first whether this procedure is representative:
-for molekuel in [
-    "C6H5Cl",
-    "C5H5N"
-                 ]:
-    path = f"compare_to_molpro_ci_vectors/data_storage/"
-    read_out_data_sym(path=path, molekuel=molekuel, ci_vector_dismiss_limit = 0.2)
 
 
 
+tables_by_molecule = {}
 
-# INFO: Results form Z200, C6H5Cl-x2:
-data_sym_1 = """
- 2aa 20 2aa 20     -0.00000000      0.55217604      0.68333877     -0.00002018      0.42283652      0.00000132      0.00000365
- 220 aa 220 aa     -0.00000000      0.41707275     -0.68057237     -0.00002046      0.55526436      0.00000195      0.00000409
- 22a a0 22a a0      0.00000000     -0.00000197      0.00000081      0.31634660      0.00001182     -0.64887655      0.66554683
- 2a0 2a 2a0 2a     -0.00000000     -0.00000191      0.00000292      0.66030373      0.00002418      0.65100657      0.32088494
- 220 20 2aa aa      0.34467191     -0.23994881      0.04729743      0.22851739      0.24228488     -0.12173127     -0.23105318
- 2aa aa 220 20      0.34467191     -0.23994881      0.04729743      0.22851739      0.24228488     -0.12173127     -0.23105318
- 2aa 20 220 aa      0.34467191     -0.23994688      0.04729520     -0.22854105      0.24225969      0.12173379      0.23105692
- 220 aa 2aa 20      0.34467191     -0.23994688      0.04729520     -0.22854105      0.24225969      0.12173379      0.23105692
- 2a0 a0 22a 2a     -0.34467191     -0.23994881      0.04729743      0.22851739      0.24228488     -0.12173127     -0.23105318
- 22a 2a 2a0 a0     -0.34467191     -0.23994881      0.04729743      0.22851739      0.24228488     -0.12173127     -0.23105318
- 22a a0 2a0 2a      0.34467191      0.23994688     -0.04729520      0.22854105     -0.24225969     -0.12173379     -0.23105692
- 2a0 2a 22a a0      0.34467191      0.23994688     -0.04729520      0.22854105     -0.24225969     -0.12173379     -0.23105692
- baa 2a 2a0 2a     -0.00000000     -0.00000040     -0.00000023     -0.05510404     -0.00000219     -0.02513473      0.00199989
- 2a0 2a baa 2a     -0.00000000     -0.00000040     -0.00000023     -0.05510404     -0.00000219     -0.02513473      0.00199989
-"""
-data_sym_2 = """
- 22a a0 220 aa     -0.25684190     -0.37250771      0.29640317      0.42985039
- 220 aa 22a a0     -0.25684190     -0.37250771      0.29640317      0.42985039
- 22a a0 2aa 20      0.29553247      0.42868409      0.25857092      0.37509459
- 2aa 20 22a a0      0.29553247      0.42868409      0.25857092      0.37509459
- 220 aa 2a0 2a     -0.37108595      0.25872719      0.42813510     -0.29848276
- 2a0 2a 220 aa     -0.37108595      0.25872719      0.42813510     -0.29848276
- 2aa 20 2a0 2a      0.42697301     -0.29760605      0.37366487     -0.26046959
- 2a0 2a 2aa 20      0.42697301     -0.29760605      0.37366487     -0.26046959
-"""
-data_sym_3 = """
- 2a0 20 22a aa     -0.34467191     -0.34424105     -0.34702251
- 22a aa 2a0 20      0.34467191      0.34424105      0.34702251
- 220 a0 2aa 2a     -0.34467191      0.34424105      0.34702251
- 2aa 2a 220 a0      0.34467191     -0.34424105     -0.34702251
- 22a 20 2a0 aa      0.34467191      0.34424191     -0.34702181
- 2a0 aa 22a 20     -0.34467191     -0.34424191      0.34702181
- 2aa a0 220 2a     -0.34467191      0.34424191     -0.34702181
- 220 2a 2aa a0      0.34467191     -0.34424191      0.34702181
-"""
-data_sym_4 = """
- 220 a0 22a aa     -0.25684578      0.37249711      0.29640967     -0.42985263
- 22a aa 220 a0      0.25684578     -0.37249711     -0.29640967      0.42985263
- 2aa a0 22a 20      0.29553266     -0.42869117      0.25855825     -0.37509544
- 22a 20 2aa a0     -0.29553266      0.42869117     -0.25855825      0.37509544
- 2a0 aa 220 2a      0.37108713      0.25874030     -0.42812749     -0.29848131
- 220 2a 2a0 aa     -0.37108713     -0.25874030      0.42812749      0.29848131
- 2a0 20 2aa 2a     -0.42697018     -0.29759769     -0.37367712     -0.26046637
- 2aa 2a 2a0 20      0.42697018      0.29759769      0.37367712      0.26046637
-"""
+
+# Testing :
+print("C6H5Cl:")
+tables_C6H5Cl = compare_different_dimers(molecule_of_theory=Molecule.C6H5Cl, molecule_of_molpro="C6H5Cl", ci_vector_dismiss_limit=0.2)
+tables_by_molecule["C6H5Cl"] = list(tables_C6H5Cl.values())[-1]
+
+print("==="*50, "\n")
+
+print("C5H5N:")
+tables_C5H5N = compare_different_dimers(molecule_of_theory=Molecule.C6H5Cl, molecule_of_molpro="C5H5N", ci_vector_dismiss_limit=0.3)
+tables_by_molecule["C5H5N"] = list(tables_C5H5N.values())[-1]
+
+print("==="*50, "\n")
 
 
 
-dimer_states = get_dimer_states_from_monomer_states(molecule=Molecule.C6H5Cl, ordering=CI_ORDERING.molpro)
+print("\n"*6, "***"*50, "\n")
 
 
+# Group molecules by identical tables
+table_groups = {}
+for mol, table in tables_by_molecule.items():
+    key = make_hashable(table)
+    if key not in table_groups:
+        table_groups[key] = {"molecules": [mol], "table": table}
+    else:
+        table_groups[key]["molecules"].append(mol)
 
-
-info = [
-    {"sym": 1,  "data": data_sym_1, "number of states": 7, "root offset": 0         },
-    {"sym": 2,  "data": data_sym_2, "number of states": 4, "root offset": 0+7       },
-    {"sym": 3,  "data": data_sym_3, "number of states": 3, "root offset": 0+7+4     },
-    {"sym": 4,  "data": data_sym_4, "number of states": 4, "root offset": 0+7+4+3   },
-]
-# search_all_states(dimer_states=dimer_states, info=info)
-get_table_off_all_states_agreeing_with_molpro(dimer_states=dimer_states, info=info,
-                                              point_group=POINTGROUP.C2v, ci_vector_dismiss_limit=0.2)
-
+# Print the results
+for group in table_groups.values():
+    mol_list = " & ".join(group["molecules"])
+    print(f"{mol_list}:\n", group["table"], "\n", sep="\n")

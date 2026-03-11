@@ -1,77 +1,31 @@
-
-from compare_to_molpro_ci_vectors.help_functions.search_all_states import search_all_states, \
-    get_table_off_all_states_agreeing_with_molpro
-from compare_to_molpro_ci_vectors.read_out_to_data_sym import read_out_data_sym
-from src.building_blocks.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
-from src.symmetries.CI_ORDERING import CI_ORDERING
+from compare_to_molpro_ci_vectors.help_functions.compare_different_dimers import compare_different_dimers
+from compare_to_molpro_ci_vectors.help_functions.make_hashable import make_hashable
 from src.symmetries.Molecule import Molecule
-from src.symmetries.POINTGROUP import POINTGROUP
-
-#INFO check first whether this procedure is representative:
-molekuel = "C6H5Clrotated"
-path = f"compare_to_molpro_ci_vectors/data_storage/"
-read_out_data_sym(path=path, molekuel=molekuel, ci_vector_dismiss_limit = 0.2)
 
 
 
-# INFO: Results form Z200, C6H5Cl-x2 (rotated):
-data_sym_1 = """
- 2aa 20 2aa 20     -0.00000000      0.55113145      0.68161603     -0.00000528      0.42149195     -0.00000120     -0.00000378
- 220 aa 220 aa     -0.00000000      0.41808039     -0.68117312     -0.00000388      0.55491891     -0.00000549     -0.00000330
- 22a a0 22a a0      0.00000000     -0.00000141      0.00000287      0.31709512      0.00000518     -0.64998127      0.66616070
- 2a0 2a 2a0 2a     -0.00000000     -0.00000159      0.00000037      0.66207439      0.00001458      0.65194278      0.32098510
- 2a0 a0 22a 2a     -0.34490755     -0.24001033      0.04710752      0.22909495      0.24181285     -0.12200592     -0.23120753
- 22a 2a 2a0 a0     -0.34490755     -0.24001033      0.04710752      0.22909495      0.24181285     -0.12200592     -0.23120753
- 220 20 2aa aa      0.34490755     -0.24001033      0.04710752      0.22909495      0.24181285     -0.12200592     -0.23120753
- 2aa aa 220 20      0.34490755     -0.24001033      0.04710752      0.22909495      0.24181285     -0.12200592     -0.23120753
- 22a a0 2a0 2a      0.34490755      0.24000883     -0.04710631      0.22910272     -0.24181206     -0.12200361     -0.23120383
- 2a0 2a 22a a0      0.34490755      0.24000883     -0.04710631      0.22910272     -0.24181206     -0.12200361     -0.23120383
- 2aa 20 220 aa      0.34490755     -0.24000883      0.04710631     -0.22910272      0.24181206      0.12200361      0.23120383
- 220 aa 2aa 20      0.34490755     -0.24000883      0.04710631     -0.22910272      0.24181206      0.12200361      0.23120383
-"""
-data_sym_2 = """
- 22a a0 220 aa     -0.25746030     -0.37314399      0.29664048      0.42992513
- 220 aa 22a a0     -0.25746030     -0.37314399      0.29664048      0.42992513
- 2a0 2a 220 aa     -0.37202217      0.25906493      0.42858510     -0.29842368
- 220 aa 2a0 2a     -0.37202217      0.25906493      0.42858510     -0.29842368
- 22a a0 2aa 20      0.29560590      0.42847180      0.25847449      0.37468939
- 2aa 20 22a a0      0.29560590      0.42847180      0.25847449      0.37468939
- 2aa 20 2a0 2a      0.42713622     -0.29738279      0.37356121     -0.26008496
- 2a0 2a 2aa 20      0.42713622     -0.29738279      0.37356121     -0.26008496
-"""
-data_sym_3 = """
- 22a 20 2a0 aa      0.34490755      0.34393800      0.34759685
- 2a0 aa 22a 20     -0.34490755     -0.34393800     -0.34759685
- 2aa a0 220 2a     -0.34490755      0.34393800      0.34759685
- 220 2a 2aa a0      0.34490755     -0.34393800     -0.34759685
- 2a0 20 22a aa     -0.34490755     -0.34393934      0.34759540
- 22a aa 2a0 20      0.34490755      0.34393934     -0.34759540
- 220 a0 2aa 2a     -0.34490755      0.34393934     -0.34759540
- 2aa 2a 220 a0      0.34490755     -0.34393934      0.34759540
-"""
-data_sym_4 = """
- 220 a0 22a aa     -0.25746242      0.37316588      0.29661609     -0.42992124
- 22a aa 220 a0      0.25746242     -0.37316588     -0.29661609      0.42992124
- 2a0 aa 220 2a      0.37202273      0.25903647     -0.42860013     -0.29842618
- 220 2a 2a0 aa     -0.37202273     -0.25903647      0.42860013      0.29842618
- 2aa a0 22a 20      0.29560623     -0.42845107      0.25850929     -0.37468882
- 22a 20 2aa a0     -0.29560623      0.42845107     -0.25850929      0.37468882
- 2a0 20 2aa 2a     -0.42713411     -0.29740989     -0.37353919     -0.26008889
- 2aa 2a 2a0 20      0.42713411      0.29740989      0.37353919      0.26008889
-"""
+tables_by_molecule = {}
 
 
+# Testing :
+print("C6H5Clrotated:")
+tables_C6H5Clrotated = compare_different_dimers(molecule_of_theory=Molecule.C6H5Cl_rotated, molecule_of_molpro="C6H5Clrotated", ci_vector_dismiss_limit=0.2)
+tables_by_molecule["C6H5Clrotated"] = list(tables_C6H5Clrotated.values())[-1]
 
-dimer_states = get_dimer_states_from_monomer_states(molecule=Molecule.C6H5Cl_rotated, ordering=CI_ORDERING.molpro, ci_vector_dismiss_limit=0.2)
+
+print("\n"*6, "***"*50, "\n")
 
 
+# Group molecules by identical tables
+table_groups = {}
+for mol, table in tables_by_molecule.items():
+    key = make_hashable(table)
+    if key not in table_groups:
+        table_groups[key] = {"molecules": [mol], "table": table}
+    else:
+        table_groups[key]["molecules"].append(mol)
 
-info = [
-    {"sym": 1,  "data": data_sym_1, "number of states": 7, "root offset": 0         },
-    {"sym": 2,  "data": data_sym_2, "number of states": 4, "root offset": 0+7       },
-    {"sym": 3,  "data": data_sym_3, "number of states": 3, "root offset": 0+7+4     },
-    {"sym": 4,  "data": data_sym_4, "number of states": 4, "root offset": 0+7+4+3   },
-]
-# search_all_states(dimer_states=dimer_states, info=info)
-
-get_table_off_all_states_agreeing_with_molpro(dimer_states=dimer_states, info=info, point_group=POINTGROUP.C2h, ci_vector_dismiss_limit=0.2)
+# Print the results
+for group in table_groups.values():
+    mol_list = " & ".join(group["molecules"])
+    print(f"{mol_list}:\n", group["table"], "\n", sep="\n")
