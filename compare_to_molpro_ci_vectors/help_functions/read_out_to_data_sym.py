@@ -29,6 +29,9 @@ def simplify_ci_vector_lines(line:str, ci_vector_dismiss_limit:float):
             s = sign_char(number)
             assert len(s) == 1
             new_line += f"{s}1" + "     "  # number value is of no relevance here, only sign
+        else:
+            new_line += f" 0" + "     "
+
     if len(new_line) > 0:
         new_line = columns[0] + "     " + new_line
     # else:
@@ -101,13 +104,13 @@ def try_to_find_deviation(infos):
 
             if data_a != data_b:
                 print(f"\nDifference found for sym={a['sym']}, states={a['number of states']}, offset={a['root offset']}:")
-                print(a["root"], "<->", b["root"])
+                print("\t", a["root"], "<->", b["root"])
                 # print("\t", data_a, "!=\n\t", data_b)
 
-                data_a = data_a.split(" ")
-                data_b = data_b.split(" ")
+                data_a = [i for i in data_a.split(" ") if len(i) > 0]
+                data_b = [i for i in data_b.split(" ") if len(i) > 0]
                 if not len(data_a) == len(data_b):
-                    print("different data lengths")
+                    print(f"\tdifferent data lengths: {data_a} <-> {data_b}")
                 else:
                     for i in range(len(data_a)):
                         if data_a[i] != data_b[i]:
@@ -117,8 +120,10 @@ def try_to_find_deviation(infos):
 
 
 def read_out_data_sym(molekuel:str, ci_vector_dismiss_limit:float, path:str="./"):
+    # list_of_z_files = [200, 300, 400, 500, 600, 2000]
     list_of_z_files = list(range(200, 605, 5)) + [2000]
     files_that_are_ok = []
+    full_length_infos = {}
     for z in list_of_z_files:
         file = f"{molekuel}-x2-CASCI-FICNEVPT2-mult5-ccpVTZ-abstandZ{z}-Plots.out"
         data_blocks = get_ci_data_blocks(file=file, path=path, ci_vector_dismiss_limit=ci_vector_dismiss_limit)
@@ -140,14 +145,19 @@ def read_out_data_sym(molekuel:str, ci_vector_dismiss_limit:float, path:str="./"
                 infos.append(block)
 
         # print(infos)
-
         if len(infos) == 4:
             files_that_are_ok.append(file)
         else:
             try_to_find_deviation(infos=infos)
 
+        full_length_infos[f"Z{z}"] = infos
+
     if len(files_that_are_ok) == len(list_of_z_files):
-        print(f"everything fine for {molekuel}: taking one exemplary ci vector output for dimer is represenative")
+        print(f"everything fine for {molekuel}: taking one exemplary ci vector output for dimer is representative")
+        return full_length_infos
+    else:
+        print("\n\nFILES THAT ARE CONSISTENT:", len(files_that_are_ok))
+    return full_length_infos
 
 
 
