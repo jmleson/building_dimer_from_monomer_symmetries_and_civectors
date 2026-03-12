@@ -80,13 +80,13 @@ def get_table_info_all_states_agreeing_with_molpro(dimer_states, point_group:POI
 
 
 if __name__ == "__main__":
-    dimer_states = get_dimer_states_from_monomer_states(molecule=Molecule.C6H5Cl, ordering=CI_ORDERING.molpro)
+    dimer_states = get_dimer_states_from_monomer_states(molecule=Molecule.C5H5N, ordering=CI_ORDERING.molpro)
     for d in dimer_states:
         d.get_product_terms()
         d.get_determinants()
         d.sum_up_determinants()
 
-    molekuel = "C6H5Cl"
+    molekuel = "C5H5N"
     z = "2000"
     path = f"compare_to_molpro_ci_vectors/data_storage/"
     file = f"{molekuel}-x2-CASCI-FICNEVPT2-mult5-ccpVTZ-abstandZ{z}-Plots.out"

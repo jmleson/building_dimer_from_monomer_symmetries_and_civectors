@@ -15,7 +15,7 @@ tables_by_molecule["C6H5Cl"] = list(tables_C6H5Cl.values())[-1]
 print("==="*50, "\n")
 
 print("C5H5N:")
-tables_C5H5N = compare_different_dimers(molecule_of_theory=Molecule.C6H5Cl, molecule_of_molpro="C5H5N", ci_vector_dismiss_limit=0.3)
+tables_C5H5N = compare_different_dimers(molecule_of_theory=Molecule.C5H5N, molecule_of_molpro="C5H5N", ci_vector_dismiss_limit=0.3)
 tables_by_molecule["C5H5N"] = list(tables_C5H5N.values())[-1]
 
 print("==="*50, "\n")
