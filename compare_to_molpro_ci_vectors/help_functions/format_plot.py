@@ -1,6 +1,7 @@
 
 import matplotlib.pyplot as my_plt
 
+from compare_to_molpro_ci_vectors.help_functions.format_axis_broken_x import format_axis_broken_x
 
 
 def apply_fonts_ax(fig, ax):
@@ -50,5 +51,6 @@ def save_my_figures(name:str, fig=None, bbox_extra_artists:list=[]):
 
 
 def format_plot(fig, ax):
+    format_axis_broken_x(ax)
     ax.grid(True, linestyle=":", alpha=0.4)
     apply_fonts_ax(fig, ax)

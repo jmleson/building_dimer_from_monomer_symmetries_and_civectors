@@ -6,6 +6,8 @@ from matplotlib.patches import Patch
 from compare_to_molpro_ci_vectors.help_functions.parse_output_file_for_state_dependent_ci_vectors import \
     parse_output_file_for_state_dependent_ci_vectors
 from compare_to_molpro_ci_vectors.help_functions.format_plot import format_plot, save_my_figures
+from compare_to_molpro_ci_vectors.help_functions.transform_molpro_order_into_own_ordering import \
+    transform_molpro_order_into_own_ordering
 from src.latex.format_irred_representations import format_irred_representations
 from src.symmetries.Molecule import Molecule
 
@@ -38,14 +40,16 @@ def plot_root_behavior(molecule:Molecule, state:str="4.1", total_fig=None, total
             continue
         df[col] = df[col].astype(float)
 
-        occ = {irred: o for irred, o in zip(
-            point_group.irreduzible_representations_molpro_ordered, col
-        )}
-        sorted_occ = sorted(
-            occ.items(),
-            key=lambda x: point_group.irreduzible_representations_orbital_ordered.index(x[0])
-        )
-        label = ''.join([f"({format_irred_representations(irred)})^{o.replace('a','1')}" for irred, o in sorted_occ])
+        sorted_occ = transform_molpro_order_into_own_ordering(col)[0]
+
+        # occ = {irred: o for irred, o in zip(
+        #     point_group.irreduzible_representations_molpro_ordered, col
+        # )}
+        # sorted_occ = sorted(
+        #     occ.items(),
+        #     key=lambda x: point_group.irreduzible_representations_orbital_ordered.index(x[0])
+        # )
+        label = ''.join([f"({format_irred_representations(irred)})^{o.replace('a','1')}" for irred, o in sorted_occ.items()])
 
         if state == "4.1":
             total_ax.plot(df["Z"], df[col],"|", color=get_color(col), markeredgewidth=2)
@@ -55,7 +59,7 @@ def plot_root_behavior(molecule:Molecule, state:str="4.1", total_fig=None, total
             color_handles.append({"style": get_color(col), "label": r"$\mathbf{"+label+"}$"})
             marker_handles.append({"style": "-", "label": f"state {state}"})
         else:
-            label = "other states than 3 or 4"
+            label = "other states than 4.1 or 5.1"
             handles, labels = total_ax.get_legend_handles_labels()
             mask = abs(df[col]) > 1e-5
             if label not in labels:
@@ -87,6 +91,7 @@ def plot_root_behavior(molecule:Molecule, state:str="4.1", total_fig=None, total
 
 
 def get_color(ci_part:str):
+    # in molpro order
     if ci_part in ["a22a0aa0", "0aa0a22a"]:
         return "darkgreen"
     if ci_part in ["aaaa0220", "0220aaaa"]:
@@ -131,7 +136,8 @@ def total_plot_of_root_behaviors(molecule:Molecule, states:list[str]):
             marker=(m["style"] if m["style"] != "-" else None),
             color="black",
             linestyle=("None" if m["style"] != "-" else "-"),
-            label=m["label"]
+            label=m["label"],
+            markeredgewidth=2
         )
         for m in marker_handles
     ]

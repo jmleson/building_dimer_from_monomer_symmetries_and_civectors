@@ -23,3 +23,5 @@ MANIFEST
 **__pycache__**
 **out
 compare_to_molpro_ci_vectors/data_storage/
+compare_to_molpro_ci_vectors/*pdf
+compare_to_molpro_ci_vectors/*csv
