@@ -7,27 +7,24 @@ from compare_to_molpro_ci_vectors.help_functions.parse_output_file_for_state_dep
     parse_output_file_for_state_dependent_ci_vectors
 from compare_to_molpro_ci_vectors.help_functions.format_plot import format_plot, save_my_figures
 from compare_to_molpro_ci_vectors.help_functions.transform_molpro_order_into_own_ordering import \
-    transform_molpro_order_into_own_ordering
+    transform_molpro_order_into_own_ordering_D2h
 from src.latex.format_irred_representations import format_irred_representations
-from src.symmetries.Molecule import Molecule
 
 
-def plot_root_behavior(molecule:Molecule, state:str="4.1", total_fig=None, total_ax=None, color_handles=[], marker_handles=[]):#
+def plot_root_behavior(molecule:str, state:str="4.1", total_fig=None, total_ax=None, color_handles=[], marker_handles=[]):#
     path = f"compare_to_molpro_ci_vectors/data_storage/"
-
-    point_group = molecule.get_point_group()
 
     data = []
     list_of_z_files = list(range(200, 605, 5)) #+ [2000]
     for z in list_of_z_files:
-        file = f"{molecule.name}-x2-CASCI-FICNEVPT2-mult5-ccpVTZ-abstandZ{z}-Plots.out"
+        file = f"{molecule}-x2-CASCI-FICNEVPT2-mult5-ccpVTZ-abstandZ{z}-Plots.out"
         info = parse_output_file_for_state_dependent_ci_vectors(path + file)
 
         info[state]["Z"] = z
         data.append(info[state])
 
     df = pd.DataFrame(data)
-    df.to_csv(f"compare_to_molpro_ci_vectors/{molecule.name}_state{state.replace('.','_')}_behavior.csv", sep=";", index=False)
+    df.to_csv(f"compare_to_molpro_ci_vectors/outputs/{molecule}_state{state.replace('.','_')}_behavior.csv", sep=";", index=False)
 
     if total_fig is None or total_ax is None:
         total_fig, total_ax = plt.subplots()
@@ -40,15 +37,8 @@ def plot_root_behavior(molecule:Molecule, state:str="4.1", total_fig=None, total
             continue
         df[col] = df[col].astype(float)
 
-        sorted_occ = transform_molpro_order_into_own_ordering(col)[0]
+        sorted_occ = transform_molpro_order_into_own_ordering_D2h(col)[0]
 
-        # occ = {irred: o for irred, o in zip(
-        #     point_group.irreduzible_representations_molpro_ordered, col
-        # )}
-        # sorted_occ = sorted(
-        #     occ.items(),
-        #     key=lambda x: point_group.irreduzible_representations_orbital_ordered.index(x[0])
-        # )
         label = ''.join([f"({format_irred_representations(irred)})^{o.replace('a','1')}" for irred, o in sorted_occ.items()])
 
         if state == "4.1":
@@ -83,7 +73,7 @@ def plot_root_behavior(molecule:Molecule, state:str="4.1", total_fig=None, total
     plt.ylim(-0.75,0.75)
     single_ax.set_title(f"state {state}")
     format_plot(fig=single_fig, ax=single_ax)
-    save_my_figures(f"compare_to_molpro_ci_vectors/{molecule.name}-plot_root{state.replace('.','_')}_behavior",
+    save_my_figures(f"compare_to_molpro_ci_vectors/outputs/{molecule}-plot_root{state.replace('.','_')}_behavior",
                     fig=single_fig, bbox_extra_artists=[legend])
     plt.close(single_fig)
     return total_fig , total_ax, color_handles, marker_handles
@@ -106,7 +96,7 @@ def get_color(ci_part:str):
 
 
 
-def total_plot_of_root_behaviors(molecule:Molecule, states:list[str]):
+def total_plot_of_root_behaviors(molecule:str, states:list[str]):
 
     fig, ax = None, None
     color_handles, marker_handles = [], []
@@ -169,7 +159,7 @@ def total_plot_of_root_behaviors(molecule:Molecule, states:list[str]):
 
     # format and save plot:
     format_plot(fig=fig, ax=ax)
-    save_my_figures(f"compare_to_molpro_ci_vectors/{molecule.name}-TOTALplot_root_behavior",
+    save_my_figures(f"compare_to_molpro_ci_vectors/outputs/{molecule}-TOTALplot_root_behavior",
                     fig=fig, bbox_extra_artists=[legend_color, legend_marker])
     plt.close()
     return
@@ -177,7 +167,10 @@ def total_plot_of_root_behaviors(molecule:Molecule, states:list[str]):
 
 if __name__ == "__main__":
 
-    molecule = Molecule.C6H6
+    molecule = "C6H6"
+    # molecule = "C6Cl6"
+    # molecule = "C6F6"
+
     states = [
         "1.1", "2.1", "3.1", "6.1", "7.1",
               "1.4", "2.4", "3.4", "4.4", "1.5", "2.5", "3.5",

@@ -1,7 +1,7 @@
 from src.symmetries.POINTGROUP import POINTGROUP
 
 
-def transform_molpro_order_into_own_ordering(ci_vector_as_occupation_sequence:str):
+def transform_molpro_order_into_own_ordering_D2h(ci_vector_as_occupation_sequence:str):
     if len(ci_vector_as_occupation_sequence) != 8:
         raise Exception(f"not 8 occupations in {ci_vector_as_occupation_sequence}")
     point_group = POINTGROUP.D2h
@@ -24,4 +24,4 @@ def transform_molpro_order_into_own_ordering(ci_vector_as_occupation_sequence:st
 
 
 if __name__ == "__main__":
-    print( transform_molpro_order_into_own_ordering("0aa0a22a")[1] )
+    print(transform_molpro_order_into_own_ordering_D2h("0aa0a22a")[1])
