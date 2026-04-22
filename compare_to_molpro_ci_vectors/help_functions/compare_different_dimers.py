@@ -23,7 +23,7 @@ def compare_different_dimers(molecule_of_theory: Molecule, molecule_of_molpro:st
 
 
     file_info = {}
-    list_of_z_files = list(range(200, 605, 5)) + [2000]
+    list_of_z_files = list(range(100, 705, 5)) + [2000]
     for z in list_of_z_files:
         path = f"compare_to_molpro_ci_vectors/data_storage/"
         file = f"{molecule_of_molpro}-x2-CASCI-FICNEVPT2-mult5-ccpVTZ-abstandZ{z}-Plots.out"
