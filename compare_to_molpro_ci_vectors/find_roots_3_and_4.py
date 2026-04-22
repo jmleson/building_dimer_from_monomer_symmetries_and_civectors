@@ -1,10 +1,8 @@
 import copy
 import re
 
-from compare_to_molpro_ci_vectors.help_functions.parse_output_file_for_state_dependent_ci_vectors import \
-    parse_output_file_for_state_dependent_ci_vectors
+
 from src.building_blocks.get_dimer_states_from_monomer_states import get_dimer_states_from_monomer_states
-from src.mathematics_and_combinations.Sign import SIGN
 from src.symmetries.CI_ORDERING import CI_ORDERING
 from src.symmetries.Molecule import Molecule
 

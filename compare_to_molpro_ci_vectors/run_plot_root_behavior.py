@@ -15,7 +15,7 @@ def plot_root_behavior(molecule:str, state:str="4.1", total_fig=None, total_ax=N
     path = f"compare_to_molpro_ci_vectors/data_storage/"
 
     data = []
-    list_of_z_files = list(range(200, 605, 5)) #+ [2000]
+    list_of_z_files = list(range(100, 705, 5)) #+ [2000]
     for z in list_of_z_files:
         file = f"{molecule}-x2-CASCI-FICNEVPT2-mult5-ccpVTZ-abstandZ{z}-Plots.out"
         info = parse_output_file_for_state_dependent_ci_vectors(path + file)
@@ -166,15 +166,12 @@ def total_plot_of_root_behaviors(molecule:str, states:list[str]):
 
 
 if __name__ == "__main__":
+    for molecule in ["C6H6", "C6Cl6", "C6F6"]:
 
-    molecule = "C6H6"
-    # molecule = "C6Cl6"
-    # molecule = "C6F6"
+        states = [
+            "1.1", "2.1", "3.1", "6.1", "7.1",
+                  "1.4", "2.4", "3.4", "4.4", "1.5", "2.5", "3.5",
+                  "1.8", "2.8", "3.8", "4.8",
+                  "4.1", "5.1"]
 
-    states = [
-        "1.1", "2.1", "3.1", "6.1", "7.1",
-              "1.4", "2.4", "3.4", "4.4", "1.5", "2.5", "3.5",
-              "1.8", "2.8", "3.8", "4.8",
-              "4.1", "5.1"]
-
-    total_plot_of_root_behaviors(molecule=molecule, states=states)
+        total_plot_of_root_behaviors(molecule=molecule, states=states)
