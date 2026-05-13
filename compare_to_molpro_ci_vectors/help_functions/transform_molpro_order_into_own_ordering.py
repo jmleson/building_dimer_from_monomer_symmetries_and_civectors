@@ -24,4 +24,4 @@ def transform_molpro_order_into_own_ordering_D2h(ci_vector_as_occupation_sequenc
 
 
 if __name__ == "__main__":
-    print(transform_molpro_order_into_own_ordering_D2h("0aa0a22a")[1])
+    print(transform_molpro_order_into_own_ordering_D2h("a20a")[1])
