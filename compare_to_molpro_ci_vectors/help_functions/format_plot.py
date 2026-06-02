@@ -107,6 +107,9 @@ def save_my_figures(name:str, fig=None, bbox_extra_artists:list=[]):
 
 
 
+def format_axis_label_acronyms(acronym:str):
+    return r"\text{\small{}" + acronym + r"\normalsize{}}"
+
 
 def format_plot(fig, ax, grid_limit=["y", "x"], y_axis=["left"], x_axis=["bottom"]):
     if "bottom" in x_axis:

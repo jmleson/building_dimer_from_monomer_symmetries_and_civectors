@@ -6,7 +6,8 @@ from matplotlib.patches import Patch
 from compare_to_molpro_ci_vectors.help_functions.plt_settings import my_plt
 from compare_to_molpro_ci_vectors.help_functions.parse_output_file_for_state_dependent_ci_vectors import \
     parse_output_file_for_state_dependent_ci_vectors
-from compare_to_molpro_ci_vectors.help_functions.format_plot import format_plot, save_my_figures
+from compare_to_molpro_ci_vectors.help_functions.format_plot import format_plot, save_my_figures, \
+    format_axis_label_acronyms
 from compare_to_molpro_ci_vectors.help_functions.transform_molpro_order_into_own_ordering import \
     transform_molpro_order_into_own_ordering_D2h
 from help_functions.plt_settings import legend_kwargs, default_figure_width, default_figure_height
@@ -29,9 +30,9 @@ def plot_root_behavior(molecule:str, state:str="4.1", total_fig=None, total_ax=N
     df.to_csv(f"compare_to_molpro_ci_vectors/outputs/{molecule}_state{state.replace('.','_')}_behavior.csv", sep=";", index=False)
 
     if total_fig is None or total_ax is None:
-        total_fig, total_ax = my_plt.subplots(figsize=(default_figure_width, default_figure_height))
+        total_fig, total_ax = my_plt.subplots(figsize=(default_figure_width, default_figure_height), constrained_layout = True)
 
-    single_fig, single_ax = my_plt.subplots(figsize=(default_figure_width, default_figure_height))
+    single_fig, single_ax = my_plt.subplots(figsize=(default_figure_width, default_figure_height), constrained_layout = True)
     df["Z"] = df["Z"].apply(lambda x: float(x) / 10)
     df.columns = df.columns.str.replace(" ", "", regex=False)
     for col in df.columns:
@@ -51,27 +52,27 @@ def plot_root_behavior(molecule:str, state:str="4.1", total_fig=None, total_ax=N
             color_handles.append({"style": get_color(col), "label": r"$\mathbf{"+label+"}$"})
             marker_handles.append({"style": "-", "label": r"state 5\,$^5 a_g$"})
         else:
-            label = r"other states than 4\,$\mathbf{^5 a_g}$ or 5\,$\mathbf{^5 a_g}$ "
+            label = r"Other States than 4\,$\mathbf{^5 a_g}$ or 5\,$\mathbf{^5 a_g}$ "
             handles, labels = total_ax.get_legend_handles_labels()
             mask = abs(df[col]) > 1e-5
             if label not in labels:
-                total_ax.plot(df["Z"][mask], df[col][mask], ".", label=label, color="#cccccc", ms=5)
-                color_handles.append({"style": "#cccccc", "label": label})
+                total_ax.plot(df["Z"][mask], df[col][mask], ".", label=label, color=get_color("other"), ms=5)
+                color_handles.append({"style": get_color("other"), "label": label})
             else:
-                total_ax.plot(df["Z"][mask], df[col][mask], ".", label=None, color="#cccccc", ms=5)
-                color_handles.append({"style": "#cccccc", "label": label})
-            marker_handles.append({"style": ".", "label": "other states"})
+                total_ax.plot(df["Z"][mask], df[col][mask], ".", label=None, color=get_color("other"), ms=5)
+                color_handles.append({"style": get_color("other"), "label": label})
+            marker_handles.append({"style": ".", "label": "Other States"})
 
         single_ax.plot(df["Z"], df[col],
                        label=r"$\mathbf{" + label + r"}$" if not "$" in label else label, color=get_color(col))
 
-    single_ax.set_xlabel(r"Dimer Distance along Z [Å]")
-    total_ax.set_xlabel(r"Dimer Distance along Z [Å]")
-    single_ax.set_ylabel("Prefactor of CI Vector Component [a.u.]")
-    total_ax.set_ylabel("Prefactor of CI Vector Component [a.u.]")
+    single_ax.set_xlabel(r"Dimer Distance $R_z$ [Å]")
+    total_ax.set_xlabel(r"Dimer Distance $R_z$ [Å]")
+    single_ax.set_ylabel(f"Prefactor of {format_axis_label_acronyms("CI")} Vector Component [a.u.]")
+    total_ax.set_ylabel(f"Prefactor of {format_axis_label_acronyms("CI")} Vector Component [a.u.]")
     legend = single_ax.legend(
-        title="CI Vector Components",
-        loc="center left", bbox_to_anchor=(1.02, 0.5)
+        title=f"{format_axis_label_acronyms("CI")} Vector Components",
+        loc="center left", bbox_to_anchor=(1.1, 0.5)
     )
     my_plt.ylim(-0.75,0.75)
     single_ax.set_title(f"state {state}")
@@ -84,17 +85,19 @@ def plot_root_behavior(molecule:str, state:str="4.1", total_fig=None, total_ax=N
 
 
 def get_color(ci_part:str):
+    # Ag Sunset (und grau von Monet):  #4B2991FF, #872CA2FF, #C0369DFF, #EA4F88FF, #FA7876FF, #F6A97AFF, #EDD9A3FF
     # in molpro order
     if ci_part in ["a22a0aa0", "0aa0a22a"]:
-        return "darkgreen"
+        return "#4B2991"
     if ci_part in ["aaaa0220", "0220aaaa"]:
-        return "limegreen"
+        return "#872CA2"
     if ci_part in ["a2a0a2a0", "0a2a0a2a"]:
-        return "pink"
+        return "#EA4F88"
     if ci_part in ["02aa02aa", "aa20aa20"]:
-        return "orange"
+        return "#EDD9A3"
     if ci_part in ["a2a00a2a", "aa2002aa", "02aaaa20", "0a2aa2a0"]:
-        return "blue"
+        return "#F6A97A"
+    return "#C2CAE3"
 
 
 
@@ -113,13 +116,16 @@ def total_plot_of_root_behaviors(molecule:str, states:list[str]):
     color_handles = list({c["label"]: c for c in color_handles}.values())
     color_handles = sorted(
         color_handles,
-        key=lambda c: (c["label"].startswith("other"), c["style"])
+        key=lambda c: (c["label"].startswith("Other"), c["style"])
     )
+    # Umsortieren nach Farbskalierung:
+    order = [0,1,  2,3,  4,5,  8,9,10,11,   6,7,  12]
+    color_handles = [ color_handles[i] for i in order]
 
     marker_handles = list({c["label"]: c for c in marker_handles}.values())
     marker_handles = sorted(
         marker_handles,
-        key=lambda c: (c["label"].startswith("other"), c["label"])
+        key=lambda c: (c["label"].startswith("Other"), c["label"])
     )
 
     # format legend entries:
@@ -127,7 +133,7 @@ def total_plot_of_root_behaviors(molecule:str, states:list[str]):
         Line2D(
             [0], [0],
             marker=(m["style"] if m["style"] != "-" else None),
-            color="black",
+            color="grey",
             linestyle=("None" if m["style"] != "-" else "-"),
             label=m["label"],
             markeredgewidth=2
@@ -141,26 +147,26 @@ def total_plot_of_root_behaviors(molecule:str, states:list[str]):
 
     legend_color = ax.legend(
         handles=color_handles,
-        title="CI Vector Components",
+        title=f"{format_axis_label_acronyms("CI")} Vector Components:",
         loc="upper center",
-        bbox_to_anchor=(0.36, 1.8),
+        bbox_to_anchor=(0.36, 1.75),
         ncol=1, frameon=True,
-        # handlelength=1,
         handleheight=1,
         **legend_kwargs
     )
+    fig.artists.append(legend_color)
     ax.add_artist(legend_color)
 
     legend_marker = ax.legend(
         handles=marker_handles,
-        title="States",
+        title="Quintet States:",
         loc="upper center",
-        bbox_to_anchor=(0.86, 1.256),
+        bbox_to_anchor=(0.86, 1.24),
         ncol=1, frameon=True,
-        # handlelength=1,
         handleheight=1,
         **legend_kwargs
     )
+    fig.artists.append(legend_marker)
 
     # format and save plot:
     format_plot(fig=fig, ax=ax)
