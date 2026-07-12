@@ -27,14 +27,16 @@ def get_summarizing_latex_file(molecule:Molecule, ordering:CI_ORDERING, detailed
     chapter5 = get_overview_table_for_civectors(molecule=molecule, ordering=ordering)
 
     end = r"\end{document}"
-    with open(f"resulting_tex_files/{molecule.value}_{molecule.get_point_group().value}.tex", "w") as file:
-        file.write(start
+    text =(start
                    + chapter1
                    + chapter2
                    + chapter3
                    + chapter4
                    + chapter5
                    + end)
+    text = text.replace(r"{r}", r"{\mathsf{r}}").replace(r"{l}", r"{\mathsf{l}}").replace("\n\n"+r"\end{array", "\n"+r"\end{array")
+    with open(f"resulting_tex_files/{molecule.value}_{molecule.get_point_group().value}.tex", "w") as file:
+        file.write(text)
 
 
 if __name__ == '__main__':

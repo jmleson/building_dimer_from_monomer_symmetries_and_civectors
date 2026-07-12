@@ -177,7 +177,7 @@ def total_plot_of_root_behaviors(molecule:str, states:list[str]):
 
 
 if __name__ == "__main__":
-    for molecule in ["C6H6"]:#, "C6Cl6", "C6F6"]:
+    for molecule in ["C6H6", "C6Cl6", "C6F6"]:
 
         states = [
             "1.1", "2.1", "3.1", "6.1", "7.1",
