@@ -9,206 +9,135 @@
 
 ---
 
+
 ## 📌 Overview
 
-This repository provides **automated Python code** to derive **dimer states, symmetries, and CI vectors** from **monomer orbital occupation and symmetry information**. This enables the correlation between monomer and dimer **Complete Active Space (CAS)** excited state calculations.
+This repository provides **automated Python code** to derive **dimer state symmetries and CI vectors** from **monomer orbital symmetries and occupations**. It enables the systematic correlation between monomer and dimer states in **Complete Active Space (CAS)** calculations.
 
-It is designed for **stacked aromatic dimers** such as:
+It is designed for double excitations in **stacked aromatic dimers**, such as:
 
-|                     | D₆h (approx. D₂h)                                                                                                                                         | C₂v                        | D₂h                                                                                                                                                                |
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Exemplary Molecule: | **Benzene (C₆H₆)**                                                                                                                                        | **Chlorobenzene (C₆H₅Cl)**                                                                                                                       | **Rotated Chlorobenzene (C₆H₅Cl)**                                                                                                                                         |
-| Vizualization:      | <div style="text-align: center;"><img src="C6H6-x2-abstandZ100.png" alt="Stacked benzene dimer (D₂h symmetry)" style="width: 300px; height: auto;"></div> | <div style="text-align: center;"><img src="C6H5Cl-x2.png" alt="Chlorobenzene dimer (C₂v symmetry)" style="width: 300px; height: auto;"></div> | <br/><div style="text-align: center;"><img src="C6H5Cl_rotated-x2.png" alt="Rotated chlorobenzene dimer (D₂h symmetry)" style="width: 300px; height: auto;"></div> |
+|                     | D₂h                                                                                                                       | C₂v                                                                                                                             | D₂h                                                                                                                                            |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Exemplary Molecule: | **Benzene (C₆H₆)**                                                                                                                     | **Chlorobenzene (C₆H₅Cl)**                                                                                                      | **Rotated Chlorobenzene (C₆H₅Cl rotated)**                                                                                                     |
+| Vizualization:      | <div style="text-align: center;"><img src="C6H6-x2-abstandZ100.png" alt="Stacked benzene dimer (D₂h symmetry)" style="scale: 1;"></div> | <div style="text-align: center;"><img src="C6H5Cl-x2.png" alt="Chlorobenzene dimer (C₂v symmetry)" style="scale: 0.868;"></div> | <div style="text-align: center;"><img src="C6H5Cl_rotated-x2.png" alt="Rotated chlorobenzene dimer (D₂h symmetry)" style="scale: 0.86;"></div> |
 
 
-The code systematically constructs **dimer configurations** by combining **monomer states** (ground, triplet, quintet state(s)) and determines:
+The code systematically constructs **dimer configurations** by combining **monomer states** (ground, triplet, quintet state(e)) and determines:
 - The **symmetry of the resulting dimer state**
-- The **set of CI vectors** (Slater determinants) included in the CAS(4,4) wavefunction
+- The **set of dimer CI vectors** in the CAS(4,4) space
 - The **mapping between monomer and dimer states**
 
 This is particularly useful for **interpreting CAS calculations** of excited states in dimers, where the physical meaning of the CI vectors is not immediately obvious.
 
-> ✅ The output is **traceable, step-by-step, and human-readable**, and documents important steps in the set-up of the thesis *"A Quantum-Chemical Analysis of Long-Range Dimer Interactions Arising From Triplet Excited States of Monocyclic Aromatics"*
+> ✅ The output is **traceable, step-by-step, and human-readable**, and serves as documentation for the thesis *"A Quantum-Chemical Analysis of Long-Range Dimer Interactions Arising From Triplet Excited States of Monocyclic Aromatics"*.
+
+
 
 ---
-
 ## 🎯 Why This Matters
 
-Usually, quantum-chemical CAS calculations on dimers produce a lot CI vectors. 
-Without a clear mapping to mehr übersichtliche monomer states, it becomes difficult to:
-- Assign physical meaning to excited states
-- Understand how monomer excitations combine
-- Validate the correctness of the active space
+Quantum-chemical CAS calculations on dimers typically generate a large number of CI vectors.
+Without a clear mapping to the  simpler monomer configurations, it becomes difficult to:
+- Assign physical meaning to excited states,
+- Understand how monomer excitations combine, or
+- Validate the correctness of the active space.
 
-This tool **bridges the gap** between monomer properties and dimer wavefunctions, that happens un-nachvollziehbar in most quantum chemistry programs, and instead gives a **transparent, interpretable, and traceable ** CAS space analysis.
+This tool **bridges the gap** between monomer properties and dimer wavefunctions enabling **transparent, interpretable, and traceable CAS analysis**.
 
 ---
-
 ## ✅ Key Features
 
-- **Automated derivation** of dimer state symmetries from monomer orbital symmetries and occupations
-- **Dimer CI vector generation** based on linear combinations of monomer states and their CI vectors
-- **Support for multiple point groups**, enabling different molecular systems:
+- **Automated derivation** of dimer state symmetries from monomer states and their orbital symmetries and occupations
+- **CI vector generation** based on linear combinations of HOMO-LUMO excited monomer states
+- **Support for multiple point groups**:
   - D₂h (e.g., benzene)
   - C₂v (e.g., chlorobenzene)
   - C₂h (e.g., rotated chlorobenzene)
-- **Traceable, Step-by-step output** with full derivations
-- **Compact and detailed LaTeX modes** for different use cases
+- **Step-by-step LaTeX output** with full derivations
+- **Compact and detailed modes** for different use cases
 - **Human-readable derivations in compiled PDFs** showing the intermediate steps
-- **Enabled Comparison to Molpro Output Files** by transformations for equation formats
+- **Enabled comparison to [Molpro](https://www.molpro.net/)  output files** via equation format transformations
 
 ---
+
 
 ## 🛠️ How It Works
 
 ### Core Idea
 
-A dimer state is built from **two monomer states** ( both in ground state or both excited). The symmetry of the dimer state is determined by building all **linear combinations** and finding the symmetry of the resulting **determinants**.
-We note, that simply building the direcct product from monomer state symmetries fails to reproduce the true dimer state symmetries. An ausmultiplizireen ist nötig. 
+A double excited dimer state is built from **two monomer states** (e.g., both excited). 
+The symmetry of the dimer state is determined by building all **linear combinations** of the monomer CI vectors and finding the symmetry of the resulting **determinants**.
+
+> ❗ We note that simply taking the direct product of monomer state symmetries **fails to reproduce the true dimer state symmetries**. We need to multiply out the full equations. 
 
 The code:
-1. Starts from the monomer orbital symmetries and CI vectors for different states
-2. Enumerates all possible combinations of monomer states, that build a doubly excited dimer state 
-3. Multiplies out the CI vector combinations to independent determinants/summanden 
-4. Generates the corresponding CI vectors
-5. Computes the resulting symmetries for determinants and states 
-6. Summarizes the results in a LaTeX file
+1. Starts from monomer orbital symmetries and CI vectors for different states
+2. Enumerates all possible combinations of monomer states that build a doubly excited dimer state
+3. Multiplies out the CI vector combinations and finds independent determinants
+4. Computes the symmetry of each determinant and the resulting state
+5. Summarizes the results in a LaTeX file
 
 > ✅ The result is a **clear, traceable map** from monomer states to dimer states.
-
 ---
-### Example: Benzene Dimer 
+
+### Example: Benzene
 As an example, we consider benzene.
-As quantum chemcial programs typically dont enable D6h calculation, we perform our considerations in the subgroup D2h. 
+As quantum chemical programs typically do not enable D₆h calculation, we perform our considerations in the subgroup D₂h. 
+
+Considering HOMO-LUMO transitions in the monomer leads to a CAS(4,4) space. 
+The relevant monomer states and their CI vectors are: 
+- $ S $: Singlet ground state  
+$$
+S = \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^0 \right|_{a_g}
+$$
+- $ Q $: Singlet excited state  
+$$
+Q = \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^1 \right|_{a_g}
+$$
+- $ i^3 b_{2u} $: Triplet state (antisymmetric combination)  
+$$
+i^3 b_{2u} = \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{2u}} - \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{2u}}
+$$
+- $ e^3 b_{2u} $: Triplet state (symmetric combination)  
+$$
+e^3 b_{2u} = \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{2u}} + \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{2u}}
+$$
+
+- $ i^3 b_{3u} $: Triplet state (antisymmetric)  
+$$
+i^3 b_{3u} = \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{3u}} - \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{3u}}
+$$
+
+- $ e^3 b_{3u} $: Triplet state (symmetric)
+$$
+e^3 b_{3u} = \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{3u}} + \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{3u}}
+$$
 
 
-Considering HOMO-LUMO excitations, there are 4 possible triplet excited states, and one 
-For a CAS(4,4) calculation on two benzene monomers:
-\[S = 
- \quad + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
-% lower MOs:
-\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
-;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; 
- \draw[<-, thick] (0.15, -0.85) -- (0.15, -0.35) ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
-;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; 
- \draw[<-, thick] (1.15, -0.85) -- (1.15, -0.35) ;
-% upper MOs:
-\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
-;;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
-;;
-\end{tikzpicture}\right) 
- \quad = \left|\underbrace{(b_{3g}^{\mathsf{l}})^{2}(b_{2g}^{\mathsf{l}})^{2}(b_{1u}^{\mathsf{l}})^{0}(a_{u}^{\mathsf{l}})^{0}}_{a_{g}}\right|\]
-$$Q = 
- \quad + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
-% lower MOs:
-\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
-;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
-;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ;
-% upper MOs:
-\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
-;\draw[->, thick] (0.35, -0.25) -- (0.35, 0.25) ;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
-;\draw[->, thick] (1.35, -0.25) -- (1.35, 0.25) ;
-\end{tikzpicture}\right) 
- \quad = \left|\underbrace{(b_{3g}^{\mathsf{l}})^{1}(b_{2g}^{\mathsf{l}})^{1}(b_{1u}^{\mathsf{l}})^{1}(a_{u}^{\mathsf{l}})^{1}}_{a_{g}}\right|\]
-\[i^3 b_{2u} = 
- \quad + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
-% lower MOs:
-\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
-;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; 
- \draw[<-, thick] (0.15, -0.85) -- (0.15, -0.35) ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
-;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ;
-% upper MOs:
-\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
-;\draw[->, thick] (0.35, -0.25) -- (0.35, 0.25) ;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
-;;
-\end{tikzpicture}\right) 
-- \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
-% lower MOs:
-\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
-;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
-;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; 
- \draw[<-, thick] (1.15, -0.85) -- (1.15, -0.35) ;
-% upper MOs:
-\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
-;;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
-;\draw[->, thick] (1.35, -0.25) -- (1.35, 0.25) ;
-\end{tikzpicture}\right) 
- \quad = \left|\underbrace{(b_{3g}^{\mathsf{l}})^{1}(b_{2g}^{\mathsf{l}})^{2}(b_{1u}^{\mathsf{l}})^{1}(a_{u}^{\mathsf{l}})^{0}}_{b_{2u}}\right| - \left|\underbrace{(b_{3g}^{\mathsf{l}})^{2}(b_{2g}^{\mathsf{l}})^{1}(b_{1u}^{\mathsf{l}})^{0}(a_{u}^{\mathsf{l}})^{1}}_{b_{2u}}\right|\]
-\[e^3 b_{2u} = 
- \quad + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
-% lower MOs:
-\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
-;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; 
- \draw[<-, thick] (0.15, -0.85) -- (0.15, -0.35) ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
-;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ;
-% upper MOs:
-\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
-;\draw[->, thick] (0.35, -0.25) -- (0.35, 0.25) ;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
-;;
-\end{tikzpicture}\right) 
-+ \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
-% lower MOs:
-\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
-;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
-;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; 
- \draw[<-, thick] (1.15, -0.85) -- (1.15, -0.35) ;
-% upper MOs:
-\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
-;;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
-;\draw[->, thick] (1.35, -0.25) -- (1.35, 0.25) ;
-\end{tikzpicture}\right) 
- \quad = \left|\underbrace{(b_{3g}^{\mathsf{l}})^{1}(b_{2g}^{\mathsf{l}})^{2}(b_{1u}^{\mathsf{l}})^{1}(a_{u}^{\mathsf{l}})^{0}}_{b_{2u}}\right| + \left|\underbrace{(b_{3g}^{\mathsf{l}})^{2}(b_{2g}^{\mathsf{l}})^{1}(b_{1u}^{\mathsf{l}})^{0}(a_{u}^{\mathsf{l}})^{1}}_{b_{2u}}\right|$$
-$$e^3 b_{3u} = 
- \quad + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
-% lower MOs:
-\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
-;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
-;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; 
- \draw[<-, thick] (1.15, -0.85) -- (1.15, -0.35) ;
-% upper MOs:
-\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
-;\draw[->, thick] (0.35, -0.25) -- (0.35, 0.25) ;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
-;;
-\end{tikzpicture}\right) 
-- \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
-% lower MOs:
-\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
-;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; 
- \draw[<-, thick] (0.15, -0.85) -- (0.15, -0.35) ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
-;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ;
-% upper MOs:
-\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
-;;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
-;\draw[->, thick] (1.35, -0.25) -- (1.35, 0.25) ;
-\end{tikzpicture}\right) 
- \quad = \left|\underbrace{(b_{3g}^{\mathsf{l}})^{2}(b_{2g}^{\mathsf{l}})^{1}(b_{1u}^{\mathsf{l}})^{1}(a_{u}^{\mathsf{l}})^{0}}_{b_{3u}}\right| - \left|\underbrace{(b_{3g}^{\mathsf{l}})^{1}(b_{2g}^{\mathsf{l}})^{2}(b_{1u}^{\mathsf{l}})^{0}(a_{u}^{\mathsf{l}})^{1}}_{b_{3u}}\right|\]
-\[i^3 b_{3u} = 
- \quad + \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
-% lower MOs:
-\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
-;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
-;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ; 
- \draw[<-, thick] (1.15, -0.85) -- (1.15, -0.35) ;
-% upper MOs:
-\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
-;\draw[->, thick] (0.35, -0.25) -- (0.35, 0.25) ;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
-;;
-\end{tikzpicture}\right) 
-+ \left(\begin{tikzpicture}[baseline={(current bounding box.center)}]
-% lower MOs:
-\draw[thick] (0,-0.6) -- (0.5,-0.6)%node[pos=0, left] {$b_{2g}$}
-;\draw[->, thick] (0.35, -0.85) -- (0.35, -0.35) ; 
- \draw[<-, thick] (0.15, -0.85) -- (0.15, -0.35) ;\draw[thick] (1,-0.6) -- (1.5,-0.6)%node[pos=1, right] {$b_{3g}$}
-;\draw[->, thick] (1.35, -0.85) -- (1.35, -0.35) ;
-% upper MOs:
-\draw[thick] (0,0) -- (0.5,0)%node[pos=0, left] {$b_{1u}$}
-;;\draw[thick] (1,0) -- (1.5,0)%node[pos=1, right] {$a_{u}$}
-;\draw[->, thick] (1.35, -0.25) -- (1.35, 0.25) ;
-\end{tikzpicture}\right) 
- \quad = \left|\underbrace{(b_{3g}^{\mathsf{l}})^{2}(b_{2g}^{\mathsf{l}})^{1}(b_{1u}^{\mathsf{l}})^{1}(a_{u}^{\mathsf{l}})^{0}}_{b_{3u}}\right| + \left|\underbrace{(b_{3g}^{\mathsf{l}})^{1}(b_{2g}^{\mathsf{l}})^{2}(b_{1u}^{\mathsf{l}})^{0}(a_{u}^{\mathsf{l}})^{1}}_{b_{3u}}\right|$$
+Building all linear combinations, one finds that the dimer state formed from a monomer in the
+ground state $S$ and one in the quintet state $Q$ has the form:
+$$
+S \otimes Q + Q \otimes S \quad = 
+$$  
+$$
+\begin{array}{c}
++2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right|\end{array}
+$$
+
+while the negative linear combination $S \otimes Q + Q \otimes S$ falls into $b_{1u}$ symmetry. 
 
 
----
+
+
+
+
+
+
+
+
+
+
+
 
 ## 🔧 How to Use
 ### 📂 Structure
@@ -216,7 +145,7 @@ $$e^3 b_{3u} =
 - `src`: Folder for source files
 - `src/run.py`: Main script that generates correlations between monomer and dimer states for C6H6, C6H5Cl, and C6H5Cl rotated
 - `resulting_tex_files/`: Folder for LaTeX compilation files
-- `resulting_tex_files/run.sh`: Compiles `.tex` files into PDFs (output in `resulting_tex_files/build/`)
+- `resulting_tex_files/run.sh <filename>`: Compiles `.tex` files into PDFs (output in `resulting_tex_files/build/`)
 
 
 ### 📦 Dependencies
@@ -237,9 +166,24 @@ pip install -r requirements.txt
 ### 💻 Running the Code
 Exemplary use of the code is given in `src/run.py` for different molecular systems.
 
-In general, the results of a different order for a tensor can be gained by running: 
+In general, the results of a different order for a tensor can be gained by calling `get_summarizing_latex_file`.
+For instance: 
 ```python
-tikz = get_summarizing_latex_file(Molecule.C6H6, ordering=order, detailed=False)
+from src.symmetries.CI_ORDERING import CI_ORDERING
+from src.symmetries.Molecule import Molecule
+from src.latex.pdf_summary.get_summarizing_latex_file import get_summarizing_latex_file
+
+order = CI_ORDERING.molpro
+
+get_summarizing_latex_file(Molecule.C6H6, ordering=order, detailed=False)
 ```
 
-The parameter ```detailed``` determines whether the generated LaTeX file includes a detailed derivation or omits some steps to get a schlankere pdf version. 
+The detailed parameter determines whether the generated LaTeX file includes a full, step-by-step derivation or omits intermediate steps to produce a more concise and slimmer PDF version. 
+
+The order parameter specifies the orbital ordering convention to use. It can be set to:
+-   `CI_ORDERING.my`: the ordering used in the dissertation (see above)
+-   `CI_ORDERING.molpro`: the orbital ordering convention used by the [Molpro quantum chemistry package](https://www.molpro.net/) 
+
+
+
+
