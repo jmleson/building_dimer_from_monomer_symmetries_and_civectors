@@ -87,13 +87,23 @@ As quantum chemical programs typically do not enable D₆h calculation, we perfo
 Considering HOMO-LUMO transitions in the monomer leads to a CAS(4,4) space. 
 The relevant monomer states and their CI vectors are: 
 - $S$: Singlet ground state  
-$$\displaystyle S = \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^0 \right|_{a_g}$$
+
+$$
+S = \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^0 \right|_{a_g}
+$$
+
 - $Q$: Singlet excited state  
-$$Q = \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^1 \right|_{a_g}$$
+
+$$
+ Q = \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^1 \right|_{a_g}
+$$
 
 - $i^3 b_{2u}$: Triplet state (antisymmetric combination)     
 
-$$i^3 b_{2u} = \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{2u}} - \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{2u}}$$
+$$
+i^3 b_{2u} = \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{2u}} - \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{2u}}
+$$
+
 - $e^3 b_{2u}$: Triplet state (symmetric combination)    
 
 $$e^3 b_{2u} = \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{2u}} + \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{2u}}$$
@@ -112,7 +122,8 @@ $$S \otimes Q + Q \otimes S \quad = $$
 
 $$
 \begin{array}{c}
-+2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right|\end{array}
++2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| \\ +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| \\ +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| \\ +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right|
+\end{array}
 $$  
 
 while the negative linear combination $S \otimes Q + Q \otimes S$ falls into $b_{1u}$ symmetry. 
