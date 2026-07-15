@@ -16,10 +16,10 @@ This repository provides **automated Python code** to derive **dimer state symme
 
 It is designed for double excitations in **stacked aromatic dimers**, such as:
 
-|                     | D<sub>2h</sub> | C<sub>2v</sub> | D<sub>2h</sub> |
-|:--------------------|:--------------:|:--------------:|:--------------:|
-| Exemplary Molecule: | **Benzene C<sub>6</sub>H<sub>6</sub>** | **Chlorobenzene C<sub>6</sub>H<sub>5</sub>Cl** | **Rotated Chlorobenzene C<sub>6</sub>H<sub>5</sub>Cl** |
-| Visualization: | <img src="C6H6-x2-abstandZ100.png" alt="Stacked benzene dimer, D2h symmetry" width="250"> | <img src="C6H5Cl-x2.png" alt="Chlorobenzene dimer, C2v symmetry" width="250"> | <img src="C6H5Cl_rotated-x2.png" alt="Rotated chlorobenzene dimer, D2h symmetry" width="250"> |
+|                     |                                      D<sub>2h</sub>                                      | C<sub>2v</sub> | D<sub>2h</sub> |
+|:--------------------|:----------------------------------------------------------------------------------------:|:--------------:|:--------------:|
+| Exemplary Molecule: |                          **Benzene C<sub>6</sub>H<sub>6</sub>**                          | **Chlorobenzene C<sub>6</sub>H<sub>5</sub>Cl** | **Rotated Chlorobenzene C<sub>6</sub>H<sub>5</sub>Cl** |
+| Visualization: | <img src="C6H6-x2-abstandZ100.png" alt="Stacked benzene dimer, D2h symmetry" width="300"> | <img src="C6H5Cl-x2.png" alt="Chlorobenzene dimer, C2v symmetry" width="250"> | <img src="C6H5Cl_rotated-x2.png" alt="Rotated chlorobenzene dimer, D2h symmetry" width="250"> |
 
 
 The code systematically constructs **dimer configurations** by combining **monomer states** (ground, triplet, quintet state(e)) and determines:
