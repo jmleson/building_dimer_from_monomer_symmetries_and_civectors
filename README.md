@@ -99,13 +99,15 @@ $$e^3 b_{2u} = \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\
 $$i^3 b_{3u} = \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{3u}} - \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{3u}}$$
 
 - $e^3 b_{3u}$: Triplet state (symmetric)
-$$e^3 b_{3u} = \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{3u}} + \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{3u}}$$
+```math
+e^3 b_{3u} = \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{3u}} + \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{3u}}```
 
 
 Building all linear combinations, one finds that the dimer state formed from a monomer in the ground state $S$ and one in the quintet state $Q$ has the form:  
 $$S \otimes Q + Q \otimes S \quad = $$  
 $$\begin{array}{c}
 +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{2}(b_{3g})^{1}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{2}(b_{2g})^{1}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| \\[0.5cm] +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{0}(b_{1u})^{1}(b_{1g})^{0}(a_{u})^{1}}_{a_{g}}\right| +2 \cdot \left|\underbrace{(b_{2u})^{1}(b_{3g})^{2}(b_{3u})^{1}(b_{2g})^{2}(a_{g})^{1}(b_{1u})^{0}(b_{1g})^{1}(a_{u})^{0}}_{a_{g}}\right|\end{array}$$  
+
 while the negative linear combination $S \otimes Q + Q \otimes S$ falls into $b_{1u}$ symmetry. 
 
 
