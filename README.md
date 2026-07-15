@@ -14,13 +14,12 @@
 This repository provides **automated Python code** to derive **dimer states, symmetries, and CI vectors** from **monomer orbital occupation and symmetry information**. This enables the correlation between monomer and dimer **Complete Active Space (CAS)** excited state calculations.
 
 It is designed for **stacked aromatic dimers** such as:
-- **Benzene (C₆H₆)** — D₆h symmetry (approximated as D₂h)
-- **Chlorobenzene (C₆H₅Cl)** — C₂v symmetry
-- **Rotated chlorobenzene** — D₂h symmetry
 
-![Alt text](C6H5Cl_rotated-x2.png)
+|                     | D₆h (approx. D₂h)                                                                                                                                         | C₂v                        | D₂h                                                                                                                                                                |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Exemplary Molecule: | **Benzene (C₆H₆)**                                                                                                                                        | **Chlorobenzene (C₆H₅Cl)**                                                                                                                       | **Rotated Chlorobenzene (C₆H₅Cl)**                                                                                                                                         |
+| Vizualization:      | <div style="text-align: center;"><img src="C6H6-x2-abstandZ100.png" alt="Stacked benzene dimer (D₂h symmetry)" style="width: 300px; height: auto;"></div> | <div style="text-align: center;"><img src="C6H5Cl-x2.png" alt="Chlorobenzene dimer (C₂v symmetry)" style="width: 300px; height: auto;"></div> | <br/><div style="text-align: center;"><img src="C6H5Cl_rotated-x2.png" alt="Rotated chlorobenzene dimer (D₂h symmetry)" style="width: 300px; height: auto;"></div> |
 
-<img src="C6H5Cl_rotated-x2.png" alt="Rotated chlorobenzene dimer (C₂v symmetry)" style="width: 300px; height: auto;">
 
 The code systematically constructs **dimer configurations** by combining **monomer states** (ground, triplet, quintet state(s)) and determines:
 - The **symmetry of the resulting dimer state**
