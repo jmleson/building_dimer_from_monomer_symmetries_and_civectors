@@ -3,7 +3,7 @@
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0)
 
 > **Author**: [Judith M. Leson](https://orcid.org/0009-0002-5627-2673)  
-> **Repository**: [https://github.com/jmleson/building_dimer_from_monomer_symmetries_and_civectors](https://github.com/jmleson/building_dimer_from_monomer_symmetries_and_civectors)  
+> **Repository**: [jmleson:building_dimer_from_monomer_symmetries_and_civectors](https://github.com/jmleson/building_dimer_from_monomer_symmetries_and_civectors)  
 > **Related Work**: Dissertation: *A Quantum-Chemical Analysis of Long-Range Dimer Interactions Arising From Triplet Excited States of Monocyclic Aromatics* (University of Duisburg-Essen, 2026)  
 > **Data DOI**: [10.71955/DUEDATA-2026-MR4YY63J](https://doi.org/10.71955/DUEDATA-2026-MR4YY63J)
 
