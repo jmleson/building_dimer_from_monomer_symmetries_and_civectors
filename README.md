@@ -99,8 +99,7 @@ $$e^3 b_{2u} = \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\
 $$i^3 b_{3u} = \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{3u}} - \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{3u}}$$
 
 - $e^3 b_{3u}$: Triplet state (symmetric)
-```math
-e^3 b_{3u} = \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{3u}} + \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{3u}}```
+$$e^3 b_{3u} = \left| (b_{3g}^{\mathsf{l}})^2 (b_{2g}^{\mathsf{l}})^1 (b_{1u}^{\mathsf{l}})^1 (a_{u}^{\mathsf{l}})^0 \right|_{b_{3u}} + \left| (b_{3g}^{\mathsf{l}})^1 (b_{2g}^{\mathsf{l}})^2 (b_{1u}^{\mathsf{l}})^0 (a_{u}^{\mathsf{l}})^1 \right|_{b_{3u}}$$
 
 
 Building all linear combinations, one finds that the dimer state formed from a monomer in the ground state $S$ and one in the quintet state $Q$ has the form:  
