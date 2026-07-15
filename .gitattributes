@@ -1,3 +1,7 @@
 *.py linguist-language=Python
 *.sh linguist-language=bash
 *.tex linguist-language=TeX
+
+*.py  linguist-detectable=true
+*.sh  linguist-detectable=true
+*.tex  linguist-detectable=true
