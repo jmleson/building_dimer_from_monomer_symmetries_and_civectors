@@ -1,3 +1,8 @@
+.venv/**
+**.idea**
+.idea/**
+.ipynb_checkpoints/**
+
 # Distribution / packaging
 .Python
 build/
