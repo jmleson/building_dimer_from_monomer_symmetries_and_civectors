@@ -1,4 +1,4 @@
-def format_irred_representations(latex_equation:str) -> str:
+def format_irred_representations(latex_equation:str, state:bool=False) -> str:
     """
     change the formatting of irreducible representations from plain strings to latex-equation compatible strings
     :param latex_equation: to-be-formatted equation
@@ -29,5 +29,7 @@ def format_irred_representations(latex_equation:str) -> str:
     latex_equation = latex_equation.replace("a1", "a_1").replace("a2","a_2")
     latex_equation = latex_equation.replace("b1","b_1").replace("b2","b_2")
 
-
+    if state:#INFO large letters
+        latex_equation = latex_equation[0].upper()+ latex_equation[1:]
+    # else orbital -> lower letters
     return latex_equation

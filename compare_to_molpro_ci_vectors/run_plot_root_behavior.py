@@ -42,17 +42,17 @@ def plot_root_behavior(molecule:str, state:str="4.1", total_fig=None, total_ax=N
 
         sorted_occ = transform_molpro_order_into_own_ordering_D2h(col)[0]
 
-        label = ''.join([f"({format_irred_representations(irred)})^{o.replace('a','1')}" for irred, o in sorted_occ.items()])
+        label = ''.join([f"({format_irred_representations(irred, state=False)})^{o.replace('a','1')}" for irred, o in sorted_occ.items()])
 
         if state == "4.1":
             total_ax.plot(df["Z"], df[col],"|", color=get_color(col), markeredgewidth=2)
-            marker_handles.append({"style": "|", "label": r"state 4\,$^5 a_g$"})
+            marker_handles.append({"style": "|", "label": r"State 4\,$^5 A_g$"})
         elif state == "5.1":
             total_ax.plot(df["Z"], df[col], "-", label="$"+label+"$", color=get_color(col))
             color_handles.append({"style": get_color(col), "label": r"$\mathbf{"+label+"}$"})
-            marker_handles.append({"style": "-", "label": r"state 5\,$^5 a_g$"})
+            marker_handles.append({"style": "-", "label": r"State 5\,$^5 A_g$"})
         else:
-            label = r"Other States than 4\,$\mathbf{^5 a_g}$ or 5\,$\mathbf{^5 a_g}$ "
+            label = r"Other States than 4\,$\mathbf{^5 A_g}$ or 5\,$\mathbf{^5 A_g}$ "
             handles, labels = total_ax.get_legend_handles_labels()
             mask = abs(df[col]) > 1e-5
             if label not in labels:
@@ -75,7 +75,7 @@ def plot_root_behavior(molecule:str, state:str="4.1", total_fig=None, total_ax=N
         loc="center left", bbox_to_anchor=(1.1, 0.5)
     )
     my_plt.ylim(-0.75,0.75)
-    single_ax.set_title(f"state {state}")
+    single_ax.set_title(f"State {state}")
     format_plot(fig=single_fig, ax=single_ax)
     save_my_figures(f"compare_to_molpro_ci_vectors/outputs/{molecule}-plot_root{state.replace('.','_')}_behavior",
                     fig=single_fig, bbox_extra_artists=[legend])
@@ -147,7 +147,7 @@ def total_plot_of_root_behaviors(molecule:str, states:list[str]):
 
     legend_color = ax.legend(
         handles=color_handles,
-        title=f"{format_axis_label_acronyms("CI")} Vector Components:",
+        title=f"{format_axis_label_acronyms("CI")} Vector Components",
         loc="upper center",
         bbox_to_anchor=(0.36, 1.75),
         ncol=1, frameon=True,
@@ -159,7 +159,7 @@ def total_plot_of_root_behaviors(molecule:str, states:list[str]):
 
     legend_marker = ax.legend(
         handles=marker_handles,
-        title="Quintet States:",
+        title="Quintet States",
         loc="upper center",
         bbox_to_anchor=(0.86, 1.24),
         ncol=1, frameon=True,

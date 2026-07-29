@@ -62,9 +62,9 @@ def get_table_info_all_states_agreeing_with_molpro(dimer_states, point_group:POI
         else:
             lc = fitting_dimer_states[0].get_label()
             if point_group == POINTGROUP.D2h:
-                lc_molpro_notation = lc.replace("e^3 b_{2u}", "2.3").replace("i^3 b_{2u}", "1.3").replace("e^3 b_{3u}", "1.2").replace("i^3 b_{3u}", "2.2")# case Benzene
+                lc_molpro_notation = lc.replace("i^3 B_{2u}", "2.3").replace("i^3 B_{2u}", "1.3").replace("i^3 B_{3u}", "1.2").replace("i^3 B_{3u}", "2.2")# case Benzene
             else:
-                lc_molpro_notation = lc.replace("e^3 a_1", "2.1").replace("i^3 a_1", "1.1").replace("e^3 b_1", "1.2").replace("e^3 b_{1}", "1.2").replace("i^3 b_1", "2.2").replace("i^3 b_{1}", "2.2")  # case C6H5Cl (rotated or not)
+                lc_molpro_notation = lc.replace("e^3 A_1", "2.1").replace("i^3 A_1", "1.1").replace("i^3 B_1", "1.2").replace("i^3 B_{1}", "1.2").replace("i^3 B_1", "2.2").replace("i^3 B_{1}", "2.2")  # case C6H5Cl (rotated or not)
 
             collected_states[(state, fitting_dimer_states[0].symmetry)] = f"${lc} = {lc_molpro_notation}$"
 
