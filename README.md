@@ -1,6 +1,6 @@
 # Building Dimer CAS States, Symmetries, and CI-Vectors from Monomer Orbitals
 
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0)
+[![License: Building Dimer CAS States, Symmetries, and CI-Vectors from Monomer Orbitals Non-Commercial Software License](https://img.shields.io/badge/License-Non--Commercial%20Software-blue.svg)](LICENSE)
 
 > **Author**: [Judith M. Leson](https://orcid.org/0009-0002-5627-2673)  
 > **Repository**: [jmleson:building_dimer_from_monomer_symmetries_and_civectors](https://github.com/jmleson/building_dimer_from_monomer_symmetries_and_civectors)  

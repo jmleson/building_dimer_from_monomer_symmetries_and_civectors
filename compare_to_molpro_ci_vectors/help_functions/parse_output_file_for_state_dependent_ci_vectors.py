@@ -51,7 +51,12 @@ def parse_output_file_for_state_dependent_ci_vectors(filename):
             i += 1
 
 
-    assert len(result) == 18
+    # print(len(result), filename)
+    # assert len(result) == 18
+    if not len(result) == 18:
+        print(len(result), filename, "wrong length of roots")
+        raise Exception("wrong length of roots")
+        return None
     sorted_result = dict(
         sorted(
             result.items(),
