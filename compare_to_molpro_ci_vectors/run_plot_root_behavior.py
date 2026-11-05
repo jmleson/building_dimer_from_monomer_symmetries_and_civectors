@@ -149,7 +149,7 @@ def total_plot_of_root_behaviors(molecule:str, states:list[str]):
         handles=color_handles,
         title=f"{format_axis_label_acronyms("CI")} Vector Components",
         loc="upper center",
-        bbox_to_anchor=(0.36, 1.75),
+        bbox_to_anchor=(0.36, 1.75),# for pdf: (0.36, 1.75), for png: (0.36, 1.92)
         ncol=1, frameon=True,
         handleheight=1,
         **legend_kwargs
@@ -161,7 +161,7 @@ def total_plot_of_root_behaviors(molecule:str, states:list[str]):
         handles=marker_handles,
         title="Quintet States",
         loc="upper center",
-        bbox_to_anchor=(0.86, 1.24),
+        bbox_to_anchor=(0.86, 1.24),# for pdf: (0.86, 1.24), for png: (0.86, 1.34)
         ncol=1, frameon=True,
         handleheight=1,
         **legend_kwargs
